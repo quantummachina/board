@@ -1,0 +1,21 @@
+<% if signed_in? %>
+	signed in
+
+<% else %>
+
+<div class="center hero-unit">
+
+  <h1>Funkalab</h1>
+  <h2>Connecting creatives with ideas</h2>
+
+  <%= form_for(@user) do |f| %>
+
+  	<%= f.label :email %>
+  	<%= f.text_field :email %>
+
+    <%= f.submit "Sign up now!", class: "btn btn-large btn-primary" %>
+
+   <% end %>
+</div>
+
+<% end %>

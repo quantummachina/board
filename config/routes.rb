@@ -1,4 +1,10 @@
 Board::Application.routes.draw do
+
+  root to: 'static_pages#landing'
+
+  match '/signup',  to: 'users#new'
+
+  resources :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
