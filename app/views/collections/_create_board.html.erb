@@ -1,9 +1,22 @@
-<%= form_for current_user.collections.build do |f| %>
-	<%= f.label :title %>
- 	<%= f.text_field :title %>
- 		<%= f.label :description %>
- 	<%= f.text_field :description %>
+<a class="btn btn-small btn-warning" data-toggle="modal" href="#NewBoard" >Create Board</a>
 
-  	<%= f.submit "Create Board", class: "btn btn-small btn-primary" %>
+<div class="modal hide fade" id="NewBoard">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Create a New Board</h3>
+  </div>
+  <div class="modal-body">
+  	<%= form_for current_user.collections.build do |f| %>
+		<%= f.label :title %>
+	 	<%= f.text_field :title %>
+	 	<%= f.label :description %>
+	 	<%= f.text_field :description %>
+	  	
+  </div>
+  <div class="modal-footer">
+    <a  data-dismiss="modal" href="#" class="btn btn-small">Close</a>
+    <%= f.submit "Create Board", class: "btn btn-small btn-primary" %>
+    <% end %>
 
-<% end %>
+  </div>
+</div>
