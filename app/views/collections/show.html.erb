@@ -2,7 +2,9 @@
 </br>
 	<h2><%= @board.description %></h2>
 </br>
-<%= render 'shared/add_item' %>
+<%if @board.user.id == current_user.id %>
+	<%= render 'shared/add_item' %>
+<% end %>
 <% for item in @board.items do %>
 	  <% if item.id %>
 
@@ -23,16 +25,18 @@
 					<li>Share in Board:</li>
 					<li class="divider"></li>
 					<% for b in current_user.collections %>
-						<li><%= link_to b.title, controller: "collections", action:"crosspost", board_id: b.id, content: item.content %></li>
+						<% if b.id != @board.id %>
+							<li><%= link_to b.title, controller: "collections", action:"crosspost", board_id: b.id, content: item.content %></li>
+						<% end %>
 					<% end %>
 					<li class="divider"></li>
 					<li class="divider"></li>
-					<li><%= render 'shared/rem', obj: item %></li>
+					<% if @board.user.id == current_user.id %>
+						<li><%= render 'shared/rem', obj: item %></li>
+					<% end %>
 				</ul>                                
 			</li>
 			</ul>
-
-          <!--%= render 'shared/rem', obj: item %-->
   	    </div>
   	  <% end %>
 	<% end %>
