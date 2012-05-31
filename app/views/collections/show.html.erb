@@ -1,3 +1,5 @@
+<div class="row">
+	<div class="span12">
 
  <h1><%= @board.title %></h1>
 </br>
@@ -7,12 +9,13 @@
 	<%= link_to "edit board", edit_collection_path(@board) %>
 	<hr>
 
-	<div class="row">
-	<div class="span12">
+	
 
 	<%= render 'shared/add_item' %>
+	<%else%>
+	<hr>
 <% end %>
-
+	<div class="row">
 <% for item in @board.items do %>
 	  <% if item.id %>
 
@@ -45,5 +48,6 @@
   	    </div>
   	  <% end %>
 	<% end %>
+</div>
 </div>
 </div>
