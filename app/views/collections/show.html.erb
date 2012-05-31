@@ -1,0 +1,38 @@
+ <h1><%= @board.title %></h1>
+</br>
+	<h2><%= @board.description %></h2>
+</br>
+<%= render 'shared/add_item' %>
+<% for item in @board.items do %>
+	  <% if item.id %>
+
+  	    <div class = <%="span#{@size}" %> >
+
+  	    	<%= embedded(item.content, @size.to_i) %>
+
+  	    	<!--%= item.content_html %-->
+  	    		  <!--%= render 'inspirations/options', obj: item, header: header %-->
+
+			<ul class="nav nav-pills">
+			<li class="dropdown" id="<%= "options"+item.id.to_s %>">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="<%= "#options"+item.id.to_s%>">
+					<i class="icon-cog"></i>
+					<b class="dropdown-menu"></b>
+				</a>
+				<ul class="dropdown-menu">
+					<li>Share in Board:</li>
+					<li class="divider"></li>
+					<% for b in current_user.collections %>
+						<li><%= link_to b.title, controller: "collections", action:"crosspost", board_id: b.id, content: item.content %></li>
+					<% end %>
+					<li class="divider"></li>
+					<li class="divider"></li>
+					<li><%= render 'shared/rem', obj: item %></li>
+				</ul>                                
+			</li>
+			</ul>
+
+          <!--%= render 'shared/rem', obj: item %-->
+  	    </div>
+  	  <% end %>
+	<% end %>

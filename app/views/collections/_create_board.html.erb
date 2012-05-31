@@ -1,0 +1,10 @@
+<%= form_for current_user.collections.build do |f| %>
+
+	<%= f.label :title %>
+ 	<%= f.text_field :title %>
+ 		<%= f.label :description %>
+ 	<%= f.text_field :description %>
+
+  	<%= f.submit "Create Board", class: "btn btn-small btn-primary" %>
+
+<% end %>

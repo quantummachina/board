@@ -3,8 +3,19 @@ Board::Application.routes.draw do
   root to: 'static_pages#landing'
 
   match '/signup',  to: 'users#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
+  match '/signin',  to: 'sessions#new'
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :collections do
+    member do
+      get :crosspost
+    end
+  end
+  resources :items
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
