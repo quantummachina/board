@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         	flash[:success] = "Welcome to Funkalab!"
       		redirect_to action: 'edit', id: @user.id
     	else
-      		redirect_to root_path
+      		render 'static_pages/landing'
     	end
   	end
 

@@ -1,7 +1,4 @@
-<% if signed_in? %>
-
-
-<% else %>
+<% if !signed_in? %>
 
 <div class="center hero-unit">
 
@@ -9,6 +6,8 @@
   <h2>Connecting creatives with ideas</h2>
 
   <%= form_for(@user) do |f| %>
+
+	<%= render 'shared/error_messages', object: f.object %>
 
   	<%= f.label :email %>
   	<%= f.text_field :email %>

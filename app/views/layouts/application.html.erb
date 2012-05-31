@@ -24,8 +24,11 @@
         <%= msg %>
       <% end %>
     <% end %>
+
     <%= yield %>
+
     <hr>
+    <%= link_to "About", '/about'%> | <%= link_to "Home", root_path %>
   </div>
 </body>
 </html>

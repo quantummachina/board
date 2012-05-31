@@ -12,10 +12,10 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @project = Resource.find(params[:id]).project
-    Resource.find(params[:id]).destroy
+    @collection = Item.find(params[:id]).collection
+    Item.find(params[:id]).destroy
     respond_to do |format|
-      format.html { redirect_to @project }
+      format.html { redirect_to @collection }
       format.js
     end
   end
