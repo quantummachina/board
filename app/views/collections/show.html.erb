@@ -3,6 +3,8 @@
 	<h2><%= @board.description %></h2>
 </br>
 <%if @board.user.id == current_user.id %>
+	<%= link_to "edit board", edit_collection_path(@board) %>
+	<hr>
 	<%= render 'shared/add_item' %>
 <% end %>
 <% for item in @board.items do %>
@@ -11,9 +13,6 @@
   	    <div class = <%="span#{@size}" %> >
 
   	    	<%= embedded(item.content, @size.to_i) %>
-
-  	    	<!--%= item.content_html %-->
-  	    		  <!--%= render 'inspirations/options', obj: item, header: header %-->
 
 			<ul class="nav nav-pills">
 			<li class="dropdown" id="<%= "options"+item.id.to_s %>">

@@ -1,0 +1,16 @@
+<% provide :title, "Edit Board" %> 
+<div class="row">
+  <div class = "span6 offset3">
+	<h1>Edit Board</h1>
+	<h2><%= @collection.title %></h2>
+	<hr>
+  	<%= form_for(@collection) do |f| %>
+		<%= f.label :title %>
+	 	<%= f.text_field :title %>
+	 	<%= f.label :description %>
+	 	<%= f.text_field :description %>
+	 	<%= f.submit "Update Board", class: "btn btn-small btn-primary" %>
+	<% end %>
+	<%= link_to "Delete board", @collection, method: :delete, title: "delete board", confirm: "Are you shure? you will not be able to undo this action." %>
+  </div>
+</div>

@@ -24,4 +24,22 @@ class CollectionsController < ApplicationController
 	    end
 	end
 
+	def edit
+		@collection = current_user.collections.find(params[:id])
+	end
+
+	def update
+		@collection = current_user.collections.find(params[:id])
+		if @collection.update_attributes(params[:collection])
+	      flash[:success] = "Board updated"
+	      redirect_to @collection
+	    else
+	      render 'edit'
+    	end
+	end
+
+	def destroy
+    	current_user.collections.find(params[:id]).destroy
+    	redirect_to root_path
+  	end
 end
