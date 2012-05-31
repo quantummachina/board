@@ -1,6 +1,8 @@
 <!-- requires boards -->
 <div class="row">
-<% for board in boards do %>
-	<%= render 'shared/board_thumbnail',  board: board, size: 3 %>
-<% end %>
+	<% if boards %>
+		<% for board in boards do %>
+			<%= render 'shared/board_thumbnail',  board: board, size: 3 %>
+		<% end %>
+	<% end %>
 </div>
