@@ -1,11 +1,9 @@
 <!-- requires board, size -->
 <div class = <%= "span#{size}" %>>
 	<%= link_to board.title, board %>
-</br>
+	</br>
 	<%= board.description %>
-
-<% if board.items.any? %>
-	<%= embedded(board.items.first.content, size.to_i) %>
-<%end%>
-
+	<% if board.items.any? %>
+		<%= embedded(board.items.first.content, size.to_i) %>
+	<%end%>
 </div>

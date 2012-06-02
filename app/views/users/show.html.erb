@@ -1,1 +1,10 @@
-User Main
+<div class="row-fluid">
+	<div class="span12">
+		<h1><%= current_user.name+"'s lab" %></h1>
+	</br>
+		<%= render 'collections/create_board' %>
+		<hr>
+
+		<%= render 'shared/boards', boards:@boards %>
+	</div>
+</div>

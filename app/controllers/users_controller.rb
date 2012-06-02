@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   	end
 
   	def show
+      @boards = current_user.collections.all #to change for other users
   	end
 
   def edit
