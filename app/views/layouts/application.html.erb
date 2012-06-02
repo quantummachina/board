@@ -25,10 +25,11 @@
       <% end %>
     <% end %>
 
+    <%= render 'layouts/header' %>
     <%= yield %>
 
     <hr>
-    <%= link_to "About", '/about'%> | <%= link_to "Home", root_path %>
+    <%= link_to "About", '/about'%>
   </div>
 </body>
 </html>

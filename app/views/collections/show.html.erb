@@ -34,7 +34,7 @@
 					<li class="divider"></li>
 					<% for b in current_user.collections %>
 						<% if b.id != @board.id %>
-							<li><%= link_to b.title, controller: "collections", action:"crosspost", board_id: b.id, content: item.content %></li>
+							<li><%= link_to b.title, controller: "items", action:"crosspost", original_id: @board.id, board_id: b.id, content: item.content %></li>
 						<% end %>
 					<% end %>
 					<li class="divider"></li>

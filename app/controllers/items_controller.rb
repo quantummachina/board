@@ -21,8 +21,10 @@ class ItemsController < ApplicationController
   end
 
   def crosspost
-    @project = Project.find(params[:project_id])
-    @project.resources.create(content: params[:content])
-    redirect_to @project
+    @original = Collection.find(params[:original_id])
+    @collection = current_user.collections.find(params[:board_id])
+      @collection.items.create(content: params[:content])
+      flash[:success] = "Item successfully posted in #{@collection.title}"
+      redirect_to @original
   end
 end

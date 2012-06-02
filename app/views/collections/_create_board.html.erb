@@ -1,21 +1,21 @@
-<a class="btn btn-small" data-toggle="modal" href="#NewBoard" >Create Board</a>
+<a class="btn" data-toggle="modal" href="#NewBoard" >Create Project</a>
 
 <div class="modal hide fade" id="NewBoard">
   <div class="modal-header">
     <a class="close" data-dismiss="modal">×</a>
-    <h3>Create a New Board</h3>
+    <h3>Create a New Project</h3>
   </div>
   <div class="modal-body">
   	<%= form_for current_user.collections.build do |f| %>
 		<%= f.label :title %>
 	 	<%= f.text_field :title %>
 	 	<%= f.label :description %>
-	 	<%= f.text_field :description %>
+	 	<%= f.text_area :description, rows: 10 %>
 	  	
   </div>
   <div class="modal-footer">
     <a  data-dismiss="modal" href="#" class="btn btn-small">Close</a>
-    <%= f.submit "Create Board", class: "btn btn-small btn-primary" %>
+    <%= f.submit "Create Project", class: "btn btn-small btn-primary" %>
     <% end %>
 
   </div>

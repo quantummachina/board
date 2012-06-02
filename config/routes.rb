@@ -9,12 +9,12 @@ Board::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :collections do
+  resources :collections 
+  resources :items do
     member do
       get :crosspost
     end
   end
-  resources :items
 
 
   # The priority is based upon order of creation:

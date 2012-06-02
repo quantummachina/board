@@ -8,7 +8,7 @@
 		<%= f.label :title %>
 	 	<%= f.text_field :title %>
 	 	<%= f.label :description %>
-	 	<%= f.text_field :description %>
+	 	<%= f.text_area :description, rows: 10 %>
 	 	<%= f.submit "Update Board", class: "btn btn-small btn-primary" %>
 	<% end %>
 	<%= link_to "Delete board", @collection, method: :delete, title: "delete board", confirm: "Are you shure? you will not be able to undo this action." %>
