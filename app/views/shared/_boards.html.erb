@@ -1,9 +1,21 @@
 <!-- requires boards -->
 <!--div class="row-fluid"-->
-	<% if boards %>
+<% if boards %>
+	<% indexes = arr_4_cols(boards.count,3) %>
 	<div class="row">
-		<% for board in boards do %>
-			<%= render 'shared/board_thumbnail',  board: board, size: 3 %>
+		<% indexes.each do |col| %>
+			<div class=<%="span#{3}" %>>
+				<div class="row">
+					<% col.each do |i| %>
+
+						<% board = boards[i] %>
+				  	    <%= render 'shared/board_thumbnail',  board: board, size: 3 %>
+				  		
+					<% end %>
+				</div>
+			</div>
 		<% end %>
 	</div>
-	<% end %>
+<% end %>
+
+	

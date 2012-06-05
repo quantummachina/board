@@ -1,8 +1,12 @@
 <% provide :title, "Sign in" %>
+<div class='span12'>
+<div class="row">
+<div class="center span6 offset3 landingpage">
 <h1>Sign in</h1>
 
-<div class="row">
-  <div class = "span6 offset3">
+</br>
+</br>
+
     <%= form_for(:session, url: sessions_path) do |f| %>
 
 	    <%= f.label :email %>
@@ -15,5 +19,6 @@
 
 	<% end %>
 
-  </div>
+</div>
+</div>
 </div>

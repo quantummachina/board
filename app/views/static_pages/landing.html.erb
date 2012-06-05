@@ -1,10 +1,16 @@
+
 <% if !signed_in? %>
-
-<div class="center hero-unit">
-
-  <h1>Funkalab</h1>
-  <h2>Connecting creatives with ideas</h2>
-
+<div class='span12'>
+<div class="row">
+<div class="center span6 offset3 landingpage">
+	<%= image_tag 'funkalab.png' %>
+</br>
+</br>
+  <h1 class='landingpage'>A lab for your creative projects</h1>
+  </br>
+  <h2>An open workspace to shape your creative ideas with your personal inspiration</h2>
+</br>
+</br>
   <%= form_for(@user) do |f| %>
 
 	<%= render 'shared/error_messages', object: f.object %>
@@ -18,5 +24,5 @@
 
    or <%= link_to "sign in", signin_path %>
 </div>
-
+</div></div>
 <% end %>

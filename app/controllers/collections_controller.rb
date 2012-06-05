@@ -1,6 +1,7 @@
 class CollectionsController < ApplicationController
 	def index
 		@boards = Collection.all
+		@size = 3
 	end
 
 	def show
