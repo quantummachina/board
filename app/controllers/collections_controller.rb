@@ -1,12 +1,12 @@
 class CollectionsController < ApplicationController
 	def index
 		@boards = Collection.all
-		@size = 3
+		@size = 3 #boards size
 	end
 
 	def show
 		@board = Collection.find(params[:id])
-		@size = 3
+		@size = 3 #Items size
 	end
 
 	def create
@@ -16,6 +16,9 @@ class CollectionsController < ApplicationController
 	      
 	      flash[:success] = "Your board has been created!"
 	      redirect_to @collection
+	  	else
+	  		flash[:error] = 'Title and description can not be blank' 
+      		redirect_to root_path
 	    end
 	end
 
@@ -29,6 +32,7 @@ class CollectionsController < ApplicationController
 	      flash[:success] = "Board updated"
 	      redirect_to @collection
 	    else
+	      flash[:error] = 'Title and description can not be blank' 
 	      render 'edit'
     	end
 	end

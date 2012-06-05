@@ -22,7 +22,7 @@
 				<% col.each do |i| %>
 					<div class="board-item ">
 					<% item = @board.items[i] %>
-			  	    	<%= embedded(item.content, @size.to_i) %>
+			  	    	<%= wrap(embedded(item.content, @size.to_i)) %>
 			  		</div>
 			  		<%= render 'gear', item: item%>
 				<% end %>

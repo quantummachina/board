@@ -7,6 +7,8 @@ class Item < ActiveRecord::Base
 
   default_scope order: 'items.created_at DESC'
 
+  validates :content, presence: true
+
   auto_html_for :content do
   	html_escape
   	image

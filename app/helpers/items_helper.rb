@@ -6,7 +6,14 @@ module ItemsHelper
 	end
 
 	def wrap(content)
- 		sanitize(raw(content.split.map{ |s| wrap_long_string(s) }.join(' ')))
+		ini = content.index('llow">')
+		if !ini.nil?
+			nd = content.index('</a>')
+			sub = content[(ini+6) .. (nd-1)]
+ 			repl = sanitize(raw(sub.split.map{ |s| wrap_long_string(s) }.join(' ')))
+ 			content.gsub!('llow">'+sub,'llow">'+repl)
+ 		end
+		raw content
 	end
 
 private
