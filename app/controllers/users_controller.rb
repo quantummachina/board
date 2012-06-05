@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 	def create
     	@user = User.new(email: params[:user][:email], name: "", password: '123456', password_confirmation: '123456')
     	if @user.save
-          #AppMailer.welcome_email(@user).deliver
+          AppMailer.welcome_email(@user).deliver
         	sign_in @user
         	flash[:success] = "Welcome to Funkalab!"
       		redirect_to action: 'edit', id: @user.id
