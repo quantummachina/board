@@ -4,6 +4,6 @@
 	</br>
 	<%= board.description %>
 	<% if board.items.any? %>
-		<%= embedded(board.items.first.content, size.to_i) %>
+		<%= wrap(embedded(board.items.first.content, size.to_i)) %>
 	<%end%>
 </div>
