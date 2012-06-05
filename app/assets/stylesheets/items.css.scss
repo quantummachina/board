@@ -1,3 +1,31 @@
 // Place all the styles related to the Items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$grayLight:             #999 !default;
+$grayLighter:           #eee !default;
+
+div.board-item {
+	border-style:solid;
+	border-color: $grayLighter;
+	border-width: 1px;
+	//margin: 10px;
+	width: 231px;
+	//background-color: $grayLighter;
+	
+}
+
+
+div.main {
+	//border-style:solid;
+	//border-color: $grayLight;
+	//border-width: 1px;
+	//margin: 10px;
+	//width: 231px;
+	//Background-color: $grayLighter;
+	
+}
+
+div.logo{
+	padding-top:4px;
+}

@@ -1,8 +1,9 @@
 <!-- requires boards -->
-<div class="row-fluid">
+<!--div class="row-fluid"-->
 	<% if boards %>
+	<div class="row">
 		<% for board in boards do %>
 			<%= render 'shared/board_thumbnail',  board: board, size: 3 %>
 		<% end %>
+	</div>
 	<% end %>
-</div>

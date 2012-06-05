@@ -8,6 +8,8 @@ gem 'simple_form', '~> 2.0' #for bootstraps generator
 gem "auto_html", git: 'git://github.com/quantummachina/auto_html.git'
 gem 'httparty'
 
+gem 'fastimage'
+
 gem 'bcrypt-ruby', '3.0.1'
 
 # Bundle edge Rails instead:

@@ -5,7 +5,7 @@ class CollectionsController < ApplicationController
 
 	def show
 		@board = Collection.find(params[:id])
-		@size = 2
+		@size = 3
 	end
 
 	def create

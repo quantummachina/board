@@ -17,7 +17,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
+  <div class="container main">
     <% flash.each do |name, msg| %>
       <%= content_tag :div, :class => "alert #{name == :error ? "alert-error" : "alert-success" }" do %>
         <a class="close" data-dismiss="alert" href="#">×</a>
