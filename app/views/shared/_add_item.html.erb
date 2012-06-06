@@ -1,9 +1,8 @@
 <%= form_for @board.items.build(collection_id: @board.id) do |f| %>
+	<%= f.hidden_field :collection_id %>
+	
+ 	<%= f.text_field :content, placeholder: 'Add a link or note' %>
 
-	<div><%= f.hidden_field :collection_id %></div>
-	<%= f.label 'add content' %>
- 	<%= f.text_field :content %>
-
-  	<%= f.submit "Append",class: "btn btn-small btn-primary" %>
+  	<%= f.submit "Post", class: "btn btn-small btn-primary" %>
 
 <% end %>

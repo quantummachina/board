@@ -2,6 +2,8 @@ class Collection < ActiveRecord::Base
   attr_accessible :description, :title, :user_id
 
   has_many :items, dependent: :destroy
+  has_many :collaborations, dependent: :destroy
+  has_many :collaborators, through: :collaborations, source: :user
 
   belongs_to :user
 

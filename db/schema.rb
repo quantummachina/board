@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530221719) do
+ActiveRecord::Schema.define(:version => 20120606180758) do
+
+  create_table "collaborations", :force => true do |t|
+    t.integer  "collection_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "collaborations", ["collection_id"], :name => "index_collaborations_on_collection_id"
+  add_index "collaborations", ["user_id", "collection_id"], :name => "index_collaborations_on_user_id_and_collection_id", :unique => true
+  add_index "collaborations", ["user_id"], :name => "index_collaborations_on_user_id"
 
   create_table "collections", :force => true do |t|
     t.integer  "user_id"

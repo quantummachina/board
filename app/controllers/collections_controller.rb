@@ -14,7 +14,8 @@ class CollectionsController < ApplicationController
 
 	    if @collection.save
 	      
-	      flash[:success] = "Your board has been created!"
+	      flash[:success] = "Your board has been created! Invite friends to help you"
+	      #redirect_to '/invte'
 	      redirect_to @collection
 	  	else
 	  		flash[:error] = 'Title and description can not be blank' 

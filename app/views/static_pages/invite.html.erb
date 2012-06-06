@@ -1,0 +1,16 @@
+<% provide(:title, 'Invite') %>
+
+<div class="row">
+	<div class="span4 offset4">
+		<h1>Invite</h1>
+		<h2>Invite a friend to help you </h2>
+		</br>
+		<%= form_tag '/suscribe' do %>
+		<%= text_field_tag 'email1', nil, placeholder:'email address'%>
+		<%= text_field_tag 'email2', nil, placeholder:'email address'%>
+		<%= text_field_tag 'email3', nil, placeholder:'email address'%>
+	</br>
+		<%= submit_tag 'Send invitations', class: "btn btn-primary" %>
+		<% end %>
+	</div>
+</div>

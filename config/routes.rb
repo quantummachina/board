@@ -6,10 +6,13 @@ Board::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/signin',  to: 'sessions#new'
   match '/about', to: 'static_pages#about'
+  match '/invite', to: 'static_pages#invite'
+  match '/suscribe', to: 'collaborations#suscribe'
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :collections 
+  resources :collaborations
   resources :items do
     member do
       get :crosspost
