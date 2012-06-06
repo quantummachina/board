@@ -55,7 +55,7 @@ Board::Application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'baci.lindsaar.net',
-    :user_name            => 'mac',
+    :user_name            => 'mac@funkalab.com',
     :password             => 'DISENTER!A',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
