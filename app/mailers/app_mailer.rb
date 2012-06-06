@@ -1,5 +1,5 @@
 class AppMailer < ActionMailer::Base
-  default from: "elite@funkalab.com"
+  default from: "mac@funkalab.com"
 
   def welcome_email(user)
     @user = user
