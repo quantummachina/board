@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_filter :signed_in_user
 
   def create
-    @collection = current_user.collections.find(params[:item][:collection_id])
+    @collection = Collection.find(params[:item][:collection_id])
     @collection.items.create(content: params[:item][:content])
 
     respond_to do |format|

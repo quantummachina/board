@@ -1,6 +1,6 @@
 <div class="row-fluid">
 	<div class="span12">
-		<h1><%= current_user.name+"'s lab" %></h1>
+		<h1><%= current_user.name + (if current_user.name.last != "s" and current_user.name.last != "z" and current_user.name.last != "S" and current_user.name.last != "Z" then "'s" else "'" end) + " Lab"%></h1>
 	</br>
 		<%= render 'collections/create_board' %>
 		<hr>
