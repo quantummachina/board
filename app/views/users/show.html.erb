@@ -4,7 +4,10 @@
 	</br>
 		<%= render 'collections/create_board' %>
 		<hr>
-
+		<h2>Owned</h2>
 		<%= render 'shared/boards', boards:@boards %>
+		<hr>
+		<h2>Collaborating</h2>
+		<%= render 'shared/boards', boards:@collabs %>
 	</div>
 </div>

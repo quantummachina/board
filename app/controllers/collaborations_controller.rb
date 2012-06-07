@@ -4,7 +4,7 @@ class CollaborationsController < ApplicationController
 		[params[:email1], params[:email2], params[:email3]].each do |email|
 			if !email.empty?
 				@user = User.find_by_email(email)
-				if @user
+				if @user #achinga!
 				else
 					pass = ('a'..'z').to_a.shuffle[0..5].join
 					#flash[:success] = email +', '+pass.to_s
