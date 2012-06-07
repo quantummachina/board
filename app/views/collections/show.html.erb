@@ -3,14 +3,17 @@
 		<h1><%= @board.title %></h1>
 		</br>
 		<h2><%= @board.description %>
-		<%if @board.user.id == current_user.id %>
+
+
+		<%if owner? %>
 			<small><%= link_to "edit board", edit_collection_path(@board) %></small></h2>
-			<!--%= link_to "Invite a friend",'/invite', board_id: @board.id, class: "btn btn-small btn-primary"%-->
+			<%= render 'invite'%>
 			<hr>
-			<%= render 'shared/add_item'%>
-			<%else%>
+		<%else%>
 			<hr>
 		<% end %>
+		<%= if collaborates? then render 'shared/add_item' end%>
+		
 	</div>
 </div>
 <% indexes = arr_4_cols(@board.items.count,@size) %>

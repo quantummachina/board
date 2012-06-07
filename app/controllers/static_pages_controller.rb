@@ -12,7 +12,7 @@ class StaticPagesController < ApplicationController
 	end
 
 	def invite
-		
+		@board_id = params[:board_id]
 	end
 
 end

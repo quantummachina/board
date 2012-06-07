@@ -1,1 +1,5 @@
-empty
+
+<%= form_tag '/invite' do%>
+  <%= submit_tag 'Invite a friend', class: "btn btn-primary btn-small"%>
+  <%= hidden_field_tag 'board_id', @board.id  %>
+<% end %>
