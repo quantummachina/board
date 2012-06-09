@@ -9,6 +9,8 @@ Board::Application.routes.draw do
   match '/invite', to: 'static_pages#invite'
   match '/suscribe', to: 'collaborations#suscribe'
 
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :collections 

@@ -10,6 +10,9 @@ gem 'httparty'
 
 gem 'fastimage'
 
+gem 'devise'
+gem 'omniauth-facebook'
+
 gem 'bcrypt-ruby', '3.0.1'
 
 # Bundle edge Rails instead:

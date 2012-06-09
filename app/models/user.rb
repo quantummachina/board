@@ -15,11 +15,33 @@ class User < ActiveRecord::Base
 	                  uniqueness: { case_sensitive: false }
 	validates :password, length: {minimum: 6}
 
-	
+	devise :omniauthable
+
+def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+  user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+    	user = User.find_by_email(auth.info.email)
+    	if user
+    		user.update_attribbutes(name:auth.extra.raw_info.name,
+                         provider:auth.provider,
+                         uid:auth.uid)
+    	else
+      user = User.create(name:auth.extra.raw_info.name,
+                         provider:auth.provider,
+                         uid:auth.uid,
+                         email:auth.info.email,
+                         password:Devise.friendly_token[0,20]
+                         )
+  		end
+    end
+  user
+end
+
 	private
 
     	def create_remember_token
     		self.remember_token = SecureRandom.urlsafe_base64
     	end
+
 
 end

@@ -53,14 +53,23 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
+    devise (2.1.0)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.0.7)
+      railties (~> 3.1)
+      warden (~> 1.1.1)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    faraday (0.8.1)
+      multipart-post (~> 1.1)
     fastimage (1.2.13)
+    hashie (1.2.0)
     hike (1.2.1)
     httparty (0.8.3)
       multi_json (~> 1.0)
       multi_xml
+    httpauth (0.1)
     i18n (0.6.0)
     journey (1.0.3)
     jquery-rails (1.0.19)
@@ -74,6 +83,20 @@ GEM
     mime-types (1.18)
     multi_json (1.3.6)
     multi_xml (0.5.1)
+    multipart-post (1.1.5)
+    oauth2 (0.6.1)
+      faraday (~> 0.7)
+      httpauth (~> 0.1)
+      multi_json (~> 1.3)
+    omniauth (1.1.0)
+      hashie (~> 1.2)
+      rack
+    omniauth-facebook (1.3.0)
+      omniauth-oauth2 (~> 1.0.2)
+    omniauth-oauth2 (1.0.2)
+      oauth2 (~> 0.6.0)
+      omniauth (~> 1.0)
+    orm_adapter (0.0.7)
     pg (0.12.2-x86-mingw32)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -125,6 +148,8 @@ GEM
     uglifier (1.2.3)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    warden (1.1.1)
+      rack (>= 1.0)
 
 PLATFORMS
   x86-mingw32
@@ -134,9 +159,11 @@ DEPENDENCIES
   bcrypt-ruby (= 3.0.1)
   bootstrap-generators (~> 2.0)!
   coffee-rails (= 3.2.2)
+  devise
   fastimage
   httparty
   jquery-rails (= 1.0.19)
+  omniauth-facebook
   pg (= 0.12.2)
   rails (= 3.2.3)
   sass-rails (= 3.2.4)
