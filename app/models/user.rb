@@ -22,7 +22,7 @@ def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     unless user
     	user = User.find_by_email(auth.info.email)
     	if user
-    		user.update_attribbutes(name:auth.extra.raw_info.name,
+    		user.update_attributes(name:auth.extra.raw_info.name,
                          provider:auth.provider,
                          uid:auth.uid)
     	else

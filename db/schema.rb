@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120606180758) do
+ActiveRecord::Schema.define(:version => 20120609225541) do
 
   create_table "collaborations", :force => true do |t|
     t.integer  "collection_id"
@@ -48,12 +48,15 @@ ActiveRecord::Schema.define(:version => 20120606180758) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.string   "remember_token"
+    t.string   "provider",        :default => ""
+    t.string   "uid",             :default => ""
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+  add_index "users", ["uid"], :name => "index_users_on_uid"
 
 end
