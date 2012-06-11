@@ -15,8 +15,9 @@ class UsersController < ApplicationController
   	end
 
   	def show
-      @boards = current_user.collections.all #to change for other users
-      @collabs = current_user.collaboratives.all
+      @user = User.find(params[:id])
+      @boards = @user.collections.all #to change for other users
+      @collabs = @user.collaboratives.all
   	end
 
   def edit

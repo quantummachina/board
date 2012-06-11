@@ -15,6 +15,15 @@ div.board-item {
 	
 }
 
+div.board-thumb {
+	margin-bottom: 18px;
+	border-style:solid;
+	border-color: $grayLighter;
+	border-width: 1px;
+	padding: 1px;
+	//background-color: $grayLighter
+}
+
 
 div.main {
 	//border-style:solid;
@@ -31,11 +40,13 @@ div.logo{
 }
 
 body.main{
-	background-image:url('landing page.jpg')
+	background-image:url('landingpage.jpg')
 }
 
 div.landingpage{
-	padding-top: 180px;
+	margin-top: 130px;
+	padding: 50px 50px 80px 80px;
+	background-color:rgba(255,255,255,.9)
 }
 h1.landingpage{
 	font-size: 33px

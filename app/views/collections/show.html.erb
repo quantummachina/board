@@ -1,12 +1,19 @@
 <div class="row-fluid">
 	<div class="span12">
 		<h1><%= @board.title %></h1>
+		<h3>by <%=link_to @board.user.name, current_user%>
+			<% if @board.collaborators %>
+				<% @board.collaborators.each do |c| %>
+					<%=", "%><%=link_to c.name, c %>
+				<% end %>
+			<% end %>
+		</h3>
 		</br>
-		<h2><%= @board.description %>
+		<p class="lead"><%= @board.description %>
 
 
 		<%if owner? %>
-			<small><%= link_to "edit board", edit_collection_path(@board) %></small></h2>
+			<small><%= link_to "edit board", edit_collection_path(@board) %></small></p>
 			<%= render 'invite'%>
 			<hr>
 		<%else%>

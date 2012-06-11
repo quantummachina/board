@@ -1,8 +1,8 @@
 <!-- requires board, size -->
-<div class = <%= "span#{size}" %>>
-	<%= link_to board.title, board %>
-	</br>
-	<%= board.description %>
+<div class = "<%= "board-thumb" %>">
+	<p><%= link_to board.title, board %></p>
+	
+	<p><small><%= board.description %></small></p>
 	<% if board.items.any? %>
 		<%= wrap(embedded(board.items.first.content, size.to_i)) %>
 	<%end%>
