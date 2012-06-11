@@ -1,7 +1,7 @@
 <div class="row-fluid">
 	<div class="span12">
 		<h1><%= @board.title %></h1>
-		<h3>by <%=link_to @board.user.name, current_user%>
+		<h3>by <%=link_to @board.user.name, @board.user %>
 			<% if @board.collaborators %>
 				<% @board.collaborators.each do |c| %>
 					<%=", "%><%=link_to c.name, c %>
