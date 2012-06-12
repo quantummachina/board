@@ -4,6 +4,18 @@
 
 $grayLight:             #999 !default;
 $grayLighter:           #eee !default;
+$linkColor:             #00AEEF !default;
+$linkColorHover:        darken($linkColor, 15%) !default;
+
+a.blockLink{
+    display:block;
+    padding: 1px;
+	border-style:solid;
+	border-color: $grayLighter;
+	border-width: 1px;
+	margin-bottom: 18px;
+    width: 231px;
+}​
 
 div.board-item {
 	border-style:solid;
@@ -24,6 +36,15 @@ div.board-thumb {
 	//background-color: $grayLighter
 }
 
+div.board-thumb:hover {
+
+	margin-bottom: 18px;
+	border-style:solid;
+	border-color: $linkColor;
+	border-width: 1px;
+	padding: 1px;
+	//background-color: $grayLighter
+}
 
 div.main {
 	//border-style:solid;

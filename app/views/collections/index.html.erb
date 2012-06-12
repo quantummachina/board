@@ -1,4 +1,10 @@
 <%= render 'collections/create_board' %>
+<p>
+	| <%= link_to "All", nav_path(category: '')%> |
+	<% @categories.each do |c| %>
+		<%= link_to c.name, nav_path(category: c.id)%> |
+	<%end%>
+</p>
 <hr>
 <div class="row-fluid">
 	<div class="span12">

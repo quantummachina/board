@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   	end
 
   	def show
+      @categories = Category.all
       @user = User.find(params[:id])
       @boards = @user.collections.all #to change for other users
       @collabs = @user.collaboratives.all

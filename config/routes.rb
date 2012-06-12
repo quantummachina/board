@@ -8,6 +8,7 @@ Board::Application.routes.draw do
   match '/about', to: 'static_pages#about'
   match '/invite', to: 'static_pages#invite'
   match '/suscribe', to: 'collaborations#suscribe'
+  match '/nav', to: 'collections#index'  
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 

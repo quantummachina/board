@@ -1,7 +1,14 @@
 class CollectionsController < ApplicationController
 	def index
-		@boards = Collection.all
+		category = params[:category] || ""
+		@categories = Category.all
 		@size = 3 #boards size
+		if category == ""
+			@boards = Collection.all
+		else
+			@boards = Category.find(category).collections
+		end
+
 	end
 
 	def show
@@ -25,6 +32,7 @@ class CollectionsController < ApplicationController
 
 	def edit
 		@collection = current_user.collections.find(params[:id])
+		@categories = Category.all
 	end
 
 	def update

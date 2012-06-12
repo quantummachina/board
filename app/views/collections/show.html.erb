@@ -1,6 +1,6 @@
 <div class="row-fluid">
 	<div class="span12">
-		<h1><%= @board.title %></h1>
+		<h1><%= @board.title %> <small><%= link_to @board.category.name, nav_path(category: @board.category.id)%></small></h1>
 		<h3>by <%=link_to @board.user.name, @board.user %>
 			<% if @board.collaborators %>
 				<% @board.collaborators.each do |c| %>
