@@ -13,7 +13,7 @@ namespace :db do
 			end
 		end
 		[1,12,13,19,20].each do |n|
-			category.find(n).delete
+			Category.find(n).delete
 		end
 	end
 end
