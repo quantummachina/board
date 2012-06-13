@@ -17,6 +17,7 @@ a.blockLink{
     width: 231px;
 }​
 
+
 div.board-item {
 	border-style:solid;
 	border-color: $grayLighter;
@@ -65,12 +66,31 @@ body.main{
 }
 
 div.landingpage{
-	margin-top: 130px;
+	margin-top: 90px;
 	padding: 50px 50px 80px 80px;
 	background-color:rgba(255,255,255,.9)
 }
 h1.landingpage{
 	font-size: 33px
+}
+a.fb{
+	width:157px;
+	display: block;
+	padding: 5px 5px 5px 0px;
+	border-style:solid;
+	border-color: #000000;
+	border-width: 1px;
+	background-color: rgb(97,122,172);
+	&:link {color:#FFFFFF; text-decoration:none;}
+	&:visited {color:#FFFFFF; text-decoration:none;}
+	&:hover {color:#FFFFFF; text-decoration:none; background-color: rgb(59,89,153);}
+	&:active {color:#FFFFFF; text-decoration:none;}
+
+}
+img.fb{
+	float: left;
+	height: 30px;
+	padding-right: 5px;
 }
 div.footer{
 	text-align: center;

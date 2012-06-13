@@ -14,16 +14,14 @@
   <%= form_for(@user) do |f| %>
 
 	<%= render 'shared/error_messages', object: f.object %>
-
   	<%= f.label :email %>
   	<%= f.text_field :email %>
-
     <%= f.submit "Sign up now!", class: "btn btn-large btn-primary" %>
-
    <% end %>
-
-   or <%= link_to "sign in", signin_path %>
-   or <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+   <p>or <%= link_to "sign in", signin_path %></p>
+   <hr>
+      <%= link_to user_omniauth_authorize_path(:facebook) do %> <%= image_tag 'fb2.jpg', class: :fb %>
+   <%end%><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), class: "fb" %>
 </div>
 </div></div>
 <% end %>
