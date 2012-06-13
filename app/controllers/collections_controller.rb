@@ -31,12 +31,12 @@ class CollectionsController < ApplicationController
 	end
 
 	def edit
-		@collection = current_user.collections.find(params[:id])
+		@collection = Collection.find(params[:id])
 		@categories = Category.all
 	end
 
 	def update
-		@collection = current_user.collections.find(params[:id])
+		@collection = Collection.find(params[:id])
 		if @collection.update_attributes(params[:collection])
 	      flash[:success] = "Board updated"
 	      redirect_to @collection
@@ -47,7 +47,7 @@ class CollectionsController < ApplicationController
 	end
 
 	def destroy
-    	current_user.collections.find(params[:id]).destroy
+    	Collection.find(params[:id]).destroy
     	redirect_to root_path
   	end
 end

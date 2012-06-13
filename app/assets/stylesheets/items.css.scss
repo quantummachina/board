@@ -25,8 +25,15 @@ div.board-item {
 	//margin: 10px;
 	width: 231px;
 	//background-color: $grayLighter;
-	
 }
+div.board-item:hover {
+	//ul.gear{display: block;}
+}
+
+ul.gear{
+	//display: none ;
+	//&:hover {visibility: visible;}
+	}
 
 div.board-thumb {
 	margin-bottom: 18px;
@@ -73,6 +80,7 @@ div.landingpage{
 h1.landingpage{
 	font-size: 33px
 }
+
 a.fb{
 	width:157px;
 	display: block;
@@ -85,13 +93,14 @@ a.fb{
 	&:visited {color:#FFFFFF; text-decoration:none;}
 	&:hover {color:#FFFFFF; text-decoration:none; background-color: rgb(59,89,153);}
 	&:active {color:#FFFFFF; text-decoration:none;}
-
 }
+
 img.fb{
 	float: left;
 	height: 30px;
 	padding-right: 5px;
 }
+
 div.footer{
 	text-align: center;
 }

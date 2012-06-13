@@ -1,4 +1,4 @@
-<ul class="nav nav-pills">
+<ul class="nav nav-pills gear">
 	<li class="dropdown" id="<%= "options"+item.id.to_s %>">
 		<a class="dropdown-toggle" data-toggle="dropdown" href="<%= "#options"+item.id.to_s%>">
 			<i class="icon-cog"></i>
@@ -20,7 +20,7 @@
 			<% end %>
 			<li class="divider"></li>
 			<li class="divider"></li>
-			<% if @board.user.id == current_user.id %>
+			<% if owner? || current_user.admin %>
 				<li><%= link_to 'x', item, method: :delete, title: "remove item" %></li>
 			<% end %>
 		</ul>                                

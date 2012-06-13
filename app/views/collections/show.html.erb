@@ -12,7 +12,7 @@
 		<p class="lead"><%= @board.description %>
 
 
-		<%if owner? %>
+		<%if owner? || current_user.admin %>
 			<small><%= link_to "edit board", edit_collection_path(@board) %></small></p>
 			<%= render 'invite'%>
 			<hr>
