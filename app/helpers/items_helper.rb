@@ -23,7 +23,7 @@ module ItemsHelper
 			if content.match(/(https?):\/\/(www.)?be(hance)?\.net\/gallery\/([A-Za-z0-9_-]*)\/([0-9])*/)
 				#'behance'
 				link_to content do
-					auto_html(content){behance_og_t}
+					#auto_html(content){behance_og_t}
 					auto_html(content){behance_og_i}
 				end
 			else
