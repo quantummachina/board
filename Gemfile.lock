@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/quantummachina/auto_html.git
-  revision: c9a4c7a71e56a2cf824a230baf4f1b262707b516
+  revision: e015cd3e0371661973c60cd8d6bea0b7ff8a7f05
   specs:
     auto_html (1.5.1)
       redcarpet (~> 2.0.0)
