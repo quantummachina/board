@@ -13,6 +13,6 @@
     	<%= f.select :category_id, options_from_collection_for_select(@categories, "id", "name", selected: @collection.category.id) %>
 	 	<%= f.submit "Update Board", class: "btn btn-small btn-primary" %>
 	<% end %>
-	<%= link_to "Delete board", @collection, method: :delete, title: "delete board", confirm: "Are you shure? you will not be able to undo this action." %>
+	<%= link_to "Delete board", @collection, method: :delete, title: "delete board", confirm: "Are you sure? You will not be able to undo this action." %>
   </div>
 </div>

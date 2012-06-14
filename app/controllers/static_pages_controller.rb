@@ -2,6 +2,9 @@ class StaticPagesController < ApplicationController
 	def about
 	end
 
+	def terms_of_service
+	end
+
 	def landing
 		if signed_in?
 			@boards = Collection.all

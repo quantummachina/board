@@ -29,4 +29,9 @@ module ApplicationHelper
 		image_tag("logofunk1.png", alt: "Sample App", class: "round")
 	end
 
+	def make_nice(text)
+		markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+        :autolink => true, :space_after_headers => true)
+        raw markdown.render(text)
+	end
 end
