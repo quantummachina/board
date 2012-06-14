@@ -20,7 +20,15 @@ module ItemsHelper
 					auto_html(content){ html_escape; image}
 				end
 		else
+			if content.match(/(https?):\/\/(www.)?be(hance)?\.net\/gallery\/([A-Za-z0-9_-]*)\/([0-9])*/)
+				#'behance'
+				link_to content do
+					auto_html(content){behance_og_t}
+					auto_html(content){behance_og_i}
+				end
+			else
 		auto_html(content){ html_escape; image; vimeo(width: w, height: h); youtube(width: w, height: h); google_map(width: w, height: h); google_map(width: w, height: h); soundcloud(width: w, height: h); link target: "_blank", rel: "nofollow"; simple_format}
+			end
 		end
 	end
 	
