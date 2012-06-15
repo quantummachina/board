@@ -39,3 +39,36 @@
 		</div>
 	<% end %>
 </div>
+
+<% if @board.items.count==0 and @board.collaborations.empty? %>
+	<script type="text/javascript">
+	    $(window).load(function(){
+	        $('#Invite').modal('show');
+	    });
+	</script>
+<!--a class="btn" data-toggle="modal" href="#Invite" Launch Modal/a-->
+
+<div class="modal active" id="Invite">
+
+	<div class="modal-header">
+	  <a class="close" data-dismiss='modal' href="#">×</a>
+	  <br>
+	</div>
+
+	<div class="modal-body">
+	  <p><h2> Invite a friend to help you </h2></p>
+	  <%= form_tag '/suscribe' do %>
+		<%= hidden_field_tag 'board_id', @board.id %>
+		<%= text_field_tag 'email1', nil, placeholder:'email address', class: 'offset1'%>
+		<%= text_field_tag 'email2', nil, placeholder:'email address', class: 'offset1'%>
+		<%= text_field_tag 'email3', nil, placeholder:'email address', class: 'offset1'%>
+	</div>
+
+	<div class="modal-footer">
+	  	<a  data-dismiss='modal' href="#" class="btn">Close</a>
+	  	<%= submit_tag 'Send invitations', class: "btn btn-primary" %>
+	  <% end %>
+
+	</div>
+</div>
+<%end%>
