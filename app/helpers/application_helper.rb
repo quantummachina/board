@@ -25,8 +25,8 @@ module ApplicationHelper
 			"#{base_title} | #{page_title}"
 	end
 
-	def logo
-		image_tag("logofunk1.png", alt: "Sample App", class: "round")
+	def categories
+		Category.all
 	end
 
 	def make_nice(text)

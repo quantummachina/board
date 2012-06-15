@@ -7,6 +7,7 @@ Board::Application.routes.draw do
   match '/signin',  to: 'sessions#new'
   match '/about', to: 'static_pages#about'
   match '/terms', to: 'static_pages#terms_of_service'
+  match '/privacy', to: 'static_pages#privacy_policy'
   match '/invite', to: 'static_pages#invite'
   match '/suscribe', to: 'collaborations#suscribe'
   match '/nav', to: 'collections#index'  

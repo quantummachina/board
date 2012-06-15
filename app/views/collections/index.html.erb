@@ -1,6 +1,7 @@
-<%= render 'collections/create_board' %>
-</br>
-</br>
+<div class="banner">
+	<h3>Have an idea? Begin here! <small>Write your idea, add notes and images from the web that will help you, invite your friends. <%= link_to 'Learn more...','/about'%></small></h3>
+</div>
+<hr>
 <p>
 	| <%= link_to "All", nav_path(category: '')%> |
 	<% @categories.each do |c| %>

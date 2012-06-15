@@ -46,7 +46,7 @@
   </div>
 </div>
 <% if signed_in? %>
-<div class="modal hide fade" id="NewBoard">
+<div class="modal toggle fade" id="NewBoard">
   <div class="modal-header">
     <a class="close" data-dismiss="modal">×</a>
     <h3>Create a New Project</h3>
@@ -62,8 +62,29 @@
   </div>
   <div class="modal-footer">
     <a  data-dismiss="modal" href="#" class="btn btn-small">Close</a>
-      <%= f.submit "Create Project", class: "btn btn-small btn-primary" %>
-    <% end %>
+    <a class="btn" data-toggle="modal" href="#Invite">Create Project</a>
+    <div class="modal hide fade" id="Invite">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Invite friends to help you</h3>
+      </div>
+      <div class="modal-body">
+        <%= form_tag '/suscribe' do %>
+          <%= hidden_field_tag 'board_id', @board_id %>
+          <%= text_field_tag 'email1', nil, placeholder:'email address'%>
+          <%= text_field_tag 'email2', nil, placeholder:'email address'%>
+          <%= text_field_tag 'email3', nil, placeholder:'email address'%> 
+      </div>
+      <div class="modal-footer">
+
+          <%= submit_tag 'Later', class: "btn btn-primary" %>
+        <% end %>
+        <%= f.submit "Create Project and Invite", class: "btn btn-small btn-primary" %>
+      <% end %>
+          
+      </div>
+    </div>
   </div>
 </div>
 <% end %>
+
