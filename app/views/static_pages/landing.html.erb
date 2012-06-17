@@ -8,11 +8,10 @@
 </br>
   <h1 class='landingpage'>A lab for your creative projects</h1>
   </br>
-  <h2>An open workspace to shape your creative ideas with your personal inspiration</h2>
+  <h3>Use an open workspace to shape your creative ideas with your personal inspiration</h3>
   </br>
-  <h3>Write down your idea. Invite friends that can help you out. Add images, videos or notes to feed your project with inspiration.</h3>
 </br>
-</br>
+
   <%= form_for(@user) do |f| %>
 
 	<%= render 'shared/error_messages', object: f.object %>
@@ -24,6 +23,9 @@
    <hr>
       <%= link_to user_omniauth_authorize_path(:facebook) do %> <%= image_tag 'fb2.jpg', class: :fb %>
    <%end%><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), class: "fb" %>
+</br>
+     <h3>Write down your idea. Invite friends that can help you out. Add images, videos or notes to feed your project with inspiration.</h3>
 </div>
+
 </div></div>
 <% end %>
