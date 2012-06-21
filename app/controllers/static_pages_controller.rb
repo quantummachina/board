@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
 			redirect_to root_path
 		end
 		auth = request.env["omniauth.auth"]
-		@fbu = FbGraph::User.new('me', access_token: auth = session[:fb_access_token]).fetch
+		@fbu = FbGraph::User.new('me', access_token: session[:fb_access_token]).fetch
 
 	end
 
