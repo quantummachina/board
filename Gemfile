@@ -13,6 +13,8 @@ gem 'fastimage'
 gem 'devise'
 gem 'omniauth-facebook'
 
+gem 'fb_graph'
+
 gem 'bcrypt-ruby', '3.0.1'
 
 gem 'paperclip'

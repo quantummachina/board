@@ -1,5 +1,14 @@
 class StaticPagesController < ApplicationController
-	def about
+	def secure
+		if !current_user.admin
+			redirect_to root_path
+		end
+		
+		@fbu = FbGraph::User.new('me', :access_token => auth[:credentials][:token]).fetch
+
+	end
+
+		def about
 	end
 
 	def terms_of_service
@@ -18,5 +27,4 @@ class StaticPagesController < ApplicationController
 	def invite
 		@board_id = params[:board_id]
 	end
-
 end
