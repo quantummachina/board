@@ -31,7 +31,7 @@ def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
                          provider:auth.provider,
                          uid:auth.uid,
                          email:auth.info.email,
-                         password:Devise.friendly_token[0,20]
+                         password:Devise.friendly_token[0,20],
                          authentication_token: auth.credentials.token
                          )
   		end
