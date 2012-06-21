@@ -6,6 +6,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if @user.persisted?
       flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Facebook"
       #sign_in_and_redirect @user, :event => :authentication
+            auth = request.env['omniauth.auth']
+            token = auth['credentials']['token']
+            session[:fb_access_token] = token
       sign_in @user
       redirect_to @user
     else
