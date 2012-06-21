@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
 		if !current_user.admin
 			redirect_to root_path
 		end
-		
+		auth = request.env["omniauth.auth"]
 		@fbu = FbGraph::User.new('me', :access_token => auth[:credentials][:token]).fetch
 
 	end
