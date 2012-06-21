@@ -13,13 +13,10 @@ def og_image(content,size)
 		if content[0..4] == '*$&%#' #attachment
 			aid = content[5..(content.length-1)].to_i
 			a = Attachment.find(aid)
-			link_to a.file.url, target: "_blank", class: "thumbnail" do
-						auto_html(a.file.url){ html_escape; image}
-			end
+			auto_html(a.file.url){ html_escape; image}
 		else
 			if content.match(/https?:\/\/.+?\.(jpg|jpeg|bmp|gif|png)(\?\S+)?/i)
 				auto_html(content){ html_escape; image}
-					
 			else
 				auto_html(content){ html_escape; image; vimeo_og; youtube_og; behance_og_i; google_map(width: w, height: h); google_map(width: w, height: h); soundcloud_og; simple_format}
 			end

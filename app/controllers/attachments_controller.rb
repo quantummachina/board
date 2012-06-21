@@ -1,6 +1,22 @@
 class AttachmentsController < ApplicationController
+
 	def create
-		#debugger
+		@collection = Collection.find(params[:collection_id])
+		if !params[:attachment].nil? #no file to upload
+			@attachment = current_user.attachments.build(params[:attachment])
+			if @attachment.save
+				@collection.items.create(content: '*$&%#'+@attachment.id.to_s)
+				redirect_to @collection
+			else
+				redirect_to root_path
+			end
+		else
+			redirect_to @collection
+		end
+	end
+
+=begin Create for one post button, no tabs (add_item_b.html.erb)
+	def create
 		@collection = Collection.find(params[:collection_id])
     	if params[:attachment].nil? #no file to upload
     		if params[:content].empty? #empty post
@@ -19,5 +35,5 @@ class AttachmentsController < ApplicationController
 			end
 		end
 	end
-
+=end
 end
