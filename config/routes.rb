@@ -1,5 +1,7 @@
 Board::Application.routes.draw do
 
+  resources :attachments
+
   root to: 'static_pages#landing'
 
   match '/signup',  to: 'users#new'
@@ -10,7 +12,7 @@ Board::Application.routes.draw do
   match '/privacy', to: 'static_pages#privacy_policy'
   match '/invite', to: 'static_pages#invite'
   match '/suscribe', to: 'collaborations#suscribe'
-  match '/nav', to: 'collections#index'  
+  match '/nav', to: 'collections#index'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 

@@ -2,32 +2,40 @@ module ItemsHelper
 	def embedded(content,size)
 		w=69*size + 12*(size-1)
 		h=w*0.71
-		if content.match(/https?:\/\/.+?\.(jpg|jpeg|bmp|gif|png)(\?\S+)?/i)
-=begin
-			m = FastImage.size(content)
-			if m[0] > m[1]
-				link_to content, target: "_blank", class: "thumbnail" do
-					auto_html(content){ html_escape; image; vimeo(width: w, height: h); youtube(width: w, height: h); google_map(width: w, height: h); google_map(width: w, height: h); soundcloud(width: w, height: h); link target: "_blank", rel: "nofollow"; simple_format}
-				end
-			else
-				link_to content, target: "_blank", class: "thumbnail" do
-					#image_tag content, width: 124*((m[0]*1.0)/(m[1]*1.0))
-					auto_html(content){ html_escape; image; vimeo(width: w, height: h); youtube(width: w, height: h); google_map(width: w, height: h); google_map(width: w, height: h); soundcloud(width: w, height: h); link target: "_blank", rel: "nofollow"; simple_format}
-				end
+		if content[0..4] == '*$&%#' #attachment
+			aid = content[5..(content.length-1)].to_i
+			a = Attachment.find(aid)
+			link_to a.file.url, target: "_blank", class: "thumbnail" do
+						auto_html(a.file.url){ html_escape; image}
 			end
-=end
-			link_to content[/https?:\/\/.+?\.(jpg|jpeg|bmp|gif|png)(\?\S+)?/i], target: "_blank", class: "thumbnail" do
-					auto_html(content){ html_escape; image}
-				end
 		else
-			if content.match(/(https?):\/\/(www.)?be(hance)?\.net\/gallery\/([A-Za-z0-9_-]*)\/([0-9])*/)
-				#'behance'
-				link_to content do
-					#auto_html(content){behance_og_t}
-					auto_html(content){behance_og_i}
+			if content.match(/https?:\/\/.+?\.(jpg|jpeg|bmp|gif|png)(\?\S+)?/i)
+=begin
+				m = FastImage.size(content)
+				if m[0] > m[1]
+					link_to content, target: "_blank", class: "thumbnail" do
+						auto_html(content){ html_escape; image; vimeo(width: w, height: h); youtube(width: w, height: h); google_map(width: w, height: h); google_map(width: w, height: h); soundcloud(width: w, height: h); link target: "_blank", rel: "nofollow"; simple_format}
+					end
+				else
+					link_to content, target: "_blank", class: "thumbnail" do
+						#image_tag content, width: 124*((m[0]*1.0)/(m[1]*1.0))
+						auto_html(content){ html_escape; image; vimeo(width: w, height: h); youtube(width: w, height: h); google_map(width: w, height: h); google_map(width: w, height: h); soundcloud(width: w, height: h); link target: "_blank", rel: "nofollow"; simple_format}
+					end
 				end
+=end
+				link_to content[/https?:\/\/.+?\.(jpg|jpeg|bmp|gif|png)(\?\S+)?/i], target: "_blank", class: "thumbnail" do
+						auto_html(content){ html_escape; image}
+					end
 			else
-		auto_html(content){ html_escape; image; vimeo(width: w, height: h); youtube(width: w, height: h); google_map(width: w, height: h); google_map(width: w, height: h); soundcloud(width: w, height: h); link target: "_blank", rel: "nofollow"; simple_format}
+				if content.match(/(https?):\/\/(www.)?be(hance)?\.net\/gallery\/([A-Za-z0-9_-]*)\/([0-9])*/)
+					#'behance'
+					link_to content do
+						#auto_html(content){behance_og_t}
+						auto_html(content){behance_og_i}
+					end
+				else
+			auto_html(content){ html_escape; image; vimeo(width: w, height: h); youtube(width: w, height: h); google_map(width: w, height: h); google_map(width: w, height: h); soundcloud(width: w, height: h); link target: "_blank", rel: "nofollow"; simple_format}
+				end
 			end
 		end
 	end

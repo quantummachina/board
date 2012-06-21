@@ -12,8 +12,17 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @collection = Item.find(params[:id]).collection
-    Item.find(params[:id]).destroy
+    @item = Item.find(params[:id])
+    @collection = @item.collection
+    if @item.content[0..4] == '*$&%#'
+      att = Attachment.find(@item.content[5..(@item.content.length-1)].to_i)
+      if att.user.id == current_user.id
+        att.file = nil
+        att.save
+        att.destroy
+      end
+    end
+    @item.destroy
     respond_to do |format|
       format.html { redirect_to @collection }
       format.js

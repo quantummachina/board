@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 	has_many :items, through: :collections
 	has_many :collaborations, dependent: :destroy
 	has_many :collaboratives, through: :collaborations, source: :collection
+    has_many :attachments #add destroy after well destroyed is implemented
 
 	before_save :create_remember_token
 

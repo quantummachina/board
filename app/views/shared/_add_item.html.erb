@@ -1,8 +1,9 @@
-<%= form_for @board.items.build(collection_id: @board.id) do |f| %>
-	<%= f.hidden_field :collection_id %>
-	
- 	<%= f.text_field :content, placeholder: 'Add a link or note' %>
-
-  	<%= f.submit "Post", class: "btn btn-small btn-primary" %>
-
-<% end %>
+<div class = 'span8'>
+<%= form_for current_user.attachments.build() do |f|%>
+	<%= hidden_field_tag :collection_id, @board.id %>
+	<%= text_field_tag :content, nil, placeholder: 'Add a link or note' %>
+	or Upload an image: 
+ 	<%= f.file_field :file, :accept => 'image/png,image/gif,image/jpeg' %>
+ 	<%= f.submit "Post", class: "btn btn-small btn-primary" %>
+ 	<%end%>
+</div>

@@ -15,10 +15,15 @@ gem 'omniauth-facebook'
 
 gem 'bcrypt-ruby', '3.0.1'
 
+gem 'paperclip'
+gem 'aws-s3'
+gem 'aws-sdk'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do
 	gem 'sqlite3', '1.3.5'
+	gem 'debugger'
 end
 
 

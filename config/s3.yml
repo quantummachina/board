@@ -1,0 +1,9 @@
+development:
+  bucket: fl-board-dev
+  access_key_id: AKIAJWDEDWBCV57TZNIQ
+  secret_access_key: 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
+
+production:
+  bucket: fl-board-prod
+  access_key_id: AKIAJWDEDWBCV57TZNIQ
+  secret_access_key: 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
