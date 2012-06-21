@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+    attr_accessor :authentication_token
 	attr_accessible :email, :name, :password, :password_confirmation, :admin, :authentication_token
 	has_secure_password
 
