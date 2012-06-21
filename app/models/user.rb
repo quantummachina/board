@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	attr_accessible :email, :name, :password, :password_confirmation, :admin
+	attr_accessible :email, :name, :password, :password_confirmation, :admin, :authentication_token
 	has_secure_password
 
 	has_many :collections, dependent: :destroy
@@ -32,6 +32,7 @@ def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
                          uid:auth.uid,
                          email:auth.info.email,
                          password:Devise.friendly_token[0,20]
+                         authentication_token: auth.credentials.token
                          )
   		end
     end
