@@ -27,7 +27,7 @@ def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     		user.update_attributes(name:auth.extra.raw_info.name,
                          provider:auth.provider,
                          uid:auth.uid,
-                         authentication_token: auth.credentials.token)
+                         authentication_token: auth['credentials']['token'])
     	else
       user = User.create(name:auth.extra.raw_info.name,
                          provider:auth.provider,
