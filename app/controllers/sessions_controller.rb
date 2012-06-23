@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:fb_access_token] = nil
     sign_out
     redirect_to root_path
   end

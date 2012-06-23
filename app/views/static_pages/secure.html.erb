@@ -2,6 +2,9 @@
 <br>
 <%= @fbu.link %>
 <br>
-<%= @fbu.friends %>
-<br>
-<%= @fbu %>
+<hr>
+
+<% for f in @fbu.friends %>
+	<% user = FbGraph::User.fetch(f.identifier) %>
+	<p><%= user.name %> - <%= user.email %></p>
+<%end%>
