@@ -27,7 +27,7 @@ def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
                          provider:auth.provider,
                          uid: session[:fb_access_token])
     	else
-      user = User.create(name:auth.extra.raw_info.name,
+            user = User.create(name:auth.extra.raw_info.name,
                          provider:auth.provider,
                          uid: session[:fb_access_token],
                          email:auth.info.email,
