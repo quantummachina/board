@@ -1,5 +1,6 @@
 <div class="row-fluid">
 	<div class="span12">
+		<%= session[:fb_user_uid] %>
 		<h1><%= @user.name + (if @user.name.last != "s" and @user.name.last != "z" and @user.name.last != "S" and @user.name.last != "Z" then "'s" else "'" end) + " Lab"%></h1>
 		<!--%= if current_user == @user then render 'collections/create_board' end %-->
 		<hr>
