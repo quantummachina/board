@@ -2,7 +2,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
     
     auth = request.env['omniauth.auth']
-    session[:fb_user_uid] = auth['uid']
+    session[:fb_user_uid] = auth['uid'].to_i
     token = auth['credentials']['token']
     session[:fb_access_token] = token
 
