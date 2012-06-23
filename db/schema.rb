@@ -66,16 +66,15 @@ ActiveRecord::Schema.define(:version => 20120623051410) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",                                        :null => false
-    t.datetime "updated_at",                                        :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "remember_token"
-    t.string   "provider",                       :default => ""
-    t.integer  "uid",             :limit => 255, :default => 0
-    t.boolean  "admin",                          :default => false
+    t.string   "provider",        :default => ""
+    t.boolean  "admin",           :default => false
+    t.integer  "uid",             :default => 0
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
-  add_index "users", ["uid"], :name => "index_users_on_uid"
 
 end
