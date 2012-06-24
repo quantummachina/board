@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+    #UID + PROVIDER USELESS. Using Session variables
 	attr_accessible :email, :name, :password, :password_confirmation, :admin, :uid, :provider
 	has_secure_password
 

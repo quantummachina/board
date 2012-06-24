@@ -1,6 +1,5 @@
-<!--requires project_id -->
+<!--requires board_id -->
 <% provide(:title, 'Invite') %>
-
 <div class="row">
 	<div class="span4 offset4">
 		<h1>Invite</h1>
@@ -14,5 +13,13 @@
 	</br>
 		<%= submit_tag 'Send invitations', class: "btn btn-primary" %>
 		<% end %>
+		<% if true %>
+			<hr>
+			or
+			<br>
+			<%= link_to fb_invite_link(@board_id) do %> <%= image_tag 'fb2.jpg', class: :fb %>
+   <%end%><%= link_to "Invite with Facebook", fb_invite_link(@board_id), class: :fb %>
+
+		<%end%>
 	</div>
 </div>

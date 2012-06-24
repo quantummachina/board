@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
 
 	end
 
-		def about
+	def about
 	end
 
 	def terms_of_service
