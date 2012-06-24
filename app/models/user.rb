@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
 	has_many :collaborations, dependent: :destroy
 	has_many :collaboratives, through: :collaborations, source: :collection
     has_many :attachments #add destroy after well destroyed is implemented
+    has_many :conversations
+    has_many :reverse_conversations, foreign_key: "interlocutor_id", class_name: "Conversation"
+    has_many :interlocutors, through: :reverse_conversations, source: :interlocutor
 
 	before_save :create_remember_token
 

@@ -1,0 +1,28 @@
+<%if !owner? && !collaborates? %>
+	<a class="btn btn-small btn-warning" data-toggle="modal" href="#icanhelp" >I can Help</a>
+	
+	<div class="modal hide fade" id="icanhelp">
+	  <div class="modal-header">
+	    <a class="close" data-dismiss="modal">×</a>
+	    <h3>I can help</h3>
+	  </div>
+	  <div class="modal-body">
+
+	    <%= form_tag '/i_can_help' do %>
+
+	  	  <%= hidden_field_tag :interlocutor_id, @board.user.id %>
+	  	  <%= hidden_field_tag :collection_id, @board.id %>
+
+	  	  <p><%= @board.needs %></p>
+
+	      <%= text_field_tag :message, nil, placeholder: "Tell " + @board.user.name + " how you can help with this project." , class: "span6"%>
+	  </div>
+	  <div class="modal-footer">
+	    <a  data-dismiss="modal" href="#" class="btn btn-small">Close</a>
+
+	      <%= submit_tag "Send message", class: "btn btn-small btn-primary" %>
+
+	    <% end %>
+	  </div>
+	</div>
+<%end%>

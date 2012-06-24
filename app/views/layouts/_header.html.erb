@@ -33,6 +33,10 @@
               </li>
 
               <% if signed_in? %>
+                <li><%= link_to conversations_path do %>
+                    <%= if unread_mail > 0 then "("+unread_mail.to_s+")" end%>
+                    <i  class= "icon-envelope"></i>
+                  <% end %></li>
                 <!--l= link_to "Navigate", nav_path /li-->
                 <li id="fat-menu" class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -67,7 +71,9 @@
       <%= f.label :title %>
       <%= f.text_field :title, maxlength: 50, placeholder:"Give a name to your idea. Don\'t worry, it can change later.", class: "span6"%>
       <%= f.label :description %>
-      <%= f.text_area :description, rows: 10, maxlength: 140,placeholder:"Tell us your idea with a brief description.", class: "span6" %>
+      <%= f.text_area :description, maxlength: 200, placeholder:"Tell us your idea with a brief description.", rows: 4 , class: "span6" %>
+      <%= f.label :needs, 'Do you need help?' %>
+      <%= f.text_area :needs, maxlength: 200,placeholder:" What´s stopping you? Do you need an idea, someone to help you or just a little push? Come and tell us!", rows: 4, class: "span6" %>
       <%= f.label :category_id %>
       <%= f.select :category_id, options_from_collection_for_select(categories, "id", "name") %>     
   </div>

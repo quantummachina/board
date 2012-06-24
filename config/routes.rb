@@ -14,6 +14,7 @@ Board::Application.routes.draw do
   match '/suscribe', to: 'collaborations#suscribe'
   match '/nav', to: 'collections#index'
   match '/secure', to: 'static_pages#secure'
+  match '/i_can_help', to: 'conversations#icanhelp'
   
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
@@ -22,6 +23,8 @@ Board::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :collections 
   resources :collaborations
+  resources :lines, only:[:create, :index]
+  resources :conversations, only:[:create, :index, :show]
   resources :items do
     member do
       get :crosspost
