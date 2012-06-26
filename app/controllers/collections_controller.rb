@@ -8,7 +8,7 @@ class CollectionsController < ApplicationController
 		else
 			@boards = Category.find(category).collections
 		end
-
+		@users = User.all
 	end
 
 	def show

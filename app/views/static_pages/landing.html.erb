@@ -8,20 +8,19 @@
 </br>
   <h1 class='landingpage'>A lab for your creative projects</h1>
   </br>
-  <h3>Start working on that creative project you have been thinking for a while and let our community of creatives help you out! Join them today!</h3>
+  <h3>Start developing your ideas with the collaboration of our creative community.</h3> <%= link_to "sign in", signin_path %>
   </br>
 </br>
 
-  <%= form_for(@user) do |f| %>
+  <%= form_for(@user,html: {class: 'form-inline'}) do |f| %>
 
 	<%= render 'shared/error_messages', object: f.object %>
-  	<%= f.label :email %>
-  	<%= f.text_field :email %>
+  	<!--%= f.label :email %-->
+  	<%= f.text_field :email, placeholder: 'email' %>
     <%= f.submit "Sign up now!", class: "btn btn-large btn-primary" %>
    <% end %>
-   <p>or <%= link_to "sign in", signin_path %></p>
-   <hr>
-      <%= link_to user_omniauth_authorize_path(:facebook) do %> <%= image_tag 'fb2.jpg', class: :fb %>
+
+    <%= link_to user_omniauth_authorize_path(:facebook) do %> <%= image_tag 'fb2.jpg', class: :fb %>
    <%end%><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), class: "fb" %>
 </br>
    
