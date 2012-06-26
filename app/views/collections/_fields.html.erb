@@ -1,10 +1,4 @@
-<% provide :title, "Edit Board" %> 
-<div class="row">
-  <div class = "span6 offset3">
-	<h1>Edit Board</h1>
-	<h2><%= @collection.title %></h2>
-	<hr>
-  	<%= form_for(@collection) do |f| %>
+<!--Unused!-->
 		<%= f.label :title %>
 		<%= f.text_field :title, maxlength: 50, placeholder:"Give a name to your idea. Don\'t worry, it can change later.", class: "span6"%>
 		<%= f.label :description %>
@@ -13,8 +7,3 @@
       	<%= f.text_area :needs, maxlength: 200, placeholder:"Is something stopping you? Do you need ideas, references or someone to collaborate with? Let us know what you need!", rows: 4, class: "span6" %>
 	 	<%= f.label :category_id, "Category:" %>
     	<%= f.select :category_id, options_from_collection_for_select(@categories, "id", "name", selected: @collection.category.id) %>
-	 	<%= f.submit "Update Board", class: "btn btn-small btn-primary" %>
-	<% end %>
-	<%= link_to "Delete board", @collection, method: :delete, title: "delete board", confirm: "Are you sure? You will not be able to undo this action." %>
-  </div>
-</div>

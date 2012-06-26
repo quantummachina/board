@@ -19,7 +19,7 @@
         
           <div class="nav-collapse">
             <ul class="nav pull-right">
-              <li><%= link_to root_path do %><!--i class="icon-home icon-white" /i-->Home<% end %></li>
+              <li><%= link_to root_path do %>Explore<% end %></li>
 
               <li id="fat-menu" class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -73,7 +73,7 @@
       <%= f.label :description %>
       <%= f.text_area :description, maxlength: 200, placeholder:"Tell us your idea with a brief description.", rows: 4 , class: "span6" %>
       <%= f.label :needs, 'Do you need help?' %>
-      <%= f.text_area :needs, maxlength: 200,placeholder:" What´s stopping you? Do you need an idea, someone to help you or just a little push? Come and tell us!", rows: 4, class: "span6" %>
+      <%= f.text_area :needs, maxlength: 200,placeholder:"Is something stopping you? Do you need ideas, references or someone to collaborate with? Let us know what you need!", rows: 4, class: "span6" %>
       <%= f.label :category_id %>
       <%= f.select :category_id, options_from_collection_for_select(categories, "id", "name") %>     
   </div>

@@ -1,10 +1,15 @@
-<%= @fbu.name %>
-<br>
-<%= @fbu.link %>
-<br>
-<hr>
+<% if @fbu %>
+	<%= @fbu.name %>
+	<br>
+	<%= @fbu.link %>
+	<br>
+	<hr>
 
-<% for f in @fbu.friends %>
-	<% user = FbGraph::User.fetch(f.identifier) %>
-	<p><%= user.name %> - <%= user.email %></p>
+	<% for f in @fbu.friends %>
+		<% user = FbGraph::User.fetch(f.identifier) %>
+		<p><%= user.name %> - <%= user.email %></p>
+	<%end%>
 <%end%>
+<div class='span3 offset3'>
+<p><iframe width="231" height="164.01" src="http://www.youtube.com/embed/EjAoBKagWQA?wmode=transparent" frameborder="0" allowfullscreen ></iframe></p>
+</div>

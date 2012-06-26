@@ -14,7 +14,7 @@ class ConversationsController < ApplicationController
     @collection = Collection.find(params[:collection_id])
     line = '['+ current_user.name + ' wants to help you out with your project '+ @collection.title + "]: " + params[:message]
     c.lines.create(user_id: current_user.id, text: line)
-    flash[:success] = "Your message has been sent. Thak you for helping out other creatives."
+    flash[:success] = "Your message has been sent. You will be notified if you’re accepted to collaborate. Thank you!"
     redirect_to @collection
   end
 
