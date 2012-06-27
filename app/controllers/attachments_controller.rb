@@ -5,7 +5,7 @@ class AttachmentsController < ApplicationController
 		if !params[:attachment].nil? #no file to upload
 			@attachment = current_user.attachments.build(params[:attachment])
 			if @attachment.save
-				@collection.items.create(content: '*$&%#'+@attachment.id.to_s)
+				@collection.items.create(content: '*$&%#'+@attachment.id.to_s, kind: params[:kind])
 				redirect_to @collection
 			else
 				redirect_to root_path

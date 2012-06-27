@@ -2,8 +2,9 @@ class ItemsController < ApplicationController
   before_filter :signed_in_user
 
   def create
+    
     @collection = Collection.find(params[:item][:collection_id])
-    @collection.items.create(content: params[:item][:content])
+    @collection.items.create(content: params[:item][:content], kind: params[:item][:kind])
 
     respond_to do |format|
       format.html { redirect_to @collection }

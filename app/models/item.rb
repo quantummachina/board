@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  attr_accessible :collection_id, :content, :content_html
+  attr_accessible :collection_id, :content, :content_html, :kind
 
   belongs_to :collection
 
