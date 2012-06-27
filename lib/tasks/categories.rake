@@ -6,13 +6,15 @@ namespace :db do
 			Category.create(name: name)
 		end
 	end
-	task update_categories: :environment do
-		Collection.all.each do |c|
-			if (c.category_id==1)||(c.category_id==12)||(c.category_id==13)||(c.category_id==19)||(c.category_id==20)
+	task update_categories: :environment do 
+		Category.create(name: 'Design') #missing category
+
+		Collection.all.each do |c| #Re-categorize
+			if (c.category_id!=2)&&(c.category_id!=5)&&(c.category_id!=7)&&(c.category_id!=17)
 				c.update_attributes(category_id: 2)
 			end
 		end
-		[1,12,13,19,20].each do |n|
+		[3,4,6,8,9,11,14,15,16,18,21,10].each do |n|
 			Category.find(n).delete
 		end
 	end

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
     #UID + PROVIDER USELESS. Using Session variables
-	attr_accessible :email, :name, :password, :password_confirmation, :admin, :uid, :provider
+	attr_accessible :email, :name, :password, :password_confirmation, :admin, :uid, :provider, :city, :category_id, :subcategory_id, :link_a, :link_b, :link_c, :link_d, :about
 	has_secure_password
 
 	has_many :collections, dependent: :destroy
@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
     has_many :conversations
     has_many :reverse_conversations, foreign_key: "interlocutor_id", class_name: "Conversation"
     has_many :interlocutors, through: :reverse_conversations, source: :interlocutor
+
+    belongs_to :category
+    belongs_to :subcategory, foreign_key: 'subcategory_id', class_name: 'Category'
 
 	before_save :create_remember_token
 

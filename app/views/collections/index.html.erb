@@ -2,6 +2,15 @@
 	<h3>Have an idea? <a data-toggle="modal" href="#NewBoard" >Begin here!</a> <small>Write your idea, add notes and images from the web that will help you, invite your friends. <%= link_to 'Learn more...','/about'%></small></h3>
 </div>
 <hr>
+
+	<ul id="myTab" class="nav nav-tabs">
+	    <li class="active"><a href="#link" data-toggle="tab">the projects</a></li>
+	    <li><a href="#upload" data-toggle="tab">the community</a></li>
+	</ul>
+	<div id="myTabContent" class="tab-content">
+		<div class="tab-pane fade in active" id="link">
+
+
 <p>
 	| <%= link_to "All", nav_path(category: '')%> |
 	<% @categories.each do |c| %>
@@ -14,3 +23,24 @@
 		<%= render 'shared/boards', boards:@boards %>
 	</div>
 </div>
+
+		
+		</div>
+		<div class="tab-pane fade" id="upload">
+
+<p>
+	| <%= link_to "All", nav_path(category: '')%> |
+	<% @categories.each do |c| %>
+		<%= link_to c.name, nav_path(category: c.id)%> |
+	<%end%>
+</p>
+<hr>
+<div class="row-fluid">
+	<div class="span12">
+		<%= render 'shared/users', users:@users %>
+	</div>
+</div>
+
+		</div>
+	</div>
+

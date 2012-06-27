@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120624193717) do
+ActiveRecord::Schema.define(:version => 20120627020718) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -92,6 +92,14 @@ ActiveRecord::Schema.define(:version => 20120624193717) do
     t.string   "provider",        :default => ""
     t.boolean  "admin",           :default => false
     t.integer  "uid",             :default => 0
+    t.string   "about",           :default => ""
+    t.string   "city",            :default => ""
+    t.integer  "category_id",     :default => 2
+    t.integer  "subcategory_id",  :default => 2
+    t.string   "link_a",          :default => ""
+    t.string   "link_b",          :default => ""
+    t.string   "link_c",          :default => ""
+    t.string   "link_d",          :default => ""
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

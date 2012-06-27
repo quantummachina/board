@@ -5,10 +5,12 @@ class CollectionsController < ApplicationController
 		@size = 3 #boards size
 		if category == ""
 			@boards = Collection.all
+			@users = User.all
 		else
 			@boards = Category.find(category).collections
+			@users = Category.find(category).users
 		end
-		@users = User.all
+		
 	end
 
 	def show

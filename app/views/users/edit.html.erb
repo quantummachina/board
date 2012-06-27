@@ -3,12 +3,15 @@
 
 <div class="row">
 	<div class="span6 offset3">
+		
 		<%= form_for(@user) do |f| %>
+		  <%= render 'shared/error_messages', object: f.object %>
 		  
 		  <%= render 'fields', f: f %>
+
 		  <%= f.submit "Update" %>
 
 		<% end %>
-  <!--a href="http://gravatar.com/emails">Change Picture</a-->
+
 	</div>
 </div>

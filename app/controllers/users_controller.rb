@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   	end
 
   def edit
+    @categories = Category.all
     @user = User.find(params[:id])
     if @user != current_user
       redirect_to root_path
@@ -35,6 +36,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @categories = Category.all
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile updated"
