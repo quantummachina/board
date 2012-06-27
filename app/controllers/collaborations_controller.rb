@@ -2,7 +2,7 @@ class CollaborationsController < ApplicationController
 	def suscribe
 		@collection = current_user.collections.find(params[:board_id])
 		[params[:email1], params[:email2], params[:email3]].each do |email|
-			if !email.empty?
+			if !email.empty? && email != current_user.email
 				@user = User.find_by_email(email)
 				if @user #achinga!
 				else
