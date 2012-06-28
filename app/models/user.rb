@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
 	validates :password, length: {minimum: 6}
 
 	devise :omniauthable
+    default_scope order: 'users.created_at ASC'
 
 def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
   user = User.where(:provider => auth.provider, :uid => auth.uid).first
