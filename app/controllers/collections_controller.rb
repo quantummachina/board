@@ -10,7 +10,10 @@ class CollectionsController < ApplicationController
 			@boards = Category.find(category).collections
 			@users = Category.find(category).users
 		end
-		
+		respond_to do |format|
+	      format.html { }
+	      format.js
+	    end
 	end
 
 	def show

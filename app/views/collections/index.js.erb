@@ -1,0 +1,2 @@
+$("#users").html("<%= escape_javascript(render 'shared/users', users:@users) %>")
+$("#collections").html("<%= escape_javascript(render 'shared/boards', boards:@boards) %>")
