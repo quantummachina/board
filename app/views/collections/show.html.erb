@@ -14,12 +14,15 @@
 			<div class='span1'><%= render 'i_can_help'%></div>
 			<div class='span10'><p><%=@board.needs%></p></div>
 		</div>
-		<%if owner? || current_user.admin %>
-			<small><%= link_to "edit board", edit_collection_path(@board) %></small></p>
-			<% if owner? %>
-				<%= render 'invite' %>
+		<div class="row">
+			<%if owner? || current_user.admin %>
+				<small><%= link_to "edit board", edit_collection_path(@board) %></small></p>
+				<% if owner? %>
+					<div class='span2'><%= render 'invite' %></div>
+				<% end %>
 			<% end %>
-		<% end %>
+			<!--%= render 'share' %-->
+		</div>
 		<hr>
 		<%= if collaborates? then render 'shared/add_item' end%>
 		

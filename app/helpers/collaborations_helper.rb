@@ -12,4 +12,5 @@ module CollaborationsHelper
   description=Check%20out%20cmy%20project%20on%20Funkalab!&
   redirect_uri=http://www.funkalab.com/collections/84'
 	end
+  
 end

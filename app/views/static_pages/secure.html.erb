@@ -1,32 +1,5 @@
 
-<div id='fb-root'></div>
-    <script src='http://connect.facebook.net/en_US/all.js'></script>
-    <p><a onclick='postToFeed(); return false;'>f_logo</a></p>
-    <p id='msg'></p>
 
-    <script> 
-      FB.init({appId: "359438187452232", status: true, cookie: true});
-
-      function postToFeed() {
-
-        // calling the API ...
-        var obj = {
-          method: 'feed',
-          link: 'https://www.funkalab.com',
-          picture: 'http://www.funkalab.com/assets/logofunk1.png',
-          name: 'Funkalab',
-          caption: 'Jorge has created a project',
-          description: 'Come check out my project!'
-        };
-
-        function callback(response) {
-          document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
-        }
-
-        FB.ui(obj, callback);
-      }
-    
-    </script>
 
 <% if @fbu %>
 	<%= @fbu.name %>
@@ -40,9 +13,7 @@
 		<p><%= user.name %> - <%= user.email %></p>
 	<%end%>
 <%end%>
-<div class='span3 offset3'>
-<a href="https://twitter.com/share?text=This%20is%20Macaco. %20http://www.funkalab.com/users/31" class="twitter-share-button" data-lang="en">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
 
 	<%= link_to 'f', fb_share_project, target: "_blank" %>
 
