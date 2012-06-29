@@ -19,6 +19,10 @@ class CollectionsController < ApplicationController
 	def show
 		@board = Collection.find(params[:id])
 		@size = 3 #Items size
+		respond_to do |format|
+	      format.html { }
+	      format.js
+	    end
 	end
 
 	def create
