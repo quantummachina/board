@@ -1,34 +1,10 @@
 <div class='span1 offset3'>
-    <div id='fb-root'></div>
-    <script src='http://connect.facebook.net/en_US/all.js'></script>
-    <p><a onclick='postToFeed(); return false;'><%=image_tag 'fb_share.png'%></a></p>
-    <p id='msg'></p>
+    <%= link_to fb_share_project, target: '_blank' do %>
 
-  <script> 
-    FB.init({appId: "359438187452232", status: true, cookie: true});
-
-    function postToFeed() {
-
-      // calling the API ...
-      var obj = {
-        method: 'feed',
-        link: 'https://www.funkalab.com',
-        picture: 'http://www.funkalab.com/assets/logofunk1.png',
-        name: 'Funkalab',
-        caption: current_user.name+' recomends this creative project!',
-        description: 'Come check out this project in Funkalab, an open platform for creatives. '+'http://www.funkalab.com/collections/'+@board.id.to_s
-      };
-
-      function callback(response) {
-        document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
-      }
-
-      FB.ui(obj, callback);
-    }
-
-  </script>
+      <% image_tag 'fb_share.png' %>
+    <%end%>
 </div>
 <div class='span1'>
-  <a href=<%= "https://twitter.com/share?text=Check%20out%20this%20creative%20project%20on%20Funkalab!%20http://www.funkalab.com/collections/" + @board.id.to_s %> class="twitter-share-button" data-lang="en"></a>
+  <a href=<%= "https://twitter.com/share?text=Check%20out%20this%20creative%20project%20on%20Funkalab!" %> class="twitter-share-button" data-lang="en"></a>
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </div>
