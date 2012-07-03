@@ -13,4 +13,14 @@ class AppMailer < ActionMailer::Base
     @url  = "http://www.funkalab.com/signin"
     mail(:to => email, :subject => inviter.name+" has invited you to collaborate!")
   end
+
+  def help_notification_email(owner, helper, project)
+    @owner = owner
+    @helper = helper
+    @project = project
+    @project_url = 'http://www.funkalab.com/collections/'+project.id.to_s
+    @helper_url = 'http://www.funkalab.com/users/'+helper.id.to_s
+    @messages_url = 'http://www.funkalab.com/conversations'
+    mail(:to => owner.email, :subject => helper.name + " wants to help you with your project!")
+  end
 end
