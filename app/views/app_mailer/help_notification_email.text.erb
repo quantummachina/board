@@ -2,7 +2,7 @@ Hi <%= @owner.name%>!
 
    <%= link_to @helper.name, @helper_url %>, another Funkalab creative, has sent you a <%= link_to 'message', @messages_url %> to help you out with your project <%= link_to @project.title, @project_url %>
 
-   You can review this message here and exchange some ideas. To let <%= @helper.name %> collaborates in your project, ask for his/her email adress and add it on "Invite a friend" in your project. 
+   You can review this <%= link_to 'message', @messages_url %> here and exchange some ideas. To let <%= @helper.name %> collaborates in your project, ask for his/her email adress and add it on "Invite a friend" in your project. 
 
    For any comments or questions, drop us a line at hello@funkalab.com
 
