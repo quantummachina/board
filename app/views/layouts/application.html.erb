@@ -31,7 +31,7 @@
 </script>
 
 </head>
-<body class = <%=if !signed_in? then "main" end%>>
+<body class = <%= if yield(:title) == 'Landing' then "main" end%>>
   <div class="container">
     <% flash.each do |name, msg| %>
       <%= content_tag :div, :class => "alert #{name == :error ? "alert-error" : "alert-success" }" do %>

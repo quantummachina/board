@@ -12,11 +12,13 @@
 		<h2>The Idea</h2>
 		<p class="lead"><%= @board.description %>
 		<div class="row">
-			<div class='span1'><%= render 'i_can_help'%></div>
+			<% if signed_in? %>
+				<div class='span1'><%= render 'i_can_help'%></div>
+			<%end%>
 			<div class='span10'><p><%=@board.needs%></p></div>
 		</div>
 		<div class="row">
-			<%if owner? || current_user.admin %>
+			<%if signed_in? && (owner? || current_user.admin) %>
 				<small><%= link_to "edit board", edit_collection_path(@board) %></small></p>
 				<% if owner? %>
 					<div class='span2'><%= render 'invite' %></div>

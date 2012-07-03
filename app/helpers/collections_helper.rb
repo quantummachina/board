@@ -1,10 +1,18 @@
 module CollectionsHelper
 
 	def owner?
-		@board.user.id == current_user.id
+		if signed_in?
+			@board.user.id == current_user.id
+		else
+			false
+		end
 	end
 	def collaborates?
-		owner? || @board.collaborations.find_by_user_id(current_user.id)
+		if signed_in?
+			owner? || @board.collaborations.find_by_user_id(current_user.id)
+		else
+			false
+		end
 	end
 #CHANGE
 def og_image(content,size)
