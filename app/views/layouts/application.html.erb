@@ -45,7 +45,7 @@
     <%= yield %>
 
     <hr>
-    <% if signed_in? %>
+    <% if yield(:title) != 'Landing' %>
       <%= render 'layouts/footer' %>
     <% end %>
   </div>

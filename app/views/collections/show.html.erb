@@ -1,3 +1,8 @@
+<% if !signed_in? %>
+	<div class="idea">
+		<h3>To join this project just <%= link_to 'login', root_path %> or <%= link_to 'sign up', '/signin'%>.</h3>
+	</div>
+<% end %>
 <div class="row-fluid">
 	<div class="span12">
 		<h1><%= @board.title %> <small><%= link_to @board.category.name, nav_path(category: @board.category.id)%></small></h1>
