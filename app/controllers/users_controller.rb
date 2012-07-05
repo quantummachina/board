@@ -38,6 +38,8 @@ class UsersController < ApplicationController
   def update
     @categories = Category.all
     @user = User.find(params[:id])
+    params[:user].delete(:password) if params[:user][:password].blank?
+    params[:user].delete(:password_confirmation) if params[:user][:password].blank?
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile updated"
       sign_in @user

@@ -1,9 +1,9 @@
 <% if current_user.admin %>
 	<%= link_to controller: 'collections', action: 'promote', id: @board.id, title: 'promote', class: 'btn' do%>
 		<%if @board.promoted%>
-			demote
+			Demote
 		<%else%>
-			promote
+			Promote
 		<%end%>
 	<%end%>	
 <% end %>

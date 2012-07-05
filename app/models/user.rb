@@ -21,7 +21,8 @@ class User < ActiveRecord::Base
 	valid_email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, presence: true, format: { with: valid_email_regex }, 
 	                  uniqueness: { case_sensitive: false }
-	validates :password, length: {minimum: 6}
+	validates :password, length: {minimum: 6}, on: :create
+    validates :password, length: {minimum: 6}, on: :update, unless: lambda{|user| user.password.blank?}
 
 	devise :omniauthable
     default_scope order: 'users.created_at ASC'

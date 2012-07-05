@@ -7,7 +7,7 @@
 <div class="row-fluid">
 	<div class="span12">
 		<h1><%= @board.title %> <small><%= link_to @board.category.name, nav_path(category: @board.category.id)%></small></h1>
-		<h3>by <%=link_to @board.user.name, @board.user %>
+		<h3>By <%=link_to @board.user.name, @board.user %>
 			<% if @board.collaborators %>
 				<% @board.collaborators.each do |c| %>
 					<%=", "%><%=link_to c.name, c %>
@@ -26,7 +26,7 @@
 		</div>
 		<div class="row">
 			<%if signed_in? && (owner? || current_user.admin) %>
-				<small><%= link_to "edit board", edit_collection_path(@board) %></small></p>
+				<small><%= link_to "Edit board", edit_collection_path(@board) %></small></p>
 				<% if owner? %>
 					<div class='span2'><%= render 'invite' %></div>
 				<% end %>
