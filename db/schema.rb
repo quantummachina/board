@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627111612) do
+ActiveRecord::Schema.define(:version => 20120705210602) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -45,10 +45,11 @@ ActiveRecord::Schema.define(:version => 20120627111612) do
     t.integer  "user_id"
     t.string   "title",       :default => ""
     t.string   "description", :default => ""
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.integer  "category_id", :default => 2
     t.string   "needs",       :default => ""
+    t.boolean  "promoted",    :default => false
   end
 
   add_index "collections", ["user_id"], :name => "index_collections_on_user_id"

@@ -11,5 +11,5 @@ class Collection < ActiveRecord::Base
   validates :title, presence: true
   validates :description, presence: true
 
-  default_scope order: 'collections.created_at DESC'
+  default_scope order: 'collections.promoted DESC'
 end

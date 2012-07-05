@@ -21,7 +21,11 @@ Board::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :collections 
+  resources :collections do
+    member do
+      get :promote
+    end
+  end
   resources :collaborations
   resources :lines, only:[:create, :index]
   resources :conversations, only:[:create, :index, :show]

@@ -4,10 +4,10 @@ class CollectionsController < ApplicationController
 		@categories = Category.all
 		@size = 3 #boards size
 		if category == ""
-			@boards = Collection.all
+			@boards = Collection.order('created_at DESC').all
 			@users = User.all
 		else
-			@boards = Category.find(category).collections
+			@boards = Category.find(category).collections.order('created_at DESC')
 			@users = Category.find(category).users
 		end
 		respond_to do |format|
@@ -58,5 +58,11 @@ class CollectionsController < ApplicationController
 	def destroy
     	Collection.find(params[:id]).destroy
     	redirect_to root_path
+  	end
+
+  	def promote
+  		@c = Collection.find(params[:id])
+  		@c.toggle!(:promoted)
+  		redirect_to @c
   	end
 end
