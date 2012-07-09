@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120705210602) do
+ActiveRecord::Schema.define(:version => 20120709202850) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -64,6 +64,15 @@ ActiveRecord::Schema.define(:version => 20120705210602) do
   add_index "conversations", ["interlocutor_id"], :name => "index_conversations_on_interlocutor_id"
   add_index "conversations", ["user_id", "interlocutor_id"], :name => "index_conversations_on_user_id_and_interlocutor_id", :unique => true
   add_index "conversations", ["user_id"], :name => "index_conversations_on_user_id"
+
+  create_table "extras", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "notifications", :default => 0
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "extras", ["user_id"], :name => "index_extras_on_user_id", :unique => true
 
   create_table "items", :force => true do |t|
     t.integer  "collection_id"

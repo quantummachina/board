@@ -1,5 +1,7 @@
 Board::Application.routes.draw do
 
+  resources :extras
+
   resources :attachments
 
   root to: 'static_pages#landing'

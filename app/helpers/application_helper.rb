@@ -4,6 +4,12 @@ module ApplicationHelper
 
 	def unread_mail
 		if signed_in?
+			current_user.extra.notifications
+		else
+			0
+		end
+=begin
+		if signed_in?
 			conversations = current_user.conversations + current_user.reverse_conversations
 			um = 0
 			for c in conversations do 
@@ -19,6 +25,7 @@ module ApplicationHelper
 		else
 			0
 		end
+=end
 	end
 	
 	def arr_4_cols(max, size) #this method can be more effective ordering by modulus??

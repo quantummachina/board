@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 	def create
     	@user = User.new(email: params[:user][:email], name: "", password: '123456', password_confirmation: '123456')
     	if @user.save
+        Extra.create(user_id: @user.id)
           #AppMailer.welcome_email(@user).deliver
         	sign_in @user
         	flash[:success] = "Welcome to Funkalab!"

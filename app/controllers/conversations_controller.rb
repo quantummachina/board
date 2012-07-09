@@ -22,6 +22,8 @@ class ConversationsController < ApplicationController
   end
 
   def index
+    current_user.extra.update_attributes(notifications: 0)
+    session[:notifications] = 0
     @conversations = current_user.conversations + current_user.reverse_conversations
     @conversation = if params[:id] then Conversation.find(params[:id]) else @conversations.first end
   end
