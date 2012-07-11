@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-source "http://rubygems.org"
-
-# Specify your gem's dependencies in bootstrap-generators.gemspec
-gemspec
-=======
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
@@ -67,4 +61,3 @@ end
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
->>>>>>> V.0.4.3
