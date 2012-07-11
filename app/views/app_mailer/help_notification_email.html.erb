@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Hi <%= @owner.name%>!</h1>
+<p>
+   <%= link_to @helper.name, @helper_url %>, another Funkalab creative, has sent you a <%= link_to 'message', @messages_url %> to help you out with your project <%= link_to @project.title, @project_url %>
+</p>
+<p>
+   You can review this <%= link_to 'message', @messages_url %> here and exchange some ideas. To let <%= @helper.name %> collaborate in your project, ask for his/her email adress and add it on "Invite a friend" in your project. 
+</p>
+<p>
+   For any comments or questions, drop us a line at hello@funkalab.com
+</p>
+</br>
+<p>Thanks,
+</p>
+   <p>   Your friends at Funkalab.</p>
+  </body>
+</html>

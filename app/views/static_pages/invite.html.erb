@@ -1,0 +1,25 @@
+<!--requires board_id -->
+<% provide(:title, 'Invite') %>
+<div class="row">
+	<div class="span4 offset4">
+		<h1>Invite</h1>
+		<h2>Invite a friend to help you </h2>
+		</br>
+		<%= form_tag '/suscribe' do %>
+		<%= hidden_field_tag 'board_id', @board_id %>
+		<%= text_field_tag 'email1', nil, placeholder:'email address'%>
+		<%= text_field_tag 'email2', nil, placeholder:'email address'%>
+		<%= text_field_tag 'email3', nil, placeholder:'email address'%>
+	</br>
+		<%= submit_tag 'Send invitations', class: "btn btn-primary" %>
+		<% end %>
+		<% if session[:fb_access_token] %>
+			<hr>
+			or
+			<br>
+			<%= link_to fb_invite_link(@board_id) do %> <%= image_tag 'fb2.jpg', class: :fb %>
+   			<%end%><%= link_to "Invite with Facebook", fb_invite_link(@board_id), class: :fb %>
+
+		<%end%>
+	</div>
+</div>

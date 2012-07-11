@@ -1,0 +1,32 @@
+<% provide(:title, 'Landing') %>
+<% if !signed_in? %>
+<div class='span12'>
+<div class="row">
+<div class="center span6 offset2 landingpage">
+	<%= image_tag 'funkalab.png' %>
+</br>
+</br>
+  <h1 class='landingpage'>A lab for your creative projects</h1>
+  </br>
+  <h3>Start developing your ideas with the collaboration of our creative community.</h3> <%= link_to "Sign in", signin_path %>
+  </br>
+</br>
+
+<p>Use your email</p>
+  <%= form_for(@user,html: {class: 'form-inline'}) do |f| %>
+
+	<%= render 'shared/error_messages', object: f.object %>
+  	<!--%= f.label :email %-->
+  	<%= f.text_field :email, placeholder: 'email' %>
+    <%= f.submit "Sign up now!", class: "btn btn-large btn-primary" %>
+   <% end %>
+   <p>Or use facebook</p>
+
+    <%= link_to user_omniauth_authorize_path(:facebook) do %> <%= image_tag 'fb2.jpg', class: :fb %>
+   <%end%><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), class: "fb" %>
+</br>
+   
+</div>
+
+</div></div>
+<% end %>

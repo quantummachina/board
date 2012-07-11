@@ -1,0 +1,19 @@
+<div class="row-fluid">
+	<div class="span12">
+		<h1><%= @user.name + (if @user.name.last != "s" and @user.name.last != "z" and @user.name.last != "S" and @user.name.last != "Z" then "'s" else "'" end) + " Lab"%> <small><%=@user.city%></small></h1>
+		<span class="label label-info"><%= @user.category.name %></span>, <span class="label label-info"><%= @user.subcategory.name %></span>
+		<br>
+		<h3><%=@user.about%></h3>
+		<p><%= link_to @user.link_a, "http://"+@user.link_a, target: "_blank"  %></p>
+		<p><%= link_to @user.link_b, "http://"+@user.link_b, target: "_blank"  %></p>
+		<p><%= link_to @user.link_c, "http://"+@user.link_c, target: "_blank"  %></p>
+		<p><%= link_to @user.link_d, "http://"+@user.link_d, target: "_blank"  %></p>
+		<!--%= if current_user == @user then render 'collections/create_board' end %-->
+		<hr>
+		<h2>Owned</h2>
+		<%= render 'shared/boards', boards:@boards %>
+		<hr>
+		<h2>Collaborating</h2>
+		<%= render 'shared/boards', boards:@collabs %>
+	</div>
+</div>

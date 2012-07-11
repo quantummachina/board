@@ -1,0 +1,28 @@
+<ul class="nav nav-pills gear">
+	<li class="dropdown" id="<%= "options"+item.id.to_s %>">
+		<a class="dropdown-toggle" data-toggle="dropdown" href="<%= "#options"+item.id.to_s%>">
+			<i class="icon-cog"></i>
+			<b class="dropdown-menu"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li>Share in Project:</li>
+			<li class="divider"></li>
+			<% for b in current_user.collections %>
+				<% if b.id != @board.id %>
+					<li><%= link_to b.title, controller: "items", action:"crosspost", original_id: @board.id, board_id: b.id, content: item.content %></li>
+				<% end %>
+			<% end %>
+			<li class="divider"></li>
+			<% for b in current_user.collaboratives %>
+				<% if b.id != @board.id %>
+					<li><%= link_to b.title, controller: "items", action:"crosspost", original_id: @board.id, board_id: b.id, content: item.content %></li>
+				<% end %>
+			<% end %>
+			<li class="divider"></li>
+			<li class="divider"></li>
+			<% if owner? || current_user.admin %>
+				<li><%= link_to 'x', item, method: :delete, title: "remove item" %></li>
+			<% end %>
+		</ul>                                
+	</li>
+</ul>

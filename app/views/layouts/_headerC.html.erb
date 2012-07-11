@@ -1,0 +1,90 @@
+<div class="navbar navbar-fixed-top">
+  <div class = "navbar-inner">
+    <div class="container">
+      <div class= "row">
+        <div class="span2 logo">
+          <%= link_to image_tag("logofunk1.png", alt: "Funkalab", class: "round"), root_path %>
+        </div>
+        <div class="span2">
+          <% if signed_in? %>
+            <a class="btn" data-toggle="modal" href="#NewBoard" >Create Project</a>
+          <% end %>
+        </div>
+        <div class="span8">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+          <div class="nav-collapse">
+            <ul class="nav pull-right">
+              <li><%= link_to root_path do %><!--i class="icon-home icon-white" /i-->Home<% end %></li>
+
+              <% if signed_in? %>
+                <!--l= link_to "Navigate", nav_path /li-->
+                <li id="fat-menu" class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Hi, <%= current_user.name.split.first %> <!--i class="icon-user icon-white"/i--><b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "My Lab", current_user %></li>
+                    <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                    <li class="divider"></li>
+                    <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+                  </ul>
+                </li>
+              <% else %>
+                <li><%= link_to "Sign in", signin_path %></li>
+              <% end %>
+            </ul>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% if signed_in? %>
+<div class="modal toggle fade" id="NewBoard">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Create a New Project</h3>
+  </div>
+  <div class="modal-body">
+    <%= form_for current_user.collections.build do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title, maxlength: 50, placeholder:"Give a name to your idea. Don\'t worry, it can change later.", class: "span6"%>
+      <%= f.label :description %>
+      <%= f.text_area :description, rows: 10, maxlength: 140,placeholder:"Tell us your idea with a brief description.", class: "span6" %>
+      <%= f.label :category_id %>
+      <%= f.select :category_id, options_from_collection_for_select(categories, "id", "name") %>     
+  </div>
+  <div class="modal-footer">
+    <a  data-dismiss="modal" href="#" class="btn btn-small">Close</a>
+    <a class="btn" data-toggle="modal" href="#Invite">Create Project</a>
+    <div class="modal hide fade" id="Invite">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Invite friends to help you</h3>
+      </div>
+      <div class="modal-body">
+        <%= form_tag '/suscribe' do %>
+          <%= hidden_field_tag 'board_id', @board_id %>
+          <%= text_field_tag 'email1', nil, placeholder:'email address'%>
+          <%= text_field_tag 'email2', nil, placeholder:'email address'%>
+          <%= text_field_tag 'email3', nil, placeholder:'email address'%> 
+      </div>
+      <div class="modal-footer">
+
+          <%= submit_tag 'Later', class: "btn btn-primary" %>
+        <% end %>
+        <%= f.submit "Create Project and Invite", class: "btn btn-small btn-primary" %>
+      <% end %>
+          
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+

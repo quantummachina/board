@@ -1,0 +1,37 @@
+<% indexes = arr_4_cols(@board.items.where(kind: 1).count,@size) %>
+<h2> My Work </h2>
+<div class="row-fluid">
+	<% indexes.each do |col| %>
+		<div class=<%="span#{@size}" %>>
+			<div class="row-fluid">
+				<% col.each do |i| %>
+					<div class="board-item ">
+					<% item = @board.items.where(kind: 1)[i] %>
+			  	    	<%= wrap(default_OG(embedded(item.content, @size.to_i))) %>
+			  		</div>
+			  		<%= if signed_in? then render 'gear', item: item end%>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+</div>
+
+<hr>
+
+<% indexes = arr_4_cols(@board.items.where(kind: 0).count,@size) %>
+<h2> My Inspiration </h2>
+<div class="row-fluid">
+	<% indexes.each do |col| %>
+		<div class=<%="span#{@size}" %>>
+			<div class="row-fluid">
+				<% col.each do |i| %>
+					<div class="board-item ">
+					<% item = @board.items.where(kind: 0)[i] %>
+			  	    	<%= wrap(default_OG(embedded(item.content, @size.to_i))) %>
+			  		</div>
+			  		<%= if signed_in? then render 'gear', item: item end%>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+</div>

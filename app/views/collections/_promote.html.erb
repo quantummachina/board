@@ -1,0 +1,11 @@
+<%if signed_in?%>
+<% if current_user.admin %>
+	<%= link_to controller: 'collections', action: 'promote', id: @board.id, title: 'promote', class: 'btn' do%>
+		<%if @board.promoted%>
+			Demote
+		<%else%>
+			Promote
+		<%end%>
+	<%end%>	
+<% end %>
+<%end%>

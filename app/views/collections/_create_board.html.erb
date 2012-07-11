@@ -1,0 +1,26 @@
+<!-- is it in use?? -->
+
+<a class="btn" data-toggle="modal" href="#NewBoard" >Create Project</a>
+
+<div class="modal hide fade" id="NewBoard">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Create a New Project</h3>
+  </div>
+  <div class="modal-body">
+  	<%= form_for current_user.collections.build do |f| %>
+		<%= f.label :title %>
+	 	<%= f.text_field :title, maxlength: 50 %>
+	 	<%= f.label :description %>
+	 	<%= f.text_area :description, rows: 10, maxlength: 140 %>
+    <%= f.label :category_id %>
+    <%= f.select :category_id, options_from_collection_for_select(@categories, "id", "name") %>
+	  	
+  </div>
+  <div class="modal-footer">
+    <a  data-dismiss="modal" href="#" class="btn btn-small">Close</a>
+    <%= f.submit "Create Project", class: "btn btn-small btn-primary" %>
+    <% end %>
+
+  </div>
+</div>

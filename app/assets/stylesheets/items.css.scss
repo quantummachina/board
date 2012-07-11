@@ -1,0 +1,104 @@
+// Place all the styles related to the Items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$grayLight:             #999 !default;
+$grayLighter:           #eee !default;
+$linkColor:             #00AEEF !default;
+$linkColorHover:        darken($linkColor, 15%) !default;
+
+div.board-item {
+	border-style:solid;
+	border-color: $grayLighter;
+	border-width: 1px;
+	//margin: 10px;
+	width: 231px;
+	//background-color: $grayLighter;
+}
+div.board-item:hover {
+	//ul.gear{display: block;}
+}
+
+ul.gear{
+	//display: none ;
+	//&:hover {visibility: visible;}
+	}
+
+div.board-thumb {
+	margin-bottom: 18px;
+	border-style:solid;
+	border-color: $grayLighter;
+	border-width: 1px;
+	padding: 1px;
+	//background-color: $grayLighter
+}
+
+div.board-thumb:hover {
+
+	margin-bottom: 18px;
+	border-style:solid;
+	border-color: $linkColor;
+	border-width: 1px;
+	padding: 1px;
+	//background-color: $grayLighter
+}
+
+div.main {
+	//border-style:solid;
+	//border-color: $grayLight;
+	//border-width: 1px;
+	//margin: 10px;
+	//width: 231px;
+	//Background-color: $grayLighter;
+	
+}
+
+div.logo{
+	padding-top:4px;
+}
+
+body.main{
+	background-image:url('landingpage.jpg')
+}
+
+div.landingpage{
+	margin-top: 50px;
+	padding: 50px 50px 80px 80px;
+	background-color:rgba(255,255,255,.9)
+}
+h1.landingpage{
+	font-size: 33px
+}
+
+a.fb{
+	width:157px;
+	display: block;
+	padding: 5px 5px 5px 0px;
+	border-style:solid;
+	border-color: #000000;
+	border-width: 1px;
+	background-color: rgb(97,122,172);
+	&:link {color:#FFFFFF; text-decoration:none;}
+	&:visited {color:#FFFFFF; text-decoration:none;}
+	&:hover {color:#FFFFFF; text-decoration:none; background-color: rgb(59,89,153);}
+	&:active {color:#FFFFFF; text-decoration:none;}
+}
+
+img.fb{
+	float: left;
+	height: 30px;
+	padding-right: 5px;
+}
+
+
+div.footer{
+	text-align: center;
+}
+
+div.idea{
+	background-color: #7a43b6;
+	padding: 5px 0px 5px 15px;
+	h3{color: #FFFFFF;}
+	small{color: #FFFFFF;}
+
+}

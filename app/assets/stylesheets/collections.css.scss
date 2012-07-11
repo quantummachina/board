@@ -1,0 +1,49 @@
+// Place all the styles related to the Collections controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$grayLighter:           #eee !default;
+$grayLight:             #999 !default;
+$orange:                #f89406 !default;
+
+div.help {
+	background-color: $grayLighter;
+	padding: 20px 0px 20px 0px;
+}
+
+a.board-thumb {
+	display:block;
+    padding: 1px;
+	border-style:solid;
+	border-color: $grayLighter;
+	border-width: 1px;
+	margin-bottom: 18px;
+    width: 238px;
+    //height: 200px;
+    &:link {text-decoration:none;}
+	&:visited {text-decoration:none;}
+    &:hover{border-color: $grayLight;};
+	}​
+
+
+img.bt{
+	float: left;
+	height: 30px;
+	padding-right: 5px;
+}
+
+a.help-btn {
+	background-color: $orange;
+	display: block;
+    padding: 20px 40px 15px 70px;
+    //width: 238px;
+    //height: 200px;
+    h1{color: #FFFFFF;}
+    &:link {text-decoration:none;}
+	&:visited {text-decoration:none;}
+    &:hover{border-color: $grayLight;};
+	}​
+
+a.noexist{
+
+}

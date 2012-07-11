@@ -1,0 +1,15 @@
+<!-- requires board, size -->
+<%= link_to board, class: "board-thumb" do %>
+	<p><%= board.title %></p>
+	
+	<p><small><%= board.description %></small></p>
+	<% if board.items.any? %>
+		<%img = og_image(board.items.first.content, size.to_i)%>
+		<% if isImage?(img) %>
+			<%=img%>
+		<% else %>
+			<%= OG_or_link(img) %>
+		<% end %>
+	<% end %>
+
+<% end %>

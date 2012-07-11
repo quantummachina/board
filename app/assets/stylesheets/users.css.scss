@@ -1,0 +1,24 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$grayLighter:           #eee !default;
+$grayLight:             #999 !default;
+
+a.user-card {
+	display:block;
+    padding: 1px;
+	border-style:solid;
+	border-color: $grayLighter;
+	border-width: 1px;
+	margin-bottom: 18px;
+    width: 238px;
+    height: 10em;
+    &:link {text-decoration:none;}
+	&:visited {text-decoration:none;}
+    &:hover{border-color: $grayLight;};
+	}​
+	
+	a.noexist{
+
+}

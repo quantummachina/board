@@ -1,0 +1,29 @@
+<!-- requires boards -->
+<!--div class="row-fluid"-->
+<% if users %>
+	<% indexes = arr_4_cols(users.count,3) %>
+	<div class="row">
+		<% indexes.each do |col| %>
+			<div class="<%="span#{3}" %>">
+				<div class="row-fluid">
+					<% col.each do |i| %>
+						<% user = users[i] %>
+
+				  	    <%= link_to user, class: "user-card" do %>
+							<p><%= user.name %></p>
+							<p><small><%= user.city %></small></p>
+							<p><small><%= user.about[0..90
+								] %></small></p>
+							<% if user.category_id != 2 %>
+							Fields: <span class="label label-info"><%= user.category.name %></span>, <span class="label label-info"><%= user.subcategory.name %></span>
+							<%end%>
+						<% end %>
+				  		
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+<% end %>
+
+	

@@ -1,0 +1,38 @@
+<div class = 'span8'>
+
+
+	<ul id="myTab" class="nav nav-tabs">
+	    <li class="active"><a href="#link" data-toggle="tab">Add a link or note</a></li>
+	    <li><a href="#upload" data-toggle="tab">Upload an image</a></li>
+	</ul>
+	<div id="myTabContent" class="tab-content">
+		<div class="tab-pane fade in active" id="link">
+			<%= form_for @board.items.build(collection_id: @board.id) do |f|%>
+			<%= f.hidden_field :collection_id %>
+			<%= f.text_field :content, placeholder: 'Add a link or note' %>
+			<br>
+			<div class='form-inline'>
+			<%= f.radio_button :kind, 0 , checked: true %> 
+			<%= f.label :kind_0, 'Inspiration'%>
+			<%= f.radio_button :kind, 1 %> 
+			<%= f.label :kind_1, 'Work'%>
+		 	<%= f.submit "Post", class: "btn btn-small btn-primary" %>
+		 	</div>
+		 	<%end%>
+		</div>
+		<div class="tab-pane fade" id="upload">
+			<%= form_for current_user.attachments.build() do |f|%>
+			<%= hidden_field_tag :collection_id, @board.id %>
+ 			<%= f.file_field :file, :accept => 'image/png,image/gif,image/jpeg' %>
+
+ 			<div class='form-inline'>
+			<%= radio_button_tag :kind, 0 , checked: true %> 
+			<%= label_tag :kind_0, 'Inspiration'%>
+			<%= radio_button_tag :kind, 1 %> 
+			<%= label_tag :kind_1, 'Work'%>
+		 	<%= f.submit "Post", class: "btn btn-small btn-primary" %>
+		 	</div>
+ 			<%end%>
+		</div>
+	</div>
+</div>

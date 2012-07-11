@@ -1,0 +1,20 @@
+
+
+
+<% if @fbu %>
+	<%= @fbu.name %>
+	<br>
+	<%= @fbu.link %>
+	<br>
+	<hr>
+
+	<% for f in @fbu.friends %>
+		<% user = FbGraph::User.fetch(f.identifier) %>
+		<p><%= user.name %> - <%= user.email %></p>
+	<%end%>
+<%end%>
+
+
+	<%= link_to 'f', fb_share_project, target: "_blank" %>
+
+</div>
