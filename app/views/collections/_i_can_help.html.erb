@@ -1,28 +1,64 @@
-<%if !owner? && !collaborates? %>
-	<a class="btn btn-small btn-warning" data-toggle="modal" href="#icanhelp" >I can Help</a>
-	
-	<div class="modal hide fade" id="icanhelp">
-	  <div class="modal-header">
-	    <a class="close" data-dismiss="modal">×</a>
-	    <h3>I can help</h3>
-	  </div>
-	  <div class="modal-body">
+<br>
+<% if signed_in? %>
+	<%if !owner? && !collaborates? %>
+		<a class="help-btn" data-toggle="modal" href="#icanhelp" ><h1>I CAN HELP!</h1></a>
+		
+		<div class="modal hide fade" id="icanhelp">
+		  <div class="modal-header">
+		    <a class="close" data-dismiss="modal">×</a>
+		    <h3>I can help</h3>
+		  </div>
+		  <div class="modal-body">
 
-	    <%= form_tag '/i_can_help' do %>
+		    <%= form_tag '/i_can_help' do %>
 
-	  	  <%= hidden_field_tag :interlocutor_id, @board.user.id %>
-	  	  <%= hidden_field_tag :collection_id, @board.id %>
+		  	  <%= hidden_field_tag :interlocutor_id, @board.user.id %>
+		  	  <%= hidden_field_tag :collection_id, @board.id %>
 
-	  	  <p><%= @board.needs %></p>
+		  	  <p><%= @board.needs %></p>
 
-	      <%= text_field_tag :message, nil, placeholder: "Tell " + @board.user.name + " how you can help with this project." , class: "span6"%>
-	  </div>
-	  <div class="modal-footer">
-	    <a  data-dismiss="modal" href="#" class="btn btn-small">Close</a>
+		      <%= text_field_tag :message, nil, placeholder: "Tell " + @board.user.name + " how you can help with this project." , class: "span6"%>
+		  </div>
+		  <div class="modal-footer">
+		    <a  data-dismiss="modal" href="#" class="btn btn-small">Close</a>
 
-	      <%= submit_tag "Send message", class: "btn btn-small btn-primary" %>
+		      <%= submit_tag "Send message", class: "btn btn-small btn-primary" %>
 
-	    <% end %>
-	  </div>
-	</div>
+		    <% end %>
+		  </div>
+		</div>
+	<%end%>
+<%else%>
+
+		<a class="help-btn" data-toggle="modal" href="#icanhelp" ><h1>I CAN HELP!</h1></a>
+		
+		<div class="modal hide fade" id="icanhelp">
+		  <div class="modal-header">
+		    <a class="close" data-dismiss="modal">×</a>
+		    <h3>I can help</h3>
+		  </div>
+		  <div class="modal-body">
+
+		    <h3>To join this project Sign Up.</h3>
+
+		    <p>Use your email</p>
+  <%= form_for(User.new,html: {class: 'form-inline'}) do |f| %>
+
+	<%= render 'shared/error_messages', object: f.object %>
+  	<!--%= f.label :email %-->
+  	<%= f.text_field :email, placeholder: 'email' %>
+    <%= f.submit "Sign up now!", class: "btn btn-large btn-primary" %>
+   <% end %>
+   <p>Or use facebook</p>
+
+    <%= link_to user_omniauth_authorize_path(:facebook) do %> <%= image_tag 'fb2.jpg', class: :fb %>
+   <%end%><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), class: "fb" %>
+
+		  </div>
+		  <div class="modal-footer">
+		    <a  data-dismiss="modal" href="#" class="btn btn-small">Close</a>
+
+		  </div>
+		</div>
+
 <%end%>

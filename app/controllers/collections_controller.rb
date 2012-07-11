@@ -30,7 +30,7 @@ class CollectionsController < ApplicationController
 
 	    if @collection.save
 	      
-	      flash[:success] = "Your board has been created! Invite friends to help you"
+	      flash[:success] = "Your project has been created! Invite friends to help you"
 	      #redirect_to '/invte'
 	      redirect_to @collection
 	  	else
@@ -47,7 +47,7 @@ class CollectionsController < ApplicationController
 	def update
 		@collection = Collection.find(params[:id])
 		if @collection.update_attributes(params[:collection])
-	      flash[:success] = "Board updated"
+	      flash[:success] = "Project updated"
 	      redirect_to @collection
 	    else
 	      flash[:error] = 'Title and description can not be blank' 

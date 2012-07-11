@@ -14,6 +14,8 @@ class LinesController < ApplicationController
     n = u.extra.notifications + 1
     u.extra.update_attributes(notifications: n)
 
+    #AppMailer.line_notification_email(User.find(params[:interlocutor_id]),current_user,@collection).deliver
+
     redirect_to @conversation
   end
 

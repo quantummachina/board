@@ -4,10 +4,11 @@
 	
 	<p><small><%= board.description %></small></p>
 	<% if board.items.any? %>
-		<% if isImage?(og_image(board.items.first.content, size.to_i)) %>
-			<%=og_image(board.items.first.content, size.to_i)%>
+		<%img = og_image(board.items.first.content, size.to_i)%>
+		<% if isImage?(img) %>
+			<%=img%>
 		<% else %>
-			<%= wrap(og_image(board.items.first.content, size.to_i)) %>
+			<%= OG_or_link(img) %>
 		<% end %>
 	<% end %>
 

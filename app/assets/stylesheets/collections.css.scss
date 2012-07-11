@@ -4,6 +4,12 @@
 
 $grayLighter:           #eee !default;
 $grayLight:             #999 !default;
+$orange:                #f89406 !default;
+
+div.help {
+	background-color: $grayLighter;
+	padding: 20px 0px 20px 0px;
+}
 
 a.board-thumb {
 	display:block;
@@ -25,6 +31,18 @@ img.bt{
 	height: 30px;
 	padding-right: 5px;
 }
+
+a.help-btn {
+	background-color: $orange;
+	display: block;
+    padding: 20px 40px 15px 70px;
+    //width: 238px;
+    //height: 200px;
+    h1{color: #FFFFFF;}
+    &:link {text-decoration:none;}
+	&:visited {text-decoration:none;}
+    &:hover{border-color: $grayLight;};
+	}​
 
 a.noexist{
 

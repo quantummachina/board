@@ -7,7 +7,7 @@
 				<% col.each do |i| %>
 					<div class="board-item ">
 					<% item = @board.items.where(kind: 1)[i] %>
-			  	    	<%= wrap(embedded(item.content, @size.to_i)) %>
+			  	    	<%= wrap(default_OG(embedded(item.content, @size.to_i))) %>
 			  		</div>
 			  		<%= if signed_in? then render 'gear', item: item end%>
 				<% end %>
@@ -27,7 +27,7 @@
 				<% col.each do |i| %>
 					<div class="board-item ">
 					<% item = @board.items.where(kind: 0)[i] %>
-			  	    	<%= wrap(embedded(item.content, @size.to_i)) %>
+			  	    	<%= wrap(default_OG(embedded(item.content, @size.to_i))) %>
 			  		</div>
 			  		<%= if signed_in? then render 'gear', item: item end%>
 				<% end %>

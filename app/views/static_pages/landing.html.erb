@@ -12,6 +12,7 @@
   </br>
 </br>
 
+<p>Use your email</p>
   <%= form_for(@user,html: {class: 'form-inline'}) do |f| %>
 
 	<%= render 'shared/error_messages', object: f.object %>
@@ -19,6 +20,7 @@
   	<%= f.text_field :email, placeholder: 'email' %>
     <%= f.submit "Sign up now!", class: "btn btn-large btn-primary" %>
    <% end %>
+   <p>Or use facebook</p>
 
     <%= link_to user_omniauth_authorize_path(:facebook) do %> <%= image_tag 'fb2.jpg', class: :fb %>
    <%end%><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), class: "fb" %>
