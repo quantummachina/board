@@ -1,0 +1,20 @@
+/*
+ *= require bootstrap
+*/
+
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.sidebar-nav {
+  padding: 9px 0;
+}
+
+.page-header a.btn {
+  float: right;
+}
+
+.page-header a.btn + a.btn {
+  margin-right: 8px;
+}

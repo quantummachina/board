@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 
-gem 'bootstrap-generators', '~> 2.0', :git => 'git://github.com/decioferreira/bootstrap-generators.git'
+gem 'bootstrap-generators', '2.0.1'#,~> :git => 'git://github.com/decioferreira/bootstrap-generators.git'
 gem 'simple_form', '~> 2.0' #for bootstraps generator
 
 gem "auto_html", git: 'git://github.com/quantummachina/auto_html.git'

@@ -1,11 +1,4 @@
 GIT
-  remote: git://github.com/decioferreira/bootstrap-generators.git
-  revision: 17f0551b177fe371623d82f5fccf079bc55a9181
-  specs:
-    bootstrap-generators (2.0.4)
-      railties (~> 3.1)
-
-GIT
   remote: git://github.com/quantummachina/auto_html.git
   revision: 65baf6347d5436a4ce1f9f85d21affcb1968e99d
   specs:
@@ -55,6 +48,8 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
+    bootstrap-generators (2.0.1)
+      railties (~> 3.1)
     builder (3.0.0)
     cocaine (0.2.1)
     coffee-rails (3.2.2)
@@ -203,7 +198,7 @@ DEPENDENCIES
   aws-s3
   aws-sdk
   bcrypt-ruby (= 3.0.1)
-  bootstrap-generators (~> 2.0)!
+  bootstrap-generators (= 2.0.1)
   coffee-rails (= 3.2.2)
   debugger
   devise
