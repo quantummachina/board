@@ -19,12 +19,10 @@ a.board-thumb {
 	border-width: 1px;
 	margin-bottom: 18px;
     width: 238px;
-    //height: 200px;
     &:link {text-decoration:none;}
 	&:visited {text-decoration:none;}
-    &:hover{border-color: $grayLight;};
+    &:hover{border-color: $grayLight;}
 	}​
-
 
 img.bt{
 	float: left;
@@ -32,18 +30,64 @@ img.bt{
 	padding-right: 5px;
 }
 
+a.hlp {
+   border: 1px solid #525252;
+   background: #ffa600;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ffbb33), to(#ffa600));
+   background: -webkit-linear-gradient(top, #ffbb33, #ffa600);
+   background: -moz-linear-gradient(top, #ffbb33, #ffa600);
+   background: -ms-linear-gradient(top, #ffbb33, #ffa600);
+   background: -o-linear-gradient(top, #ffbb33, #ffa600);
+   background-image: -ms-linear-gradient(top, #ffbb33 0%, #ffa600 100%);
+   padding: 20px 40px;
+   -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   border-radius: 7px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 0px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 0px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 0px 0;
+   text-shadow: #303030 0 1px 0;
+   color: #ffffff;
+   font-size: 24px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   &:hover {
+	   border: 1px solid #525252;
+	   text-shadow: #303030 0 1px 0;
+	   background: #fab32f;
+	   background: -webkit-gradient(linear, left top, left bottom, from(#fcd077), to(#fab32f));
+	   background: -webkit-linear-gradient(top, #fcd077, #fab32f);
+	   background: -moz-linear-gradient(top, #fcd077, #fab32f);
+	   background: -ms-linear-gradient(top, #fcd077, #fab32f);
+	   background: -o-linear-gradient(top, #fcd077, #fab32f);
+	   background-image: -ms-linear-gradient(top, #fcd077 0%, #fab32f 100%);
+	   color: #fff;
+	   }
+	&:active {
+	   text-shadow: #1e4158 0 1px 0;
+	   border: 1px solid #525252;
+	   background: #f59b00;
+	   background: -webkit-gradient(linear, left top, left bottom, from(#ff9d00), to(#fab32f));
+	   background: -webkit-linear-gradient(top, #ff9d00, #f59b00);
+	   background: -moz-linear-gradient(top, #ff9d00, #f59b00);
+	   background: -ms-linear-gradient(top, #ff9d00, #f59b00);
+	   background: -o-linear-gradient(top, #ff9d00, #f59b00);
+	   background-image: -ms-linear-gradient(top, #ff9d00 0%, #f59b00 100%);
+	   color: #fff;
+	   }
+   }
+
 a.help-btn {
 	background-color: $orange;
 	display: block;
     padding: 20px 40px 15px 70px;
-    //width: 238px;
-    //height: 200px;
     h1{color: #FFFFFF;}
     &:link {text-decoration:none;}
 	&:visited {text-decoration:none;}
-    &:hover{border-color: $grayLight;};
+    &:hover{border-color: $grayLight;}
 	}​
 
-a.noexist{
-
+a.empty{
+	
 }

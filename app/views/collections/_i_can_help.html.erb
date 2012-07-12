@@ -1,7 +1,7 @@
 <br>
 <% if signed_in? %>
 	<%if !owner? && !collaborates? %>
-		<a class="help-btn" data-toggle="modal" href="#icanhelp" ><h1>I CAN HELP!</h1></a>
+		<a class="hlp" data-toggle="modal" href="#icanhelp" >I can help!</a>
 		
 		<div class="modal hide fade" id="icanhelp">
 		  <div class="modal-header">
@@ -30,7 +30,7 @@
 	<%end%>
 <%else%>
 
-		<a class="help-btn" data-toggle="modal" href="#icanhelp" ><h1>I CAN HELP!</h1></a>
+		<a class="hlp" data-toggle="modal" href="#icanhelp" >I can help!</a>
 		
 		<div class="modal hide fade" id="icanhelp">
 		  <div class="modal-header">
