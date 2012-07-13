@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
 		if !current_user.admin
 			redirect_to root_path
 		end
-		@board = Collection.find(17) #84
+		@board = Collection.find(84) #84/17
 	end
 
 	def about

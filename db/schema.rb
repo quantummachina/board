@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120712203308) do
+ActiveRecord::Schema.define(:version => 20120713231001) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -109,27 +109,7 @@ ActiveRecord::Schema.define(:version => 20120712203308) do
     t.datetime "updated_at",                      :null => false
   end
 
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
-    t.string   "remember_token"
-    t.string   "provider",        :default => ""
-    t.boolean  "admin",           :default => false
-    t.integer  "uid",             :default => 0
-    t.string   "about",           :default => ""
-    t.string   "city",            :default => ""
-    t.integer  "category_id",     :default => 2
-    t.integer  "subcategory_id",  :default => 2
-    t.string   "link_a",          :default => ""
-    t.string   "link_b",          :default => ""
-    t.string   "link_c",          :default => ""
-    t.string   "link_d",          :default => ""
-  end
-
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'long' for column 'uid'
 
 end
