@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120709202850) do
+ActiveRecord::Schema.define(:version => 20120712203308) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -64,6 +64,22 @@ ActiveRecord::Schema.define(:version => 20120709202850) do
   add_index "conversations", ["interlocutor_id"], :name => "index_conversations_on_interlocutor_id"
   add_index "conversations", ["user_id", "interlocutor_id"], :name => "index_conversations_on_user_id_and_interlocutor_id", :unique => true
   add_index "conversations", ["user_id"], :name => "index_conversations_on_user_id"
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "extras", :force => true do |t|
     t.integer  "user_id"

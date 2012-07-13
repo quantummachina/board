@@ -44,6 +44,7 @@
 <div id='user_collections'>
 	<%= render 'collections' %>
 </div>
+
 <% if @board.items.count==0 and @board.collaborations.empty? and owner? %>
 	<script type="text/javascript">
 	    $(window).load(function(){
