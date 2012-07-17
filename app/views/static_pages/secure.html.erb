@@ -7,7 +7,7 @@
 				<% col.each do |i| %>
 					<div class="board-item ">
 					<% item = @board.items.where(kind: 1)[i] %>
-			  	    	<%= item.delay.get_image %>
+			  	    	<%= item.get_image %>
 			  		</div>
 				<% end %>
 			</div>
@@ -26,7 +26,7 @@
 				<% col.each do |i| %>
 					<div class="board-item ">
 					<% item = @board.items.where(kind: 0)[i] %>
-			  	    	<%= item.delay.get_image %>
+			  	    	<%= item.get_image %>
 			  		</div>
 				<% end %>
 			</div>

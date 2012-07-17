@@ -22,9 +22,16 @@ class Item < ActiveRecord::Base
   	simple_format
   end
 
+  def set_ch
+    self.content_digest = 'fuck yeah!'
+    save
+  end
+  handle_asynchronously :set_ch
+
   def get_image
     content
   end
+  #handle_asynchronously :get_image
 
   def get_embeeded(size)
     default_og(embeeded(content,size))
