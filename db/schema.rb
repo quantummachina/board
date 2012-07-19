@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120712203308) do
+ActiveRecord::Schema.define(:version => 20120718023910) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -94,9 +94,12 @@ ActiveRecord::Schema.define(:version => 20120712203308) do
     t.integer  "collection_id"
     t.text     "content"
     t.text     "content_html"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.integer  "kind",          :default => 0
+    t.integer  "urltype",       :default => 0
+    t.string   "og_image",      :default => ""
+    t.text     "pre_content",   :default => ""
   end
 
   add_index "items", ["collection_id"], :name => "index_items_on_collection_id"

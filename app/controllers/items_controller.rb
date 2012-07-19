@@ -4,7 +4,8 @@ class ItemsController < ApplicationController
   def create
     
     @collection = Collection.find(params[:item][:collection_id])
-    @collection.items.create(content: params[:item][:content], kind: params[:item][:kind])
+    @item = @collection.items.create(content: params[:item][:content], kind: params[:item][:kind])
+    @item.set
 
     respond_to do |format|
       format.html { redirect_to @collection }
@@ -33,7 +34,8 @@ class ItemsController < ApplicationController
   def crosspost
     @original = Collection.find(params[:original_id])
     @collection = current_user.collections.find(params[:board_id])
-      @collection.items.create(content: params[:content])
+    @item = @collection.items.create(content: params[:content])
+    @item.set
       flash[:success] = "Item successfully posted in #{@collection.title}"
       redirect_to @original
   end

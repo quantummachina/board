@@ -1,5 +1,6 @@
 module ItemsHelper
-	def embedded(content,size)
+
+	def embedded_b(content,size)
 		w=69*size + 12*(size-1)
 		h=w*0.71
 		if content[0..4] == '*$&%#' #attachment
@@ -57,7 +58,7 @@ module ItemsHelper
 		raw content
 	end
 
-	def default_OG(content)
+	def default_OG_b(content)
 		ini = content.index('llow">h') # h 'ensures' begins with http
 		if !ini.nil?
 			nd = content.index('</a>')

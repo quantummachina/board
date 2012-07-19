@@ -15,7 +15,7 @@ module CollectionsHelper
 		end
 	end
 #CHANGE
-def og_image(content,size)
+def og_image_b(content,size)
 		w=69*size + 12*(size-1)
 		h=w*0.70
 		if content[0..4] == '*$&%#' #attachment
@@ -33,7 +33,26 @@ def og_image(content,size)
 	end
 end
 
-def OG_or_link(content)
+def cover(item)
+	# 1 attachment, 2 image url, 3 url w/og, 4 url/text
+	case item.urltype
+		when 1..3
+			raw item.og_image
+		when 4	
+			#raw wrap_long_string(item.pre_content)
+			cont= item.pre_content
+			ini = cont.index('llow">') 
+			if !ini.nil? # link
+				nd = cont.index('</a>')
+				sub = cont[(ini+6) .. (nd-1)]
+					repl = sanitize(raw(sub.split.map{ |s| wrap_long_string(s) }.join(' ')))
+			else #not a link
+				cont
+			end
+	end
+end
+
+def OG_or_link_b(content)
 	ini = content.index('llow">') 
 	if !ini.nil? #es link
 
