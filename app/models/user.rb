@@ -44,6 +44,7 @@ def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
                          email:auth.info.email,
                          password:Devise.friendly_token[0,20]
                          )
+            Extra.create(user_id: user.id)
   		end
     end
   user

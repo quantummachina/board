@@ -3,7 +3,9 @@ namespace :db do
 	task set_extras: :environment do 
 
 		User.all.each do |u|
-			Extra.create(user_id: u.id)
+			if u.extra.nil?
+				Extra.create(user_id: u.id)
+			end
 		end
 	end
 end
