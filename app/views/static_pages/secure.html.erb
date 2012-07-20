@@ -1,35 +1,12 @@
-<% indexes = arr_4_cols(@board.items.where(kind: 1).count,3) %>
-<h2> My Work </h2>
-<div class="row-fluid">
-	<% indexes.each do |col| %>
-		<div class=<%="span#{@size}" %>>
-			<div class="row-fluid">
-				<% col.each do |i| %>
-					<div class="board-item ">
-					<% item = @board.items.where(kind: 1)[i] %>
-			  	    	<%= item.get_image %>
-			  		</div>
-				<% end %>
-			</div>
-		</div>
-	<% end %>
+<% provide(:title, '') %>
 </div>
 
-<hr>
+  <%= render 'front'%>
+  <%= render 'success'%>
+  <%= render 'weekly'%>
+  <%= render 'how'%>
+  <%= render 'why'%>
+  <%= render 'back'%>
 
-<% indexes = arr_4_cols(@board.items.where(kind: 0).count,3) %>
-<h2> My Inspiration </h2>
-<div class="row-fluid">
-	<% indexes.each do |col| %>
-		<div class=<%="span#{@size}" %>>
-			<div class="row-fluid">
-				<% col.each do |i| %>
-					<div class="board-item ">
-					<% item = @board.items.where(kind: 0)[i] %>
-			  	    	<%= item.get_image %>
-			  		</div>
-				<% end %>
-			</div>
-		</div>
-	<% end %>
-</div>
+
+<div class='container'>

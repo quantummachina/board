@@ -1,0 +1,26 @@
+<div class='m0'>
+<div class='container'>
+<div class='span12'>
+	<div class="row">
+	  <div class="span9 offset2">
+	  	<div class = 'week-t'>
+		  <h2><%=@s3.tls.find_by_i(1).t%></h2>
+		</div>
+		  <div class="row">
+		  	<div class="span3">
+		  	  <%=render 'shared/board_thumbnail', board: @p_feat, size: 3%>
+		    </div>
+		    <div class="span6">
+		    	<h3><%=@s3.tls.find_by_i(2).t%></h3>
+		    	<h3><%=link_to @s3.tls.find_by_i(3).t, '#'%></h3>
+		    	<br>
+		    	<div class='centercontent'>
+		    		<%= render 'i_can_help' %>
+		    	</div>
+		    </div>
+		</div>
+	  </div>
+	</div>
+</div>
+</div>
+</div>

@@ -3,7 +3,13 @@ class StaticPagesController < ApplicationController
 		if !current_user.admin
 			redirect_to root_path
 		end
-		@board = Collection.find(17) #84/17
+			@user = User.new
+			@s1 = Section.find_by_name('Landing front')
+			@s2 = Section.find_by_name('Landing success')
+			@s3 = Section.find_by_name('Landing weekly')
+			@s4 = Section.find_by_name('Landing how')
+			@s5 = Section.find_by_name('Landing why')
+			@p_feat= Collection.find(110)
 	end
 
 	def about
@@ -17,6 +23,12 @@ class StaticPagesController < ApplicationController
 			redirect_to collections_path
 		else
 			@user = User.new
+			@s1 = Section.find_by_name('Landing front')
+			@s2 = Section.find_by_name('Landing success')
+			@s3 = Section.find_by_name('Landing weekly')
+			@s4 = Section.find_by_name('Landing how')
+			@s5 = Section.find_by_name('Landing why')
+			@p_feat= Collection.find(21)
   		end
 	end
 

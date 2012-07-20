@@ -1,0 +1,20 @@
+<div class='m3'>
+<div class='container'>
+<div class='span12'>
+	<div class="row">
+		<div class="span2 offset1">
+			<%=image_tag 'http://placekitten.com/g/250/150'%>
+		</div>
+	  <div class="span5 textc">
+		<div class='fbb'>
+		   	<%= link_to user_omniauth_authorize_path(:facebook) do %>
+		   		<%= image_tag 'fb2.jpg', class: :fbb %>
+     		<%end%>
+     		<%= link_to @s1.tls.find_by_i(4).t , user_omniauth_authorize_path(:facebook), class: "fbb" %>
+		 </div>
+		  o <%=link_to @s1.tls.find_by_i(5).t, '#'%>
+	  </div>
+	</div>
+</div>
+</div>
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120718023910) do
+ActiveRecord::Schema.define(:version => 20120720034655) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -110,6 +110,20 @@ ActiveRecord::Schema.define(:version => 20120718023910) do
     t.text     "text",            :default => ""
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
+  end
+
+  create_table "sections", :force => true do |t|
+    t.text     "name",       :default => ""
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "tls", :force => true do |t|
+    t.integer  "section_id"
+    t.integer  "i",          :default => 0
+    t.string   "t",          :default => ""
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
 # Could not dump table "users" because of following StandardError

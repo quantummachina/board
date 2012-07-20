@@ -11,18 +11,8 @@ div.board-item {
 	border-style:solid;
 	border-color: $grayLighter;
 	border-width: 1px;
-	//margin: 10px;
 	width: 231px;
-	//background-color: $grayLighter;
 }
-div.board-item:hover {
-	//ul.gear{display: block;}
-}
-
-ul.gear{
-	//display: none ;
-	//&:hover {visibility: visible;}
-	}
 
 div.board-thumb {
 	margin-bottom: 18px;
@@ -30,7 +20,6 @@ div.board-thumb {
 	border-color: $grayLighter;
 	border-width: 1px;
 	padding: 1px;
-	//background-color: $grayLighter
 }
 
 div.board-thumb:hover {
@@ -40,17 +29,6 @@ div.board-thumb:hover {
 	border-color: $linkColor;
 	border-width: 1px;
 	padding: 1px;
-	//background-color: $grayLighter
-}
-
-div.main {
-	//border-style:solid;
-	//border-color: $grayLight;
-	//border-width: 1px;
-	//margin: 10px;
-	//width: 231px;
-	//Background-color: $grayLighter;
-	
 }
 
 div.logo{
@@ -58,16 +36,16 @@ div.logo{
 }
 
 body.main{
-	background-image:url('landingpage.jpg')
+	background-image:url('landingpage.jpg');
 }
 
 div.landingpage{
 	margin-top: 50px;
 	padding: 50px 50px 80px 80px;
-	background-color:rgba(255,255,255,.9)
+	background-color:rgba(255,255,255,.9);
 }
 h1.landingpage{
-	font-size: 33px
+	font-size: 33px;
 }
 
 a.fb{

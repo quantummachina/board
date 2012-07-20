@@ -1,0 +1,113 @@
+// Place all the styles related to the Items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$grayLight:             #999 !default;
+$grayLighter:           #eee !default;
+$linkColor:             #00AEEF !default;
+$linkColorHover:        darken($linkColor, 15%) !default;
+$cyan:					rgb(157, 239, 227) !default;
+$purple:				rgb(120, 0, 188) !default;
+$pink:					rgb(255, 0, 174) !default;
+$fuscia:				rgb(225, 41, 124) !default;
+$yellow:				rgb(225, 225, 51) !default;
+$softred:				rgb(245, 48, 93) !default;
+
+div.textc{
+	text-align: center;
+}
+div.textd{
+	text-align: right;
+}
+div.centercontent{
+	margin-left: 100px;
+	margin-right: auto;
+}
+div.fbb{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px; 
+	margin-bottom: 10px;
+	width: 200px;
+}
+img.fbb{
+	float: left;
+	height: 30px;
+	padding-right: 5px;
+}
+a.fbb{
+	width:200px;
+	display: block;
+	padding: 5px 5px 5px 0px;
+	border-style:solid;
+	border-color: #000000;
+	border-width: 1px;
+	background-color: rgb(97,122,172);
+
+	&:link {color:#FFFFFF; text-decoration:none;}
+	&:visited {color:#FFFFFF; text-decoration:none;}
+	&:hover {color:#FFFFFF; text-decoration:none; background-color: rgb(59,89,153);}
+	&:active {color:#FFFFFF; text-decoration:none;}
+}
+div.bang{
+	text-align: center;
+	margin-top: 20px;
+	background: $softred;
+	h3{color: white;}
+}
+
+
+
+div.m1 {
+	width: 100%;
+	Background-color: $cyan;
+	h1{color: #FFFFFF;}
+	h2{color: #FFFFFF;}
+}
+div.m2 {
+	width: 100%;
+	Background-color: rgb(125, 227, 249);
+	h1{color: #FFFFFF;}
+	h2{color: #FFFFFF;}
+}
+div.m3 {
+	width: 100%;
+	Background-color: $grayLighter;
+	h1{color: #FFFFFF;}
+	h2{color: #FFFFFF;}
+}
+
+div.success-t {
+	Background-color: $fuscia;
+	width: 244px;
+	padding: 2px 0px 2px 0px;
+	margin: 30px 0px 10px 0px;
+	text-align: center;
+	h1{color: white;}
+	h2{color: white;}
+}
+div.week-t {
+	Background-color: $purple;
+	width: 280px;
+	padding: 2px 0px 2px 0px;
+	margin: 30px 0px 10px 0px;
+	text-align: center;
+	h1{color: white;}
+	h2{color: white;}
+}
+div.how-t {
+	Background-color: $yellow;
+	padding: 10px 0px 10px 0px;
+	margin: 30px 0px 10px 0px;
+	text-align: center;
+	h1{color: black;}
+	h2{color: black;}
+}
+div.why-t {
+	Background-color: $pink;
+	padding: 10px 0px 10px 0px;
+	margin: 30px 0px 10px 0px;
+	text-align: center;
+	h1{color: white;}
+	h2{color: white;}
+}
