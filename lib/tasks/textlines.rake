@@ -7,6 +7,7 @@ namespace :data do
 		end
 	end
 	task landing_textlines: :environment do
+=begin
 		s1=["La comunidad para colaborar en tus proyectos de","Musica, Video, Arte, Diseno y Tecnologia", "Ahora en Monterrey!", "Conectate con Facebook", "Usa tu correo"]
 		c=1
 		s1.each do |t|
@@ -20,9 +21,9 @@ namespace :data do
 			Section.find(2).tls.create(t: t, i: c)
 			c = c + 1
 		end
-
-		s3=["Proyecto de la semana","Rodrigo y Bere estan buscando hacer el museo mas pequeno del mundo. En su proceso, documentaran como construirlo para que mas personas de la ciudad salgan a las calles y muestren una obra de un artista al publico. Estas interesado? unete y se parte del proyecto", "Ver mas."]
-		c=1
+=end
+		s3=["Rodrigo y Bere estan buscando hacer el museo mas pequeno del mundo. En su proceso, documentaran como construirlo para que mas personas de la ciudad salgan a las calles y muestren una obra de un artista al publico. Estas interesado? unete y se parte del proyecto", "Ver mas."]
+		c=2
 		s3.each do |t|
 			Section.find(3).tls.create(t: t, i: c)
 			c = c + 1

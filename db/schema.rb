@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120720034655) do
+ActiveRecord::Schema.define(:version => 20120720083838) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -120,10 +120,10 @@ ActiveRecord::Schema.define(:version => 20120720034655) do
 
   create_table "tls", :force => true do |t|
     t.integer  "section_id"
-    t.integer  "i",          :default => 0
-    t.string   "t",          :default => ""
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.integer  "i",                         :default => 0
+    t.text     "t",          :limit => 255, :default => ""
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
 # Could not dump table "users" because of following StandardError
