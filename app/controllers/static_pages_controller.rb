@@ -9,7 +9,7 @@ class StaticPagesController < ApplicationController
 			@s3 = Section.find_by_name('Landing weekly')
 			@s4 = Section.find_by_name('Landing how')
 			@s5 = Section.find_by_name('Landing why')
-			@p_feat= Collection.find(110)
+			@p_feat= Collection.find(21)
 	end
 
 	def about
