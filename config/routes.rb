@@ -1,5 +1,7 @@
 Board::Application.routes.draw do
-
+  resources :sections
+  resources :tls
+  
   resources :extras
 
   resources :attachments

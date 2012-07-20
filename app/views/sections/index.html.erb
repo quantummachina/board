@@ -1,0 +1,12 @@
+<!--%= form_tag '/sections_update' do %-->
+<% for s in @sections do %>
+	<h3><%= s.name %></h3>
+		<% for tl in s.tls do %>
+			<%= form_for tl do |f| %>
+				<%= f.text_field :t, class: 'span8' %>
+				<%= f.submit 'Update' %>
+			<% end %>
+			<!--%= text_field_tag s.name + tl.i.to_s, tl.t, class: 'span8'%-->
+		<% end %>
+	<hr>
+<% end %>
