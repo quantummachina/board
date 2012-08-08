@@ -1,3 +1,4 @@
+<% provide :title, @board.title %> 
 <% if !signed_in? %>
 	<div class="idea">
 		<h3>Para unirte a este proyecto <%= link_to 'inicia sesión', '/signin' %> o <%= link_to 'regístrate', root_path %>.</h3>
@@ -39,6 +40,7 @@
 						<%else%>
 							<%= image_tag(dummycover(@board.category_id))%>
 						<%end%>
+						<%= render 'share' %>
 						<p><%= @board.description %></p>
 						<h2>Progreso</h2>
 
@@ -49,7 +51,7 @@
 					</div>
 <%#lado derecho%>
 					<div class="span5 offset1">
-						<%= render 'share' %>
+						
 						<div class="row">
 							<div class='span4'>
 								<h2>¿Colaboras?</h2>
@@ -92,32 +94,7 @@
 <% if @board.items.count==0 and @board.collaborations.empty? and owner? %>
 	<script type="text/javascript">
 	    $(window).load(function(){
-	        $('#Invite').modal('show');
+	        $('#invite2').modal('show');
 	    });
 	</script>
-<!--a class="btn" data-toggle="modal" href="#Invite" Launch Modal/a-->
-
-<div class="modal active" id="Invite">
-
-	<div class="modal-header">
-	  <a class="close" data-dismiss='modal' href="#">×</a>
-	  <br>
-	</div>
-
-	<div class="modal-body">
-	  <p><h2> Invita a un amigo a colaborar </h2></p>
-	  <%= form_tag '/suscribe' do %>
-		<%= hidden_field_tag 'board_id', @board.id %>
-		<%= text_field_tag 'email1', nil, placeholder:'correo electrónico', class: 'offset1'%>
-		<%= text_field_tag 'email2', nil, placeholder:'correo electrónico', class: 'offset1'%>
-		<%= text_field_tag 'email3', nil, placeholder:'correo electrónico', class: 'offset1'%>
-	</div>
-
-	<div class="modal-footer">
-	  	<a  data-dismiss='modal' href="#" class="btn">Cancelar</a>
-	  	<%= submit_tag 'Enviar invitaciones', class: "btn btn-primary" %>
-	  <% end %>
-
-	</div>
-</div>
 <%end%>

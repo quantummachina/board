@@ -1,3 +1,4 @@
+# encoding: utf-8
 class UsersController < ApplicationController
   def index
     if !current_user.admin
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
         AppMailer.welcome_email(@user).deliver
         search_pending(@user.email, @user.id)
         sign_in @user
-      	flash[:success] = "Bienvenido a Funkalab!"
+      	flash[:success] = "¡Bienvenido a Funkalab!"
         redirect_to collections_path
     	else
       		render 'static_pages/landing'
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
     params[:user].delete(:password) if params[:user][:password].blank?
     params[:user].delete(:password_confirmation) if params[:user][:password].blank?
     if @user.update_attributes(params[:user])
-      flash[:success] = "Tu perfil ha sido actualizado"
+      flash[:success] = "Tu perfil ha sido actualizado."
       sign_in @user
       redirect_to root_path
     else

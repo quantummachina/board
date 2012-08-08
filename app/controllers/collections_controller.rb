@@ -1,3 +1,4 @@
+# encoding: utf-8
 class CollectionsController < ApplicationController
 	def index
 		category = params[:category] || ""
@@ -35,7 +36,7 @@ class CollectionsController < ApplicationController
 	      redirect_to add_vacants_path({cid: @collection.id})
 
 	  	else
-	  		flash[:error] = 'Titulo y descripcion no pueden estar vacios' 
+	  		flash[:error] = 'Título y descripción no pueden estar vacios' 
       		redirect_to action: 'new'
 	    end
 	end
@@ -66,10 +67,10 @@ class CollectionsController < ApplicationController
 	def update
 		@collection = Collection.find(params[:id])
 		if @collection.update_attributes(params[:collection])
-	      flash[:success] = "Proyecto actualizado"
+	      flash[:success] = "Proyecto actualizado."
 	      redirect_to @collection
 	    else
-	      flash[:error] = 'Titulo y descripcion no pueden estar vacios' 
+	      flash[:error] = 'Título y descripción no pueden estar vacíos' 
 	      render 'edit'
     	end
 	end

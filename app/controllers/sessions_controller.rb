@@ -1,3 +1,4 @@
+# encoding: utf-8
 class SessionsController < ApplicationController
 
   def new
@@ -9,7 +10,7 @@ class SessionsController < ApplicationController
       sign_in user
       redirect_to root_path
     else
-      flash.now[:error] = 'Combinacion invalida. Intenta nuevamente.' 
+      flash.now[:error] = 'Combinación inválida. Intenta nuevamente.' 
       render 'new'
     end
   end

@@ -12,7 +12,7 @@ class CollaborationsController < ApplicationController
 					Pendinguser.create(collection: @collection.id, email: email, from: current_user.id)
 					AppMailer.invite_email(email, @collection.user, @collection, @collection.category).deliver
 				end
-				flash[:success] = 'Se ha invitado al usuario'
+				flash[:success] = 'Se ha invitado al usuario.'
 			end
 		end
 		redirect_to @collection

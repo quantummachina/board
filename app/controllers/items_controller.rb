@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ItemsController < ApplicationController
   before_filter :signed_in_user
 
@@ -38,7 +39,7 @@ class ItemsController < ApplicationController
     @collection = current_user.collections.find(params[:board_id])
     @item = @collection.items.create(content: params[:content])
     @item.set
-      flash[:success] = "Item successfully posted in #{@collection.title}"
+      flash[:success] = "Tu ítem ha sido enviado a #{@collection.title}"
       redirect_to @original
   end
 

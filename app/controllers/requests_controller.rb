@@ -1,3 +1,4 @@
+# encoding: utf-8
 class RequestsController < ApplicationController
 
 	def invite
@@ -16,7 +17,7 @@ class RequestsController < ApplicationController
 
 		AppMailer.invite_notification_email(r).deliver
 
-		flash[:success] = 'Tu peticion ha sido enviada. Te notificaremos si el usuario acepta colaborar en tu proyecto.'
+		flash[:success] = 'Tu petición ha sido enviada. Te notificaremos si el usuario acepta colaborar en tu proyecto.'
 		if params.has_key?(:interlocutor_id)
 			redirect_to @user
 		else
@@ -34,7 +35,7 @@ class RequestsController < ApplicationController
 
 		AppMailer.help_notification_email(@collection.user, current_user, @collection, r).deliver
 
-		flash[:success] = 'Tu peticion ha sido enviada. Te notificaremos si eres aceptado a colaborar. Gracias!'
+		flash[:success] = 'Tu petición ha sido enviada. Te notificaremos si eres aceptado a colaborar. ¡Gracias!'
 		redirect_to @collection
 	end
 
@@ -74,7 +75,7 @@ class RequestsController < ApplicationController
 			AppMailer.accept_notification_email(@request).deliver
 		end
 		@request.delete
-		flash[:success] = "La colaboracion ha sido aceptada."
+		flash[:success] = "La colaboración ha sido aceptada."
 		redirect_to requests_path
 	end
 end
