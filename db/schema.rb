@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120720083838) do
+ActiveRecord::Schema.define(:version => 20120801202550) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -48,8 +48,9 @@ ActiveRecord::Schema.define(:version => 20120720083838) do
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
     t.integer  "category_id", :default => 2
-    t.string   "needs",       :default => ""
     t.boolean  "promoted",    :default => false
+    t.boolean  "status",      :default => false
+    t.integer  "cover",       :default => 0
   end
 
   add_index "collections", ["user_id"], :name => "index_collections_on_user_id"
@@ -86,9 +87,18 @@ ActiveRecord::Schema.define(:version => 20120720083838) do
     t.integer  "notifications", :default => 0
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
+    t.integer  "messages",      :default => 0
+    t.integer  "requests",      :default => 0
   end
 
   add_index "extras", ["user_id"], :name => "index_extras_on_user_id", :unique => true
+
+  create_table "genvars", :force => true do |t|
+    t.string   "name",       :default => ""
+    t.integer  "value",      :default => 0
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
 
   create_table "items", :force => true do |t|
     t.integer  "collection_id"
@@ -112,10 +122,43 @@ ActiveRecord::Schema.define(:version => 20120720083838) do
     t.datetime "updated_at",                      :null => false
   end
 
+  create_table "notifications", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "message",    :default => ""
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "pendingusers", :force => true do |t|
+    t.string   "email"
+    t.integer  "from"
+    t.integer  "collection"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "requests", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "from_id"
+    t.integer  "collection_id"
+    t.integer  "vacant_id"
+    t.string   "message"
+    t.boolean  "invite"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "sections", :force => true do |t|
     t.text     "name",       :default => ""
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "sprojects", :force => true do |t|
+    t.integer  "collection_id"
+    t.text     "text",          :default => ""
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "tls", :force => true do |t|
@@ -128,5 +171,13 @@ ActiveRecord::Schema.define(:version => 20120720083838) do
 
 # Could not dump table "users" because of following StandardError
 #   Unknown type 'long' for column 'uid'
+
+  create_table "vacants", :force => true do |t|
+    t.integer  "collection_id"
+    t.string   "title",         :default => ""
+    t.string   "description",   :default => ""
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
 
 end

@@ -1,12 +1,12 @@
-<br>
+<%#receives id from vacant num%>
 <% if signed_in? %>
 	<%if !owner? && !collaborates? %>
-		<a class="hlp" data-toggle="modal" href="#icanhelp" >I can help!</a>
+		<a class="qc" data-toggle="modal" href=<%="#icanhelp"+id.to_s%> ><h3>¡Quiero Colaborar!</h3></a>
 		
-		<div class="modal hide fade" id="icanhelp">
-		  <div class="modal-header">
+		<div class="modal hide fade" id=<%="icanhelp"+id.to_s%>>
+		  <div class="modal-header textc">
 		    <a class="close" data-dismiss="modal">×</a>
-		    <h3>I can help</h3>
+		    <h3>¡Quiero Colaborar!</h3>
 		  </div>
 		  <div class="modal-body">
 
@@ -14,15 +14,14 @@
 
 		  	  <%= hidden_field_tag :interlocutor_id, @board.user.id %>
 		  	  <%= hidden_field_tag :collection_id, @board.id %>
+		  	  <%= hidden_field_tag :vacant_id, id %>
 
-		  	  <p><%= @board.needs %></p>
-
-		      <%= text_field_tag :message, nil, placeholder: "Tell " + @board.user.name + " how you can help with this project." , class: "span6"%>
+		      <%= text_field_tag :message, nil, placeholder: "Dile a " + @board.user.name + " cómo puedes ayudar con este proyecto." , class: "span6"%>
 		  </div>
 		  <div class="modal-footer">
-		    <a  data-dismiss="modal" href="#" class="btn btn-small">Close</a>
+		    <a  data-dismiss="modal" href="#" class="btn btn-small">Cerrar</a>
 
-		      <%= submit_tag "Send message", class: "btn btn-small btn-primary" %>
+		      <%= submit_tag "Enviar solicitud", class: "btn btn-small btn-primary" %>
 
 		    <% end %>
 		  </div>
@@ -30,33 +29,33 @@
 	<%end%>
 <%else%>
 
-		<a class="hlp" data-toggle="modal" href="#icanhelp" >I can help!</a>
+		<a class="qc" data-toggle="modal" href="#icanhelp" ><h3>¡Quiero Colaborar!</h3></a>
 		
 		<div class="modal hide fade" id="icanhelp">
 		  <div class="modal-header">
 		    <a class="close" data-dismiss="modal">×</a>
-		    <h3>I can help</h3>
+		    <h3>¡Quiero Colaborar!</h3>
 		  </div>
 		  <div class="modal-body">
 
-		    <h3>To join this project Sign Up.</h3>
+		    <h3>Para unirte a este proyecto, regístrate.</h3>
 
-		    <p>Use your email</p>
+		    <p>Usa tu correo electrónico</p>
   <%= form_for(User.new,html: {class: 'form-inline'}) do |f| %>
 
 	<%= render 'shared/error_messages', object: f.object %>
   	<!--%= f.label :email %-->
-  	<%= f.text_field :email, placeholder: 'email' %>
-    <%= f.submit "Sign up now!", class: "btn btn-large btn-primary" %>
+  	<%= f.text_field :email, placeholder: 'correo electrónico' %>
+    <%= f.submit "Registrarse ahora!", class: "btn btn-large btn-primary" %>
    <% end %>
-   <p>Or use facebook</p>
+   <p>O usa facebook</p>
 
     <%= link_to user_omniauth_authorize_path(:facebook) do %> <%= image_tag 'fb2.jpg', class: :fb %>
-   <%end%><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), class: "fb" %>
+   <%end%><%= link_to "Conéctate con facebook", user_omniauth_authorize_path(:facebook), class: "fb" %>
 
 		  </div>
 		  <div class="modal-footer">
-		    <a  data-dismiss="modal" href="#" class="btn btn-small">Close</a>
+		    <a  data-dismiss="modal" href="#" class="btn btn-small">Cerrar</a>
 
 		  </div>
 		</div>

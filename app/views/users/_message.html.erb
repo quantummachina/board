@@ -1,0 +1,30 @@
+<% unless current_user?(@user) %>
+
+	<a class='btn btn-primary' data-toggle="modal" href="#invite" >Invitar a proyecto</a>
+		
+		<div class="modal hide fade" id="invite">
+		  <div class="modal-header textc">
+		    <a class="close" data-dismiss="modal">×</a>
+		    <h3>Invitar a Proyecto</h3>
+		  </div>
+		  <div class="modal-body">
+		  	<h4>Invitación para <%=@user.name%> a colaborar en tu proyecto:</h4>
+		  	<br>
+		    <%= form_tag '/invite_to_collaborate' do %>
+
+		  	  <%= hidden_field_tag :interlocutor_id, @user.id %>
+		  	  <%= select_tag :collection_id, options_from_collection_for_select(current_user.collections, "id", "title") %>
+
+		      <%= text_field_tag :message, nil, placeholder: "Dile a " + @user.name + " por qué necesitas de su colaboración en este proyecto." , class: "span6"%>
+		  </div>
+		  <div class="modal-footer">
+		    <a  data-dismiss="modal" href="#" class="btn btn-small">Cerrar</a>
+
+		      <%= submit_tag "Enviar solicitud", class: "btn btn-small btn-primary" %>
+
+		    <% end %>
+		  </div>
+		</div>
+
+<%= link_to image_tag('',class: 'icon-envelope'), conversations_path(user_id: current_user.id, interlocutor_id: @user.id), :method => :post, class: 'btn btn-small' %>
+<% end %>

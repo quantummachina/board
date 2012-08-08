@@ -52,6 +52,21 @@ def cover(item)
 	end
 end
 
+def dummycover(cat)
+	case cat
+	when 2
+		'arte-dummy.png'
+	when 5
+		'musica-dummy.png'
+	when 7
+		'video-dummy.png'
+	when 17
+		'tecnologia-dummy.png'
+	when 22
+		'diseno-dummy.png'
+	end
+end
+
 def OG_or_link_b(content)
 	ini = content.index('llow">') 
 	if !ini.nil? #es link

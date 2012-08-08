@@ -4,17 +4,17 @@ class LinesController < ApplicationController
 
   def create 
     @conversation = Conversation.find(params[:line][:conversation_id])
-    @conversation.lines.create(user_id: current_user.id, text: params[:line][:text])
+    l = @conversation.lines.create(user_id: current_user.id, text: params[:line][:text])
 
     if @conversation.user_id == current_user.id
     	u = User.find(@conversation.interlocutor_id)
     else
     	u = User.find(@conversation.user_id)
     end
-    n = u.extra.notifications + 1
-    u.extra.update_attributes(notifications: n)
+    n = u.extra.messages + 1
+    u.extra.update_attributes(messages: n)
 
-    #AppMailer.line_notification_email(User.find(params[:interlocutor_id]),current_user,@collection).deliver
+    AppMailer.message_notification_email(current_user, u, l ).deliver
 
     redirect_to @conversation
   end

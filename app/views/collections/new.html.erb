@@ -1,0 +1,17 @@
+<% provide :title, "Nuevo proyecto" %> 
+<div class="row">
+  <div class = "span8 offset1">
+	<h1>Nuevo proyecto</h1>
+	<br>
+	<h3>Paso 1 de 2</h3>
+	<%= form_for(@collection) do |f| %>
+		<%= render 'fields', f: f %>
+		<%= f.select :category_id, options_from_collection_for_select(@categories, "id", "name") %>
+		<br>
+		<%= f.submit 'Siguiente'%>
+	<% end %>
+
+  </div>
+</div>
+
+		

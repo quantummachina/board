@@ -1,4 +1,5 @@
 Board::Application.routes.draw do
+
   resources :sections
   resources :tls
   
@@ -18,7 +19,9 @@ Board::Application.routes.draw do
   match '/suscribe', to: 'collaborations#suscribe'
   match '/nav', to: 'collections#index'
   match '/secure', to: 'static_pages#secure'
-  match '/i_can_help', to: 'conversations#icanhelp'
+  match '/i_can_help', to: 'requests#icanhelp'#
+  match '/invite_to_collaborate', to: 'requests#invite'#'conversations#icanhelp'
+  match '/add_vacants', to: 'collections#add_vacants'
   
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
@@ -27,7 +30,10 @@ Board::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :collections do
     member do
+      get :devacant
       get :promote
+      get :successful
+      get :weekly
     end
   end
   resources :collaborations
@@ -36,8 +42,19 @@ Board::Application.routes.draw do
   resources :items do
     member do
       get :crosspost
+      get :setcover
     end
   end
+
+  resources :vacants
+  resources :sprojects
+  resources :notifications
+  resources :requests do
+    member do
+      get :accept
+    end
+  end
+  resources :genvars
 
 
   # The priority is based upon order of creation:

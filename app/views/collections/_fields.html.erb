@@ -1,7 +1,5 @@
-		<%= f.label :title %>
-		<%= f.text_field :title, maxlength: 50, placeholder:"Give a name to your idea. Don\'t worry, it can change later.", class: "span6"%>
-		<%= f.label :description %>
-		<%= f.text_area :description, maxlength: 200, placeholder:"Tell us your idea with a brief description.", rows: 4 , class: "span6" %>
-	 	<%= f.label :needs, 'Do you need help?' %>
-      	<%= f.text_area :needs, maxlength: 200, placeholder:"Is something stopping you? Do you need ideas, references or someone to collaborate with? Let us know what you need!", rows: 4, class: "span6" %>
-	 	<%= f.label :category_id, "Category:" %>
+		<%= f.label :title, 'Título' %>
+		<%= f.text_field :title, maxlength: 50, placeholder:"Dale un nombre a tu idea. No te preocupes, lo puedes cambiar después.", class: "span6"%>
+		<%= f.label :description, "Descripción" %>
+		<%= f.text_area :description, maxlength: 200, placeholder:"Explícanos brevemente tu idea y el producto final que quieres lograr. (Ej. un comic, un blog, un video).", rows: 4 , class: "span6" %>
+	 	<%= f.label :category_id, "Categoría:" %>

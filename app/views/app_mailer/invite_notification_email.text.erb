@@ -1,0 +1,13 @@
+Hola <%= @invited.name%>,
+
+<%= link_to @from.name, @from_url %> te ha invitado a colaborar en el proyecto <%=link_to @project.title, @project_url%>.
+
+“<%=@request.message%>”
+
+¡Excelente! Un creativo quiere colaborar contigo para realizar un mejor proyecto.
+Visita su proyecto <%=link_to @project.title, @project_url%> y si estás interesado, acepta su propuesta <%=link_to "aquí", @request_url %>.
+
+
+Gracias,
+
+   Tus amigos de Funkalab.

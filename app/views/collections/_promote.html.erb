@@ -1,11 +1,17 @@
 <%if signed_in?%>
 <% if current_user.admin %>
+
 	<%= link_to controller: 'collections', action: 'promote', id: @board.id, title: 'promote', class: 'btn' do%>
 		<%if @board.promoted%>
-			Demote
+			Degradar
 		<%else%>
-			Promote
+			Promover
 		<%end%>
 	<%end%>	
+
+	<%= link_to 'Exitoso', controller: 'collections', action: 'successful', collection_id: @board.id %>
+
+	<%= link_to 'Semanal', controller: 'collections', action: 'weekly', id: @board.id %>
+
 <% end %>
 <%end%>

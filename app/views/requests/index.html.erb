@@ -1,0 +1,26 @@
+<h1>Invitaciones</h1>
+<hr>
+<div class="row">
+	<div class="span6">
+		<% for r in @requests do %>
+			<% if r.invite == false %>
+				<p><%= link_to User.find(r.from_id).name, User.find(r.from_id) %> quiere colaborar contigo en tu proyecto <%= link_to r.collection.title, r.collection %>. Ha contestado a la vacante de <strong><%=Vacant.find(r.vacant_id).title%></strong>.</p>
+			<%else%>
+				<p><%= link_to User.find(r.from_id).name, User.find(r.from_id) %> te ha invitado a colaborar en su proyecto <%= link_to r.collection.title, r.collection %></p>
+			<%end%>
+			<p>"<%=r.message%>"</p>
+			<div class="row">
+				<div class="span4">
+					<%= link_to 'Aceptar',{controller: 'requests', action: 'accept', id: r.id}, class: 'btn btn-small btn-primary'%> <%= link_to 'Ignorar', r, method: :delete, class: 'btn btn-small'%>
+				</div>
+				<div class='span2'>
+					<%= form_for current_user.conversations.build(interlocutor_id: r.from_id) do |f| %>
+					  <%= f.hidden_field :interlocutor_id %>
+					  <%= f.submit "Enviar mensaje", class: "btn btn-small" %>
+					<% end %>
+				</div>
+			</div>
+			<hr>
+		<% end %>
+	</div>
+</div>

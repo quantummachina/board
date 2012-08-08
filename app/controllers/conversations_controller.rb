@@ -2,7 +2,7 @@ class ConversationsController < ApplicationController
   before_filter :signed_in_user
   before_filter :correct_user, only: :destroy
 
-  def icanhelp
+  def icanhelp #temporalmente fuera
     c1 = current_user.conversations.find_by_interlocutor_id(params[:interlocutor_id])
     c2 = current_user.reverse_conversations.find_by_user_id(params[:interlocutor_id])
 
@@ -22,7 +22,7 @@ class ConversationsController < ApplicationController
   end
 
   def index
-    current_user.extra.update_attributes(notifications: 0)
+    current_user.extra.update_attributes(messages: 0)
     session[:notifications] = 0
     @conversations = current_user.conversations + current_user.reverse_conversations
     @conversation = if params[:id] then Conversation.find(params[:id]) else @conversations.first end
@@ -32,17 +32,21 @@ class ConversationsController < ApplicationController
     redirect_to action: 'index', id: params[:id]
   end
 
-  def create #not in use
-    c1 = current_user.conversations.find_by_interlocutor_id(params[:conversation][:interlocutor_id])
-    c2 = current_user.reverse_conversations.find_by_user_id(params[:conversation][:interlocutor_id])
+  def create
+    if params.has_key?(:conversation)
+      i_id = params[:conversation][:interlocutor_id]
+    else
+      i_id = params[:interlocutor_id]
+    end
+    c1 = current_user.conversations.find_by_interlocutor_id(i_id)
+    c2 = current_user.reverse_conversations.find_by_user_id(i_id)
 
     if c1 then redirect_to c1 else
       if c2 then redirect_to c2 else
-        current_user.conversations.create(interlocutor_id: params[:conversation][:interlocutor_id])
+        current_user.conversations.create(interlocutor_id: i_id)
         redirect_to current_user.conversations.last
       end
     end
-
   end
 
 end

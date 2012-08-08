@@ -4,24 +4,20 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1>Hi!</h1>
+    <h1>Hola!</h1>
 <p>
-   Your friend <%= @inviter.name %> has invited you to collaborate in his new creative project!
-</p><p>
-   You can help <%= @inviter.name.split.first %> by collecting inspiration and posting ideas. Also check out other similar projects that can boost your creativity and help your ideas grow.
-</p><p>
-   To begin, follow this link <%= @url %> and login with your email and the following password:
-</p><p>
-Password: <%= @password %>
+   <%= @inviter.name %> te ha invitado a colaborar en su proyecto de <%= @category.name %>: <%=link_to @collection.title, 'http://www.funkalab.com/collections/'+ @collection.id.to_s %>.
+</p><br><p>
+   Para colaborar entra y crea una cuenta en <%= link_to 'Funkalab', 'http://www.funkalab.com' %>.
+</p><br><p>
+   ¡Únete a una gran comunidad de creativos que colaboran, comparten ideas e inspiraciones!
+</p><br><p>
+ Para cualquier comentario o pregunta, contáctanos en hello@funkalab.com.
  </p>
-</br>
-<p>   Belong to a great community of creatives, who share ideas and inspirations!
+<br>
+<p>Gracias,
 </p><p>
-   For any comments or questions, drop us a line at contact@funkalab.com
+   Tus amigos de Funkalab.
 </p>
-</br>
-<p>Thanks,
-</p>
-   <p>   Your friends at Funkalab.</p>
   </body>
 </html>

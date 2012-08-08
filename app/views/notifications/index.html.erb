@@ -1,0 +1,10 @@
+<h1>Notificaciones</h1>
+<hr>
+<div class="row">
+	<div class="span6">
+		<% for n in @notifications do %>
+			<p><%=raw n.message%></p>
+			<hr>
+		<% end %>
+	</div>
+</div>

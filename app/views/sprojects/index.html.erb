@@ -1,0 +1,11 @@
+<h2>Proyectos Exitosos</h2>
+<br>
+
+<%for p in @sprojects do%>
+	<h3><%= p.collection.title %> <small><%=link_to 'Eliminar', p, method: :delete %></small></h3>
+	<%= form_for p do |f| %>
+	<%= f.text_area :text, maxlength: 200, placeholder:"Descripción del proyecto exitoso", rows: 4 , class: "span6" %>
+	<%= f.submit "Guardar" %>
+	<%end%>
+	<hr>
+<%end%>

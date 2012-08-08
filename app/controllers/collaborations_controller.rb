@@ -4,17 +4,15 @@ class CollaborationsController < ApplicationController
 		[params[:email1], params[:email2], params[:email3]].each do |email|
 			if !email.empty? && email != current_user.email
 				@user = User.find_by_email(email)
-				if @user #achinga!
-				else
-					pass = ('a'..'z').to_a.shuffle[0..5].join
-					#flash[:success] = email +', '+pass.to_s
-					@user = User.create(email: email, password: pass,name: "")
-					AppMailer.invite_email(email,current_user,pass).deliver
-				end
 				if @user
-					@collection.collaborations.create(user_id: @user.id)
-					flash[:success] = 'Invitations sent!'
+					@user.requests.create(from_id: current_user.id, collection_id: @collection.id, invite: true)
+					n = @user.extra.requests + 1
+    				@user.extra.update_attributes(requests: n)
+				else
+					Pendinguser.create(collection: @collection.id, email: email, from: current_user.id)
+					AppMailer.invite_email(email, @collection.user, @collection, @collection.category).deliver
 				end
+				flash[:success] = 'Se ha invitado al usuario'
 			end
 		end
 		redirect_to @collection

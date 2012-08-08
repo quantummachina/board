@@ -7,7 +7,8 @@
         </div>
         <div class="span2">
           <% if signed_in? %>
-            <a class="btn" data-toggle="modal" href="#NewBoard" >Create Project</a>
+            <%= link_to 'Crear Proyecto', new_collection_path ,class: 'btn' %>
+            <!--a class="btn" data-toggle="modal" href="#NewBoard" >Crear Proyecto</a-->
           <% end %>
         </div>
         <div class="span8">
@@ -19,38 +20,59 @@
         
           <div class="nav-collapse">
             <ul class="nav pull-right">
-              <li><%= link_to '/nav' do %>Explore<% end %></li>
+              <li><%= link_to '/nav' do %>Explorar<% end %></li>
 
               <li id="fat-menu" class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  About <!--i class="icon-user icon-white"/i--><b class="caret"></b>
+                  Acerca de <!--i class="icon-user icon-white"/i--><b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "About", '/about'%></li>
-                  <li><%= link_to "Privacy policy", '/privacy'%></li>
-                  <li><%= link_to "Terms of service", '/terms'%></li>
+                  <li><%= link_to "Acerca de", '/about'%></li>
+                  <li><%= link_to "Privacidad", '/privacy'%></li>
+                  <li><%= link_to "Términos de uso", '/terms'%></li>
                 </ul>
               </li>
 
               <% if signed_in? %>
-                <li><%= link_to conversations_path do %>
-                    <%= if unread_mail > 0 then "("+unread_mail.to_s+")" end%>
-                    <i  class= "icon-envelope"></i>
+
+
+                <li id="fat-menu" class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <%=news%>
+                    <i  class= "icon-envelope"></i><b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to notifications_path do %>
+                    <%=notifications%>
+                    Notificaciones
                   <% end %></li>
+                    <li><%= link_to requests_path do %>
+                    <%=requests%>
+                    Invitaciones
+                  <% end %></li>
+                    <li><%= link_to conversations_path do %>
+                    <%=messages%>
+                    Mensajes
+                  <% end %></li>
+                  </ul>
+                </li>
+
+
+
                 <!--l= link_to "Navigate", nav_path /li-->
                 <li id="fat-menu" class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    Hi, <%= current_user.name.split.first %> <!--i class="icon-user icon-white"/i--><b class="caret"></b>
+                    Hola, <%= current_user.name.split.first %> <!--i class="icon-user icon-white"/i--><b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu">
-                    <li><%= link_to "My Lab", current_user %></li>
-                    <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                    <li><%= link_to "Mi laboratorio", current_user %></li>
+                    <li><%= link_to "Opciones", edit_user_path(current_user) %></li>
                     <li class="divider"></li>
-                    <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+                    <li><%= link_to "Salir", signout_path, method: "delete" %></li>
                   </ul>
                 </li>
               <% else %>
-                <li><%= link_to "Sign in", signin_path %></li>
+                <li><%= link_to "Iniciar sesión", signin_path %></li>
               <% end %>
             </ul>
           </div>
@@ -64,7 +86,7 @@
 <div class="modal hide fade" id="NewBoard">
   <div class="modal-header">
     <a class="close" data-dismiss="modal">×</a>
-    <h3>Create a New Project</h3>
+    <h3>Crear un Nuevo Proyecto</h3>
   </div>
   <div class="modal-body">
     <%= form_for current_user.collections.build do |f| %>

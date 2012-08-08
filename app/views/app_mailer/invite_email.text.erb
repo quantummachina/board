@@ -1,19 +1,14 @@
-Hi!
+Hola!
 
-   Your friend <%= @inviter.name %> has invited you to collaborate in his new creative project!
+   <%= @inviter.name %> te ha invitado a colaborar en su proyecto de <%=@category.name%>: <%=link_to @collection.title, 'http://www.funkalab.com/collections/'+ @collection.id.to_s %>.
 
-   You can help <%= @inviter.name.split.first %> by collecting inspiration and posting ideas. Also check out other similar projects that can boost your creativity and help your ideas grow.
-
-   To begin, follow this link <%= @url %> and login with your email and the following password:
-
-Password: <%= @password %>
+   Para colaborar entra y crea una cuenta en <%= link_to 'Funkalab', 'http://www.funkalab.com' %>.
  
+   ¡Únete a una gran comunidad de creativos que colaboran, comparten ideas e inspiraciones!
 
-   Belong to a great community of creatives, who share ideas and inspirations!
-
-   For any comments or questions, drop us a line at contact@funkalab.com
+   Para cualquier comentario o pregunta, contáctanos en hello@funkalab.com.
 
 
-Thanks,
+Gracias,
 
-   Your friends at Funkalab.
+   Tus amigos de Funkalab.

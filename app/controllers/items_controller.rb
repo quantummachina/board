@@ -2,11 +2,13 @@ class ItemsController < ApplicationController
   before_filter :signed_in_user
 
   def create
-    
     @collection = Collection.find(params[:item][:collection_id])
-    @item = @collection.items.create(content: params[:item][:content], kind: params[:item][:kind])
+    @item = @collection.items.create(content: params[:item][:content], kind: params[:kind])
     @item.set
-
+    if @item.kind == 1 && @collection.cover == 0
+      @collection.update_attributes(cover: @item.id)
+    end
+#poner de cover
     respond_to do |format|
       format.html { redirect_to @collection }
       format.js
@@ -38,5 +40,11 @@ class ItemsController < ApplicationController
     @item.set
       flash[:success] = "Item successfully posted in #{@collection.title}"
       redirect_to @original
+  end
+
+  def setcover
+    @collection = Item.find(params[:id]).collection
+    @collection.update_attributes(cover: params[:id])
+    redirect_to @collection
   end
 end

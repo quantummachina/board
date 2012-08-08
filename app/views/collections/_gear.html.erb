@@ -1,3 +1,4 @@
+<%#recibe item%>
 <ul class="nav nav-pills gear">
 	<li class="dropdown" id="<%= "options"+item.id.to_s %>">
 		<a class="dropdown-toggle" data-toggle="dropdown" href="<%= "#options"+item.id.to_s%>">
@@ -5,7 +6,13 @@
 			<b class="dropdown-menu"></b>
 		</a>
 		<ul class="dropdown-menu">
-			<li>Share in Project:</li>
+			<% if owner? || current_user.admin %>
+				<li><%= link_to 'Establecer como Portada', controller: "items", action: "setcover", id: item.id if item.kind == 1 %></li>
+				<li class="divider"></li>
+				<li class="divider"></li>
+			<%end%>
+
+			<li>Compartir a proyecto:</li>
 			<li class="divider"></li>
 			<% for b in current_user.collections %>
 				<% if b.id != @board.id %>
@@ -21,7 +28,7 @@
 			<li class="divider"></li>
 			<li class="divider"></li>
 			<% if owner? || current_user.admin %>
-				<li><%= link_to 'x', item, method: :delete, title: "remove item" %></li>
+				<li><%= link_to 'x', item, method: :delete, title: "Eliminar item" %></li>
 			<% end %>
 		</ul>                                
 	</li>

@@ -7,6 +7,9 @@ class AttachmentsController < ApplicationController
 			if @attachment.save
 				@item = @collection.items.create(content: '*$&%#'+@attachment.id.to_s, kind: params[:kind])
 				@item.set
+				if @item.kind == 1 && @collection.cover == 0
+			      @collection.update_attributes(cover: @item.id)
+			    end
 				redirect_to @collection
 			else
 				redirect_to root_path

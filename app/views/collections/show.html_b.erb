@@ -1,0 +1,79 @@
+<% if !signed_in? %>
+	<div class="idea">
+		<h3>Para unirte a este proyecto <%= link_to 'inicia sesión', '/signin' %> o <%= link_to 'regístrate', root_path %>.</h3>
+	</div>
+	<br>
+<% end %>
+<div class="row-fluid">
+	<div class="span12">
+		<h1><%= @board.title %> <small><%= link_to @board.category.name, nav_path(category: @board.category.id)%></small></h1>
+		<h3>Por <%=link_to @board.user.name, @board.user %>
+			<% if @board.collaborators %>
+				<% @board.collaborators.each do |c| %>
+					<%=", "%><%=link_to c.name, c %>
+				<% end %>
+			<% end %>
+		</h3>
+		<%= render 'promote'%>
+		<%if signed_in? && (owner? || current_user.admin) %>
+			<small><%= link_to "Editar proyecto", edit_collection_path(@board) %></small></p>
+		<%end%>
+		</br>
+		<h2>La idea</h2>
+		<p class="lead"><%= @board.description %></p>
+
+
+		<div class="row help">
+			<div class='span6'>
+				<h1>Ayuda!</h1>
+				<p class="lead"><%=@board.needs%></p>
+			</div>
+			<div class='span4 offset1'><%= render 'i_can_help'%></div>
+		</div>
+		<br>
+
+		<div class="row">
+			<div class='span2'><%= render 'invite' %></div>
+			<%= render 'share' %>
+		</div>
+		<hr>
+		<%= if collaborates? then render 'shared/add_item' end%>
+		
+	</div>
+</div>
+<div id='user_collections'>
+	<%= render 'collections' %>
+</div>
+
+<% if @board.items.count==0 and @board.collaborations.empty? and owner? %>
+	<script type="text/javascript">
+	    $(window).load(function(){
+	        $('#Invite').modal('show');
+	    });
+	</script>
+<!--a class="btn" data-toggle="modal" href="#Invite" Launch Modal/a-->
+
+<div class="modal active" id="Invite">
+
+	<div class="modal-header">
+	  <a class="close" data-dismiss='modal' href="#">×</a>
+	  <br>
+	</div>
+
+	<div class="modal-body">
+	  <p><h2> Invita a un amigo a colaborar </h2></p>
+	  <%= form_tag '/suscribe' do %>
+		<%= hidden_field_tag 'board_id', @board.id %>
+		<%= text_field_tag 'email1', nil, placeholder:'correo electrónico', class: 'offset1'%>
+		<%= text_field_tag 'email2', nil, placeholder:'correo electrónico', class: 'offset1'%>
+		<%= text_field_tag 'email3', nil, placeholder:'correo electrónico', class: 'offset1'%>
+	</div>
+
+	<div class="modal-footer">
+	  	<a  data-dismiss='modal' href="#" class="btn">Cancelar</a>
+	  	<%= submit_tag 'Enviar invitaciones', class: "btn btn-primary" %>
+	  <% end %>
+
+	</div>
+</div>
+<%end%>

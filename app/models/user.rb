@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
     has_many :conversations
     has_many :reverse_conversations, foreign_key: "interlocutor_id", class_name: "Conversation"
     has_many :interlocutors, through: :reverse_conversations, source: :interlocutor
+    has_many :requests
+    has_many :notifications
 
     has_one :extra
 

@@ -1,5 +1,5 @@
 <% indexes = arr_4_cols(@board.items.where(kind: 1).count,@size) %>
-<h2> My Work </h2>
+<h2> Mi proyecto </h2>
 <div class="row-fluid">
 	<% indexes.each do |col| %>
 		<div class=<%="span#{@size}" %>>
@@ -19,7 +19,7 @@
 <hr>
 
 <% indexes = arr_4_cols(@board.items.where(kind: 0).count,@size) %>
-<h2> My Inspiration </h2>
+<h2> Mi inspiración </h2>
 <div class="row-fluid">
 	<% indexes.each do |col| %>
 		<div class=<%="span#{@size}" %>>

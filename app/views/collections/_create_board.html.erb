@@ -1,11 +1,11 @@
 <!-- is it in use?? -->
 
-<a class="btn" data-toggle="modal" href="#NewBoard" >Create Project</a>
+<a class="btn" data-toggle="modal" href="#NewBoard" >Crear</a>
 
 <div class="modal hide fade" id="NewBoard">
   <div class="modal-header">
     <a class="close" data-dismiss="modal">×</a>
-    <h3>Create a New Project</h3>
+    <h3>Crear un Nuevo Proyecto</h3>
   </div>
   <div class="modal-body">
   	<%= form_for current_user.collections.build do |f| %>
@@ -18,8 +18,8 @@
 	  	
   </div>
   <div class="modal-footer">
-    <a  data-dismiss="modal" href="#" class="btn btn-small">Close</a>
-    <%= f.submit "Create Project", class: "btn btn-small btn-primary" %>
+    <a  data-dismiss="modal" href="#" class="btn btn-small">Cancelar</a>
+    <%= f.submit "Crear Proyecto", class: "btn btn-small btn-primary" %>
     <% end %>
 
   </div>

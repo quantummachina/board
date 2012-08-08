@@ -1,10 +1,18 @@
 <!-- requires board, size -->
 <%= link_to board, class: "board-thumb" do %>
+	<%# to be removed for production this category safe%>
+	<%if board.category %>
+		<div class= "<%='b'+board.category_id.to_s%>">
+			<p><small><%= board.category.name %></small></p>
+		</div>
+	<%end%>
 	<p><%= board.title %></p>
 	
 	<p><small><%= board.description %></small></p>
-	<% if board.items.any? %>
-		<%= cover(board.items.first)%>
+	<% if board.cover != 0 %>
+		<%= cover(board.items.find(board.cover))%>
+	<%else%>
+		<%= image_tag(dummycover(board.category_id))%>
 	<% end %>
 
 <% end %>

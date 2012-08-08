@@ -1,5 +1,5 @@
 <%= form_for @conversation.lines.build(conversation_id: @conversation.id) do |f|%>
 	<%= f.hidden_field :conversation_id %>
 	<%= f.text_field :text %>
-	<%= f.submit "Send" %>
+	<%= f.submit "Enviar" %>
 <% end %>

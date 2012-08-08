@@ -1,0 +1,30 @@
+<% if signed_in? && owner? %>
+	<a data-toggle="modal" href="#addvacant" >+Agregar</a>
+	
+	<div class="modal hide fade" id="addvacant">
+	  <div class="modal-header">
+	    <a class="close" data-dismiss="modal">×</a>
+	    <h3>Agregar un colaborador</h3>
+	  </div>
+	  <div class="modal-body">
+
+	  	<%= form_for @board.vacants.build(collection_id: @board.id) do |f|%>
+	  	<div class='row'>
+	  	<div class = 'span4 offset1'>
+	  		<%=f.hidden_field :collection_id %>
+	  		<%= f.label :title, "¿Qué colaborador buscas?" %>
+	  	  <%= f.text_field :title, maxlength: 30, placeholder:" Ej. Animador", class: "span4 offset1"%>
+	  	  <%= f.label :description, "Describe como puede colaborar:" %>
+	  	  <%= f.text_area :description, maxlength: 200, placeholder:"Ej. Alguien interesado en experimentar con animación 2D", class: "span4", rows: 4%>
+	  	</div>
+	  </div>
+	  </div>
+	  <div class="modal-footer">
+	    <a  data-dismiss="modal" href="#" class="btn btn-small">Cerrar</a>
+
+	      <%= f.submit "Publicar", class: "btn btn-small btn-primary" %>
+
+	    <% end %>
+	  </div>
+	</div>
+<%end%>

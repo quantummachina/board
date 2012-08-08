@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Hola <%= @invited.name%>,</h1>
+<p>
+    <%=link_to @from.name, @from_url %> te ha invitado a colaborar en el proyecto <%=link_to @project.title, @project_url%>.
+</p>
+<br>
+<p>
+      "<%= @request.message %>"</p>
+      <br>
+<p>
+   ¡Excelente! Un creativo quiere colaborar contigo para realizar un mejor proyecto.
+</p>
+<p>Visita su proyecto <%=link_to @project.title, @project_url%> y si estás interesado, acepta su propuesta <%=link_to "aquí", @request_url %>.</p>
+<br>
+<p>Gracias,</p>
+   <p> Tus amigos de Funkalab.</p>
+  </body>
+</html>

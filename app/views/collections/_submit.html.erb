@@ -1,0 +1,5 @@
+<% if Vacant.exists?(collection_id: current_user.id + 999999) %>
+	<input class="btn btn-primary" name="commit" type="submit" value="Crear proyecto" />
+<%else%>
+	<input class="btn btn-primary disabled" name="commit" type="submit" value="Crear proyecto" />
+<%end%>

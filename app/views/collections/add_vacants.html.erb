@@ -1,0 +1,49 @@
+<% provide :title, "Nuevo proyecto" %> 
+<div class="row">
+  <div class = "span8 offset1">
+	<h1>Colaboración</h1>
+	<br>
+	<h3>Paso 2 de 2</h3>
+
+	<div class='row'>
+		<div class = 'span4'>
+			
+		  	<%= form_for @collection.vacants.build(collection_id: @collection.id) do |g|%>
+		  		<%=g.hidden_field :collection_id %>
+		  		<%=hidden_field_tag 'from', 1 %>
+		  		<%= g.label :title, "¿Qué colaborador buscas?" %>
+		  	  <%= g.text_field :title, maxlength: 30, placeholder:" Ej. Animador", class: "span4"%>
+		  	  <%= g.label :description, "Describe cómo puede colaborar:" %>
+		  	  <%= g.text_area :description, maxlength: 200, placeholder:"Ej. Alguien interesado en experimentar con animación 2D", class: "span4", rows: 4%><br>
+		  	  <%= g.submit "Agregar este colaborador", class: "btn btn-warning" %>
+			<%end%>
+		</div>
+		<div class= 'span4'>
+
+			<% @collection.vacants.each do |v|%>
+				<%if !v.id.nil? %>
+				<div class="row help2">
+					<div class='span3'>
+						<h3><%=v.title%></h3>
+						<p><%=v.description%></p>
+
+						
+						<%= link_to 'Descartar', {controller: 'collections', action: 'devacant', id: v.id} %>
+					</div>
+				</div>
+				<br>
+				<%end%>
+			<%end%>
+		</div>	
+
+	</div>
+	<hr>
+	<%if @collection.vacants.count < 1 %>
+		<%= link_to 'Publicar proyecto', '#', class: "btn btn-large btn-primary disabled" %>
+	<% else %>
+		<%= link_to 'Publicar proyecto', @collection, class: "btn btn-large btn-primary" %>
+	<% end %>
+  </div>
+</div>
+
+		

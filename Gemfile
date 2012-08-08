@@ -21,7 +21,7 @@ gem 'paperclip'
 gem 'aws-s3'
 gem 'aws-sdk'
 
-gem 'delayed_job_active_record'
+#gem 'delayed_job_active_record'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

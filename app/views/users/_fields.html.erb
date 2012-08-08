@@ -1,28 +1,29 @@
 
-  <%= f.label :name %>
+  <%= f.label :name, 'Nombre' %>
   <%= f.text_field :name %>
 
-  <%= f.label :email %>
-  <%= f.text_field :email, disabled: true %>
+  <%if @user.id.nil? then dis = false else dis = true end%>
+  <%= f.label :email, 'Correo Electrónico' %>
+  <%= f.text_field :email, disabled: dis %>
 
-  <%= f.label :password, 'New Password' %>
+  <%= f.label :password, 'Nueva Conttraseña' %>
   <%= f.password_field :password %>
 
-  <%= f.label :password_confirmation, "Confirm Password" %>
+  <%= f.label :password_confirmation, "Confirmar Contraseña" %>
   <%= f.password_field :password_confirmation %>
 
   <hr>
-  <%= f.label :city %>
+  <%= f.label :city, 'Ciudad' %>
   <%= f.text_field :city %>
 
-  <%= f.label :category_id, 'Creative fields' %>
-  <%= f.select :category_id, options_from_collection_for_select(@categories, "id", "name", selected: @user.category_id)  %>
+  <%= f.label :category_id, 'Áreas Creativas' %>
+  <%= f.select :category_id, options_from_collection_for_select(@categories, "id", "name", selected: (@user.category_id || 2))  %>
   <%= f.select :subcategory_id, options_from_collection_for_select(@categories, "id", "name", selected: @user.subcategory_id)  %>
-  <%= f.label :about %>
-  <%= f.text_area :about, maxlength: 200, placeholder:"Tell us about you. What do you do? What are your interests?", rows: 4, class: 'span5' %>
+  <%= f.label :about, 'Acerca de ti' %>
+  <%= f.text_area :about, maxlength: 200, placeholder:"Háblanos sobre ti ¿Qué te gusta hacer? ¿Cuáles son tus intereses?", rows: 4, class: 'span5' %>
 
-  <%= f.label :link_a, 'Where can we find more about you?' %>
-  <%= f.text_field :link_a, placeholder: 'Facebook, Twitter, web page...' %>
-<%= f.text_field :link_b, placeholder: 'Facebook, Twitter, web page...' %>
-<%= f.text_field :link_c, placeholder: 'Facebook, Twitter, web page...' %>
-<%= f.text_field :link_d, placeholder: 'Facebook, Twitter, web page...' %>
+  <%= f.label :link_a, '¿Dónde podemos conocer más sobre ti?' %>
+  <%= f.text_field :link_a, placeholder: 'Facebook, Twitter, página web...' %>
+<%= f.text_field :link_b, placeholder: 'Facebook, Twitter, página web...' %>
+<%= f.text_field :link_c, placeholder: 'Facebook, Twitter, página web...' %>
+<%= f.text_field :link_d, placeholder: 'Facebook, Twitter, página web...' %>

@@ -5,10 +5,68 @@
 $grayLighter:           #eee !default;
 $grayLight:             #999 !default;
 $orange:                #f89406 !default;
+$fuscia:				rgb(225, 41, 124) !default;
+$fuscia2:				rgb(201, 41, 175) !default;
+$cyan:					rgb(206, 255, 247)  !default;
+$art:					rgb(255, 54, 97)  !default;
+$music:					rgb(249, 176, 70)  !default;
+$design:				rgb(183, 42, 146)  !default;
+$film:					rgb(119, 203, 229)  !default;
+$technology:			rgb(82, 206, 194)  !default;
+
+div.idea{
+	background-color: $cyan;
+	padding: 17px 0px 17px 0px;
+	h3{color: #FFFFFF;}
+	small{color: #FFFFFF;}
+	a{color: $fuscia2;}
+
+}
+
+div.b22{//diseno
+	background-color: $design;
+	text-align: center;
+	width: 60px;
+	small{color: white;}
+}
+
+div.b7{//video
+	background-color: $film;
+	text-align: center;
+	width: 60px;
+	small{color: white;}
+}
+
+div.b5{//musica
+	background-color: $music;
+	text-align: center;
+	width: 60px;
+	small{color: white;}
+}
+
+div.b29{//arte
+	background-color: $art;
+	text-align: center;
+	width: 60px;
+	small{color: white;}
+}
+
+div.b17{//tecnologia
+	background-color: $technology;
+	text-align: center;
+	width: 60px;
+	small{color: white;}
+}
 
 div.help {
 	background-color: $grayLighter;
-	padding: 20px 0px 20px 0px;
+	padding: 15px 0px 15px 0px;
+}
+
+div.help2 {
+	background-color: $grayLighter;
+	padding: 15px 0px 15px 0px;
+	margin-left: 15px;
 }
 
 a.board-thumb {
@@ -78,6 +136,18 @@ a.hlp {
 	   }
    }
 
+a.qc {
+	background-color: $fuscia;
+	display: block;
+    padding: 5px 5px 5px 5px;
+    width: 130px;
+    text-align: center;
+    h3{color: white;}
+    &:link {text-decoration:none;}
+	&:visited {text-decoration:none;}
+    &:hover{border-color: $grayLight;}
+	}​
+
 a.help-btn {
 	background-color: $orange;
 	display: block;
@@ -87,6 +157,8 @@ a.help-btn {
 	&:visited {text-decoration:none;}
     &:hover{border-color: $grayLight;}
 	}​
+
+
 
 a.empty{
 	
