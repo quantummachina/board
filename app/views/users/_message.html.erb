@@ -1,4 +1,4 @@
-<% unless current_user?(@user) %>
+<% unless current_user?(@user) || !signed_in? %>
 
 	<a class='btn btn-primary' data-toggle="modal" href="#invite" >Invitar a proyecto</a>
 		
@@ -26,5 +26,10 @@
 		  </div>
 		</div>
 
-<%= link_to image_tag('',class: 'icon-envelope'), conversations_path(user_id: current_user.id, interlocutor_id: @user.id), :method => :post, class: 'btn btn-small' %>
+<%# link_to image_tag(' ' , class: 'icon-envelope'), conversations_path(user_id: current_user.id, interlocutor_id: @user.id), :method => :post, class: 'btn btn-small' %>
+
+<%= link_to conversations_path(user_id: current_user.id, interlocutor_id: @user.id), :method => :post, class: 'btn btn-small' do%>
+	<i class='icon-envelope'></i>
+<%end%>
+
 <% end %>

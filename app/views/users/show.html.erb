@@ -1,7 +1,13 @@
-<% provide :title, @user.name %> 
+<% provide :title, @user.name %>
+<% if !signed_in? %>
+	<div class="idea textc">
+		<h3>Para conectarte con este usuario <%= link_to 'inicia sesión', '/signin' %> o <%= link_to 'regístrate', root_path %>.</h3>
+	</div>
+	<br>
+<% end %>
 <div class="row-fluid">
 	<div class="span12">
-		<%if @user.id == current_user.id %>
+		<%if signed_in? && @user.id == current_user.id %>
 			<h1>Mi Laboratorio
 		<%else%>
 			<h1>Laboratorio de <%= @user.name%>
