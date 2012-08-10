@@ -9,7 +9,6 @@ class ItemsController < ApplicationController
     if @item.kind == 1 && @collection.cover == 0
       @collection.update_attributes(cover: @item.id)
     end
-#poner de cover
     respond_to do |format|
       format.html { redirect_to @collection }
       format.js
@@ -27,7 +26,20 @@ class ItemsController < ApplicationController
         att.destroy
       end
     end
+    iid = @item.id
     @item.destroy
+    if @collection.cover == iid
+      if @collection.items.empty?
+        @collection.update_attributes(cover: 0)
+      else
+        i = @collection.items.where('kind = ?',1).first
+        if !i.nil?
+          @collection.update_attributes(cover: i.id)
+        else
+          @collection.update_attributes(cover: 0)
+        end
+      end
+    end
     respond_to do |format|
       format.html { redirect_to @collection }
       format.js
