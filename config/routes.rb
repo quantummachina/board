@@ -13,6 +13,7 @@ Board::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/signin',  to: 'sessions#new'
   match '/about', to: 'static_pages#about'
+  match '/contact', to: 'static_pages#contact'
   match '/terms', to: 'static_pages#terms_of_service'
   match '/privacy', to: 'static_pages#privacy_policy'
   match '/invite', to: 'static_pages#invite'
