@@ -85,4 +85,8 @@ module ApplicationHelper
         raw markdown.render(text)
 	end
 
+	def wrapm(content, n)
+	    sanitize(raw(content.split.map{ |s| wrap_long_string(s, n) }.join(' ')))
+	end
+
 end

@@ -6,7 +6,7 @@
 			<% if line.id %>
 					
         				<dt><%=line.user.name%>:</dt>
-        				<dd><%=line.text %>
+        				<dd><%= make_nice(line.text) %>
 							<%#<h6>- = time_ago_in_words(line.created_at)  ago.</h6> %>
 						</dd>
 			

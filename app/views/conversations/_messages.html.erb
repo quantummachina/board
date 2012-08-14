@@ -8,10 +8,10 @@
 			<dd>
 				<p>
 					<% if (line == conversation.lines.first) && (line.user_id != current_user.id) %>
-						<b><%=line.user.name%>: <%=line.text %>  </b>
+						<b><%=line.user.name%>: <%= wrapm(line.text, 20) %>  </b>
 						 <% #<small = time_ago_in_words(line.created_at)  ago.</small>%>
 					<% else %>
-						<%=line.user.name%>: <%=line.text %>  <%#<small> = time_ago_in_words(line.created_at) > ago.</small>%>
+						<%=line.user.name%>: <%= wrapm(line.text,20) %>  <%#<small> = time_ago_in_words(line.created_at) > ago.</small>%>
 					<% end %>
 				</p>
 			</dd>
