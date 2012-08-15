@@ -34,13 +34,13 @@
 				<div class="row">
 					<div class="span6">
 
-						<h2>La idea</h2>
 						<%if @board.cover != 0%>
 							<%= wrap(default_OG_b(embedded_b(@board.items.find(@board.cover).content, 6))) %>
 						<%else%>
 							<%= image_tag(dummycover(@board.category_id))%>
 						<%end%>
 						<%= render 'share' %>
+						<h2>La idea</h2>
 						<p><%= @board.description %></p>
 
 						<%if @board.status == 5%>
@@ -52,7 +52,7 @@
 
 							<% if collaborates? %><%=render 'shared/add_item', kind: 1 %><% end%>
 						<%end %>
-						
+
 						<%= render 'wcollections' %>
 
 					</div>
