@@ -63,8 +63,6 @@ class CollectionsController < ApplicationController
 		@els = @collection.externallinks
 	end
 
-
-
 	def update
 		@collection = Collection.find(params[:id])
 		if @collection.update_attributes(params[:collection])
