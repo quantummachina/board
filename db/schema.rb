@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120801202550) do
+ActiveRecord::Schema.define(:version => 20120814191224) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -49,8 +49,9 @@ ActiveRecord::Schema.define(:version => 20120801202550) do
     t.datetime "updated_at",                     :null => false
     t.integer  "category_id", :default => 2
     t.boolean  "promoted",    :default => false
-    t.boolean  "status",      :default => false
     t.integer  "cover",       :default => 0
+    t.text     "conclusion",  :default => ""
+    t.integer  "status",      :default => 0
   end
 
   add_index "collections", ["user_id"], :name => "index_collections_on_user_id"
@@ -81,6 +82,13 @@ ActiveRecord::Schema.define(:version => 20120801202550) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "externallinks", :force => true do |t|
+    t.integer  "collection_id"
+    t.text     "link"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "extras", :force => true do |t|
     t.integer  "user_id"

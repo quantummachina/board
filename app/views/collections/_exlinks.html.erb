@@ -1,0 +1,19 @@
+		<%if @els%>
+			<% @els.each do |el|%>
+				<div class = 'row'>
+					<div class = 'span1 textd'>
+						<%=link_to 'borrar', el, method: :delete, remote: true %>
+					</div>
+					<div class = 'span 7'>
+						<%=make_nice(el.link)%>
+					</div>
+				</div>
+			<%end%>
+		<%end%>
+
+				<%= form_for @collection.externallinks.build(collection_id: @collection.id), remote: true do |e| %>
+			<%= e.hidden_field :collection_id %>
+			<%= e.label 'Puedes agregar enlaces externos de tus resultados'%>
+			<%= e.text_field :link, placeholder: 'Escribe un enlace externo'%>
+			<%= e.submit 'Agregar enlace' %>
+		<% end %>

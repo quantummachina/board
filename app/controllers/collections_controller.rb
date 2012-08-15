@@ -60,6 +60,7 @@ class CollectionsController < ApplicationController
 	def edit
 		@collection = Collection.find(params[:id])
 		@categories = Category.all
+		@els = @collection.externallinks
 	end
 
 
@@ -67,8 +68,12 @@ class CollectionsController < ApplicationController
 	def update
 		@collection = Collection.find(params[:id])
 		if @collection.update_attributes(params[:collection])
-	      flash[:success] = "Proyecto actualizado."
-	      redirect_to @collection
+			if @collection.status !=5
+	      		flash[:success] = "Proyecto actualizado."
+	      		redirect_to @collection
+	      	else
+				redirect_to edit_collection_path(@collection)
+	      	end
 	    else
 	      flash[:error] = 'Título y descripción no pueden estar vacíos' 
 	      render 'edit'
@@ -94,5 +99,19 @@ class CollectionsController < ApplicationController
   	def weekly
   		Genvar.find_by_name('weekly').update_attributes(value: params[:id])
   		redirect_to root_path
+  	end
+
+  	def switchstat
+  		@collection = Collection.find(params[:id])
+  		s = @collection.status
+  		if s == 0 then r = 1 else r = 0 end
+  		@collection.update_attributes(status: r)
+  		redirect_to @collection
+  	end
+
+  	def markfinished
+  		@collection = Collection.find(params[:id])
+  		@collection.update_attributes(status: 5)
+  		redirect_to edit_collection_path(@collection)
   	end
 end

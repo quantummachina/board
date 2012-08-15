@@ -14,6 +14,18 @@ module CollectionsHelper
 			false
 		end
 	end
+
+	def status(n)
+		case n
+		when 0
+			'En curso'
+		when 1
+			'En espera'
+		when 5
+			'Finalizado'
+		end
+		
+	end
 #CHANGE
 def og_image_b(content,size)
 		w=69*size + 12*(size-1)

@@ -1,5 +1,6 @@
 Board::Application.routes.draw do
 
+  resources :externallinks
   resources :sections
   resources :tls
   
@@ -35,6 +36,8 @@ Board::Application.routes.draw do
       get :promote
       get :successful
       get :weekly
+      get :switchstat
+      get :markfinished
     end
   end
   resources :collaborations

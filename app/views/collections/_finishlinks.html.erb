@@ -1,0 +1,10 @@
+<h1> Proyecto Completado </h1>
+
+<% if @board.externallinks %>
+	<h3>Sitios relacionados</h3>
+	<br>
+
+	<% @board.externallinks.each do |el| %>
+		<%= make_nice(el.link)%>
+	<%end%>
+<%end%>

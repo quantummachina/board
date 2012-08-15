@@ -17,7 +17,7 @@
 			<% end %>
 			<%= link_to @board.category.name, nav_path(category: @board.category.id), class: "label"%></p>
 
-			<p>Estatus: <%= if @board.status then "Concluido" else "En curso" end %></p>
+			<%= render 'status' %>
 
 			<%= render 'invite' %><%if signed_in? && (owner? || current_user.admin) %>
 			<%= link_to "Editar proyecto", edit_collection_path(@board), class: "btn btn-small" %>
@@ -42,40 +42,27 @@
 						<%end%>
 						<%= render 'share' %>
 						<p><%= @board.description %></p>
-						<h2>Progreso</h2>
 
-						<% if collaborates? %><%=render 'shared/add_item', kind: 1 %><% end%>
+						<%if @board.status == 5%>
+							<%= render 'finished' %>
+							<hr>
+						<%else%>
 
+							<h2>Progreso</h2>
+
+							<% if collaborates? %><%=render 'shared/add_item', kind: 1 %><% end%>
+						<%end %>
+						
 						<%= render 'wcollections' %>
 
 					</div>
 <%#lado derecho%>
 					<div class="span5 offset1">
-						
-						<div class="row">
-							<div class='span4'>
-								<h2>¿Colaboras?</h2>
-							</div>
-							<div class='span1'>
-								<br>
-								<%= render 'add_vacant'%>
-							</div>
-						</div>
-						<% @board.vacants.each do |v|%>
-							<%if !v.id.nil? %>
-							<div class="row help">
-								<div class='span3'>
-									<h3><%=v.title%></h3>
-									<p><%=v.description%></p>
-								</div>
-								<div class='span2 textc'>
-									<%= render 'i_can_help', id: v.id %>
-									<%= if owner? then link_to 'Descartar ', v, method: :delete end%>
-								</div>
-							</div>
-							<br>
-							<%end%>
-						<%end%>
+						<%if @board.status != 5 %>
+							<%= render 'collaborate'%>
+						<%else%>
+							<%= render 'finishlinks'%>
+						<% end %>
 					</div>
 				</div>
 			</div>
