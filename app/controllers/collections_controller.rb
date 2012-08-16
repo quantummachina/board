@@ -31,7 +31,7 @@ class CollectionsController < ApplicationController
 		@collection = current_user.collections.build( params[:collection] )
 
 	    if @collection.save
-
+	    	@collection.user.extra.toggle!(:newboard)
 	      flash[:success] = "Ahora crea las colaboraciones que necesites."
 	      redirect_to add_vacants_path({cid: @collection.id})
 

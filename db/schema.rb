@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120814191224) do
+ActiveRecord::Schema.define(:version => 20120816025625) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -93,10 +93,11 @@ ActiveRecord::Schema.define(:version => 20120814191224) do
   create_table "extras", :force => true do |t|
     t.integer  "user_id"
     t.integer  "notifications", :default => 0
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.integer  "messages",      :default => 0
     t.integer  "requests",      :default => 0
+    t.boolean  "newboard",      :default => false
   end
 
   add_index "extras", ["user_id"], :name => "index_extras_on_user_id", :unique => true
