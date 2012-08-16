@@ -35,7 +35,7 @@
 
 	  <br>
 
-	  <% if !session[:fb_access_token] %>
+	  <% if session[:fb_access_token] %>
 			
 			<%= link_to fb_invite_link(@board_id) do %> <%= image_tag 'fb2.jpg', class: :fb %>
    			<%end%><%= link_to "Invita por Facebook", fb_invite_link(@board_id), class: :fb %>
