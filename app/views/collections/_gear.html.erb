@@ -7,29 +7,12 @@
 		</a>
 		<ul class="dropdown-menu">
 			<% if owner? || current_user.admin %>
-				<li><%= link_to 'Establecer como Portada', controller: "items", action: "setcover", id: item.id if item.kind == 1 %></li>
-				<li class="divider"></li>
-				<li class="divider"></li>
-			<%end%>
-
-			<li>Compartir a proyecto:</li>
-			<li class="divider"></li>
-			<% for b in current_user.collections %>
-				<% if b.id != @board.id %>
-					<li><%= link_to b.title, controller: "items", action:"crosspost", original_id: @board.id, board_id: b.id, content: item.content %></li>
-				<% end %>
-			<% end %>
-			<li class="divider"></li>
-			<% for b in current_user.collaboratives %>
-				<% if b.id != @board.id %>
-					<li><%= link_to b.title, controller: "items", action:"crosspost", original_id: @board.id, board_id: b.id, content: item.content %></li>
-				<% end %>
-			<% end %>
-			<li class="divider"></li>
-			<li class="divider"></li>
-			<% if owner? || current_user.admin %>
-				<li><%= link_to 'x', item, method: :delete, title: "Eliminar item" %></li>
+				<li><%= link_to 'Establecer como Portada', controller: "items", action: "setcover", id: item.id if item.kind == 1 %></li>			
+				<li><%= link_to 'Borrar', item, method: :delete, title: "Eliminar item" %></li>
 			<% end %>
 		</ul>                                
 	</li>
 </ul>
+
+<%# link_to b.title, controller: "items", action:"crosspost", original_id: @board.id, board_id: b.id, content: item.content %>
+<%# for b in current_user.collaboratives %>

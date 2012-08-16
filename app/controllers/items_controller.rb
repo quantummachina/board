@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  def crosspost
+  def crosspost #Deshuso
     @original = Collection.find(params[:original_id])
     @collection = current_user.collections.find(params[:board_id])
     @item = @collection.items.create(content: params[:content])
