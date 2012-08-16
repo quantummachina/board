@@ -14,7 +14,7 @@
 		  	  <%= hidden_field_tag :collection_id, @board.id %>
 
 
-            <p><input id='name' name='name' placeholder='Escribe el nombre del usuario' type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source= '<%=@names.to_json%>'></p>
+            <p><input id='name' name='name' placeholder='Escribe el nombre del usuario' type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source= '<%=raw(@names.to_json)%>'></p>
 
           <%= text_field_tag :message, nil, placeholder: "¿Cómo te gustaría que colaborara?" , class: "span6"%>
 			<%= submit_tag "Enviar solicitud", class: "btn btn-small btn-primary" %>
