@@ -18,10 +18,10 @@
 				 <%= render 'message'%>
 				 <br>
 		<h3><%=@user.about%></h3>
-		<p><%= link_to @user.link_a, "http://"+@user.link_a, target: "_blank"  %></p>
-		<p><%= link_to @user.link_b, "http://"+@user.link_b, target: "_blank"  %></p>
-		<p><%= link_to @user.link_c, "http://"+@user.link_c, target: "_blank"  %></p>
-		<p><%= link_to @user.link_d, "http://"+@user.link_d, target: "_blank"  %></p>
+		<%= make_nice(@user.link_a)%>
+		<%= make_nice(@user.link_b)%>
+		<%= make_nice(@user.link_c)%>
+		<%= make_nice(@user.link_d)%>
 		<!--%= if current_user == @user then render 'collections/create_board' end %-->
 		<hr>
 		<h2>Proyectos Creados</h2>

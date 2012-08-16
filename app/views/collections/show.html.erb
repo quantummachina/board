@@ -30,7 +30,7 @@
 		</ul>
 		<div id="WoIContent" class="tab-content">
 			<div class="tab-pane fade in active" id="work">
-<%# division to new %>
+<%# division to work %>
 				<div class="row">
 					<div class="span6">
 
@@ -57,7 +57,7 @@
 						<%= render 'wcollections' %>
 
 					</div>
-<%#lado derecho%>
+<%#rigt side%>
 					<div class="span5 offset1">
 						<%if @board.status != 5 %>
 							<%= render 'collaborate'%>
@@ -67,7 +67,7 @@
 					</div>
 				</div>
 			</div>
-
+<%#Division to inspiration%>
 			<div class="tab-pane fade" id="inspiration">
 				<% if collaborates? %><%=render 'shared/add_item', kind: 0 %><% end%>
 				<%= render 'icollections' %>
