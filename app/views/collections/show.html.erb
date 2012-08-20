@@ -80,7 +80,7 @@
 	</div>
 </div>
 
-<% if current_user.extra.newboard %>
+<% if signed_in? && current_user.extra.newboard %>
 	<script type="text/javascript">
 	    $(window).load(function(){
 	        $('#invite2').modal('show');
