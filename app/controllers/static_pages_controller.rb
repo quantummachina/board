@@ -3,14 +3,8 @@ class StaticPagesController < ApplicationController
 		if !current_user.admin
 			redirect_to root_path
 		end
-			@user = User.new
-			@sprojects = Sproject.all
-			@s1 = Section.find_by_name('Landing front')
-			@s2 = Section.find_by_name('Landing success')
-			@s3 = Section.find_by_name('Landing weekly')
-			@s4 = Section.find_by_name('Landing how')
-			@s5 = Section.find_by_name('Landing why')
-			@p_feat= Collection.find(Genvar.find_by_name('weekly').value)
+		#@fbuser = FbGraph::User.new(session[:fb_user_uid], :access_token => session[:fb_access_token]).fetch
+		@fbuser = FbGraph::User.new('egroj.sarertnoc').fetch
 	end
 
 	def about
