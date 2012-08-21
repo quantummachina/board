@@ -8,7 +8,11 @@ class SessionsController < ApplicationController
   	user = User.find_by_email(params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       sign_in user
-      redirect_to root_path
+      if user.collections.count == 0
+        redirect_to root_path
+      else
+        redirect_to user
+      end
     else
       flash.now[:error] = 'Combinación inválida. Intenta nuevamente.' 
       render 'new'
