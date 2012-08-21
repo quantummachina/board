@@ -3,8 +3,8 @@ class StaticPagesController < ApplicationController
 		if !current_user.admin
 			redirect_to root_path
 		end
-		#@fbuser = FbGraph::User.new(session[:fb_user_uid], :access_token => session[:fb_access_token]).fetch
-		@fbuser = FbGraph::User.new('egroj.sarertnoc').fetch
+		@fbuser = FbGraph::User.new(session[:fb_user_uid], :access_token => session[:fb_access_token]).fetch
+		#@fbuser = FbGraph::User.new('egroj.sarertnoc').fetch
 	end
 
 	def about
