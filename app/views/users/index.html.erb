@@ -3,12 +3,14 @@
 		===USERS===
 		<table>
 			<tr>
+				<td>photo</td>
 				<td>id</td>
 				<td>name</td>
 				<td>email</td>
 				<td>suscription</td>
 		<% for  u in User.reorder('created_at DESC').all  do  %>
 			<tr>
+				<td><% if u.uid != 0 %><% f = FbGraph::User.new(u.uid, :access_token => session[:fb_access_token]).fetch%><%= image_tag f.picture %><%end%></td>
 				<td><%= u.id %></td>
 				<td><%= u.name %></td>
 				<td><%= u.email %></td>
