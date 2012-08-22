@@ -8,7 +8,6 @@
 				<td>name</td>
 				<td>email</td>
 				<td>suscription</td>
-				<td>facebook</td>
 		<% for  u in User.reorder('created_at DESC').all  do  %>
 			<tr>
 				<td><% if u.uid != 0 %><%= link_to 'https://www.facebook.com/' + u.uid.to_s do%>

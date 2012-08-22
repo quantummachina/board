@@ -1,5 +1,5 @@
 <% if @conversation %>
-	<h3><%= "Con: " + (if @conversation.interlocutor.id != current_user.id then @conversation.interlocutor.name else @conversation.user.name end) %></h3>
+	<h3>Con: <%= (if @conversation.interlocutor.id != current_user.id then link_to @conversation.interlocutor.name, @conversation.interlocutor else link_to @conversation.user.name, @conversation.user end) %></h3>
 	<%= render "new_line" %>
 	<dl class="dl-horizontal">
 		<% for line in @conversation.lines do %>
@@ -9,7 +9,7 @@
         				<dd><%= make_nice(line.text) %>
 							<%#<h6>- = time_ago_in_words(line.created_at)  ago.</h6> %>
 						</dd>
-			
+			<hr>
 			<% end %>
 		<% end %>
 	</dl>

@@ -4,7 +4,7 @@
 		<dt>
 			<h4><%= link_to "Con: "+ (if conversation.interlocutor.id != current_user.id then conversation.interlocutor.name else conversation.user.name end), controller: "conversations", action: "index", id: conversation.id  %></h4>
 		</dt>
-		<% for line in conversation.lines.all(limit: 2) do %>
+		<% for line in conversation.lines.all(limit: 1) do %>
 			<dd>
 				<p>
 					<% if (line == conversation.lines.first) && (line.user_id != current_user.id) %>
