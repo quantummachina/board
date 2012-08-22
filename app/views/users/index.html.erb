@@ -3,16 +3,21 @@
 		===USERS===
 		<table>
 			<tr>
+				<td>photo</td>
 				<td>id</td>
 				<td>name</td>
 				<td>email</td>
 				<td>suscription</td>
+				<td>facebook</td>
 		<% for  u in User.reorder('created_at DESC').all  do  %>
 			<tr>
+				<td><% if u.uid != 0 %><%= link_to '', 'https://www.facebook.com/' + u.uid.to_s do%>
+					<%=%>image_tag 'https://graph.facebook.com/' + u.uid.to_s + '/picture' %><%end%><%end%></td>
 				<td><%= u.id %></td>
 				<td><%= u.name %></td>
 				<td><%= u.email %></td>
 				<td><%= time_ago_in_words(u.created_at) %></td>
+				<td><%= %></td>
 			</tr>
 		<% end %>
 		</table>
