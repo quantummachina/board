@@ -1,0 +1,20 @@
+<!--to be deleted if not used-->
+<% for conversation in @conversations do %>
+	<dl>
+		<dt>
+			<h4><%= link_to "Con: "+ (if conversation.interlocutor.id != current_user.id then conversation.interlocutor.name else conversation.user.name end), controller: "conversations", action: "index", id: conversation.id  %></h4>
+		</dt>
+		<% for line in conversation.lines.all(limit: 1) do %>
+			<dd>
+				<p>
+					<% if (line == conversation.lines.first) && (line.user_id != current_user.id) %>
+						<b><%=line.user.name%>: <%= wrapm(line.text, 20) %>  </b>
+						 <% #<small = time_ago_in_words(line.created_at)  ago.</small>%>
+					<% else %>
+						<%=line.user.name%>: <%= wrapm(line.text,20) %>  <%#<small> = time_ago_in_words(line.created_at) > ago.</small>%>
+					<% end %>
+				</p>
+			</dd>
+		<% end %>
+	</dl>
+<% end %>

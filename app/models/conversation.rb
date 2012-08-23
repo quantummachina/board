@@ -3,4 +3,6 @@ class Conversation < ActiveRecord::Base
     belongs_to :user
     belongs_to :interlocutor, class_name: "User"
     has_many :lines, dependent: :destroy
+
+    #scope :desc, order("conversation.lines.first DESC")
 end
