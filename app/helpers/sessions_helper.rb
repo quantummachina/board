@@ -1,3 +1,4 @@
+# encoding: utf-8
 module SessionsHelper
 
 	def sign_in(user)
@@ -24,7 +25,7 @@ module SessionsHelper
 	def signed_in_user
     	unless signed_in?
       		store_location
-      		redirect_to signin_path, notice: "Please sign in."
+      		redirect_to signin_path, notice: "Por favor inicia sesión."
     	end
   	end
 
@@ -34,8 +35,8 @@ module SessionsHelper
 
 	def redirect_back_or(default)
     redirect_to(session[:return_to] || default)
-    #session.delete(:return_to) #TESTS
-    clear_return_to
+    session.delete(:return_to)
+    #clear_return_to
 	end
 
     def store_location

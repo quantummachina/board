@@ -1,5 +1,7 @@
 # encoding: utf-8
 class RequestsController < ApplicationController
+  before_filter :signed_in_user
+  #before_filter :correct_user, only: :destroy
 
 	def invite
 		if params.has_key?(:interlocutor_id)

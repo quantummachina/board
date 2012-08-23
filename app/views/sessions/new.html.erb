@@ -19,6 +19,15 @@
 
 	<% end %>
 
+	O
+	<br>
+	<div class='fb'>
+		   	<%= link_to user_omniauth_authorize_path(:facebook) do %>
+		   		<%= image_tag 'fb2.jpg', class: :fbb %>
+     		<%end%>
+     		<%= link_to 'Inicia sesión con Facebook' , user_omniauth_authorize_path(:facebook), class: "fbb" %>
+	</div>
+
 </div>
 </div>
 </div>

@@ -1,6 +1,6 @@
 class ConversationsController < ApplicationController
   before_filter :signed_in_user
-  before_filter :correct_user, only: :destroy
+  #before_filter :correct_user, only: :destroy
 
   def icanhelp #temporalmente fuera
     c1 = current_user.conversations.find_by_interlocutor_id(params[:interlocutor_id])
