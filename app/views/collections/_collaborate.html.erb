@@ -1,24 +1,42 @@
 <div class="row">
-							<div class='span4'>
-								<h2>¿Colaboras?</h2>
-							</div>
-							<div class='span1'>
-								<br>
-								<%= render 'add_vacant'%>
-							</div>
-						</div>
-						<% @board.vacants.each do |v|%>
-							<%if !v.id.nil? %>
-							<div class="row help">
-								<div class='span3'>
-									<h3><%=v.title%></h3>
-									<p><%=v.description%></p>
-								</div>
-								<div class='span2 textc'>
-									<%= render 'i_can_help', id: v.id %>
-									<%= if owner? then link_to 'Descartar ', v, method: :delete end%>
-								</div>
-							</div>
-							<br>
-							<%end%>
-						<%end%>
+	<div class='span4'>
+		<h2>¿Colaboras?</h2>
+	</div>
+	<div class='span1'>
+		<br>
+		<%= render 'add_vacant'%>
+	</div>
+</div>
+<%if @board.vacants.count > 0 %>
+	<% @board.vacants.each do |v|%>
+		<%if !v.id.nil? %>
+		<div class="row help">
+			<div class='span3'>
+				<h3><%=v.title%></h3>
+				<p><%=v.description%></p>
+			</div>
+			<div class='span2 textc'>
+				<%= render 'i_can_help', id: v.id %>
+				<%= if owner? then link_to 'Descartar ', v, method: :delete end%>
+			</div>
+		</div>
+		<br>
+		<%end%>
+	<%end%>
+<%else%>
+	<div class="row help">
+		<div class='span3'>
+			<h3>Colaborador</h3>
+			<%if @board.user.id != current_user.id %>
+				<p>Éste proyecto no ha publicado colaboradores específicos. ¡Tú puedes proponer!</p>
+			<%else%>
+				<p>Recuerda que ésta es una plataforma de colaboración. Agrega creativos puedan colaborar en tu proyecto.</p>
+			<%end%>
+		</div>
+		<div class='span2 textc'>
+			<%= render 'i_can_help', id: 0 %>
+			<%# if owner? then "Publica colaboraciones específicas" end%>
+		</div>
+	</div>
+	<br>
+<%end%>

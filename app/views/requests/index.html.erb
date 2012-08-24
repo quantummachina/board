@@ -5,7 +5,11 @@
 	<div class="span6">
 		<% for r in @requests do %>
 			<% if r.invite == false %>
-				<p><%= link_to User.find(r.from_id).name, User.find(r.from_id) %> quiere colaborar contigo en tu proyecto <%= link_to r.collection.title, r.collection %>. Ha contestado a la vacante de <strong><%=Vacant.find(r.vacant_id).title%></strong>.</p>
+				<p><%= link_to User.find(r.from_id).name, User.find(r.from_id) %> quiere colaborar contigo en tu proyecto <%= link_to r.collection.title, r.collection %>. 
+					<%if r.vacant_id != 0 %>
+						Ha contestado a la vacante de <strong><%=Vacant.find(r.vacant_id).title%></strong>.
+					<%end%>
+				</p>
 			<%else%>
 				<p><%= link_to User.find(r.from_id).name, User.find(r.from_id) %> te ha invitado a colaborar en su proyecto <%= link_to r.collection.title, r.collection %></p>
 			<%end%>

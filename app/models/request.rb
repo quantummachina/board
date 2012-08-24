@@ -3,4 +3,6 @@ class Request < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :collection
+
+  default_scope order: 'requests.created_at DESC'
 end
