@@ -1,5 +1,7 @@
 Board::Application.routes.draw do
 
+  resources :comments
+
   resources :externallinks
   resources :sections
   resources :tls

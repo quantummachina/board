@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
     has_many :interlocutors, through: :reverse_conversations, source: :interlocutor
     has_many :requests
     has_many :notifications
+    has_many :comments
 
     has_one :extra
 

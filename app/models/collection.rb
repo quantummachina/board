@@ -6,6 +6,7 @@ class Collection < ActiveRecord::Base
   has_many :collaborators, through: :collaborations, source: :user
   has_many :vacants, dependent: :destroy
   has_many :externallinks, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   belongs_to :user
   belongs_to :category
