@@ -14,6 +14,9 @@
 	<% @board.comments.each do |c|%>
 		<%if c.id %>
 			<%= link_to c.user.name, c.user %>: <%= c.text%>
+			<% if signed_in? && (c.user.id == current_user.id || current_user.admin || current_user.id == @board.user.id) %>
+			<div class='textd'><p><small><%= link_to 'Borrar comentario', c, method: :delete %></small></p></div>
+			<%end%>
 			<hr>
 		<%end%>
 	<% end %>
