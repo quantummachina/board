@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Hola <%=@to.name%>,</h1>
+<p>
+<%=@from.name%> ha comentado en tu proyecto <%= link_to @project.title, @project_url %>:
+</p>
+<br>
+<p>
+"<%=@text%>"</p>
+<br>
+<p>Gracias,</p>
+   <p> Tus amigos de Funkalab.</p>
+  </body>
+</html>
