@@ -1,8 +1,9 @@
 <!--to be deleted if not used-->
 <% for conversation in @conversations do %>
+	<% if conversation.unread == current_user.id then mclass = 'umessage' else mclass = 'message' end %>
 	<dl>
 		<dt>
-			<%= link_to conversations_path(id: conversation.id), class: "message" do %>
+			<%= link_to conversations_path(id: conversation.id), class: mclass do %>
 				<h4>Con: <%=(if conversation.interlocutor.id != current_user.id then conversation.interlocutor.name else conversation.user.name end)%></h4>
 				<% for line in conversation.lines.all(limit: 1) do %>
 			

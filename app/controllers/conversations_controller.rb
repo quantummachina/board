@@ -24,9 +24,14 @@ class ConversationsController < ApplicationController
   def index
     current_user.extra.update_attributes(messages: 0)
     session[:notifications] = 0
+
+    if params[:id]
+      @conversation = Conversation.find(params[:id])
+      @conversation.update_attributes(unread: 0) if @conversation.unread == current_user.id
+    end
+
     cs = current_user.conversations + current_user.reverse_conversations
     @conversations = cs.sort_by{ |c| c.lines}.reverse
-    @conversation = if params[:id] then Conversation.find(params[:id]) else @conversations.first end
   end
 
   def show

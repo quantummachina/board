@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120816025625) do
+ActiveRecord::Schema.define(:version => 20120823233509) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -59,8 +59,9 @@ ActiveRecord::Schema.define(:version => 20120816025625) do
   create_table "conversations", :force => true do |t|
     t.integer  "user_id"
     t.integer  "interlocutor_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.integer  "unread",          :default => 0
   end
 
   add_index "conversations", ["interlocutor_id"], :name => "index_conversations_on_interlocutor_id"
