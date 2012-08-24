@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120824020904) do
+ActiveRecord::Schema.define(:version => 20120824070741) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -160,10 +160,10 @@ ActiveRecord::Schema.define(:version => 20120824020904) do
     t.integer  "from_id"
     t.integer  "collection_id"
     t.integer  "vacant_id"
-    t.string   "message"
+    t.text     "message",       :limit => 255, :default => ""
     t.boolean  "invite"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
   end
 
   create_table "sections", :force => true do |t|

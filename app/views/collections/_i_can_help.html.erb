@@ -16,7 +16,7 @@
 		  	  <%= hidden_field_tag :collection_id, @board.id %>
 		  	  <%= hidden_field_tag :vacant_id, id %>
 
-		      <%= text_field_tag :message, nil, placeholder: "Dile a " + @board.user.name + " cómo puedes ayudar con este proyecto." , class: "span6"%>
+		      <%= text_area_tag :message, nil, placeholder: "Dile a " + @board.user.name + " cómo puedes ayudar con este proyecto." , rows: 3, class: "span6"%>
 		  </div>
 		  <div class="modal-footer">
 		    <a  data-dismiss="modal" href="#" class="btn btn-small">Cerrar</a>
