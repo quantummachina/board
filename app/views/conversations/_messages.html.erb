@@ -1,6 +1,6 @@
 <!--to be deleted if not used-->
 <% for conversation in @conversations do %>
-	<% if conversation.unread == current_user.id then mclass = 'umessage' else mclass = 'message' end %>
+	<% if conversation.unread == current_user.id then mclass = 'umessage' else mclass = 'rmessage' end %>
 	<dl>
 		<dt>
 			<%= link_to conversations_path(id: conversation.id), class: mclass do %>
