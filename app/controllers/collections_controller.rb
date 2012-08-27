@@ -9,7 +9,7 @@ class CollectionsController < ApplicationController
 			@users = User.all
 		else
 			@boards = Category.find(category).collections.order('created_at DESC')
-			@users = Category.find(category).users
+			@users = Category.find(category).users + Category.find(category).subusers
 		end
 		respond_to do |format|
 	      format.html { }
