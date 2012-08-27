@@ -17,7 +17,9 @@
 			</div>
 			<div class='span2 textc'>
 				<%= render 'i_can_help', id: v.id %>
-				<%= if owner? then link_to 'Descartar ', v, method: :delete end%>
+				<% if owner? %>
+					<%=link_to 'Editar', edit_vacant_path(v) %>/<%=link_to 'Borrar', v, method: :delete%>
+				<%end%>
 			</div>
 		</div>
 		<br>

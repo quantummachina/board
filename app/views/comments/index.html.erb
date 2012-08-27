@@ -1,0 +1,24 @@
+<div class="row-fluid">
+	<div class="span12">
+		===COMENTARIOS===
+		<table>
+			<tr>
+				<td>photo</td>
+				<td>user</td>
+				<td>project</td>
+				<td>comment</td>
+				<td>date</td>
+			</tr>
+		<% for  c in Comment.all  do  %>
+			<tr>
+				<td><% if c.user.uid != 0 %><%= link_to 'https://www.facebook.com/' + c.user.uid.to_s do%>
+					<%=image_tag 'https://graph.facebook.com/' + c.user.uid.to_s + '/picture' %><%end%><%end%></td>
+				<td><%= link_to c.user.name, c.user %></td>
+				<td><%= link_to c.collection.title, c.collection %></td>
+				<td><%= c.text %></td>
+				<td><%= time_ago_in_words(c.created_at) %></td>
+			</tr>
+		<% end %>
+		</table>
+	</div>
+</div>

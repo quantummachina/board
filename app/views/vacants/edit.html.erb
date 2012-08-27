@@ -1,0 +1,17 @@
+<% provide :title, "Editar colaboración" %> 
+<div class="row">
+  <div class = "span6 offset3">
+	<h1>Editar ficha de colaboración</h1>
+	<h2><%= @vacant.title %></h2>
+
+		<hr>
+
+	  	<%= form_for(@vacant) do |f| %>
+	  		<%= render 'fields', f: f %>
+	  		<br>
+			<%= f.submit "Actualizar" %>
+		<% end %>
+		<%= link_to "Eliminar", @vacant, method: :delete %>
+	
+  </div>
+</div>

@@ -1,3 +1,4 @@
+# encoding: utf-8
 class VacantsController < ApplicationController
   before_filter :signed_in_user
 
@@ -30,6 +31,21 @@ class VacantsController < ApplicationController
     @collection = @vacant.collection
     @vacant.destroy
       redirect_to @collection
+  end
+
+  def edit
+    @vacant = Vacant.find(params[:id])
+  end
+
+  def update
+    @vacant = Vacant.find(params[:id])
+    if @vacant.update_attributes(params[:vacant])
+      flash[:success] = "Colaboración actualizada."
+      redirect_to @vacant.collection
+    else
+      flash[:error] = 'Los campos no pueden estar vacíos' 
+        render 'edit'
+    end
   end
 
 end
