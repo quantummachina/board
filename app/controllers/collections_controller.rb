@@ -73,7 +73,7 @@ class CollectionsController < ApplicationController
 				redirect_to edit_collection_path(@collection)
 	      	end
 	    else
-	      flash[:error] = 'Título y descripción no pueden estar vacíos' 
+	      flash[:error] = 'Los campos  no pueden estar vacíos' 
 	      render 'edit'
     	end
 	end

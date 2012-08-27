@@ -8,7 +8,7 @@
 	<%end%>
 	<p><%= board.title %></p>
 	
-	<p><small><%= board.description %></small></p>
+	<p><small><%= board.idea %></small></p>
 	<% if board.cover != 0 %>
 		<%= cover(board.items.find(board.cover))%>
 	<%else%>

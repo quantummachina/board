@@ -1,5 +1,5 @@
 class Collection < ActiveRecord::Base
-  attr_accessible :description, :title, :user_id, :category_id, :needs, :status, :cover, :conclusion
+  attr_accessible :description, :title, :user_id, :category_id, :needs, :status, :cover, :conclusion, :idea
 
   has_many :items, dependent: :destroy
   has_many :collaborations, dependent: :destroy
@@ -12,7 +12,8 @@ class Collection < ActiveRecord::Base
   belongs_to :category
 
   validates :title, presence: true
-  validates :description, presence: true
+  #validates :description, presence: true
+  validates :idea, presence: true
 
   default_scope order: 'collections.promoted DESC'
 end

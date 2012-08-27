@@ -1,5 +1,7 @@
 		<%= f.label :title, 'Título' %>
 		<%= f.text_field :title, maxlength: 50, placeholder:"Dale un nombre a tu idea. No te preocupes, lo puedes cambiar después.", class: "span6"%>
+		<%= f.label :idea, "Idea" %>
+		<%= f.text_area :idea, maxlength: 160, placeholder:"Explícanos brevemente tu idea. Este texto aparecerá en portada. (160 caracteres)", rows: 2 , class: "span6" %>
 		<%= f.label :description, "Descripción" %>
-		<%= f.text_area :description, maxlength: 200, placeholder:"Explícanos brevemente tu idea y el producto final que quieres lograr. (Ej. un comic, un blog, un video).", rows: 4 , class: "span6" %>
+		<%= f.text_area :description, maxlength: 1000, placeholder:"Describe tu idea. Recuerda ser claro e incluir que producto quieres realizar. (1000 caracteres)", rows: 6 , class: "span6" %>
 	 	<%= f.label :category_id, "Categoría:" %>

@@ -42,7 +42,16 @@
 						<%end%>
 						<%= render 'share' %>
 						<h2>La idea</h2>
-						<p><%= @board.description %></p>
+						<p><%= @board.idea %></p>
+						<% if @board.description == ''%>
+							<% if signed_in? && owner? %>
+								<h2>Descripción</h2>
+								<p><%= link_to '¡Por favor provee una descripción de tu proyecto!', edit_collection_path(@board) %></p>
+							<%end%>
+						<%else%>
+							<h2>Descripción</h2>
+							<p><%= @board.description %></p>
+						<%end%>
 
 						<%if @board.status == 5%>
 							<%= render 'finished' %>
