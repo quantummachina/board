@@ -23,6 +23,7 @@ Board::Application.routes.draw do
   match '/suscribe', to: 'collaborations#suscribe'
   match '/nav', to: 'collections#index'
   match '/secure', to: 'static_pages#secure'
+  match '/admin', to: 'static_pages#admin'
   match '/i_can_help', to: 'requests#icanhelp'#
   match '/invite_to_collaborate', to: 'requests#invite'#'conversations#icanhelp'
   match '/add_vacants', to: 'collections#add_vacants'

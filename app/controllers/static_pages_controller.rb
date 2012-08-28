@@ -35,4 +35,13 @@ class StaticPagesController < ApplicationController
 	def invite
 		@board_id = params[:board_id]
 	end
+
+	def admin
+		if !current_user.admin
+			redirect_to root_path
+		end
+		p = HTTParty.get('http://hellokisses.com/')
+		s = p.to_s
+		@i = s[/http:\/\/imc1.hellokisses.com\/.+?\.(jpg|jpeg|bmp|gif|png)/]
+	end
 end

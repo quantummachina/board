@@ -13,7 +13,7 @@
 				<td><% if u.uid != 0 %><%= link_to 'https://www.facebook.com/' + u.uid.to_s do%>
 					<%=image_tag 'https://graph.facebook.com/' + u.uid.to_s + '/picture' %><%end%><%end%></td>
 				<td><%= u.id %></td>
-				<td><%= u.name %></td>
+				<td><%= link_to u.name, u %></td>
 				<td><%= u.email %></td>
 				<td><%= time_ago_in_words(u.created_at) %></td>
 				<td><%= %></td>

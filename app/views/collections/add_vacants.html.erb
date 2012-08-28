@@ -1,6 +1,6 @@
 <% provide :title, "Nuevo proyecto" %> 
 <div class="row">
-  <div class = "span8 offset1">
+  <div class = "span8 offset">
 	<h1>Colaboración</h1>
 	<br>
 	<h3>Paso 2 de 2</h3>
@@ -43,6 +43,9 @@
 	<% else %>
 		<%= link_to 'Publicar proyecto', @collection, class: "btn btn-large btn-primary" %>
 	<% end %>
+  </div>
+  <div class='span4'>
+  	<%= render 'choro'%>
   </div>
 </div>
 
