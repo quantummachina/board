@@ -7,15 +7,17 @@
   <!--link rel="icon" href="/logo16x16.jpg" type="image/x-icon" /-->
   <!--link rel="shortcut icon" href="/logo16x16.jpg" type="image/x-icon" /-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="La comunidad para colaborar en tus proyectos de Música, Video, Arte, Diseño y Tecnología.">
+
   <meta name="author" content="">
 
     <%if @board %>
+  <meta name="description" content=<%=@board.description%>>
   <meta property="og:image" content=<%="http://www.funkalab.com/assets/" + dummycover(@board.category_id)%> />
   <meta property="og:url" content=<%="http://www.funkalab.com/collections/" + @board.id.to_s%> />
   <meta property="og:title" content=<%=@board.title%> />
   <meta property="og:description" content=<%=@board.description%> />
     <%else%>
+  <meta name="description" content="La comunidad para colaborar en tus proyectos de Música, Video, Arte, Diseño y Tecnología.">
   <meta property="og:image" content="http://www.funkalab.com/assets/logo75x75.png" />
   <meta property="og:url" content="http://www.funkalab.com" />
   <meta property="og:title" content="Funkalab" />
