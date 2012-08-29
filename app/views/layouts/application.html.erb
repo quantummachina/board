@@ -12,12 +12,14 @@
 
   <%if @board %>
   <meta property="og:image" content=<%="http://www.funkalab.com/assets/" + dummycover(@board.category_id)%> />
+  <meta property="og:url" content=<%="http://www.funkalab.com/collections/" + @board.id.to_s%> />
   <%else%>
   <meta property="og:image" content="http://www.funkalab.com/assets/logo75x75.png" />
+  <meta property="og:url" content="http://www.funkalab.com" />
   <%end%>
 
   <meta property="og:title" content="Funkalab." />
-  <meta property="og:url" content="http://www.funkalab.com" />
+
   <meta property="og:description" content="La comunidad para colaborar en tus proyectos de Música, Video, Arte, Diseño y Tecnología." />
 
 
