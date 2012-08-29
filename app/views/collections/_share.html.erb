@@ -1,5 +1,8 @@
 <div class='row'>
-<div class='span1 offset2'>
+<div class='span1'>
+	<div class="fb-like" data-href=<%="http://www.funkalab.com/collections/" + @board.id.to_s%> data-send="true" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+</div>
+<div class='span1 offset3'>
     <%= link_to fb_share_project, target: '_blank' do %>
 
       <% image_tag 'fb_share.png' %>
