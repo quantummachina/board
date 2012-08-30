@@ -1,3 +1,4 @@
+# encoding: utf-8
 class AppMailer < ActionMailer::Base
   default from: "hello@funkalab.com"
 
@@ -66,4 +67,10 @@ class AppMailer < ActionMailer::Base
     mail(:to => @to.email, :subject => @from.name + " ha comentado en tu proyecto " + @project.title)
   end
 #http://localhost:3000/conversations?interlocutor_id=6&user_id=10
+
+  def password_restar_email(user, pass)
+    @user = user
+    @password = pass
+    mail(:to => @user.email, :subject => "Tu nueva contraseña en Funkalab")
+  end
 end

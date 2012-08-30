@@ -54,6 +54,24 @@ class UsersController < ApplicationController
     end
   end  
 
+  def reset_password
+    u = User.find_by_email(params[:email])
+    if u
+      np= ('a'..'z').to_a.shuffle[0..5].join
+      u.update_attributes(password: np, password_confirmation: np)
+
+      AppMailer.password_restar_email(u, np).deliver
+
+      flash[:success] = 'Tu nueva contraseña hasido enviada exitosamente.' 
+      redirect_to '/signin'
+      
+    else
+      flash[:error] = 'Este correo electrónico no está registrado en Funkalab. Verifícalo por favor.' 
+      redirect_to '/reset_password'
+    end
+    
+  end
+
 private
 
   def search_pending(email, id)

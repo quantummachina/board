@@ -27,6 +27,8 @@ Board::Application.routes.draw do
   match '/i_can_help', to: 'requests#icanhelp'#
   match '/invite_to_collaborate', to: 'requests#invite'#'conversations#icanhelp'
   match '/add_vacants', to: 'collections#add_vacants'
+  match '/reset_password', to: 'static_pages#reset_password'
+  match '/rstpss', to: 'users#reset_password'
   
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

@@ -44,4 +44,8 @@ class StaticPagesController < ApplicationController
 		s = p.to_s
 		@i = s[/http:\/\/imc1.hellokisses.com\/.+?\.(jpg|jpeg|bmp|gif|png)/]
 	end
+
+	def reset_password
+			
+	end
 end
