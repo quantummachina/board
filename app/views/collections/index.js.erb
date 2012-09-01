@@ -1,2 +1,3 @@
-$("#users").html("<%= escape_javascript(render 'shared/users', users:@users) %>")
-$("#collections").html("<%= escape_javascript(render 'shared/boards', boards:@boards) %>")
+$("#promoboards").html("<%= escape_javascript(render 'shared/boards', boards:@promoboards) %>")
+$("#finishedboards").html("<%= escape_javascript(render 'shared/boards', boards:@finishedboards) %>")
+$("#allboards").html("<%= escape_javascript(render 'shared/boards', boards:@allboards) %>")

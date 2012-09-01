@@ -1,9 +1,20 @@
 # encoding: utf-8
 class UsersController < ApplicationController
   def index
-    if !current_user.admin
-      redirect_to root_path
+    category = params[:category] || ""
+    @categories = Category.all
+    #@size = 3 #boards size
+    if category == ""
+      #@boards = Collection.order('created_at DESC').all
+      @users = User.all
+    else
+      #@boards = Category.find(category).collections.order('created_at DESC')
+      @users = Category.find(category).users + Category.find(category).subusers
     end
+    respond_to do |format|
+        format.html { }
+        format.js
+      end
   end
 
 	def new

@@ -3,8 +3,18 @@ class StaticPagesController < ApplicationController
 		if !current_user.admin
 			redirect_to root_path
 		end
-		@fbuser = FbGraph::User.new(session[:fb_user_uid], :access_token => session[:fb_access_token]).fetch
-		#@fbuser = FbGraph::User.new('egroj.sarertnoc').fetch
+		category = params[:category] || ""
+		@categories = Category.all
+		@size = 3 #boards size
+		if category == ""
+			@allboards = Collection.reorder('created_at DESC').all
+			@finishedboards = Collection.order('updated_at DESC').find_all_by_status(5)
+			@promoboards = Collection.order('updated_at DESC').find_all_by_promoted(true)
+		else
+			@allboards = Category.find(category).collections.reorder('created_at DESC')
+			@finishedboards = Category.find(category).collections.order('updated_at DESC').find_all_by_status(5)
+			@promoboards = Category.find(category).collections.order('updated_at DESC').find_all_by_promoted(true)
+		end
 	end
 
 	def about
@@ -34,15 +44,6 @@ class StaticPagesController < ApplicationController
 
 	def invite
 		@board_id = params[:board_id]
-	end
-
-	def admin
-		if !current_user.admin
-			redirect_to root_path
-		end
-		p = HTTParty.get('http://hellokisses.com/')
-		s = p.to_s
-		@i = s[/http:\/\/imc1.hellokisses.com\/.+?\.(jpg|jpeg|bmp|gif|png)/]
 	end
 
 	def reset_password

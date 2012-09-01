@@ -1,24 +1,34 @@
-<div class="row-fluid">
-	<div class="span12">
-		===USERS===
-		<table>
-			<tr>
-				<td>photo</td>
-				<td>id</td>
-				<td>name</td>
-				<td>email</td>
-				<td>suscription</td>
-		<% for  u in User.reorder('created_at DESC').all  do  %>
-			<tr>
-				<td><% if u.uid != 0 %><%= link_to 'https://www.facebook.com/' + u.uid.to_s do%>
-					<%=image_tag 'https://graph.facebook.com/' + u.uid.to_s + '/picture' %><%end%><%end%></td>
-				<td><%= u.id %></td>
-				<td><%= link_to u.name, u %></td>
-				<td><%= u.email %></td>
-				<td><%= time_ago_in_words(u.created_at) %></td>
-				<td><%= %></td>
-			</tr>
-		<% end %>
-		</table>
+</div>
+<% provide :title, "Explorar" %> 
+<div class="idea textc">
+	<h1>Funkalab es la comunidad para colaborar en tus proyectos creativos.</h1>
+		
+	<h4>Inicia un <%= link_to 'nuevo proyecto', new_collection_path %> o colabora con otros creativos. <%= link_to 'Ver más.','/about'%></h4>
+</div>
+<div class='container'>
+	
+<hr>
+
+<ul id="myTab" class="nav nav-tabs">
+    <li class="active"><a href="#link" data-toggle="tab">La Comunidad</a></li>
+</ul>
+
+<div id="myTabContent" class="tab-content">
+	<div class="tab-pane fade in active" id="link">
+		<p>
+			| <%= link_to "Todo", nav_path(category: ''), remote: true %> |
+			<% @categories.each do |c| %>
+				<%= link_to c.name, nav_path(category: c.id), remote: true %> |
+			<%end%>
+		</p>
+		<hr>
+		<div class="row-fluid">
+			<div class="span12">
+				<div id="users">
+				<%= render 'shared/users', users:@users %>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
+

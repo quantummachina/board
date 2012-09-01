@@ -5,11 +5,13 @@ class CollectionsController < ApplicationController
 		@categories = Category.all
 		@size = 3 #boards size
 		if category == ""
-			@boards = Collection.order('created_at DESC').all
-			@users = User.all
+			@allboards = Collection.reorder('created_at DESC').all
+			@finishedboards = Collection.order('updated_at DESC').find_all_by_status(5)
+			@promoboards = Collection.order('updated_at DESC').find_all_by_promoted(true)
 		else
-			@boards = Category.find(category).collections.order('created_at DESC')
-			@users = Category.find(category).users + Category.find(category).subusers
+			@allboards = Category.find(category).collections.reorder('created_at DESC')
+			@finishedboards = Category.find(category).collections.order('updated_at DESC').find_all_by_status(5)
+			@promoboards = Category.find(category).collections.order('updated_at DESC').find_all_by_promoted(true)
 		end
 		respond_to do |format|
 	      format.html { }

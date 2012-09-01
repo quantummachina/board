@@ -1,8 +1,73 @@
-<% provide(:title, '') %>
+</div>
+<% provide :title, "Explorar" %> 
+<div class="idea textc">
+	<h1>Funkalab es la comunidad para colaborar en tus proyectos creativos.</h1>
+		
+	<h4>Inicia un <%= link_to 'nuevo proyecto', new_collection_path %> o colabora con otros creativos. <%= link_to 'Ver más.','/about'%></h4>
+</div>
+<div class='container'>
+	
+<hr>
+
+<ul id="myTab" class="nav nav-tabs">
+    <li class="active"><a href="#link" data-toggle="tab">Destacados</a></li>
+    <li><a href="#success" data-toggle="tab">Exitosos</a></li>
+    <li><a href="#all" data-toggle="tab">Todo</a></li>
+</ul>
+
+<div id="myTabContent" class="tab-content">
+	<div class="tab-pane fade in active" id="link">
+		<p>
+			| <%= link_to "Todo", nav_path(category: ''), remote: true%> |
+			<% @categories.each do |c| %>
+				<%= link_to c.name, nav_path(category: c.id), remote: true%> |
+			<%end%>
+		</p>
+		<hr>
+		<div class="row-fluid">
+			<div class="span12">
+				<div id="promoboards">
+				<%= render 'shared/boards', boards:@promoboards %>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="tab-pane fade" id="success">
+
+		<p>
+			| <%= link_to "Todo", nav_path(category: ''), remote: true%> |
+			<% @categories.each do |c| %>
+				<%= link_to c.name, nav_path(category: c.id), remote: true%> |
+			<%end%>
+		</p>
+		<hr>
+		<div class="row-fluid">
+			<div class="span12">
+				<div id="finishedboards">
+				<%= render 'shared/boards', boards:@finishedboards %>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="tab-pane fade" id="all">
+
+		<p>
+			| <%= link_to "Todo", nav_path(category: ''), remote: true%> |
+			<% @categories.each do |c| %>
+				<%= link_to c.name, nav_path(category: c.id), remote: true%> |
+			<%end%>
+		</p>
+		<hr>
+		<div class="row-fluid">
+			<div class="span12">
+				<div id="allboards">
+				<%= render 'shared/boards', boards:@allboards %>
+				</div>
+			</div>
+		</div>
+
+	</div>
 </div>
 
-  <%= image_tag @fbuser.picture %>
-
-
-
-<div class='container'>
