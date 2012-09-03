@@ -14,7 +14,6 @@ $design:				rgb(183, 42, 146)  !default;
 $film:					rgb(119, 203, 229)  !default;
 $technology:			rgb(82, 206, 194)  !default;
 
-
 div.alert-success{
 	background-color: $fuscia;
 	color: white;
@@ -79,19 +78,6 @@ div.help2 {
 	padding: 15px 0px 15px 0px;
 	margin-left: 15px;
 }
-
-a.board-thumb {
-	display:block;
-    padding: 1px;
-	border-style:solid;
-	border-color: $grayLighter;
-	border-width: 1px;
-	margin-bottom: 18px;
-    width: 238px;
-    &:link {text-decoration:none;}
-	&:visited {text-decoration:none;}
-    &:hover{border-color: $grayLight;}
-	}​
 
 img.bt{
 	float: left;
@@ -169,8 +155,7 @@ a.help-btn {
     &:hover{border-color: $grayLight;}
 	}​
 
-
-
 a.empty{
 	
 }
+

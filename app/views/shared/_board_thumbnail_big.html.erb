@@ -1,0 +1,36 @@
+<!-- requires board, size -->
+<%= link_to board, class: "board-thumb-big" do %>
+<div class= 'row'>
+	<div class='span5'>
+		<% if board.cover != 0 %>
+			<%= cover(board.items.find(board.cover))%>
+		<%else%>
+			<%= image_tag(dummycover(board.category_id))%>
+		<% end %>
+	</div>
+	<div class='span6'>
+		<%if board.category #label%>
+			<div class= "<%='b'+board.category_id.to_s%>">
+				<p><small><%= board.category.name %></small></p>
+			</div>
+		<%end%>
+
+		<h3><%= board.title %></h3>
+		
+		<p><%= board.idea %></p>
+
+		<%if board.vacants %>
+		<h4>
+			<%board.vacants.each do |v|%>
+				<%#v.title+ "      "%>
+			<%end%>
+		</h4>
+		<%end%>
+		<br>
+		<br>
+		<div class='qcp'>
+			<h1>¡Quiero Colaborar!</h1>
+		</div>
+	</div>
+</div>
+<% end %>

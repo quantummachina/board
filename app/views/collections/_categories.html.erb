@@ -1,0 +1,6 @@
+<p>
+	| <%= link_to "Todo", nav_path(category: ''), remote: true%> |
+	<% @categories.each do |c| %>
+		<%= link_to c.name, nav_path(category: c.id), remote: true%> |
+	<%end%>
+</p>

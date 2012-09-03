@@ -1,0 +1,55 @@
+// Place all the styles related to the Collections controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$linkColor:             #00AEEF !default;
+$linkColorHover:        darken($linkColor, 15%) !default;
+$grayLighter:           #eee !default;
+$grayLight:             #999 !default;
+$orange:                #f89406 !default;
+$ffuscia:				#F50C5B;
+$fuscia2:				rgb(201, 41, 175) !default;
+$cyan:					rgb(206, 255, 247)  !default;
+
+
+div.qcp {
+	background-color: $ffuscia;
+	margin: auto;
+	text-align: center;
+	width: 25em;
+	-webkit-border-radius: 7px;
+	h1{color: white;}
+}
+
+a.board-thumb-big {
+
+	display: block;
+    padding: 1px;
+	border-style: solid;
+	border-color: $grayLighter;
+	border-width: 1px;
+	margin-bottom: 18px;
+    &:link {text-decoration:none;}
+	&:visited {text-decoration:none;}
+    &:hover{border-color: $grayLight;}
+    p{color: $grayLight;}
+	h3{color: $linkColor;}
+	}​
+
+a.board-thumb {
+	display: block;
+    padding: 1px;
+	border-style: solid;
+	border-color: $grayLighter;
+	border-width: 1px;
+	margin-bottom: 18px;
+    width: 238px;
+    &:link {text-decoration:none;}
+	&:visited {text-decoration:none;}
+    &:hover{border-color: $grayLight;}
+	}​
+
+a.empty{
+	
+}
+

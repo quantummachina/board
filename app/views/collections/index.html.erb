@@ -17,17 +17,12 @@
 
 <div id="myTabContent" class="tab-content">
 	<div class="tab-pane fade in active" id="link">
-		<p>
-			| <%= link_to "Todo", nav_path(category: ''), remote: true%> |
-			<% @categories.each do |c| %>
-				<%= link_to c.name, nav_path(category: c.id), remote: true%> |
-			<%end%>
-		</p>
+		<%=render'categories'%>
 		<hr>
 		<div class="row-fluid">
 			<div class="span12">
 				<div id="promoboards">
-				<%= render 'shared/boards', boards:@promoboards %>
+				<%= render 'shared/boards', boards:@promoboards, first: true %>
 				</div>
 			</div>
 		</div>
@@ -35,35 +30,24 @@
 	</div>
 	<div class="tab-pane fade" id="success">
 
-		<p>
-			| <%= link_to "Todo", nav_path(category: ''), remote: true%> |
-			<% @categories.each do |c| %>
-				<%= link_to c.name, nav_path(category: c.id), remote: true%> |
-			<%end%>
-		</p>
+		<%=render'categories'%>
 		<hr>
 		<div class="row-fluid">
 			<div class="span12">
 				<div id="finishedboards">
-				<%= render 'shared/boards', boards:@finishedboards %>
+				<%= render 'shared/boards', boards:@finishedboards, first: true  %>
 				</div>
 			</div>
 		</div>
 
 	</div>
 	<div class="tab-pane fade" id="all">
-
-		<p>
-			| <%= link_to "Todo", nav_path(category: ''), remote: true%> |
-			<% @categories.each do |c| %>
-				<%= link_to c.name, nav_path(category: c.id), remote: true%> |
-			<%end%>
-		</p>
+		<%=render'categories'%>
 		<hr>
 		<div class="row-fluid">
 			<div class="span12">
 				<div id="allboards">
-				<%= render 'shared/boards', boards:@allboards %>
+				<%= render 'shared/boards', boards:@allboards, first: false  %>
 				</div>
 			</div>
 		</div>
