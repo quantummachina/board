@@ -24,6 +24,10 @@ a.board-thumb {
     &:hover{border-color: $grayLight;}
 	}​
 
+a.empty{
+	border-color: black;	
+}
+
 a.board-thumb-big {
 
 	display: block;
@@ -39,10 +43,8 @@ a.board-thumb-big {
 	h3{color: $linkColor;}
 	}​
 
-a.empty{
-	display: block;	
-}
 
 a.emptyagain{
 	
 }
+

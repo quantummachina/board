@@ -2,9 +2,11 @@
 <!--div class="row-fluid"-->
 
 <% if !boards.empty? %>
-
-<%= if first then render 'shared/board_thumbnail_big', board: boards.first, size: 3 end %>
-
+<% if first %>
+	<%boards.each do |board|%>
+		<%= render 'shared/board_thumbnail_big', board: board, size: 3 %>
+	<%end%>
+<%else%>
 	<% indexes = arr_4_cols(boards.count,3) %>
 	<div class="row">
 		<% indexes.each do |col| %>
@@ -13,15 +15,14 @@
 					<% col.each do |i| %>
 
 						<% board = boards[i] %>
-						<% if !(first && board.id == boards.first.id) %>
+						
 				  	    	<%= render 'shared/board_thumbnail',  board: board, size: 3 %>
-				  	    <%end%>
-				  		
 					<% end %>
 				</div>
 			</div>
 		<% end %>
 	</div>
+<%end%>
 <% end %>
 
 	
