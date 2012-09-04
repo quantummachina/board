@@ -12,7 +12,9 @@
 <p>
 "<%=@line.text%>"</p>
       <br>
-<p><%= link_to '¡Ponte en contacto en Funkalab!', 'http://www.funkalab.com/conversations' %></p>
+<%= link_to 'http://www.funkalab.com/conversations', style: 'display:block;background-color:#F50C5B;width:25em;-webkit-border-radius:7px;text-align:center' do %>
+	<h3 style='color:white;'>¡Ponte en contacto en Funkalab!</h3>
+<%end%>
 <br>
 <p>Gracias,</p>
    <p> Tus amigos de Funkalab.</p>
