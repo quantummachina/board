@@ -1,7 +1,7 @@
 <!-- requires boards, first -->
 <!--div class="row-fluid"-->
 
-<% if boards %>
+<% if !boards.empty? %>
 
 <%= if first then render 'shared/board_thumbnail_big', board: boards.first, size: 3 end %>
 
