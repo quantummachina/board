@@ -1,6 +1,6 @@
 <!-- requires boards -->
 <!--div class="row-fluid"-->
-<% if users %>
+<% if !users.empty? %>
 	<% indexes = arr_4_cols(users.count,3) %>
 	<div class="row">
 		<% indexes.each do |col| %>
