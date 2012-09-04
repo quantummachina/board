@@ -2,7 +2,12 @@
 <html>
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <style type="text/css">
+    	a:hover {color:white; text-decoration:none;
+		}
+	</style>
   </head>
+
   <body>
     <h1>Hola <%=@to.name%>,</h1>
 <p>
@@ -12,7 +17,7 @@
 <p>
 "<%=@line.text%>"</p>
       <br>
-<%= link_to 'http://www.funkalab.com/conversations', style: 'display:block;background-color:#F50C5B;width:25em;-webkit-border-radius:7px;text-align:center' do %>
+<%= link_to 'http://www.funkalab.com/conversations', style: 'display:block;background-color:#F50C5B;width:25em;text-decoration:none;-webkit-border-radius:7px;text-align:center', onmouseover: "this.style.color = 'white'; this.style.text-decoration = 'none'", onmouseout: "white'; this.style.text-decoration = 'none'" do %>
 	<h3 style='color:white;'>¡Ponte en contacto en Funkalab!</h3>
 <%end%>
 <br>
