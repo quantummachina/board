@@ -26,11 +26,13 @@
 			<%end%>
 		</h4>
 		<%end%>
-		<br>
-		<br>
-		<div class='qcp'>
-			<h1>¡Quiero Colaborar!</h1>
-		</div>
+		<%if board.status != 5%>
+			<br>
+			<br>
+			<div class='qcp'>
+				<h1>¡Quiero Colaborar!</h1>
+			</div>
+		<%end%>
 	</div>
 </div>
 <% end %>
