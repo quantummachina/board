@@ -14,9 +14,9 @@
 							<p><small><%= user.city %></small></p>
 							<p><small><%= user.about[0..90
 								] %></small></p>
-							<% if user.category_id != 2 %>
+							
 							Fields: <span class="label label-info"><%= user.category.name %></span>, <span class="label label-info"><%= user.subcategory.name %></span>
-							<%end%>
+							
 						<% end %>
 				  		
 					<% end %>
