@@ -1,20 +1,6 @@
 class StaticPagesController < ApplicationController
 	def secure
-		if !current_user.admin
-			redirect_to root_path
-		end
-		category = params[:category] || ""
-		@categories = Category.all
-		@size = 3 #boards size
-		if category == ""
-			@allboards = Collection.reorder('created_at DESC').all
-			@finishedboards = Collection.order('updated_at DESC').find_all_by_status(5)
-			@promoboards = Collection.order('updated_at DESC').find_all_by_promoted(true)
-		else
-			@allboards = Category.find(category).collections.reorder('created_at DESC')
-			@finishedboards = Category.find(category).collections.order('updated_at DESC').find_all_by_status(5)
-			@promoboards = Category.find(category).collections.order('updated_at DESC').find_all_by_promoted(true)
-		end
+		@users = User.all
 	end
 
 	def about
