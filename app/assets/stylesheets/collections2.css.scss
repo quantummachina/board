@@ -11,6 +11,18 @@ $ffuscia:				#F50C5B;
 $fuscia2:				rgb(201, 41, 175) !default;
 $cyan:					rgb(206, 255, 247)  !default;
 
+a.board-thumb {
+	display: block;
+    padding: 1px;
+	border-style: solid;
+	border-color: $grayLighter;
+	border-width: 1px;
+	margin-bottom: 18px;
+    width: 238px;
+    &:link {text-decoration:none;}
+	&:visited {text-decoration:none;}
+    &:hover{border-color: $grayLight;}
+	}​
 
 div.qcp {
 	background-color: $ffuscia;
@@ -36,20 +48,10 @@ a.board-thumb-big {
 	h3{color: $linkColor;}
 	}​
 
-a.board-thumb {
-	display: block;
-    padding: 1px;
-	border-style: solid;
-	border-color: $grayLighter;
-	border-width: 1px;
-	margin-bottom: 18px;
-    width: 238px;
-    &:link {text-decoration:none;}
-	&:visited {text-decoration:none;}
-    &:hover{border-color: $grayLight;}
-	}​
-
 a.empty{
 	
 }
 
+a.emptyagain{
+	
+}
