@@ -11,6 +11,15 @@ $ffuscia:				#F50C5B;
 $fuscia2:				rgb(201, 41, 175) !default;
 $cyan:					rgb(206, 255, 247)  !default;
 
+div.qcp {
+	background-color: $ffuscia;
+	margin: auto;
+	text-align: center;
+	width: 25em;
+	-webkit-border-radius: 7px;
+	h1{color: white;}
+}
+
 a.board-thumb {
 	display: block;
     padding: 1px;
@@ -23,15 +32,6 @@ a.board-thumb {
 	&:visited {text-decoration:none;}
     &:hover{border-color: $grayLight;}
 	}​
-
-div.qcp {
-	background-color: $ffuscia;
-	margin: auto;
-	text-align: center;
-	width: 25em;
-	-webkit-border-radius: 7px;
-	h1{color: white;}
-}
 
 a.board-thumb-big {
 
