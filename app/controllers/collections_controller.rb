@@ -5,6 +5,14 @@ class CollectionsController < ApplicationController
 		@categories = Category.all
 		@size = 3 #boards size
 		if category == ""
+			@allboards = Collection.order('created_at DESC').where("promoted = ? AND status != 5", false)
+			@promoboards = Collection.order('updated_at DESC').find_all_by_promoted(true)
+		else
+			@allboards = Category.find(category).collections.order('created_at DESC').where("promoted = ? AND status != 5", false)
+			@promoboards = Category.find(category).collections.order('updated_at DESC').find_all_by_promoted(true)
+		end
+=begin
+		if category == ""
 			@allboards = Collection.reorder('created_at DESC').all
 			@finishedboards = Collection.order('updated_at DESC').find_all_by_status(5)
 			@promoboards = Collection.order('updated_at DESC').find_all_by_promoted(true)
@@ -13,10 +21,15 @@ class CollectionsController < ApplicationController
 			@finishedboards = Category.find(category).collections.order('updated_at DESC').find_all_by_status(5)
 			@promoboards = Category.find(category).collections.order('updated_at DESC').find_all_by_promoted(true)
 		end
+=end
 		respond_to do |format|
 	      format.html { }
 	      format.js
 	    end
+	end
+
+	def finished
+		@finishedboards = Collection.order('updated_at DESC').find_all_by_status(5)
 	end
 
 	def show

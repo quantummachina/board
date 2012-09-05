@@ -1,0 +1,19 @@
+</div>
+<% provide :title, "Explorar" %> 
+<div class="idea textc">
+	<h1>Funkalab es la comunidad para colaborar en tus proyectos creativos.</h1>
+		
+	<h4>Inicia un <%= link_to 'nuevo proyecto', new_collection_path %> o colabora con otros creativos. <%= link_to 'Ver más.','/about'%></h4>
+</div>
+<div class='container'>
+<hr>
+	<h4><%= link_to 'Todos', '/collections'%> | Exitosos</h4>
+<hr>
+
+		<div class="row-fluid">
+			<div class="span12">
+				<div id="finishedboards">
+				<%= render 'shared/boards', boards:@finishedboards, first: true  %>
+				</div>
+			</div>
+		</div>

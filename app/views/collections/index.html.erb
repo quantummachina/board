@@ -6,52 +6,24 @@
 	<h4>Inicia un <%= link_to 'nuevo proyecto', new_collection_path %> o colabora con otros creativos. <%= link_to 'Ver más.','/about'%></h4>
 </div>
 <div class='container'>
-	
+<hr>
+	<h4>Todos | <%= link_to 'Exitosos', '/finished'%></h4>
 <hr>
 
-<ul id="myTab" class="nav nav-tabs">
-    <li class="active"><a href="#link" data-toggle="tab">Destacados</a></li>
-    <li><a href="#success" data-toggle="tab">Exitosos</a></li>
-    <li><a href="#all" data-toggle="tab">Todo</a></li>
-</ul>
-
-<div id="myTabContent" class="tab-content">
-	<div class="tab-pane fade in active" id="link">
-		<%=render'shared/categories'%>
-		<hr>
-		<div class="row-fluid">
-			<div class="span12">
-				<div id="promoboards">
-				<%= render 'shared/boards', boards:@promoboards, first: true %>
-				</div>
+	<%=render'shared/categories'%>
+<hr>
+	<div class="row-fluid">
+		<div class="span12">
+			<div id="promoboards">
+			<%= render 'shared/boards', boards:@promoboards, first: true %>
 			</div>
 		</div>
-		
 	</div>
-	<div class="tab-pane fade" id="success">
 
-		<%=render'shared/categories'%>
-		<hr>
-		<div class="row-fluid">
-			<div class="span12">
-				<div id="finishedboards">
-				<%= render 'shared/boards', boards:@finishedboards, first: true  %>
-				</div>
+	<div class="row-fluid">
+		<div class="span12">
+			<div id="allboards">
+			<%= render 'shared/boards', boards:@allboards, first: false  %>
 			</div>
 		</div>
-
 	</div>
-	<div class="tab-pane fade" id="all">
-		<%=render'shared/categories'%>
-		<hr>
-		<div class="row-fluid">
-			<div class="span12">
-				<div id="allboards">
-				<%= render 'shared/boards', boards:@allboards, first: false  %>
-				</div>
-			</div>
-		</div>
-
-	</div>
-</div>
-

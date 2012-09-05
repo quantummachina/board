@@ -35,6 +35,7 @@ Board::Application.routes.draw do
   match '/add_vacants', to: 'collections#add_vacants'
   match '/reset_password', to: 'static_pages#reset_password'
   match '/rstpss', to: 'users#reset_password'
+  match '/finished', to: 'collections#finished'
   
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
