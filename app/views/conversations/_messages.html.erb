@@ -8,7 +8,7 @@
 				<% for line in conversation.lines.all(limit: 1) do %>
 			
 
-						<%=line.user.name%>: <%= wrapm(line.text,20) %>
+						<%=line.user.name%>: <%= wrapm(line.text[0..65]+"...",20) %>
 			  
 				<%end%>
 			<%end%>
