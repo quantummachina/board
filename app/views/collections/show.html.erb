@@ -14,7 +14,7 @@
 				<% @board.collaborators.each do |c| %>
 
 
-					<%=", "%> <%=link_to c.name, c, rel: "tooltip", :"data-placement"=> "bottom", title: c.about[0..15] %>
+					<%=", "%> <%=link_to c.name, c, rel: "tooltip", :"data-placement"=> "bottom", title: c.about %>
 
 
 				<% end %>
