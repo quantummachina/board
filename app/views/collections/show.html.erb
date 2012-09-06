@@ -9,10 +9,14 @@
 <div class="row">
 	<div class="span12">
 		<h1><%= @board.title %></h1>
-		<p>Por <%=link_to @board.user.name, @board.user %>
+		<p>Por <%=link_to @board.user.name, @board.user, rel: "tooltip", :"data-placement"=> "bottom", title: @board.user.about %>
 			<% if @board.collaborators %>
 				<% @board.collaborators.each do |c| %>
-					<%=", "%><%=link_to c.name, c %>
+
+
+					<%=", "%> <%=link_to c.name, c, rel: "tooltip", :"data-placement"=> "bottom", title: c.about[0..15] %>
+
+
 				<% end %>
 			<% end %>
 			<%= link_to @board.category.name, nav_path(category: @board.category.id), class: "label"%></p>

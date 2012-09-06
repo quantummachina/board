@@ -5,22 +5,27 @@
 	<div class="row">
 		<% indexes.each do |col| %>
 			<div class="<%="span#{3}" %>">
-				<div class="row-fluid">
+				
 					<% col.each do |i| %>
 						<% user = users[i] %>
 
 				  	    <%= link_to user, class: "user-card" do %>
+				  	    <div class='span1'>
+				  	    <% if user.uid != 0 %><%=image_tag 'https://graph.facebook.com/' + user.uid.to_s + '/picture' %><%end%>
+				  	    </div>
+				  	    <div class 'span2'>
 							<p><%= user.name %></p>
 							<p><small><%= user.city %></small></p>
+						</div>
 							<p><small><%= user.about[0..90
 								] %></small></p>
 							
-							Fields: <span class="label label-info"><%= user.category.name %></span>, <span class="label label-info"><%= user.subcategory.name %></span>
+							Áreas: <span class="label label-info"><%= user.category.name %></span>, <span class="label label-info"><%= user.subcategory.name %></span>
 							
 						<% end %>
 				  		
 					<% end %>
-				</div>
+				
 			</div>
 		<% end %>
 	</div>

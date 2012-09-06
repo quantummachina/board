@@ -29,7 +29,7 @@
 	<div class="row help">
 		<div class='span3'>
 			<h3>Colaborador</h3>
-			<%if @board.user.id != current_user.id %>
+			<%if !signed_in? || (@board.user.id != current_user.id) %>
 				<p>Éste proyecto no ha publicado colaboradores específicos. ¡Tú puedes proponer!</p>
 			<%else%>
 				<p>Recuerda que ésta es una plataforma de colaboración. Agrega creativos puedan colaborar en tu proyecto.</p>
