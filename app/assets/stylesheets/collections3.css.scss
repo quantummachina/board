@@ -27,3 +27,12 @@ a.empty{
 a.emptyagain{
 	
 }
+
+a.llena{
+	text-align: center;
+	display: block;
+	background-color: $cyan;
+	h1{color: black;}
+	h4{color: gray;}
+		&:hover{text-decoration: none;};
+}

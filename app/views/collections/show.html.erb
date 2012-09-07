@@ -1,10 +1,19 @@
 <% provide :title, @board.title %> 
 <% if !signed_in? %>
-	<div class="idea textc">
+	<div class="llena textc">
 		<h3>Para unirte a este proyecto <%= link_to 'inicia sesión', '/signin' %> o <%= link_to 'regístrate', root_path %>.</h3>
 	</div>
 	<br>
 <% end %>
+<% if signed_in? and current_user.about == "" %>
+</div>
+	<%=link_to edit_user_path(current_user) , class: "llena textc" do %>
+		<h1>Completa tu perfil para que el colectivo te conozca mejor.</h1>
+		
+		<h4>Haz click aquí para editar tu perfil.</h4>
+<div class='container'>
+	<%end%>
+<%end%>
 
 <div class="row">
 	<div class="span12">

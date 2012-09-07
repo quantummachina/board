@@ -76,6 +76,9 @@ class CollectionsController < ApplicationController
 		@collection = Collection.find(params[:id])
 		@categories = Category.all
 		@els = @collection.externallinks
+		if (@collection.user != current_user) || (!current_user.admin?)
+      		redirect_to root_path
+    	end
 	end
 
 	def update
