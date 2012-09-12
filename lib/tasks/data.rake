@@ -87,4 +87,22 @@ namespace :data do
 		end
 	end
 
+	task deart: :environment do
+		User.all.each do |u|
+			if u.category_id == 2 && u.subcategory_id == 2
+				u.toggle!(:c_art)
+			end
+		end
+	end
+
+	task fix_cities: :environment do
+		City.all.each do |c|
+			nn = c.name[0..c.name.size-2]
+			c.update_attributes(name:nn)
+		end
+		City.find(1804).update_attributes(name: 'Cancún')
+	end
+
+
+
 end
