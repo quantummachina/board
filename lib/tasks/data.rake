@@ -82,7 +82,10 @@ namespace :data do
 				when 22
 					u.toggle!(:c_design)
 				end
-			end
+			else
+				if u.category_id == 2
+					u.toggle!(:c_art)
+				end
 
 		end
 	end
