@@ -58,9 +58,9 @@ class AppMailer < ActionMailer::Base
     mail(:to => @to.email, :subject => @from.name + " te ha enviado un mensaje.")
   end
 
-  def comment_notification_email(comment)
+  def comment_notification_email(to, comment)
     @from = comment.user
-    @to = comment.collection.user
+    @to = to
     @text = comment.text
     @project = comment.collection
     @project_url = 'http://www.funkalab.com/collections/'+@project.id.to_s
