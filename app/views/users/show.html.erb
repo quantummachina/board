@@ -15,8 +15,8 @@
 		<%else%>
 			<h1>Laboratorio de <%= @user.name%>
 		<%end%>
-		 <small><%=@user.city%></small></h1>
-		<span class="label label-info"><%= @user.category.name %></span>, <span class="label label-info"><%= @user.subcategory.name %></span>
+		 <small><%=if @user.city_id !=0 then @user.city.name + ', ' + @user.city.state.name + '.' end%></small></h1>
+		<%= render 'users/categories_cards', user: @user %>
 		<br><br>
 				 <%= render 'message'%>
 				 <br>

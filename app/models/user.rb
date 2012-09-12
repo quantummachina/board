@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
     #UID + PROVIDER USELESS. Using Session variables
-	attr_accessible :email, :name, :password, :password_confirmation, :admin, :uid, :provider, :city, :category_id, :subcategory_id, :link_a, :link_b, :link_c, :link_d, :about, :notifications
+	attr_accessible :email, :name, :password, :password_confirmation, :admin, :uid, :provider, :city, :category_id, :subcategory_id, :c_art, :c_video, :c_music, :c_tecnology, :c_design, :link_a, :link_b, :link_c, :link_d, :about, :notifications, :city_id
 	has_secure_password
 
 	has_many :collections, dependent: :destroy
@@ -17,8 +17,9 @@ class User < ActiveRecord::Base
 
     has_one :extra
 
-    belongs_to :category
-    belongs_to :subcategory, foreign_key: 'subcategory_id', class_name: 'Category'
+    #belongs_to :category / ya no requiere
+    #belongs_to :subcategory, foreign_key: 'subcategory_id', class_name: 'Category'
+    belongs_to :city
 
 	before_save :create_remember_token
 

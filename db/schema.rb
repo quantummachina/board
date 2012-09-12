@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120827195112) do
+ActiveRecord::Schema.define(:version => 20120912052542) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -28,6 +28,11 @@ ActiveRecord::Schema.define(:version => 20120827195112) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "cities", :force => true do |t|
+    t.integer "state_id"
+    t.string  "name"
   end
 
   create_table "collaborations", :force => true do |t|
@@ -178,6 +183,10 @@ ActiveRecord::Schema.define(:version => 20120827195112) do
     t.text     "text",          :default => ""
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "states", :force => true do |t|
+    t.string "name"
   end
 
   create_table "tls", :force => true do |t|

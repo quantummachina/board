@@ -15,12 +15,12 @@
 				  	    </div>
 				  	    <div class 'span2'>
 							<p><%= user.name %></p>
-							<p><small><%= user.city %></small></p>
+							<p><small><%= if user.city_id !=0 then user.city.name end %></small></p>
 						</div>
-							<p><small><%= user.about[0..85
+							<p><small><%= user.about[0..82
 								] %></small></p>
 							
-							Áreas: <span class="label label-info"><%= user.category.name %></span>, <span class="label label-info"><%= user.subcategory.name %></span>
+							Áreas:<%= render 'categories_cards', user: user %>
 							
 						<% end %>
 				  		

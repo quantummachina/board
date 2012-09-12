@@ -14,11 +14,20 @@
 
   <hr>
   <%= f.label :city, 'Ciudad' %>
-  <%= f.text_field :city %>
+  <div id='city'>
+    <%= render 'city'%>
+  </div>
 
-  <%= f.label :category_id, 'Áreas Creativas' %>
-  <%= f.select :category_id, options_from_collection_for_select(@categories, "id", "name", selected: (@user.category_id || 2))  %>
-  <%= f.select :subcategory_id, options_from_collection_for_select(@categories, "id", "name", selected: @user.subcategory_id)  %>
+  <%= f.label :categories, 'Áreas Creativas' %>
+  <label class="checkbox inline"><%= f.check_box :c_art, checked: @user.c_art %>Arte</label>
+  <label class="checkbox inline"><%= f.check_box :c_video, checked: @user.c_video %>Video</label>
+  <label class="checkbox inline"><%= f.check_box :c_music, checked: @user.c_music %>Música</label>
+  <label class="checkbox inline"><%= f.check_box :c_tecnology, checked: @user.c_tecnology %>Tecnología</label>
+  <label class="checkbox inline"><%= f.check_box :c_design, checked: @user.c_design %>Diseño</label>
+
+  <br>
+  <br>
+
   <%= f.label :about, 'Acerca de ti' %>
   <%= f.text_area :about, maxlength: 200, placeholder:"Háblanos sobre ti ¿Qué te gusta hacer? ¿Cuáles son tus intereses?", rows: 4, class: 'span5' %>
 

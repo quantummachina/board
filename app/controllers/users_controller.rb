@@ -4,13 +4,20 @@ class UsersController < ApplicationController
     category = params[:category] || ""
     @categories = Category.all
     #@size = 3 #boards size
-    if category == ""
-      #@boards = Collection.order('created_at DESC').all
-      @users = User.all
+
+    case category
+    when "2"
+      @users = User.find_all_by_c_art(true)
+    when "7"
+      @users = User.find_all_by_c_video(true)
+    when "5"
+      @users = User.find_all_by_c_music(true)
+    when "17"
+      @users = User.find_all_by_c_tecnology(true)
+    when "22"
+      @users = User.find_all_by_c_design(true)
     else
-      #@boards = Category.find(category).collections.order('created_at DESC')
-      @users = User.where("category_id = #{category} OR subcategory_id = #{category}")
-      #@users = Category.find(category).users + Category.find(category).subusers
+      @users = User.all
     end
     respond_to do |format|
         format.html { }
@@ -20,7 +27,31 @@ class UsersController < ApplicationController
 
 	def new
     @user = User.new
+
+    if params.has_key?(:state)
+      @state = params[:state]
+    else
+      if @user.city_id != 0
+        @state = @user.city.state.id
+      else  
+        @state = 0
+      end
+    end
+
+    if @state == 0 
+      @cities = []
+    else
+      @cities = State.find(@state).cities
+    end
+
+    #@state = params[:state]  || (if @user.city_id != 0 then @user.city.state.id end) || 0
+    @states = State.all
     @categories = Category.all
+
+    respond_to do |format|
+        format.html { }
+        format.js
+    end
 	end
 
 	def create
@@ -45,11 +76,37 @@ class UsersController < ApplicationController
   	end
 
   def edit
-    @categories = Category.all
+    
     @user = User.find(params[:id])
     if @user != current_user
       redirect_to root_path
     end
+
+    if params.has_key?(:state)
+      @state = params[:state]
+    else
+      if @user.city_id != 0
+        @state = @user.city.state.id
+      else  
+        @state = 0
+      end
+    end
+
+    if @state == 0 
+      @cities = []
+    else
+      @cities = State.find(@state).cities
+    end
+
+    #@state = params[:state]  || (if @user.city_id != 0 then @user.city.state.id end) || 0
+    @states = State.all
+    @categories = Category.all
+
+    respond_to do |format|
+        format.html { }
+        format.js
+    end
+
   end
 
   def update
