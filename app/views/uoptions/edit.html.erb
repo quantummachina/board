@@ -1,0 +1,23 @@
+<% provide :title, "Opciones" %> 
+<h1>Preferencias</h1>
+
+<div class="row">
+	<div class="span6 offset3">
+		<h4>Recibir notificaciones via correo electrónico sobre:</h4>
+		<div class = 'row'>
+			<div class = 'span5 offset1'>
+				<%= form_for(@uoption) do |f| %>
+					<label class="checkbox inline"><%= f.check_box :n_requests %>Solicitudes de colaboración.</label>
+					<br>
+					<label class="checkbox inline"><%= f.check_box :n_messages %>Mensajes recibidos.</label>
+					<br>
+					<label class="checkbox inline"><%= f.check_box :n_comments %>Comentarios publicados en mis proyectos.</label>
+					<br>
+					<br>
+					<%= f.submit "Guardar" %>
+
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

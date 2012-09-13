@@ -15,7 +15,9 @@ class LinesController < ApplicationController
     u.extra.update_attributes(messages: n)
     @conversation.update_attributes(unread: u.id)
 
-    AppMailer.message_notification_email(current_user, u, l ).deliver
+    if u.uoption.n_messages
+      AppMailer.message_notification_email(current_user, u, l ).deliver
+    end
 
     redirect_to @conversation
   end

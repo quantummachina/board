@@ -58,6 +58,7 @@ class UsersController < ApplicationController
     	@user = User.new(params[:user])
     	if @user.save
         Extra.create(user_id: @user.id)
+        Uoption.create(user_id: @user.id)
         AppMailer.welcome_email(@user).deliver
         search_pending(@user.email, @user.id)
         sign_in @user
@@ -140,7 +141,7 @@ class UsersController < ApplicationController
     end
     
   end
-
+  
 private
 
   def search_pending(email, id)

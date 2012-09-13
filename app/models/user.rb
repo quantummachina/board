@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
     has_many :comments
 
     has_one :extra
+    has_one :uoption
 
     #belongs_to :category / ya no requiere
     #belongs_to :subcategory, foreign_key: 'subcategory_id', class_name: 'Category'

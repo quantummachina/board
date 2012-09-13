@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120912052542) do
+ActiveRecord::Schema.define(:version => 20120913194006) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -196,6 +196,17 @@ ActiveRecord::Schema.define(:version => 20120912052542) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
   end
+
+  create_table "uoptions", :force => true do |t|
+    t.integer  "user_id"
+    t.boolean  "n_requests", :default => true
+    t.boolean  "n_messages", :default => true
+    t.boolean  "n_comments", :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "uoptions", ["user_id"], :name => "index_uoptions_on_user_id", :unique => true
 
 # Could not dump table "users" because of following StandardError
 #   Unknown type 'long' for column 'uid'

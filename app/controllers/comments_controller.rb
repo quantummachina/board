@@ -9,7 +9,9 @@ class CommentsController < ApplicationController
 			@collection.user.notifications.create(message: message)
 			n = @collection.user.extra.notifications + 1
 			@collection.user.extra.update_attributes(notifications: n)
-			AppMailer.comment_notification_email(@collection.user, comment).deliver
+			if @collection.user.uoption.n_comments
+				AppMailer.comment_notification_email(@collection.user, comment).deliver
+			end
 		end
 
 		@collection.collaborators.each do |u|
@@ -17,7 +19,9 @@ class CommentsController < ApplicationController
 				u.notifications.create(message: message)
 				n = u.extra.notifications + 1
 				u.extra.update_attributes(notifications: n)
-				AppMailer.comment_notification_email(u, comment).deliver
+				if u.uoption.n_comments
+					AppMailer.comment_notification_email(u, comment).deliver
+				end
 			end
 		end
 

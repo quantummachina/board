@@ -1,5 +1,7 @@
 Board::Application.routes.draw do
 
+  resources :uoptions
+
   get "admins/admin"
   get "admins/users"
   #get "admins/massemail"

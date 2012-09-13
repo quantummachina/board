@@ -3,7 +3,7 @@ class Item < ActiveRecord::Base
 
   attr_accessible :collection_id, :content, :content_html, :kind, :urltype, :og_image, :pre_content
 
-  belongs_to :collection
+  belongs_to :collection, touch: true
 
   belongs_to :user
 

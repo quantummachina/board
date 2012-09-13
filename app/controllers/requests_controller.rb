@@ -16,8 +16,9 @@ class RequestsController < ApplicationController
 
 		n = @user.extra.requests + 1
     	@user.extra.update_attributes(requests: n)
-
-		AppMailer.invite_notification_email(r).deliver
+    	if @user.uoption.n_requests
+			AppMailer.invite_notification_email(r).deliver
+		end
 
 		flash[:success] = 'Tu petición ha sido enviada. Te notificaremos si el usuario acepta colaborar en tu proyecto.'
 		if params.has_key?(:interlocutor_id)
@@ -35,7 +36,9 @@ class RequestsController < ApplicationController
 		n = @collection.user.extra.requests + 1
     	@collection.user.extra.update_attributes(requests: n)
 
-		AppMailer.help_notification_email(@collection.user, current_user, @collection, r).deliver
+    	if @collection.user.uoption.n_requests
+			AppMailer.help_notification_email(@collection.user, current_user, @collection, r).deliver
+		end
 
 		flash[:success] = 'Tu petición ha sido enviada. Te notificaremos si eres aceptado a colaborar. ¡Gracias!'
 		redirect_to @collection
