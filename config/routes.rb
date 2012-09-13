@@ -2,9 +2,8 @@ Board::Application.routes.draw do
 
   get "admins/admin"
   get "admins/users"
-  #get "admins/comments"
-  #get "admins/sections"
-  #get "admins/sprojects"
+  #get "admins/massemail"
+  #get "admins/sendmassemail"
 
   resources :comments
 
@@ -36,6 +35,7 @@ Board::Application.routes.draw do
   match '/reset_password', to: 'static_pages#reset_password'
   match '/rstpss', to: 'users#reset_password'
   match '/finished', to: 'collections#finished'
+  match '/massemail', to: 'admins#massemail'
   
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

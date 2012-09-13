@@ -1,0 +1,62 @@
+<div class="row-fluid">
+	<div class= 'span12'>
+		<h2>===Mass Email===</h2>
+		<div class= 'row'>
+			<div class="span6">
+
+				<%= form_tag 'massemail' do %>
+					
+					<%= label_tag 'Título' %>
+					<%= text_field_tag :subject, nil, class: 'span6' %>
+					<%= label_tag 'Mensaje' %>
+					<%= text_area_tag :body, nil, rows: 8,  class: 'span6' %>
+					<%= label_tag 'Firma' %>
+					<%= text_area_tag :signature, nil, rows: 3, class: 'span6' %>
+					<%= submit_tag 'Send!', class: 'btn btn-primary'%>
+				<%end%>
+
+			</div>
+			<div class='span6'>
+				
+				<%= form_tag 'massemail', remote: true do %>
+					<%= label_tag 'Preview' %>
+					<%= text_area_tag :test, nil, rows: 8,  class: 'span6' %>
+					<%= submit_tag 'Preview', class: 'btn btn-info'%>
+				<%end%>
+				<hr>
+				<div id = "preview">
+					<%= render 'preview'%>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<h4>Guía Markdown</h4>
+		<p>Markdown ayuda a darle formato sencillo a un texto de manera sencilla mientras se escribe.</p>
+		<div class= 'row'>
+			<div class="span4">
+				<p>Para separar párrafos se requieren dos "enters"<p>
+				<p>Encabezados con # ## ### #### </p>
+				<p>Enlaces automáticos</p>
+				<p>* al inicio para listas</p>
+				<p>1. 2. etc al inicio para listas numeradas</p>
+				<p>*italics*  **bold**</p>
+				<p>Links: [Texto de enlace](http://enlace.com)</p>
+			</div>
+			<div class='span4'>
+				<h4> Texto de ejemplo </h4>
+				<p>## Funkalab </p>
+				<p>Visita www.funkalab.com </p>
+				<p>* Tenemos **proyectos** </p>
+				<p>* Tenemos *usuarios* </p>
+				<p>[FUNKALAB](http://www.funkalab.com)</p>
+			</div>
+			<div class="span4"><br>
+				<%=make_nice('## Funkalab')%>
+				<%=make_nice("Visita www.funkalab.com")%>
+				<%=make_nice('* Tenemos **proyectos**')%>
+				<%=make_nice('* Tenemos *usuarios*')%>
+				<%=make_nice('[FUNKALAB](http://www.funkalab.com)')%>
+			</div>
+		</div>
+	</div>
+</div>

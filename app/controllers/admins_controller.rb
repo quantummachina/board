@@ -11,6 +11,24 @@ class AdminsController < ApplicationController
     @users = User.reorder('created_at DESC').all
   end
 
+  def massemail
+    @test = params[:test] || ''
+    @subject = params[:subject] || ''
+    @body = params[:body] || ''
+    @signature = params[:signature] || ''
+    if params[:commit] == 'Send!'
+      User.all.each do |u|
+        AppMailer.massive_email(u,@subject, @body, @signature).deliver
+      end
+      flash[:success] = "Mensajes Enviados"
+      redirect_to '/massemail'
+    end
+    respond_to do |format|
+      format.html { }
+      format.js
+    end
+  end
+
 
 private
 

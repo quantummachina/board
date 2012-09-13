@@ -1,5 +1,7 @@
 # encoding: utf-8
 class AppMailer < ActionMailer::Base
+  helper :mail   # loads app/helpers/mail_helper.rb & includes MailHelper
+  
   default from: "hello@funkalab.com"
 
   def welcome_email(user)
@@ -72,5 +74,11 @@ class AppMailer < ActionMailer::Base
     @user = user
     @password = pass
     mail(:to => @user.email, :subject => "Tu nueva contraseña en Funkalab")
+  end
+
+  def massive_email(user,subject,body,signature)
+    @body = body
+    @signature = signature
+    mail(to: user.email, subject: subject)
   end
 end
