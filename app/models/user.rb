@@ -50,6 +50,8 @@ def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
                          password:Devise.friendly_token[0,20]
                          )
             Extra.create(user_id: user.id)
+            Uoption.create(user_id: user.id)
+            AppMailer.welcome_email(user).deliver
   		end
     end
   user
