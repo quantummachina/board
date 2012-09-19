@@ -48,7 +48,12 @@ end
 def cover(item)
 	# 1 attachment, 2 image url, 3 url w/og, 4 url/text
 	case item.urltype
-		when 1..3
+		when 1
+			aid = item.content[5..(item.content.length-1)].to_i
+      		a = Attachment.find(aid)
+			raw image_tag a.file.url(:medium)
+
+		when 2..3
 			raw item.og_image
 		when 4	
 			#raw wrap_long_string(item.pre_content)
