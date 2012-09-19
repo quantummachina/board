@@ -19,7 +19,7 @@ gem 'bcrypt-ruby', '3.0.1'
 
 gem 'paperclip'
 gem 'aws-s3'
-gem 'aws-sdk'
+gem 'aws-sdk', '1.5.8'
 
 #gem 'delayed_job_active_record'
 

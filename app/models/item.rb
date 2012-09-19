@@ -28,7 +28,7 @@ class Item < ActiveRecord::Base
       self.urltype = 1
       aid = content[5..(content.length-1)].to_i
       a = Attachment.find(aid)
-      self.og_image = auto_html(a.file.url){ html_escape; image}
+      self.og_image = auto_html(a.file.url(:small)){ html_escape; image}
       self.pre_content = link_to og_image, a.file.url, target: "_blank", class: "thumbnail"
 
     else

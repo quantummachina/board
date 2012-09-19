@@ -7,7 +7,7 @@ module ItemsHelper
 			aid = content[5..(content.length-1)].to_i
 			a = Attachment.find(aid)
 			link_to a.file.url, target: "_blank", class: "thumbnail" do
-						auto_html(a.file.url){ html_escape; image}
+						auto_html(a.file.url(:medium)){ html_escape; image}
 			end
 		else
 			if content.match(/https?:\/\/.+?\.(jpg|jpeg|bmp|gif|png)(\?\S+)?/i)

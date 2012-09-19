@@ -1,3 +1,4 @@
+# encoding: utf-8
 module ApplicationHelper
 	include AutoHtml
 	#Returns the full title on a per-page basis.
@@ -87,6 +88,37 @@ module ApplicationHelper
 
 	def wrapm(content, n)
 	    sanitize(raw(content.split.map{ |s| wrap_long_string(s, n) }.join(' ')))
+	end
+
+	def tiempo(time)
+		secs = Time.now().to_i - time.to_i
+		if secs < 60
+			'justo ahora'
+		else
+			mins = secs/60
+			if mins < 60
+				'hace ' + mins.to_s + ' minuto' + (mins > 1 ? 's' : '')
+			else
+				hrs = mins/60
+				if hrs < 24
+					'hace ' + hrs.to_s + ' hora' + (hrs > 1 ? 's' : '')
+				else
+					dys = hrs/24
+					if dys < 30
+						'hace ' + dys.to_s + ' día' + (dys > 1 ? 's' : '')
+					else
+						mths = dys/30
+						if mths < 12
+							'hace ' + mths.to_s + ' mes' + (mths > 1 ? 'es' : '' )
+						else
+							yrs = mths/12
+							'hace ' + yrs.to_s + ' año' + (yrs > 1 ? 's' : '')
+						end
+					end
+				end
+			end			
+		end
+
 	end
 
 end

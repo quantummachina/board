@@ -1,10 +1,10 @@
 # encoding: utf-8
 namespace :data do
-	desc "Opciones de Usuario"
+	desc "Set thumbnails by setting all items"
 
-	task pop_uoptions: :environment do
-		User.all.each do |u|
-			Uoption.create(user_id: u.id)
+	task set_thumbs: :environment do
+		Item.all.each do |i|
+			i.set
 		end
 	end
 
