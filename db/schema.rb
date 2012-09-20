@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120913194006) do
+ActiveRecord::Schema.define(:version => 20120920052404) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20120913194006) do
     t.text     "conclusion",                 :default => ""
     t.integer  "status",                     :default => 0
     t.string   "idea",                       :default => ""
+    t.boolean  "quarantine",                 :default => false
   end
 
   add_index "collections", ["user_id"], :name => "index_collections_on_user_id"

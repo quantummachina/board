@@ -117,6 +117,12 @@ class CollectionsController < ApplicationController
   		redirect_to root_path
   	end
 
+  	def quarantine
+  		@c = Collection.find(params[:id])
+  		@c.toggle!(:quarantine)
+  		redirect_to root_path
+  	end
+
   	def switchstat
   		@collection = Collection.find(params[:id])
   		s = @collection.status

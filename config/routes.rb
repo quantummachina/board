@@ -4,6 +4,7 @@ Board::Application.routes.draw do
 
   get "admins/admin"
   get "admins/users"
+  get "admins/quarantine"
   #get "admins/massemail"
   #get "admins/sendmassemail"
 
@@ -50,6 +51,7 @@ Board::Application.routes.draw do
       get :promote
       get :successful
       get :weekly
+      get :quarantine
       get :switchstat
       get :markfinished
     end

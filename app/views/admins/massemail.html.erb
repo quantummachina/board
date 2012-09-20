@@ -12,7 +12,7 @@
 					<%= text_area_tag :body, nil, rows: 8,  class: 'span6' %>
 					<%= label_tag 'Firma' %>
 					<%= text_area_tag :signature, nil, rows: 3, class: 'span6' %>
-					<%= submit_tag 'Send!', class: 'btn btn-primary'%>
+					<%= submit_tag 'Send!', confirm: 'Confirmar enviar a TODOS los usuarios!', class: 'btn btn-primary'%>
 				<%end%>
 
 			</div>

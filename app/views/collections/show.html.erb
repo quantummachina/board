@@ -32,7 +32,7 @@
 			<%= render 'invite' if @board.status != 5 %>
 			<%if signed_in? && (owner? || current_user.admin) %>
 			<%= link_to "Editar proyecto", edit_collection_path(@board), class: "btn btn-small" %>
-		<%end%><%= render 'promote'%>
+		<%end%><%= render 'admin'%>
 		<br><br>
 
 		<ul id="WoI" class="nav nav-tabs">

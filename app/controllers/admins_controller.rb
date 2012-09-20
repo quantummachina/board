@@ -11,6 +11,10 @@ class AdminsController < ApplicationController
     @users = User.reorder('created_at DESC').all
   end
 
+  def quarantine
+    @collections = Collection.find_all_by_quarantine(true)
+  end
+
   def massemail
     @test = params[:test] || ''
     @subject = params[:subject] || ''

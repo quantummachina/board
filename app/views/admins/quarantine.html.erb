@@ -1,0 +1,8 @@
+<div class="row-fluid">
+	<div class="span12">
+		<h2>===Castigados===</h2>
+		<%@collections.each do |c|%>
+			<h3><%= link_to c.title, c %> <small> - <%= link_to 'Restaurar', controller: 'collections', action: 'quarantine', id: c.id %></small></h3>
+		<%end%>
+	</div>
+</div>

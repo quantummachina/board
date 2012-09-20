@@ -16,7 +16,7 @@
 
 						<% board = boards[i] %>
 						
-				  	    	<%= render 'shared/board_thumbnail',  board: board, size: 3 %>
+				  	    	<%= (render 'shared/board_thumbnail',  board: board, size: 3) if !board.quarantine %>
 					<% end %>
 				</div>
 			</div>
