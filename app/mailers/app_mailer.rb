@@ -77,6 +77,7 @@ class AppMailer < ActionMailer::Base
   end
 
   def massive_email(user,subject,body,signature)
+    @user = user
     @body = body
     @signature = signature
     mail(to: user.email, subject: subject)

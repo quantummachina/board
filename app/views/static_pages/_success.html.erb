@@ -14,7 +14,7 @@
 
                 <% @sprojects.each do |s|%>
                   <div class="<%=if s == @sprojects.first then "item active" else "item" end%>">
-	                <%= raw Item.find(s.collection.cover).og_image %>
+	                <%= cover(Item.find(s.collection.cover))%>
 	                <div class="carousel-caption">
 	                  <h3><%= link_to s.collection.title, s.collection %></h3>
 	                  <h3><%=s.text%></h3>

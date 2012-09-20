@@ -4,4 +4,6 @@
 		<%= f.text_area :idea, maxlength: 160, placeholder:"Explícanos brevemente tu idea. Este texto aparecerá en portada. (160 caracteres)", rows: 2 , class: "span6" %>
 		<%= f.label :description, "Descripción" %>
 		<%= f.text_area :description, maxlength: 1000, placeholder:"Describe tu idea. Recuerda ser claro e incluir que producto quieres realizar. (1000 caracteres)", rows: 6 , class: "span6" %>
+		<%= f.label :contribution, "Yo puedo contribuir con:" %>
+		<%= f.text_area :contribution, maxlength: 500, placeholder:"Describe tu rol en el proyecto, lo que  puedes aportar. (500 caracteres)", rows: 4 , class: "span6" %>
 	 	<%= f.label :category_id, "Categoría:" %>
