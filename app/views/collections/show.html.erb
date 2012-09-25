@@ -27,6 +27,9 @@
 			<% end %>
 			<%= link_to @board.category.name, nav_path(category: @board.category.id), class: "label"%></p>
 
+			<p>Creado: <%= tiempo(@board.created_at)%></p>
+			<p>Actualizado: <%= tiempo(@board.updated_at)%></p>
+
 			<%= render 'status' %>
 
 			<%= render 'invite' if @board.status != 5 %>
@@ -61,6 +64,10 @@
 						<%else%>
 							<h2>Descripción</h2>
 							<p><%= @board.description %></p>
+						<%end%>
+						<% if @board.contribution != '' %>
+							<h2>Mi aportación es:</h2>
+							<p><%= @board.contribution %></p>
 						<%end%>
 
 						<%if @board.status == 5%>
@@ -102,11 +109,12 @@
 	</div>
 </div>
 
+<%= render 'share_now'%>
 <% if signed_in? && current_user.extra.newboard %>
 	<script type="text/javascript">
 	    $(window).load(function(){
-	        $('#invite2').modal('show');
+	        $('#sharenow').modal('show');
 	    });
 	</script>
-	<%current_user.extra.toggle!(:newboard)%>
+	<%#current_user.extra.toggle!(:newboard)%>
 <%end%>
