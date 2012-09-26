@@ -1,5 +1,5 @@
 class Collection < ActiveRecord::Base
-  attr_accessible :description, :title, :user_id, :category_id, :needs, :status, :cover, :conclusion, :idea, :contribution
+  attr_accessible :description, :title, :user_id, :category_id, :needs, :status, :cover, :conclusion, :idea, :contribution, :city_id
 
   has_many :items, dependent: :destroy
   has_many :collaborations, dependent: :destroy
@@ -10,6 +10,7 @@ class Collection < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :category
+  belongs_to :city
 
   validates :title, presence: true
   #validates :description, presence: true

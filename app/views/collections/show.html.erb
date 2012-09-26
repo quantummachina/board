@@ -29,6 +29,7 @@
 
 			<p>Creado: <%= tiempo(@board.created_at)%></p>
 			<p>Actualizado: <%= tiempo(@board.updated_at)%></p>
+			<p>Lugar: <%= if @board.city_id == 0 then 'En Línea' else @board.city.name + ", " + @board.city.state.name end %></p>
 
 			<%= render 'status' %>
 
@@ -66,7 +67,7 @@
 							<p><%= @board.description %></p>
 						<%end%>
 						<% if @board.contribution != '' %>
-							<h2>Mi aportación es:</h2>
+							<h2>Mi aportación es</h2>
 							<p><%= @board.contribution %></p>
 						<%end%>
 
