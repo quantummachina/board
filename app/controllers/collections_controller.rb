@@ -74,7 +74,7 @@ class CollectionsController < ApplicationController
 		@collection = Collection.find(params[:id])
 		@categories = Category.all
 		@els = @collection.externallinks
-		if !(@collection.user.id == current_user.id) || (current_user.admin?)
+		if !((@collection.user.id == current_user.id) || (current_user.admin?))
       		redirect_to root_path
     	end
 	end
