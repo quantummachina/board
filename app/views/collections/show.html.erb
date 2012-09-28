@@ -27,11 +27,10 @@
 			<% end %>
 			<%= link_to @board.category.name, nav_path(category: @board.category.id), class: "label"%></p>
 
-			<p>Creado: <%= tiempo(@board.created_at)%></p>
-			<p>Actualizado: <%= tiempo(@board.updated_at)%></p>
-			<p>Lugar: <%= if @board.city_id == 0 then 'En Línea' else @board.city.name + ", " + @board.city.state.name end %></p>
+			<p>Creado: <%= tiempo(@board.created_at)%>, Actualizado: <%= tiempo(@board.updated_at)%></p>
+			<p>Lugar: <%= if @board.city_id == 0 then 'En Línea' else @board.city.name + ", " + @board.city.state.name end %>, 
 
-			<%= render 'status' %>
+			<%= render 'status' %> </p>
 
 			<%= render 'invite' if @board.status != 5 %>
 			<%if signed_in? && (owner? || current_user.admin) %>
@@ -117,5 +116,5 @@
 	        $('#sharenow').modal('show');
 	    });
 	</script>
-	<%#current_user.extra.toggle!(:newboard)%>
+	<%current_user.extra.toggle!(:newboard)%>
 <%end%>

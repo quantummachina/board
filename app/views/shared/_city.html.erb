@@ -1,0 +1,24 @@
+
+<ul class="nav nav-pills">
+  <li class="dropdown">
+    <a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#"><%= if @state == 0 then "Selecciona tu estado" else State.find(@state).name end %><b class="caret"></b></a>
+    <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+    	<%@states.each do |s|%>
+    		<%if @user.id %>
+    			<li> <%= link_to s.name, edit_user_path(@user, state: s.id), remote: true %></li>
+    		<%else%>
+    		<li> <%= link_to s.name, new_user_path(@user, state: s.id), remote: true %></li>
+    		<%end%>
+    	<%end%>
+
+      <%#li class="divider"li
+      li link_to 'Sin ubicación', edit_user_path(@user, state: 0), remote: true li%>
+
+    </ul>
+  </li>
+  <li class="dropdown">
+  	<%=fields_for @user do |g| %>
+  		<%= g.select 'city_id', options_from_collection_for_select(@cities, 'id', 'name', selected: @user.city_id || 0)  %>
+  	<%end%>
+  </li>
+</ul>

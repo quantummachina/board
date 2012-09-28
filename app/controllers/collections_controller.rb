@@ -68,15 +68,57 @@ class CollectionsController < ApplicationController
 	def new
 		@collection = Collection.new
 		@categories = Category.all
+		@states = State.all
+		if params.has_key?(:state)
+	      @state = params[:state]
+	    else
+	      if @collection.city_id != 0
+	        @state = @collection.city.state.id
+	      else  
+	        @state = 0
+	      end
+	    end
+
+	    if @state == 0 
+	      @cities = []
+	    else
+	      @cities = State.find(@state).cities
+	    end
+	    respond_to do |format|
+	        format.html { }
+	        format.js
+	    end
 	end
 
 	def edit
 		@collection = Collection.find(params[:id])
-		@categories = Category.all
-		@els = @collection.externallinks
 		if !((@collection.user.id == current_user.id) || (current_user.admin?))
       		redirect_to root_path
     	end
+    	@categories = Category.all
+		@els = @collection.externallinks
+		@states = State.all
+
+	    if params.has_key?(:state)
+	      @state = params[:state]
+	    else
+	      if @collection.city_id != 0
+	        @state = @collection.city.state.id
+	      else  
+	        @state = 0
+	      end
+	    end
+	    if @state == 0 
+	      @cities = []
+	    else
+	      @cities = State.find(@state).cities
+	    end
+
+	    respond_to do |format|
+	        format.html { }
+	        format.js
+	    end
+
 	end
 
 	def update

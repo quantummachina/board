@@ -90,21 +90,3 @@
     </div>
   </div>
 </div>
-<% if signed_in? %>
-<div class="modal hide fade" id="NewBoard">
-  <div class="modal-header">
-    <a class="close" data-dismiss="modal">×</a>
-    <h3>Crear un Nuevo Proyecto</h3>
-  </div>
-  <div class="modal-body">
-    <%= form_for current_user.collections.build do |f| %>
-      <%= render 'collections/fields', f: f %>
-      <%= f.select :category_id, options_from_collection_for_select(categories, "id", "name") %> 
-  </div>
-  <div class="modal-footer">
-    <a  data-dismiss="modal" href="#" class="btn btn-small">Close</a>
-      <%= f.submit "Create Project", class: "btn btn-small btn-primary" %>
-    <% end %>
-  </div>
-</div>
-<% end %>
