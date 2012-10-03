@@ -1,6 +1,13 @@
-<p>
-	| <%= link_to "Todo", nav_path(category: ''), remote: true%> |
+<div class='row'>
+<div class='span12'>
+	<div class= "b0">
+	<%= link_to "Todo", nav_path(category: ''), remote: true%>
+	</div>
 	<% @categories.each do |c| %>
-		<%= link_to c.name, nav_path(category: c.id), remote: true%> |
+	<div class= "<%='b'+c.id.to_s%>">
+		
+		<%= link_to c.name, nav_path(category: c.id), remote: true%>
+		</div>
 	<%end%>
-</p>
+</div>
+</div>

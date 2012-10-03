@@ -70,7 +70,7 @@ class CollectionsController < ApplicationController
 		@categories = Category.all
 		@states = State.all
 		if params.has_key?(:state)
-	      @state = params[:state]
+	      @state = params[:state].to_i
 	    else
 	      if @collection.city_id != 0
 	        @state = @collection.city.state.id
@@ -100,7 +100,7 @@ class CollectionsController < ApplicationController
 		@states = State.all
 
 	    if params.has_key?(:state)
-	      @state = params[:state]
+	      @state = params[:state].to_i
 	    else
 	      if @collection.city_id != 0
 	        @state = @collection.city.state.id
@@ -124,6 +124,9 @@ class CollectionsController < ApplicationController
 	def update
 		@collection = Collection.find(params[:id])
 		if @collection.update_attributes(params[:collection])
+			if params[:collection][:state].to_i == 0
+				@collection.update_attributes(city_id: 0)
+			end
 			if @collection.status !=5
 	      		flash[:success] = "Proyecto actualizado."
 	      		redirect_to @collection

@@ -14,18 +14,20 @@
 				<p><small><%= board.category.name %></small></p>
 			</div>
 		<%end%>
+		<div class='thmbcontent'>
 
-		<h3><%= board.title %></h3>
-		
-		<p><%= board.idea %></p>
+			<h3><%= board.title %></h3>
+			
+			<p><%= board.idea %></p>
 
-		<%if board.vacants %>
-		<h4>
-			<%board.vacants.each do |v|%>
-				<%#v.title+ "      "%>
+			<%if board.vacants %>
+			<h4>
+				<%board.vacants.each do |v|%>
+					<%#v.title+ "      "%>
+				<%end%>
+			</h4>
 			<%end%>
-		</h4>
-		<%end%>
+		</div>
 	</div>
 </div>
 <% end %>

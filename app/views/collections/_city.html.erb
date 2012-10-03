@@ -1,13 +1,19 @@
 
 <ul class="nav nav-pills">
   <li class="dropdown">
-    <a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#"><%= if @state == 0 then "Selecciona tu estado" else State.find(@state).name end %><b class="caret"></b></a>
+    <a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#"><%= if @state == 0 then "En línea" else State.find(@state).name end %><b class="caret"></b></a>
     <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+      <%if @collection.id %>
+        <li> <%= link_to 'En línea', edit_collection_path(@collection, state: 0), remote: true %></li>
+      <%else%>
+        <li> <%= link_to 'En línea', new_collection_path(@collection, state: 0), remote: true %></li>
+      <%end%>
+      <li class="divider"></li>
     	<%@states.each do |s|%>
     		<%if @collection.id %>
     			<li> <%= link_to s.name, edit_collection_path(@collection, state: s.id), remote: true %></li>
     		<%else%>
-    		<li> <%= link_to s.name, new_collection_path(@collection, state: s.id), remote: true %></li>
+    		  <li> <%= link_to s.name, new_collection_path(@collection, state: s.id), remote: true %></li>
     		<%end%>
     	<%end%>
 

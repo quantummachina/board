@@ -14,6 +14,18 @@ $design:				rgb(183, 42, 146)  !default;
 $film:					rgb(119, 203, 229)  !default;
 $technology:			rgb(82, 206, 194)  !default;
 
+div.thmbcontent{
+	padding-top: 4px;
+	clear: left;
+}
+
+ul.categorias{//deshuso
+	background-color: black;
+	li{
+		background-color: white;
+	}
+}
+
 div.alert-success{
 	background-color: $fuscia;
 	color: white;
@@ -36,36 +48,72 @@ div.idea{
 div.b22{//diseno
 	background-color: $design;
 	text-align: center;
-	width: 60px;
+	width: 80px;
+	height: 20px;
+	float: left;
 	small{color: white;}
+	p{color: white;}
+	a{color: white;}
 }
 
 div.b7{//video
 	background-color: $film;
 	text-align: center;
-	width: 60px;
+	width: 80px;
+	height: 20px;
+	float: left;
 	small{color: white;}
+	a{color: white;}
 }
 
 div.b5{//musica
 	background-color: $music;
 	text-align: center;
-	width: 60px;
+	width: 80px;
+	height: 20px;
+	float: left;
 	small{color: white;}
+	a{color: white;}
 }
 
 div.b2{//arte
 	background-color: $art;
 	text-align: center;
-	width: 60px;
+	width: 80px;
+	height: 20px;
+	float: left;
 	small{color: white;}
+	a{color: white;}
 }
 
 div.b17{//tecnologia
 	background-color: $technology;
 	text-align: center;
-	width: 60px;
+	width: 80px;
+	height: 20px;
+	float: left;
 	small{color: white;}
+	a{color: white;}
+}
+
+div.b0{//todo en menu
+	background-color: $grayLight;
+	text-align: center;
+	width: 80px;
+	height: 20px;
+	float: left;
+	small{color: white;}
+	a{color: white;}
+}
+
+div.b3{//arte
+	background-color: $art;
+	text-align: center;
+	width: 80px;
+	height: 20px;
+	float: left;
+	small{color: white;}
+	a{color: white;}
 }
 
 div.help {

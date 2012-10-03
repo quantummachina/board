@@ -1,0 +1,1525 @@
+Usage: heroku logs
+
+ display recent log output
+
+ -n, --num NUM        # the number of lines to display
+ -p, --ps PS          # only display logs from the given process
+ -s, --source SOURCE  # only display logs from the given source
+ -t, --tail           # continually stream logs
+
+Example:
+
+ $ heroku logs
+ 2012-01-01T12:00:00+00:00 heroku[api]: Config add EXAMPLE by email@example.com
+ 2012-01-01T12:00:01+00:00 heroku[api]: Release v1 created by email@example.com
+
+Terminate batch job (Y/N)? 
+
+A new version of the Heroku toolbelt is available, run `heroku update` to upgrade.
+
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.4ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.5ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.9ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.2ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (81.7ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.1ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.5ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.0ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.0ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.4ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.4ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (66.9ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (51.7ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (10.1ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.1ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered collections/index.html.erb within layouts/application (668.8ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_boards.html.erb (625.9ms)
+2012-09-29T20:44:53+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (36.1ms)
+2012-09-29T20:44:54+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.3ms)
+2012-09-29T20:44:54+00:00 app[web.1]:   Rendered layouts/_header.html.erb (300.5ms)
+2012-09-29T20:44:54+00:00 app[web.1]: Completed 200 OK in 998ms (Views: 415.7ms | ActiveRecord: 579.3ms)
+2012-09-29T20:44:54+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:44:54 +0000] "GET /collections HTTP/1.1" 200 10107 "-" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:44:54+00:00 heroku[router]: GET www.funkalab.com/collections dyno=web.1 queue=0 wait=0ms service=1013ms status=200 bytes=39439
+2012-09-29T20:44:57+00:00 app[web.1]: Started GET "/collections/164/edit" for 187.162.150.66 at 2012-09-29 20:44:57 +0000
+2012-09-29T20:44:57+00:00 app[web.1]: Processing by CollectionsController#edit as HTML
+2012-09-29T20:44:57+00:00 app[web.1]: 
+2012-09-29T20:44:57+00:00 app[web.1]:   Parameters: {"id"=>"164"}
+2012-09-29T20:44:57+00:00 app[web.1]: 
+2012-09-29T20:44:57+00:00 app[web.1]:   Rendered collections/_fields.html.erb (20.7ms)
+2012-09-29T20:44:57+00:00 app[web.1]:   Rendered collections/edit.html.erb within layouts/application (24.7ms)
+2012-09-29T20:44:57+00:00 app[web.1]:   Rendered collections/_city.html.erb (18.8ms)
+2012-09-29T20:44:57+00:00 app[web.1]:   Rendered layouts/_header.html.erb (7.8ms)
+2012-09-29T20:44:57+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.1ms)
+2012-09-29T20:44:57+00:00 app[web.1]: Completed 200 OK in 49ms (Views: 32.6ms | ActiveRecord: 11.7ms)
+2012-09-29T20:44:57+00:00 heroku[router]: GET www.funkalab.com/collections/164/edit dyno=web.1 queue=0 wait=0ms service=60ms status=200 bytes=14129
+2012-09-29T20:44:57+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:44:57 +0000] "GET /collections/164/edit HTTP/1.1" 200 4240 "http://www.funkalab.com/collections/164" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:45:01+00:00 app[web.1]: Started DELETE "/collections/164" for 187.162.150.66 at 2012-09-29 20:45:01 +0000
+2012-09-29T20:45:01+00:00 app[web.1]: Processing by CollectionsController#destroy as HTML
+2012-09-29T20:45:01+00:00 app[web.1]: 
+2012-09-29T20:45:01+00:00 app[web.1]: 
+2012-09-29T20:45:01+00:00 app[web.1]:   Parameters: {"authenticity_token"=>"9ykfcuPZahkADJwG1CiOWwbWazhPk78zJ14Bnzmbkd4=", "id"=>"164"}
+2012-09-29T20:45:01+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:01 +0000] "POST /collections/164 HTTP/1.1" 302 90 "http://www.funkalab.com/collections/164/edit" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:45:01+00:00 heroku[router]: POST www.funkalab.com/collections/164 dyno=web.1 queue=0 wait=0ms service=124ms status=302 bytes=90
+2012-09-29T20:45:01+00:00 app[web.1]: Redirected to http://www.funkalab.com/
+2012-09-29T20:45:01+00:00 app[web.1]: Completed 302 Found in 115ms (ActiveRecord: 41.4ms)
+2012-09-29T20:45:01+00:00 app[web.1]: Started GET "/" for 187.162.150.66 at 2012-09-29 20:45:01 +0000
+2012-09-29T20:45:01+00:00 app[web.1]: 
+2012-09-29T20:45:01+00:00 app[web.1]: 
+2012-09-29T20:45:01+00:00 app[web.1]: Processing by StaticPagesController#landing as HTML
+2012-09-29T20:45:01+00:00 app[web.1]: Redirected to http://www.funkalab.com/collections
+2012-09-29T20:45:01+00:00 app[web.1]: Completed 302 Found in 50ms (ActiveRecord: 47.2ms)
+2012-09-29T20:45:01+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:01 +0000] "GET / HTTP/1.1" 302 101 "http://www.funkalab.com/collections/164/edit" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:45:01+00:00 heroku[router]: GET www.funkalab.com/ dyno=web.1 queue=0 wait=0ms service=59ms status=302 bytes=101
+2012-09-29T20:45:01+00:00 app[web.1]: Started GET "/collections" for 187.162.150.66 at 2012-09-29 20:45:01 +0000
+2012-09-29T20:45:01+00:00 app[web.1]: Processing by CollectionsController#index as HTML
+2012-09-29T20:45:01+00:00 app[web.1]: 
+2012-09-29T20:45:01+00:00 app[web.1]: 
+2012-09-29T20:45:01+00:00 app[web.1]:   Rendered shared/_categories.html.erb (1.2ms)
+2012-09-29T20:45:01+00:00 app[web.1]
+:   Rendered shared/_board_thumbnail_big.html.erb (21.7ms)
+2012-09-29T20:45:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (26.8ms)
+2012-09-29T20:45:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (30.9ms)
+2012-09-29T20:45:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (26.0ms)
+2012-09-29T20:45:01+00:00 app[web.1]:   Rendered shared/_boards.html.erb (123.8ms)
+2012-09-29T20:45:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (15.2ms)
+2012-09-29T20:45:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.7ms)
+2012-09-29T20:45:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (16.5ms)
+2012-09-29T20:45:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.1ms)
+2012-09-29T20:45:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.8ms)
+2012-09-29T20:45:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (9.4ms)
+2012-09-29T20:45:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.5ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.0ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.1ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.6ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.4ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.0ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (9.5ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.5ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.5ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.0ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.5ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (23.1ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.4ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (16.8ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.3ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.1ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.5ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (11.2ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.6ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.4ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (9.3ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.0ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.2ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.6ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.2ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (59.3ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.6ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (23.6ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.6ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.8ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.4ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.7ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (29.2ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.9ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.3ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.4ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (12.7ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.1ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.9ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (14.4ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.2ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.4ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (21.2ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.1ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (22.2ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (10.0ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (11.5ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.9ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_boards.html.erb (541.1ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/index.html.erb within layouts/application (668.5ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered layouts/_header.html.erb (11.8ms)
+2012-09-29T20:45:02+00:00 app[web.1]: Started GET "/collections/168" for 187.162.150.66 at 2012-09-29 20:45:02 +0000
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (4.0ms)
+2012-09-29T20:45:02+00:00 app[web.1]: Completed 200 OK in 695ms (Views: 463.7ms | ActiveRecord: 229.4ms)
+2012-09-29T20:45:02+00:00 app[web.1]: 
+2012-09-29T20:45:02+00:00 app[web.1]:   Parameters: {"id"=>"168"}
+2012-09-29T20:45:02+00:00 app[web.1]: Processing by CollectionsController#show as HTML
+2012-09-29T20:45:02+00:00 app[web.1]: 
+2012-09-29T20:45:02+00:00 heroku[router]: GET www.funkalab.com/collections dyno=web.1 queue=0 wait=0ms service=706ms status=200 bytes=39135
+2012-09-29T20:45:02+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:02 +0000] "GET /collections HTTP/1.1" 200 9974 "http://www.funkalab.com/collections/164/edit" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_status.html.erb (0.6ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_invite.html.erb (1.5ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_admin.html.erb (1.0ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_share.html.erb (1.7ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_add_item.html.erb (61.9ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_wcollections.html.erb (45.5ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_add_item.html.erb (3.6ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_add_vacant.html.erb (3.2ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_share.html.erb (2.3ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_collaborate.html.erb (5.2ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_icollections.html.erb (1.5ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_share_now.html.erb (2.6ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered vacants/_fields.html.erb (0.8ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (0.0ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_comments.html.erb (2.9ms)
+2012-09-29T20:45:02+00:00 app[web.1]: Processing by CollectionsController#show as HTML
+2012-09-29T20:45:02+00:00 app[web.1]:   Parameters: {"id"=>"167"}
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered layouts/_header.html.erb (7.3ms)
+2012-09-29T20:45:02+00:00 app[web.1]: 
+2012-09-29T20:45:02+00:00 app[web.1]: Completed 200 OK in 212ms (Views: 112.8ms | ActiveRecord: 84.0ms)
+2012-09-29T20:45:02+00:00 app[web.1]: 
+2012-09-29T20:45:02+00:00 app[web.1]: Started GET "/collections/167" for 187.162.150.66 at 2012-09-29 20:45:02 +0000
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.8ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/show.html.erb within layouts/application (177.6ms)
+2012-09-29T20:45:02+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:02 +0000] "GET /collections/168 HTTP/1.1" 200 8168 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_add_item.html.erb (3.1ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_wcollections.html.erb (1.6ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_status.html.erb (0.6ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_invite.html.erb (2.1ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_admin.html.erb (1.0ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_share.html.erb (1.6ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered vacants/_fields.html.erb (0.7ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_add_vacant.html.erb (2.5ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_collaborate.html.erb (21.1ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (0.1ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_comments.html.erb (3.2ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered shared/_add_item.html.erb (2.8ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_icollections.html.erb (2.3ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_share_now.html.erb (2.3ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/_share.html.erb (1.9ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered collections/show.html.erb within layouts/application (55.4ms)
+2012-09-29T20:45:02+00:00 heroku[router]: GET www.funkalab.com/collections/168 dyno=web.1 queue=0 wait=0ms service=519ms status=200 bytes=26834
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered layouts/_header.html.erb (55.7ms)
+2012-09-29T20:45:02+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.0ms)
+2012-09-29T20:45:02+00:00 app[web.1]: Completed 200 OK in 133ms (Views: 92.9ms | ActiveRecord: 28.8ms)
+2012-09-29T20:45:02+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:02 +0000] "GET /collections/167 HTTP/1.1" 200 8103 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:45:02+00:00 heroku[router]: GET www.funkalab.com/collections/167 dyno=web.1 queue=0 wait=0ms service=410ms status=200 bytes=26752
+2012-09-29T20:45:03+00:00 heroku[router]: GET www.funkalab.com/collections/166 dyno=web.1 queue=0 wait=0ms service=95ms status=200 bytes=26207
+2012-09-29T20:45:03+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:03 +0000] "GET /collections/166 HTTP/1.1" 200 8050 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:45:03+00:00 app[web.1]: Started GET "/collections/166" for 187.162.150.66 at 2012-09-29 20:45:03 +0000
+2012-09-29T20:45:03+00:00 app[web.1]: Processing by CollectionsController#show as HTML
+2012-09-29T20:45:03+00:00 app[web.1]: 
+2012-09-29T20:45:03+00:00 app[web.1]: 
+2012-09-29T20:45:03+00:00 app[web.1]:   Parameters: {"id"=>"166"}
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered shared/_add_item.html.erb (3.3ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered collections/_share.html.erb (1.7ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered collections/_status.html.erb (0.7ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered collections/_admin.html.erb (1.1ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered collections/_share.html.erb (1.9ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered collections/_invite.html.erb (2.0ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered collections/_share_now.html.erb (2.1ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (0.0ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered collections/show.html.erb within layouts/application (41.9ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (2.9ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered vacants/_fields.html.erb (0.7ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered layouts/_header.html.erb (8.5ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered collections/_add_vacant.html.erb (2.4ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered collections/_wcollections.html.erb (1.9ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered collections/_collaborate.html.erb (3.7ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered collections/_comments.html.erb (2.4ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered collections/_icollections.html.erb (1.9ms)
+2012-09-29T20:45:03+00:00 app[web.1]:   Rendered shared/_add_item.html.erb (3.1ms)
+2012-09-29T20:45:03+00:00 app[web.1]: Completed 200 OK in 76ms (Views: 46.9ms | ActiveRecord: 16.9ms)
+2012-09-29T20:45:03+00:00 app[web.1]: 
+2012-09-29T20:45:03+00:00 app[web.1]: 
+2012-09-29T20:45:03+00:00 app[web.1]: Started GET "/collections/165" for 187.162.150.66 at 2012-09-29 20:45:03 +0000
+2012-09-29T20:45:03+00:00 app[web.1]:   Parameters: {"id"=>"165"}
+2012-09-29T20:45:03+00:00 app[web.1]: Processing by CollectionsController#show as HTML
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered collections/_invite.html.erb (1.4ms)
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered collections/_status.html.erb (0.6ms)
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered collections/_admin.html.erb (1.7ms)
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered collections/_share.html.erb (1.5ms)
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered shared/_add_item.html.erb (56.0ms)
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (0.0ms)
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered collections/_wcollections.html.erb (2.0ms)
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered vacants/_fields.html.erb (1.7ms)
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered collections/_add_vacant.html.erb (4.5ms)
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered collections/_collaborate.html.erb (6.5ms)
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered collections/_comments.html.erb (3.5ms)
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered shared/_add_item.html.erb (3.9ms)
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered collections/_icollections.html.erb (4.4ms)
+2012-09-29T20:45:0
+4+00:00 app[web.1]:   Rendered collections/_share.html.erb (2.8ms)
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered collections/_share_now.html.erb (4.6ms)
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered collections/show.html.erb within layouts/application (146.5ms)
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered layouts/_header.html.erb (50.6ms)
+2012-09-29T20:45:04+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.3ms)
+2012-09-29T20:45:04+00:00 app[web.1]: Completed 200 OK in 217ms (Views: 105.2ms | ActiveRecord: 100.7ms)
+2012-09-29T20:45:04+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:04 +0000] "GET /collections/165 HTTP/1.1" 200 8036 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:45:04+00:00 heroku[router]: GET www.funkalab.com/collections/165 dyno=web.1 queue=0 wait=0ms service=228ms status=200 bytes=26207
+2012-09-29T20:45:05+00:00 app[web.1]: 
+2012-09-29T20:45:05+00:00 app[web.1]:   Parameters: {"id"=>"165"}
+2012-09-29T20:45:05+00:00 app[web.1]: Started GET "/collections/165" for 69.171.237.2 at 2012-09-29 20:45:05 +0000
+2012-09-29T20:45:05+00:00 app[web.1]: Processing by CollectionsController#show as */*
+2012-09-29T20:45:05+00:00 app[web.1]: 
+2012-09-29T20:45:05+00:00 app[web.1]:   Rendered collections/_status.html.erb (0.1ms)
+2012-09-29T20:45:05+00:00 app[web.1]:   Rendered collections/_admin.html.erb (0.0ms)
+2012-09-29T20:45:05+00:00 app[web.1]:   Rendered collections/_invite.html.erb (0.0ms)
+2012-09-29T20:45:05+00:00 app[web.1]:   Rendered collections/_share.html.erb (1.8ms)
+2012-09-29T20:45:05+00:00 app[web.1]:   Rendered collections/_wcollections.html.erb (2.7ms)
+2012-09-29T20:45:05+00:00 app[web.1]:   Rendered collections/_add_vacant.html.erb (0.1ms)
+2012-09-29T20:45:05+00:00 app[web.1]:   Rendered shared/_error_messages.html.erb (0.0ms)
+2012-09-29T20:45:05+00:00 app[web.1]:   Rendered collections/_comments.html.erb (1.7ms)
+2012-09-29T20:45:05+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (5.7ms)
+2012-09-29T20:45:05+00:00 app[web.1]:   Rendered collections/_collaborate.html.erb (7.8ms)
+2012-09-29T20:45:05+00:00 app[web.1]:   Rendered collections/_icollections.html.erb (10.6ms)
+2012-09-29T20:45:05+00:00 app[web.1]:   Rendered layouts/_header.html.erb (2.6ms)
+2012-09-29T20:45:05+00:00 app[web.1]:   Rendered collections/show.html.erb within layouts/application (36.0ms)
+2012-09-29T20:45:05+00:00 app[web.1]:   Rendered collections/_share_now.html.erb (0.1ms)
+2012-09-29T20:45:05+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (5.8ms)
+2012-09-29T20:45:05+00:00 app[web.1]: Completed 200 OK in 89ms (Views: 33.3ms | ActiveRecord: 42.8ms)
+2012-09-29T20:45:05+00:00 heroku[router]: GET www.funkalab.com/collections/165 dyno=web.1 queue=0 wait=0ms service=110ms status=200 bytes=9409
+2012-09-29T20:45:05+00:00 heroku[nginx]: 69.171.237.2 - - [29/Sep/2012:20:45:05 +0000] "GET /collections/165 HTTP/1.1" 200 3487 "-" "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)" www.funkalab.com
+2012-09-29T20:45:05+00:00 heroku[router]: GET www.funkalab.com/assets/arte-dummy.png dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=7244
+2012-09-29T20:45:05+00:00 heroku[nginx]: 69.171.237.3 - - [29/Sep/2012:20:45:05 +0000] "GET /assets/arte-dummy.png HTTP/1.1" 200 7244 "-" "facebookplatform/1.0 (+http://developers.facebook.com)" www.funkalab.com
+2012-09-29T20:45:07+00:00 app[web.1]: 
+2012-09-29T20:45:07+00:00 app[web.1]: Started GET "/collections/165" for 187.162.150.66 at 2012-09-29 20:45:07 +0000
+2012-09-29T20:45:07+00:00 app[web.1]: 
+2012-09-29T20:45:07+00:00 app[web.1]: Processing by CollectionsController#show as HTML
+2012-09-29T20:45:07+00:00 app[web.1]:   Parameters: {"id"=>"165"}
+2012-09-29T20:45:07+00:00 app[web.1]:   Rendered collections/_status.html.erb (0.1ms)
+2012-09-29T20:45:07+00:00 app[web.1]:   Rendered collections/_invite.html.erb (0.0ms)
+2012-09-29T20:45:07+00:00 app[web.1]:   Rendered collections/_admin.html.erb (1.0ms)
+2012-09-29T20:45:07+00:00 app[web.1]:   Rendered collections/_share.html.erb (1.9ms)
+2012-09-29T20:45:07+00:00 app[web.1]:   Rendered collections/_wcollections.html.erb (2.1ms)
+2012-09-29T20:45:07+00:00 app[web.1]:   Rendered collections/_add_vacant.html.erb (0.1ms)
+2012-09-29T20:45:07+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (1.9ms)
+2012-09-29T20:45:07+00:00 app[web.1]:   Rendered collections/_collaborate.html.erb (5.1ms)
+2012-09-29T20:45:07+00:00 app[web.1]:   Rendered collections/_comments.html.erb (3.5ms)
+2012-09-29T20:45:07+00:00 app[web.1]:   Rendered collections/_icollections.html.erb (1.4ms)
+2012-09-29T20:45:07+00:00 app[web.1]:   Rendered collections/_share_now.html.erb (0.1ms)
+2012-09-29T20:45:07+00:00 app[web.1]:   Rendered collections/show.html.erb within layouts/application (99.0ms)
+2012-09-29T20:45:07+00:00 app[web.1]:   Rendered layouts/_header.html.erb (73.9ms)
+2012-09-29T20:45:07+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.6ms)
+2012-09-29T20:45:07+00:00 app[web.1]: Completed 200 OK in 197ms (Views: 96.5ms | ActiveRecord: 85.1ms)
+2012-09-29T20:45:07+00:00 heroku[router]: GET www.funkalab.com/collections/165 dyno=web.1 queue=0 wait=0ms service=207ms status=200 bytes=11704
+2012-09-29T20:45:07+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:07 +0000] "GET /collections/165 HTTP/1.1" 200 3857 "http://www.funkalab.com/collections" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:45:10+00:00 app[web.1]: 
+2012-09-29T20:45:10+00:00 app[web.1]: 
+2012-09-29T20:45:10+00:00 app[web.1]: Processing by CollectionsController#edit as HTML
+2012-09-29T20:45:10+00:00 app[web.1]:   Parameters: {"id"=>"168"}
+2012-09-29T20:45:10+00:00 app[web.1]: Started GET "/collections/168/edit" for 187.162.150.66 at 2012-09-29 20:45:10 +0000
+2012-09-29T20:45:10+00:00 app[web.1]:   Rendered collections/_city.html.erb (8.4ms)
+2012-09-29T20:45:10+00:00 app[web.1]:   Rendered collections/_fields.html.erb (10.2ms)
+2012-09-29T20:45:10+00:00 app[web.1]:   Rendered collections/edit.html.erb within layouts/application (14.0ms)
+2012-09-29T20:45:10+00:00 app[web.1]:   Rendered layouts/_header.html.erb (10.7ms)
+2012-09-29T20:45:10+00:00 app[web.1]: 
+2012-09-29T20:45:10+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.3ms)
+2012-09-29T20:45:10+00:00 app[web.1]: 
+2012-09-29T20:45:10+00:00 app[web.1]: Started GET "/collections/165/edit" for 187.162.150.66 at 2012-09-29 20:45:10 +0000
+2012-09-29T20:45:10+00:00 app[web.1]: Completed 200 OK in 47ms (Views: 26.7ms | ActiveRecord: 16.5ms)
+2012-09-29T20:45:10+00:00 heroku[router]: GET www.funkalab.com/collections/168/edit dyno=web.1 queue=0 wait=1ms service=60ms status=200 bytes=12529
+2012-09-29T20:45:10+00:00 app[web.1]: Processing by CollectionsController#edit as HTML
+2012-09-29T20:45:10+00:00 app[web.1]:   Parameters: {"id"=>"165"}
+2012-09-29T20:45:10+00:00 app[web.1]:   Rendered collections/_fields.html.erb (10.5ms)
+2012-09-29T20:45:10+00:00 app[web.1]:   Rendered collections/_city.html.erb (7.9ms)
+2012-09-29T20:45:10+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:10 +0000] "GET /collections/168/edit HTTP/1.1" 200 3585 "http://www.funkalab.com/collections/168" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:45:10+00:00 app[web.1]:   Rendered collections/edit.html.erb within layouts/application (14.1ms)
+2012-09-29T20:45:10+00:00 app[web.1]:   Rendered layouts/_header.html.erb (6.8ms)
+2012-09-29T20:45:10+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.4ms)
+2012-09-29T20:45:10+00:00 app[web.1]: Completed 200 OK in 36ms (Views: 24.2ms | ActiveRecord: 7.2ms)
+2012-09-29T20:45:10+00:00 heroku[router]: GET www.funkalab.com/collections/165/edit dyno=web.1 queue=0 wait=0ms service=96ms status=200 bytes=12041
+2012-09-29T20:45:10+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:10 +0000] "GET /collections/165/edit HTTP/1.1" 200 3541 "http://www.funkalab.com/collections/165" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:45:13+00:00 app[web.1]: 
+2012-09-29T20:45:13+00:00 app[web.1]: 
+2012-09-29T20:45:13+00:00 app[web.1]: Started DELETE "/collections/168" for 187.162.150.66 at 2012-09-29 20:45:13 +0000
+2012-09-29T20:45:13+00:00 app[web.1]:   Parameters: {"authenticity_token"=>"QtxtfJzaKe+Kz95mT7xLPOcdQlSz0dHECrE2u/tNi04=", "id"=>"168"}
+2012-09-29T20:45:13+00:00 app[web.1]: Processing by CollectionsController#destroy as HTML
+2012-09-29T20:45:13+00:00 app[web.1]: Redirected to http://www.funkalab.com/
+2012-09-29T20:45:13+00:00 app[web.1]: Completed 302 Found in 35ms (ActiveRecord: 29.1ms)
+2012-09-29T20:45:13+00:00 heroku[router]: POST www.funkalab.com/collections/168 dyno=web.1 queue=0 wait=0ms service=41ms status=302 bytes=90
+2012-09-29T20:45:13+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:13 +0000] "POST /collections/168 HTTP/1.1" 302 90 "http://www.funkalab.com/collections/168/edit" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:45:13+00:00 heroku[router]: GET www.funkalab.com/ dyno=web.1 queue=0 wait=0ms service=8ms status=302 bytes=101
+2012-09-29T20:45:13+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:13 +0000] "GET / HTTP/1.1" 302 101 "http://www.funkalab.com/collections/168/edit" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:45:13+00:00 app[web.1]: Redirected to http://www.funkalab.com/collections
+2012-09-29T20:45:13+00:00 app[web.1]: 
+2012-09-29T20:45:13+00:00 app[web.1]: Started GET "/" for 187.162.150.66 at 2012-09-29 20:45:13 +0000
+2012-09-29T20:45:13+00:00 app[web.1]: Processing by StaticPagesController#landing as HTML
+2012-09-29T20:45:13+00:00 app[web.1]: 
+2012-09-29T20:45:13+00:00 app[web.1]: Completed 302 Found in 2ms (ActiveRecord: 1.2ms)
+2012-09-29T20:45:13+00:00 app[web.1]: 
+2012-09-29T20:45:13+00:00 app[web.1]: Started GET "/collections" for 187.162.150.66 at 2012-09-29 20:45:13 +0000
+2012-09-29T20:45:13+00:00 app[web.1]: Processing by CollectionsController#index as HTML
+2012-09-29T20:45:13+00:00 app[web.1]: 
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_categories.html.erb (57.7ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (43.0ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (28.9ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (41.0ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (6.2ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_boards.html.erb (127.3ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (6.5ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.9ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.3ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (14.1ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.7ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.3ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.0ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.7ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.2ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.1ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.6ms)
+2012-09-29T20:45:13+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (18.0ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (24.3ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.6ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (9.0ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.5ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.5ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.2ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.4ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.1ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.5ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (34.9ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.5ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (90.1ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.2ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (9.2ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.5ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.0ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.2ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.5ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (81.7ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.7ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.2ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.8ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.6ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.4ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.2ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.2ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (9.4ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.0ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.8ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.7ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.7ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.6ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (38.6ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (30.0ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (22.0ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (27.8ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.4ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered collections/index.html.erb within layouts/application (854.9ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.5ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered shared/_boards.html.erb (668.8ms)
+2012-09-29T20:45:14+00:00 heroku[router]: GET www.funkalab.com/collections dyno=web.1 queue=0 wait=0ms service=911ms status=200 bytes=38840
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered layouts/_header.html.erb (33.6ms)
+2012-09-29T20:45:14+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (4.0ms)
+2012-09-29T20:45:14+00:00 app[web.1]: Completed 200 OK in 900ms (Views: 458.7ms | ActiveRecord: 439.4ms)
+2012-09-29T20:45:14+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:14 +0000] "GET /collections HTTP/1.1" 200 10062 "http://www.funkalab.com/collections/168/edit" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:45:16+00:00 app[web.1]: 
+2012-09-29T20:45:16+00:00 app[web.1]: 
+2012-09-29T20:45:16+00:00 app[web.1]: Started DELETE "/collections/165" for 187.162.150.66 at 2012-09-29 20:45:16 +0000
+2012-09-29T20:45:16+00:00 app[web.1]: Processing by CollectionsController#destroy as HTML
+2012-09-29T20:45:16+00:00 app[web.1]:   Parameters: {"authenticity_token"=>"9ykfcuPZahkADJwG1CiOWwbWazhPk78zJ14Bnzmbkd4=", "id"=>"165"}
+2012-09-29T20:45:16+00:00 app[web.1]: Redirected to http://www.funkalab.com/
+2012-09-29T20:45:16+00:00 app[web.1]: Completed 302 Found in 14ms (ActiveRecord: 8.5ms)
+2012-09-29T20:45:16+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:16 +0000] "POST /collections/165 HTTP/1.1" 302 90 "http://www.funkalab.com/collections/165/edit" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefo
+x/15.0.1" www.funkalab.com
+2012-09-29T20:45:16+00:00 heroku[router]: POST www.funkalab.com/collections/165 dyno=web.1 queue=0 wait=0ms service=21ms status=302 bytes=90
+2012-09-29T20:45:16+00:00 app[web.1]: 
+2012-09-29T20:45:16+00:00 app[web.1]: Started GET "/" for 187.162.150.66 at 2012-09-29 20:45:16 +0000
+2012-09-29T20:45:16+00:00 app[web.1]: Processing by StaticPagesController#landing as HTML
+2012-09-29T20:45:16+00:00 app[web.1]: 
+2012-09-29T20:45:16+00:00 app[web.1]: Redirected to http://www.funkalab.com/collections
+2012-09-29T20:45:16+00:00 app[web.1]: Completed 302 Found in 28ms (ActiveRecord: 26.8ms)
+2012-09-29T20:45:16+00:00 heroku[router]: GET www.funkalab.com/ dyno=web.1 queue=0 wait=0ms service=39ms status=302 bytes=101
+2012-09-29T20:45:16+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:16 +0000] "GET / HTTP/1.1" 302 101 "http://www.funkalab.com/collections/165/edit" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_categories.html.erb (1.1ms)
+2012-09-29T20:45:16+00:00 app[web.1]: Processing by CollectionsController#index as HTML
+2012-09-29T20:45:16+00:00 app[web.1]: 
+2012-09-29T20:45:16+00:00 app[web.1]: 
+2012-09-29T20:45:16+00:00 app[web.1]: Started GET "/collections" for 187.162.150.66 at 2012-09-29 20:45:16 +0000
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (30.4ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (12.7ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (77.6ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (45.5ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (17.2ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_boards.html.erb (190.6ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.2ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.5ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (84.7ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.2ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.9ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.3ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.3ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.0ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.4ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.3ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.9ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.5ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.3ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.5ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.4ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.9ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.3ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.4ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.6ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.2ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.4ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.3ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.5ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.2ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.0ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.4ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.5ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.4ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.0ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.1ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.4ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (14.3ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (9.8ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.0ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (25.7ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (11.2ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.9ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.9ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (9.4ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (10.9ms)
+2012-09-29T20:45:16+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.5ms)
+2012-09-29T20:45:17+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.3ms)
+2012-09-29T20:45:17+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (102.1ms)
+2012-09-29T20:45:17+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.8ms)
+2012-09-29T20:45:17+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (9.0ms)
+2012-09-29T20:45:17+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (24.4ms)
+2012-09-29T20:45:17+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (14.5ms)
+2012-09-29T20:45:17+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.1ms)
+2012-09-29T20:45:17+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (10.5ms)
+2012-09-29T20:45:17+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.8ms)
+2012-09-29T20:45:17+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (11.3ms)
+2012-09-29T20:45:17+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (10.4ms)
+2012-09-29T20:45:17+00:00 app[web.1]:   Rendered shared/_boards.html.erb (632.3ms)
+2012-09-29T20:45:17+00:00 app[web.1]:   Rendered collections/index.html.erb within layouts/application (825.5ms)
+2012-09-29T20:45:17+00:00 app[web.1]:   Rendered layouts/_header.html.erb (22.6ms)
+2012-09-29T20:45:17+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.5ms)
+2012-09-29T20:45:17+00:00 app[web.1]: Completed 200 OK in 884ms (Views: 568.3ms | ActiveRecord: 314.0ms)
+2012-09-29T20:45:17+00:00 heroku[router]: GET www.funkalab.com/collections dyno=web.1 queue=0 wait=0ms service=937ms status=200 bytes=38535
+2012-09-29T20:45:17+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:17 +0000] "GET /collections HTTP/1.1" 200 10108 "http://www.funkalab.com/collections/165/edit" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:45:19+00:00 app[web.1]: 
+2012-09-29T20:45:19+00:00 app[web.1]: Started GET "/collections/167/edit" for 187.162.150.66 at 2012-09-29 20:45:19 +0000
+2012-09-29T20:45:19+00:00 app[web.1]: 
+2012-09-29T20:45:19+00:00 app[web.1]: Processing by CollectionsController#edit as HTML
+2012-09-29T20:45:19+00:00 app[web.1]:   Parameters: {"id"=>"167"}
+2012-09-29T20:45:19+00:00 app[web.1]:   Rendered collections/_fields.html.erb (11.1ms)
+2012-09-29T20:45:19+00:00 app[web.1]:   Rendered collections/_city.html.erb (9.1ms)
+2012-09-29T20:45:19+00:00 app[web.1]:   Rendered collections/edit.html.erb within layouts/application (15.2ms)
+2012-09-29T20:45:19+00:00 app[web.1]: Completed 200 OK in 99ms (Views: 28.0ms | ActiveRecord: 67.1ms)
+2012-09-29T20:45:19+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.8ms)
+2012-09-29T20:45:19+00:00 app[web.1]:   Rendered layouts/_header.html.erb (64.6ms)
+2012-09-29T20:45:19+00:00 heroku[router]: GET www.funkalab.com/collections/167/edit dyno=web.1 queue=0 wait=0ms service=112ms status=200 bytes=12541
+2012-09-29T20:45:19+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:19 +0000] "GET /collections/167/edit HTTP/1.1" 200 3621 "http://www.funkalab.com/collections/167" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:45:20+00:00 app[web.1]: 
+2012-09-29T20:45:20+00:00 app[web.1]: Started GET "/collections/166" for 187.162.150.66 at 2012-09-29 20:45:20 +0000
+2012-09-29T20:45:20+00:00 app[web.1]: 
+2012-09-29T20:45:20+00:00 app[web.1]:   Parameters: {"id"=>"166"}
+2012-09-29T20:45:20+00:00 app[web.1]: Processing by CollectionsController#show as HTML
+2012-09-29T20:45:20+00:00 app[web.1]:   Rendered collections/_status.html.erb (0.1ms)
+2012-09-29T20:45:20+00:00 app[web.1]:   Rendered collections/_invite.html.erb (0.1ms)
+2012-09-29T20:45:20+00:00 app[web.1]:   Rendered collections/_admin.html.erb (8.4ms)
+2012-09-29T20:45:20+00:00 app[web.1]:   Rendered collections/_share.html.erb (1.9ms)
+2012-09-29T20:45:20+00:00 app[web.1]:   Rendered collections/_add_vacant.html.erb (0.1ms)
+2012-09-29T20:45:20+00:00 app[web.1]:   Rendered collections/_wcollections.html.erb (1.9ms)
+2012-09-29T20:45:20+00:00 app[web.1]:   Rendered collections/_collaborate.html.erb (12.4ms)
+2012-09-29T20:45:20+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (4.5ms)
+2012-09-29T20:45:20+00:00 heroku[router]: GET www.funkalab.com/collections/166 dyno=web.1 queue=0 wait=0ms service=262ms status=200 bytes=11704
+2012-09-29T20:45:20+00:00 app[web.1]:   Rendered collections/_icollections.html.erb (4.1ms)
+2012-09-29T20:45:20+00:00 app[web.1]:   Rendered collections/show.html.erb within layouts/application (201.2ms)
+2012-09-29T20:45:20+00:00 app[web.1]:   Rendered layouts/_header.html.erb (9.9ms)
+2012-09-29T20:45:20+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (6.2ms)
+2012-09-29T20:45:20+00:00 app[web.1]:   Rendered collections/_comments.html.erb (115.8ms)
+2012-09-29T20:45:20+00:00 app[web.1]:   Rendered collections/_share_now.html.erb (0.1ms)
+2012-09-29T20:45:20+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:20 +0000] "GET /collections/166 HTTP/1.1" 200 3856 "http://www.funkalab.com/collections" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:45:20+00:00 app[web.1]: Completed 200 OK in 253ms (Views: 162.7ms | ActiveRecord: 68.5ms)
+2012-09-29T20:45:22+00:00 app[web.1]: 
+2012-09-29T20:45:22+00:00 app[web.1]: Started GET "/collections/166" for 69.171.229.3 at 2012-09-29 20:45:22 +0000
+2012-09-29T20:45:22+00:00 app[web.1]: Processing by CollectionsController#show as */*
+2012-09-29T20:45:22+00:00 app[web.1]: 
+2012-09-29T20:45:22+00:00 app[web.1]:   Parameters: {"id"=>"166"}
+2012-09-29T20:45:22+00:00 app[web.1]:   Rendered collections/_invite.html.erb (0.0ms)
+2012-09-29T20:45:22+00:00 app[web.1]:   Rendered collections/_admin.html.erb (0.0ms)
+2012-09-29T20:45:22+00:00 app[web.1]:   Rendered collections/_share.html.erb (1.9ms)
+2012-09-29T20:45:22+00:00 app[web.1]:   Rendered collections/_status.html.erb (0.1ms)
+2012-09-29T20:45:22+00:00 app[web.1]:   Rendered collections/_add_vacant.html.erb (0.1ms)
+2012-09-29T20:45:22+00:00 app[web.1]:   Rendered
+ shared/_error_messages.html.erb (0.0ms)
+2012-09-29T20:45:22+00:00 app[web.1]:   Rendered collections/_wcollections.html.erb (23.8ms)
+2012-09-29T20:45:22+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (5.9ms)
+2012-09-29T20:45:22+00:00 app[web.1]:   Rendered collections/_collaborate.html.erb (9.5ms)
+2012-09-29T20:45:22+00:00 app[web.1]:   Rendered collections/_comments.html.erb (28.2ms)
+2012-09-29T20:45:22+00:00 heroku[router]: GET www.funkalab.com/collections/166 dyno=web.1 queue=0 wait=0ms service=193ms status=200 bytes=9409
+2012-09-29T20:45:22+00:00 heroku[nginx]: 69.171.229.3 - - [29/Sep/2012:20:45:22 +0000] "GET /collections/166 HTTP/1.1" 200 3467 "-" "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)" www.funkalab.com
+2012-09-29T20:45:22+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:22 +0000] "POST /collections/167 HTTP/1.1" 302 90 "http://www.funkalab.com/collections/167/edit" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:45:22+00:00 heroku[router]: POST www.funkalab.com/collections/167 dyno=web.1 queue=0 wait=0ms service=33ms status=302 bytes=90
+2012-09-29T20:45:22+00:00 app[web.1]:   Rendered layouts/_header.html.erb (2.6ms)
+2012-09-29T20:45:22+00:00 app[web.1]:   Rendered collections/show.html.erb within layouts/application (144.0ms)
+2012-09-29T20:45:22+00:00 app[web.1]: Started DELETE "/collections/167" for 187.162.150.66 at 2012-09-29 20:45:22 +0000
+2012-09-29T20:45:22+00:00 app[web.1]:   Rendered collections/_share_now.html.erb (0.1ms)
+2012-09-29T20:45:22+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (7.7ms)
+2012-09-29T20:45:22+00:00 app[web.1]: Completed 200 OK in 172ms (Views: 51.7ms | ActiveRecord: 107.8ms)
+2012-09-29T20:45:22+00:00 app[web.1]: 
+2012-09-29T20:45:22+00:00 app[web.1]:   Rendered collections/_icollections.html.erb (8.4ms)
+2012-09-29T20:45:22+00:00 app[web.1]: 
+2012-09-29T20:45:22+00:00 app[web.1]: Redirected to http://www.funkalab.com/
+2012-09-29T20:45:22+00:00 app[web.1]: Completed 302 Found in 22ms (ActiveRecord: 11.4ms)
+2012-09-29T20:45:22+00:00 app[web.1]: Processing by CollectionsController#destroy as HTML
+2012-09-29T20:45:22+00:00 app[web.1]:   Parameters: {"authenticity_token"=>"QtxtfJzaKe+Kz95mT7xLPOcdQlSz0dHECrE2u/tNi04=", "id"=>"167"}
+2012-09-29T20:45:22+00:00 app[web.1]: Started GET "/" for 187.162.150.66 at 2012-09-29 20:45:22 +0000
+2012-09-29T20:45:22+00:00 app[web.1]: 
+2012-09-29T20:45:22+00:00 app[web.1]: 
+2012-09-29T20:45:22+00:00 app[web.1]: Processing by StaticPagesController#landing as HTML
+2012-09-29T20:45:22+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:22 +0000] "GET / HTTP/1.1" 302 101 "http://www.funkalab.com/collections/167/edit" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:45:22+00:00 app[web.1]: Redirected to http://www.funkalab.com/collections
+2012-09-29T20:45:22+00:00 app[web.1]: Completed 302 Found in 12ms (ActiveRecord: 10.0ms)
+2012-09-29T20:45:22+00:00 heroku[router]: GET www.funkalab.com/ dyno=web.1 queue=0 wait=0ms service=21ms status=302 bytes=101
+2012-09-29T20:45:23+00:00 app[web.1]: 
+2012-09-29T20:45:23+00:00 app[web.1]: Processing by CollectionsController#index as HTML
+2012-09-29T20:45:23+00:00 app[web.1]: 
+2012-09-29T20:45:23+00:00 app[web.1]: Started GET "/collections" for 187.162.150.66 at 2012-09-29 20:45:23 +0000
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_categories.html.erb (1.7ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (22.8ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (17.3ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (215.5ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (7.9ms)
+2012-09-29T20:45:23+00:00 heroku[nginx]: 69.171.229.0 - - [29/Sep/2012:20:45:23 +0000] "GET /assets/arte-dummy.png HTTP/1.1" 200 7244 "-" "facebookplatform/1.0 (+http://developers.facebook.com)" www.funkalab.com
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (26.0ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_boards.html.erb (292.7ms)
+2012-09-29T20:45:23+00:00 heroku[router]: GET www.funkalab.com/assets/arte-dummy.png dyno=web.1 queue=0 wait=0ms service=218ms status=200 bytes=7244
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.0ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.5ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.4ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.1ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.9ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.1ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.0ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (12.8ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.7ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (52.5ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (70.1ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.8ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (10.0ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (36.1ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (11.1ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (12.6ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (25.4ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (20.9ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.2ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (10.9ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.2ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.0ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.7ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (19.9ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.3ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.0ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.8ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.2ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (10.2ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.6ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (10.1ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.4ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.7ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (18.0ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.6ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.6ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.6ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (9.5ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.4ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.3ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (13.2ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.3ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.3ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (9.8ms)
+2012-09-29T20:45:23+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (66.3ms)
+2012-09-29T20:45:24+00:00 app[web.1]:   Rendered collections/index.html.erb within layouts/application (978.9ms)
+2012-09-29T20:45:24+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (55.4ms)
+2012-09-29T20:45:24+00:00 app[web.1]:   Rendered shared/_boards.html.erb (683.3ms)
+2012-09-29T20:45:24+00:00 app[web.1]:   Rendered layouts/_header.html.erb (10.5ms)
+2012-09-29T20:45:24+00:00 heroku[router]: GET www.funkalab.com/collections dyno=web.1 queue=0 wait=0ms service=1027ms status=200 bytes=38230
+2012-09-29T20:45:24+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.5ms)
+2012-09-29T20:45:24+00:00 app[web.1]: Completed 200 OK in 1011ms (Views: 499.9ms | ActiveRecord: 506.8ms)
+2012-09-29T20:45:24+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:24 +0000] "GET /collections HTTP/1.1" 200 9939 "http://www.funkalab.com/collections/167/edit" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:45:34+00:00 app[web.1]: 
+2012-09-29T20:45:34+00:00 app[web.1]: 
+2012-09-29T20:45:34+00:00 app[web.1]: Started GET "/collections/166/edit" for 187.162.150.66 at 2012-09-29 20:45:34 +0000
+2012-09-29T20:45:34+00:00 app[web.1]: Processing by CollectionsController#edit as HTML
+2012-09-29T20:45:34+00:00 app[web.1]:   Parameters: {"id"=>"166"}
+2012-09-29T20:45:34+00:00 app[web.1]:   Rendered collections/_city.html.erb (8.0ms)
+2012-09-29T20:45:34+00:00 app[web.1]:   Rendered collections/_fields.html.erb (9.7ms)
+2012-09-29T20:45:34+00:00 app[web.1]:   Rendered collections/edit.html.erb within layouts/application (13.0ms)
+2012-09-29T20:45:34+00:00 app[web.1]:   Rendered layouts/_header.html.erb (6.4ms)
+2012-09-29T20:45:34+00:00 app[web.1]: Completed 200 OK in 56ms (Views: 24.4ms | ActiveRecord: 25.6ms)
+2012-09-29T20:45:34+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (4.4ms)
+2012-09-29T20:45:34+00:00 heroku[router]: GET www.funkalab.com/collections/166/edit dyno=web.1 queue=0 wait=0ms service=62ms status=200 bytes=12041
+2012-09-29T20:45:35+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:35 +0000] "GET /collections/166/edit HTTP/1.1" 200 3607 "http://www.funkalab.com/collections/166" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:45:38+00:00 app[web.1]: 
+2012-09-29T20:45:38+00:00 app[web.1]: 
+2012-09-29T20:45:38+00:00 app[web.1]: Started DELETE "/collections/166" for 187.162.150.66 at 2012-09-29 20:45:38 +0000
+2012-09-29T20:45:38+00:00 app[web.1]:   Parameters: {"authenticity_token"=>"9ykfcuPZahkADJwG1CiOWwbWazhPk78zJ14Bnzmbkd4=", "id"=>"166"}
+2012-09-29T20:45:38+00:00 app[web.1]: Processing by CollectionsController#destroy as HTML
+2012-09-29T20:45:38+00:00 app[web.1]: Completed 302 Found in 10ms (ActiveRecord: 5.7ms)
+2012-09-29T20:45:38+00:00 app[web.1]: Redirected to http://www.funkalab.com/
+2012-09-29T20:45:38+00:00 heroku[router]: POST www.funkalab.com/collections/166 dyno=web.1 queue=0 wait=0ms service=17ms status=302 bytes=90
+2012-09-29T20:45:38+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:38 +0000] "POST /collections/166 HTTP/1.1" 302 90 "http://www.funkalab.com/collections/166/edit" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:45:39+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:39 +0000] "GET / HTTP/1.1" 302 101 "http://www.funkalab.com/collections/166/edit" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:45:39+00:00 heroku[router]: GET www.funkalab.com/ dyno=web.1 queue=0 wait=0ms service=8ms status=302 bytes=101
+2012-09-29T20:45:39+00:00 app[web.1]: Processing by StaticPagesController#landing as HTML
+2012-09-29T20:45:39+00:00 app[web.1]: Redirected to http://www.funkalab.com/collections
+2012-09-29T20:45:39+00:00 app[web.1]: 
+2012-09-29T20:45:39+00:00 app[web.1]: Started GET "/" for 187.162.150.66 at 2012-09-29 20:45:39 +0000
+2012-09-29T20:45:39+00:00 app[web.1]: 
+2012-09-29T20:45:39+00:00 app[web.1]: Completed 302 Found in 2ms (ActiveRecord: 1.2ms)
+2012-09-29T20:45:39+00:00 app[web.1]: 
+2012-09-29T20:45:39+00:00 app[web.1]: Processing by CollectionsController#index as HTML
+2012-09-29T20:45:39+00:00 app[web.1]: 
+2012-09-29T20:45:39+00:00 app[web.1]: Started GET "/collections" for 187.162.150.66 at 2012-09-29 20:45:39 +0000
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_categories.html.erb (1.1ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (19.5ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (5.7ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (12.9ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (6.9ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (7.4ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_boards.html.erb (54.2ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.4ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.2ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.1ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.1ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (62.1ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (18.1ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.6ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.6ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.6ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.5ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.1ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.9ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (1.9ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.5ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.6ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.1ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.0ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.5ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.5ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (1.9ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.5ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.5ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.9ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.3ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.2ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.0ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.0ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.9ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (15.1ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.5ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (15.9ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.0ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.0ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.0ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.5ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.9ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:45:39+00:00 heroku[router]: GET www.funkalab.com/collections dyno=web.1 queue=0 wait=0ms service=505ms status=200 bytes=37925
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.1ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.8ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.4ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (58.4ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.2ms)
+2012-09-29T20:45:39+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:39 +0000] "GET /collections HTTP/1.1" 200 9989 "http://www.funkalab.com/collections/166/edit" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_boards.html.erb (406.7ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered collections/index.html.erb within layouts/application (463.1ms)
+2012-09-29T20:45:39+00:00 app[web.1]: Completed 200 OK in 497ms (Views: 367.3ms | ActiveRecord: 128.3ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.9ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered layouts/_header.html.erb (9.2ms)
+2012-09-29T20:45:39+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.9ms)
+2012-09-29T20:45:43+00:00 heroku[router]: GET funkalab.com/assets/mono-nube.png dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=4556
+2012-09-29T20:45:43+00:00 heroku[nginx]: 207.241.237.238 - - [29/Sep/2012:20:45:43 +0000] "GET /assets/mono-nube.png HTTP/1.0" 200 4556 "-" "Mozilla/5.0 (compatible; archive.org_bot +http://www.archive.org/details/archive.org_bot)" funkalab.com
+2012-09-29T20:45:45+00:00 heroku[router]: GET www.funkalab.com/assets/arte-dummy.png dyno=web.1 queue=0 wait=0ms service=27ms status=200 bytes=7244
+2012-09-29T20:45:45+00:00 heroku[nginx]: 69.171.228.247 - - [29/Sep/2012:20:45:45 +0000] "GET /assets/arte-dummy.png HTTP/1.1" 200 7244 "-" "facebookexternalhit/1.0 (+http://www.facebook.com/externalhit_uatext.php)" www.funkalab.com
+2012-09-29T20:45:50+00:00 app[web.1]: 
+2012-09-29T20:45:50+00:00 app[web.1]: 
+2012-09-29T20:45:50+00:00 app[web.1]: Started GET "/collections/163" for 187.162.150.66 at 2012-09-29 20:45:50 +0000
+2012-09-29T20:45:50+00:00 app[web.1]: Processing by CollectionsController#show as HTML
+2012-09-29T20:45:50+00:00 app[web.1]:   Parameters: {"id"=>"163"}
+2012-09-29T20:45:50+00:00 app[web.1]:   Rendered collections/_admin.html.erb (1.5ms)
+2012-09-29T20:45:50+00:00 app[web.1]:   Rendered collections/_status.html.erb (0.1ms)
+2012-09-29T20:45:50+00:00 app[web.1]:   Rendered collections/_invite.html.erb (0.0ms)
+2012-09-29T20:45:50+00:00 app[web.1]:   Rendered collections/_share.html.erb (1.9ms)
+2012-09-29T20:45:50+00:00 app[web.1]:   Rendered collections/_gear.html.erb (1.0ms)
+2012-09-29T20:45:50+00:00 app[web.1]:   Rendered collections/_add_vacant.html.erb (0.0ms)
+2012-09-29T20:45:50+00:00 app[web.1]:   Rendered collections/_wcollections.html.erb (4.7ms)
+2012-09-29T20:45:50+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (1.4ms)
+2012-09-29T20:45:50+00:00 app[web.1]:   Rendered collections/_collaborate.html.erb (4.2ms)
+2012-09-29T20:45:50+00:00 app[web.1]:   Rendered collections/_comments.html.erb (3.9ms)
+2012-09-29T20:45:50+00:00 app[web.1]:   Rendered collections/_icollections.html.erb (1.3ms)
+2012-09-29T20:45:50+00:00 app[web.1]:   Rendered collections/_share_now.html.erb (0.1ms)
+2012-09-29T20:45:50+00:00 app[web.1]:   Rendered collections/show.html.erb within layouts/application (56.2ms)
+2012-09-29T20:45:50+00:00 app[web.1]:   Rendered layouts/_header.html.erb (26.9ms)
+2012-09-29T20:45:50+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.1ms)
+2012-09-29T20:45:50+00:00 app[web.1]: Completed 200 OK in 104ms (Views: 39.2ms | ActiveRecord: 53.8ms)
+2012-09-29T20:45:50+00:00 heroku[router]: GET www.funkalab.com/collections/163 dyno=web.1 queue=0 wait=0ms service=115ms status=200 bytes=13589
+2012-09-29T20:45:51+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:50 +0000] "GET /collections/163 HTTP/1.1" 200 4697 "http://www.funkalab.com/collections" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:45:52+00:00 app[web.1]: 
+2012-09-29T20:45:52+00:00 app[web.1]: 
+2012-09-29T20:45:52+00:00 app[web.1]: Started GET "/collections/166/edit" for 187.162.150.66 at 2012-09-29 20:45:52 +0000
+2012-09-29T20:45:52+00:00 app[web.1]:   Parameters: {"id"=>"166"}
+2012-09-29T20:45:52+00:00 app[web.1]: Processing by CollectionsController#edit as HTML
+2012-09-29T20:45:52+00:00 app[web.1]: Completed 500 Internal Server Error in 2ms
+2012-09-29T20:45:52+00:00 app[web.1]: ActiveRecord::RecordNotFound (Couldn't find Collection with id=166):
+2012-09-29T20:45:52+00:00 app[web.1]:   app/controllers/collections_controller.rb:94:in `edit'
+2012-09-29T20:45:52+00:00 app[web.1]: 
+2012-09-29T20:45:52+00:00 app[web.1]: 
+2012-09-29T20:45:52+00:00 app[web.1]: 
+2012-09-29T20:45:52+00:00 heroku[router]: GET www.funkalab.com/collections/166/edit dyno=web.1 queue=0 wait=0ms service=48ms status=404 bytes=728
+2012-09-29T20:45:52+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:52 +0000] "GET /collections/166/edit HTTP/1.1" 404 728 "http://www.funkalab.com/collections/166" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:45:57+00:00 heroku[router]: GET www.funkalab.com/collections/165/edit dyno=web.1 queue=0 wait=0ms service=9ms status=404 bytes=728
+2012-09-29T20:45:57+00:00 app[web.1]: Started GET "/collections/165/edit" for 187.162.150.66 at 2012-09-29 20:45:57 +0000
+2012-09-29T20:45:57+00:00 app[web.1]: 
+2012-09-29T20:45:57+00:00 app[web.1]: 
+2012-09-29T20:45:57+00:00 app[web.1]: Processing by CollectionsController#edit as HTML
+2012-09-29T20:45:57+00:00 app[web.1]:   app/controllers/collections_controller.rb:94:in `edit'
+2012-09-29T20:45:57+00:00 app[web.1]: Completed 500 Internal Server Error in 3ms
+2012-09-29T20:45:57+00:00 app[web.1]:   Parameters: {"id"=>"165"}
+2012-09-29T20:45:57+00:00 app[web.1]: 
+2012-09-29T20:45:57+00:00 app[web.1]: 
+2012-09-29T20:45:57+00:00 app[web.1]: ActiveRecord::RecordNotFound (Couldn't find Collection with id=165):
+2012-09-29T20:45:57+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:45:57 +0000] "GET /collections/165/edit HTTP/1.1" 404 728 "http://www.funkalab.com/collections/165" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:45:57+00:00 app[web.1]: 
+2012-09-29T20:46:02+00:00 app[web.1]: 
+2012-09-29T20:46:02+00:00 app[web.1]: Started GET "/collections" for 187.162.150.66 at 2012-09-29 20:46:02 +0000
+2012-09-29T20:46:02+00:00 app[web.1]: 
+2012-09-29T20:46:02+00:00 app[web.1]: Processing by CollectionsController#index as HTML
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_categories.html.erb (1.2ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (18.8ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (16.6ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (19.1ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (14.1ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_boards.html.erb (80.6ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (10.2ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (59.7ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.4ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (1.9ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.0ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.7ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.5ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.7ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.0ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.7ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (9.1ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.2ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.2ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.3ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.6ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.1ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.5ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.6ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.2ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.2ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.2ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.9ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.5ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.5ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.4ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.7ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.8ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.9ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.5ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.4ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.5ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.6ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (1.9ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.2ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (58.9ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.9ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (1.9ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.7ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.3ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.0ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.8ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.0ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.2ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.1ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered shared/_boards.html.erb (448.3ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered collections/index.html.erb within layouts/application (531.0ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.1ms)
+2012-09-29T20:46:02+00:00 app[web.1]:   Rendered layouts/_header.html.erb (17.1ms)
+2012-09-29T20:46:02+00:00 app[web.1]: Completed 200 OK in 576ms (Views: 373.6ms | ActiveRecord: 201.0ms)
+2012-09-29T20:46:02+00:00 heroku[router]: GET www.funkalab.com/collections dyno=web.1 queue=0 wait=0ms service=585ms status=200 bytes=37925
+2012-09-29T20:46:02+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:46:02 +0000] "GET /collections HTTP/1.1" 200 10127 "-" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:03+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:46:03 +0000] "GET /assets/application-38729c239b536af10dee43afc334f0fc.js HTTP/1.1" 304 0 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:03+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:46:03 +0000] "GET /assets/application-2c354b876ff5de835edb062fb94546e8.css HTTP/1.1" 304 0 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:03+00:00 heroku[router]: GET www.funkalab.com/assets/application-2c354b876ff5de835edb062fb94546e8.css dyno=web.1 queue=0 wait=0ms service=13ms status=200 bytes=79536
+2012-09-29T20:46:03+00:00 heroku[router]: GET www.funkalab.com/assets/application-38729c239b536af10dee43afc334f0fc.js dyno=web.1 queue=0 wait=0ms service=14ms status=200 bytes=122043
+2012-09-29T20:46:03+00:00 heroku[router]: GET www.funkalab.com/assets/arte-dummy.png dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=7244
+2012-09-29T20:46:03+00:00 heroku[router]: GET www.funkalab.com/assets/logofunk1.png dyno=web.1 queue=0 wait=0ms service=6ms status=200 bytes=1188
+2012-09-29T20:46:03+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:46:03 +0000] "GET /assets/logofunk1.png HTTP/1.1" 304 0 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:03+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:46:03 +0000] "GET /assets/tecnologia-dummy.png HTTP/1.1" 304 0 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:03+00:00 heroku[router]: GET www.funkalab.com/assets/tecnologia-dummy.png dyno=web.1 queue=0 wait=0ms service=6ms status=200 bytes=8161
+2012-09-29T20:46:03+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:46:03 +0000] "GET /assets/arte-dummy.png HTTP/1.1" 304 0 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:03+00:00 heroku[router]: GET www.funkalab.com/assets/diseno-dummy.png dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=7581
+2012-09-29T20:46:03+00:00 heroku[router]: GET www.funkalab.com/assets/musica-dummy.png dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=10575
+2012-09-29T20:46:03+00:00 heroku[router]: GET www.funkalab.com/assets/icon_facebook.png dyno=web.1 queue=0 wait=0ms service=4ms status=200 bytes=1147
+2012-09-29T20:46:03+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:46:03 +0000] "GET /assets/icon_twitter.png HTTP/1.1" 304 0 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:03+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:46:03 +0000] "GET /assets/musica-dummy.png HTTP/1.1" 304 0 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:03+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:46:03 +0000] "GET /assets/diseno-dummy.png HTTP/1.1" 304 0 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:03+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:46:03 +0000] "GET /assets/icon_facebook.png HTTP/1.1" 304 0 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:03+00:00 heroku[router]: GET www.funkalab.com/assets/icon_twitter.png dyno=web.1 queue=0 wait=0ms service=4ms status=200 bytes=1197
+2012-09-29T20:46:04+00:00 heroku[router]: GET www.funkalab.com/favicon.ico dyno=web.1 queue=0 wait=0ms service=26ms status=200 bytes=61798
+2012-09-29T20:46:04+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:46:04 +0000] "GET /favicon.ico HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:08+00:00 heroku[router]: GET funkalab.com/assets/caja-inferior.png dyno=web.1 queue=0 wait=0ms service=11ms status=200 bytes=18846
+2012-09-29T20:46:09+00:00 heroku[nginx]: 207.241.237.238 - - [29/Sep/2012:20:46:09 +0000] "GET /assets/caja-inferior.png HTTP/1.0" 200 18846 "-" "Mozilla/5.0 (compatible; archive.org_bot +http://www.archive.org/details/archive.org_bot)" funkalab.com
+2012-09-29T20:46:13+00:00 app[web.1]: 
+2012-09-29T20:46:13+00:00 app[web.1]: 
+2012-09-29T20:46:13+00:00 app[web.1]: Started GET "/collections/123" for 189.160.105.153 at 2012-09-29 20:46:13 +0000
+2012-09-29T20:46:13+00:00 app[web.1]: Processing by CollectionsController#show as HTML
+2012-09-29T20:46:13+00:00 app[web.1]:   Parameters: {"id"=>"123"}
+2012-09-29T20:46:13+00:00 app[web.1]:   Rendered collections/_status.html.erb (0.1ms)
+2012-09-29T20:46:13+00:00 app[web.1]:   Rendered collections/_invite.html.erb (0.0ms)
+2012-09-29T20:46:13+00:00 app[web.1]:   Rendered collections/_admin.html.erb (0.0ms)
+2012-09-29T20:46:13+00:00 app[web.1]:   Rendered collections/_share.html.erb (1.6ms)
+2012-09-29T20:46:13+00:00 app[web.1]:   Rendered collections/_wcollections.html.erb (1.8ms)
+2012-09-29T20:46:13+00:00 app[web.1]:   Rendered collections/_add_vacant.html.erb (0.1ms)
+2012-09-29T20:46:13+00:00 app[web.1]:   Rendered shared/_error_messages.html.erb (0.0ms)
+2012-09-29T20:46:13+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (4.1ms)
+2012-09-29T20:46:13+00:00 app[web.1]:   Rendered shared/_error_messages.html.erb (0.0ms)
+2012-09-29T20:46:13+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (2.8ms)
+2012-09-29T20:46:13+00:00 app[web.1]:   Rendered collections/_collaborate.html.erb (9.9ms)
+2012-09-29T20:46:13+00:00 app[web.1]:   Rendered collections/_comments.html.erb (67.3ms)
+2012-09-29T20:46:14+00:00 app[web.1]:   Rendered collections/_icollections.html.erb (6.2ms)
+2012-09-29T20:46:14+00:00 app[web.1]:   Rendered collections/show.html.erb within layouts/application (98.9ms)
+2012-09-29T20:46:14+00:00 app[web.1]:   Rendered collections/_share_now.html.erb (0.0ms)
+2012-09-29T20:46:14+00:00 app[web.1]:   Rendered layouts/_header.html.erb (3.9ms)
+2012-09-29T20:46:14+00:00 app[web.1]: Completed 200 OK in 123ms (Views: 95.9ms | ActiveRecord: 16.7ms)
+2012-09-29T20:46:14+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.1ms)
+2012-09-29T20:46:14+00:00 heroku[router]: GET www.funkalab.com/collections/123 dyno=web.1 queue=0 wait=0ms service=130ms status=200 bytes=12078
+2012-09-29T20:46:14+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:46:14 +0000] "GET /collections/123 HTTP/1.1" 200 3931 "http://www.google.com.mx/search?q=registrarme+en+funkalab&rlz=1C1CHJL_esMX465MX465&oq=registrarme+en+funkalab&sugexp=chrome,mod=5&sourceid=chrome&ie=UTF-8" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:14+00:00 heroku[router]: GET www.funkalab.com/assets/application-2c354b876ff5de835edb062fb94546e8.css dyno=web.1 queue=0 wait=0ms service=9ms status=200 bytes=79536
+2012-09-29T20:46:14+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:46:14 +0000] "GET /assets/application-2c354b876ff5de835edb062fb94546e8.css HTTP/1.1" 200 13988 "http://www.funkalab.com/collections/123" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:14+00:00 heroku[router]: GET www.funkalab.com/assets/application-38729c239b536af10dee43afc334f0fc.js dyno=web.1 queue=0 wait=0ms service=10ms status=200 bytes=122043
+2012-09-29T20:46:14+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:46:14 +0000] "GET /assets/application-38729c239b536af10dee43afc334f0fc.js HTTP/1.1" 200 41847 "http://www.funkalab.com/collections/123" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:15+00:00 heroku[router]: GET www.funkalab.com/assets/logofunk1.png dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=1188
+2012-09-29T20:46:15+00:00 heroku[router]: GET www.funkalab.com/assets/diseno-dummy.png dyno=web.1 queue=0 wait=0ms service=6ms status=200 bytes=7581
+2012-09-29T2
+0:46:15+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:46:15 +0000] "GET /assets/logofunk1.png HTTP/1.1" 200 1188 "http://www.funkalab.com/collections/123" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:15+00:00 heroku[router]: GET www.funkalab.com/assets/fb_share.png dyno=web.1 queue=0 wait=0ms service=2ms status=200 bytes=1024
+2012-09-29T20:46:15+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:46:15 +0000] "GET /assets/fb_share.png HTTP/1.1" 200 1024 "http://www.funkalab.com/collections/123" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:15+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:46:15 +0000] "GET /assets/diseno-dummy.png HTTP/1.1" 200 7581 "http://www.funkalab.com/collections/123" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:15+00:00 heroku[router]: GET www.funkalab.com/assets/icon_twitter.png dyno=web.1 queue=0 wait=0ms service=4ms status=200 bytes=1197
+2012-09-29T20:46:15+00:00 heroku[router]: GET www.funkalab.com/assets/fb2.jpg dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=8900
+2012-09-29T20:46:15+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:46:15 +0000] "GET /assets/icon_twitter.png HTTP/1.1" 200 1197 "http://www.funkalab.com/collections/123" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:15+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:46:15 +0000] "GET /assets/icon_facebook.png HTTP/1.1" 200 1147 "http://www.funkalab.com/collections/123" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:15+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:46:15 +0000] "GET /assets/fb2.jpg HTTP/1.1" 200 8900 "http://www.funkalab.com/collections/123" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:15+00:00 heroku[router]: GET www.funkalab.com/assets/icon_facebook.png dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=1147
+2012-09-29T20:46:16+00:00 app[web.1]: 
+2012-09-29T20:46:16+00:00 app[web.1]: Processing by UsersController#new as HTML
+2012-09-29T20:46:16+00:00 app[web.1]: 
+2012-09-29T20:46:16+00:00 app[web.1]: Started GET "/signup" for 189.160.105.153 at 2012-09-29 20:46:16 +0000
+2012-09-29T20:46:16+00:00 heroku[router]: GET www.funkalab.com/signup dyno=web.1 queue=0 wait=0ms service=32ms status=200 bytes=10570
+2012-09-29T20:46:16+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:46:16 +0000] "GET /signup HTTP/1.1" 200 3207 "http://www.google.com.mx/url?sa=t&rct=j&q=registrarse%20en%20funkalab&source=web&cd=2&ved=0CCQQFjAB&url=http%3A%2F%2Fwww.funkalab.com%2Fsignup&ei=FF5nUKutLYX42gWw_YD4Ag&usg=AFQjCNFRinwKnSBntJx-0RRO8srftS1QUg" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:16+00:00 app[web.1]:   Rendered shared/_error_messages.html.erb (0.0ms)
+2012-09-29T20:46:16+00:00 app[web.1]:   Rendered users/_city.html.erb (7.2ms)
+2012-09-29T20:46:16+00:00 app[web.1]:   Rendered layouts/_header.html.erb (2.2ms)
+2012-09-29T20:46:16+00:00 app[web.1]:   Rendered users/new.html.erb within layouts/application (11.5ms)
+2012-09-29T20:46:16+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.5ms)
+2012-09-29T20:46:16+00:00 app[web.1]: Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 2.3ms)
+2012-09-29T20:46:16+00:00 app[web.1]:   Rendered users/_fields.html.erb (10.1ms)
+2012-09-29T20:46:18+00:00 heroku[router]: GET www.funkalab.com/favicon.ico dyno=web.1 queue=0 wait=0ms service=11ms status=200 bytes=61798
+2012-09-29T20:46:18+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:46:18 +0000] "GET /favicon.ico HTTP/1.1" 200 61798 "-" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:46:22+00:00 app[web.1]: 
+2012-09-29T20:46:22+00:00 app[web.1]: Started GET "/users/379" for 180.76.5.100 at 2012-09-29 20:46:22 +0000
+2012-09-29T20:46:22+00:00 app[web.1]: 
+2012-09-29T20:46:22+00:00 app[web.1]: Processing by UsersController#show as */*
+2012-09-29T20:46:22+00:00 app[web.1]:   Parameters: {"id"=>"379"}
+2012-09-29T20:46:22+00:00 heroku[router]: GET www.funkalab.com/users/379 dyno=web.1 queue=0 wait=0ms service=35ms status=200 bytes=5469
+2012-09-29T20:46:22+00:00 app[web.1]:   Rendered users/_categories_cards.html.erb (0.1ms)
+2012-09-29T20:46:22+00:00 app[web.1]:   Rendered shared/_boards.html.erb (0.0ms)
+2012-09-29T20:46:22+00:00 app[web.1]:   Rendered users/show.html.erb within layouts/application (1.6ms)
+2012-09-29T20:46:22+00:00 app[web.1]:   Rendered users/_message.html.erb (0.0ms)
+2012-09-29T20:46:22+00:00 app[web.1]:   Rendered shared/_boards.html.erb (0.0ms)
+2012-09-29T20:46:22+00:00 app[web.1]:   Rendered layouts/_header.html.erb (2.2ms)
+2012-09-29T20:46:22+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (2.9ms)
+2012-09-29T20:46:22+00:00 app[web.1]: Completed 200 OK in 30ms (Views: 9.1ms | ActiveRecord: 18.1ms)
+2012-09-29T20:46:22+00:00 heroku[nginx]: 180.76.5.100 - - [29/Sep/2012:20:46:22 +0000] "GET /users/379 HTTP/1.1" 200 2124 "-" "Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)" www.funkalab.com
+2012-09-29T20:46:48+00:00 heroku[router]: GET www.funkalab.com/favicon.ico dyno=web.1 queue=0 wait=0ms service=11ms status=200 bytes=61798
+2012-09-29T20:46:48+00:00 heroku[nginx]: 184.72.159.8 - - [29/Sep/2012:20:46:48 +0000] "GET /favicon.ico HTTP/1.1" 200 61798 "-" "bitlybot/2.0" www.funkalab.com
+2012-09-29T20:46:57+00:00 app[web.1]: 
+2012-09-29T20:46:57+00:00 app[web.1]: 
+2012-09-29T20:46:57+00:00 app[web.1]: Started GET "/" for 187.162.150.66 at 2012-09-29 20:46:57 +0000
+2012-09-29T20:46:57+00:00 app[web.1]: Processing by StaticPagesController#landing as HTML
+2012-09-29T20:46:57+00:00 heroku[router]: GET www.funkalab.com/ dyno=web.1 queue=0 wait=0ms service=60ms status=302 bytes=101
+2012-09-29T20:46:57+00:00 app[web.1]: Completed 302 Found in 53ms (ActiveRecord: 49.0ms)
+2012-09-29T20:46:57+00:00 app[web.1]: Redirected to http://www.funkalab.com/collections
+2012-09-29T20:46:57+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:46:57 +0000] "GET / HTTP/1.1" 302 101 "http://www.funkalab.com/collections/163" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:46:58+00:00 app[web.1]: 
+2012-09-29T20:46:58+00:00 app[web.1]: 
+2012-09-29T20:46:58+00:00 app[web.1]: Started GET "/collections" for 187.162.150.66 at 2012-09-29 20:46:58 +0000
+2012-09-29T20:46:58+00:00 app[web.1]: Processing by CollectionsController#index as HTML
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_categories.html.erb (1.7ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (7.0ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (6.6ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (11.0ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (6.7ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (7.0ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_boards.html.erb (39.6ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (37.5ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.1ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.0ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.0ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (1.9ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (1.9ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.7ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.5ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.2ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.3ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.0ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.0ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.0ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.4ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.9ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.8ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.0ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.9ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.5ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.5ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.0ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.5ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (26.9ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.8ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.4ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.8ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.4ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.7ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.7ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (62.7ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.9ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.2ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.8ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.0ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.0ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.4ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.1ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (1.9ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.3ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.2ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (32.7ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (46.7ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.7ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (10.3ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.0ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.1ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.9ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered collections/index.html.erb within layouts/application (507.9ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered shared/_boards.html.erb (465.5ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered layouts/_header.html.erb (12.7ms)
+2012-09-29T20:46:58+00:00 app[web.1]: Completed 200 OK in 530ms (Views: 326.4ms | ActiveRecord: 201.6ms)
+2012-09-29T20:46:58+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (2.9ms)
+2012-09-29T20:46:58+00:00 heroku[router]: GET www.funkalab.com/collections dyno=web.1 queue=0 wait=0ms service=590ms status=200 bytes=37925
+2012-09-29T20:46:58+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:46:58 +0000] "GET /collections HTTP/1.1" 200 9855 "http://www.funkalab.com/collections/163" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:47:01+00:00 app[web.1]: 
+2012-09-29T20:47:01+00:00 app[web.1]:   Parameters: {"id"=>"162"}
+2012-09-29T20:47:01+00:00 app[web.1]: Processing by CollectionsController#show as HTML
+2012-09-29T20:47:01+00:00 app[web.1]: 
+2012-09-29T20:47:01+00:00 app[web.1]: Started GET "/collections/162" for 187.162.150.66 at 2012-09-29 20:47:01 +0000
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered shared/_add_item.html.erb (3.7ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered collections/_status.html.erb (0.1ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered collections/_invite.html.erb (0.0ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered collections/_wcollections.html.erb (5.8ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered collections/_admin.html.erb (1.0ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered collections/_share.html.erb (1.8ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered collections/_add_vacant.html.erb (0.0ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered collections/_gear.html.erb (1.0ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered collections/_gear.html.erb (0.8ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (1.0ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (0.7ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered collections/_collaborate.html.erb (5.2ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered collections/_comments.html.erb (3.5ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered shared/_add_item.html.erb (57.1ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered collections/_icollections.html.erb (24.7ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered collections/_share_now.html.erb (0.1ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered collections/show.html.erb within layouts/application (125.5ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered layouts/_header.html.erb (6.8ms)
+2012-09-29T20:47:01+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (4.9ms)
+2012-09-29T20:47:01+00:00 app[web.1]: Completed 200 OK in 156ms (Views: 102.8ms | ActiveRecord: 42.4ms)
+2012-09-29T20:47:01+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:47:01 +0000] "GET /collections/162 HTTP/1.1" 200 4753 "http://www.funkalab.com/collections" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1" www.funkalab.com
+2012-09-29T20:47:01+00:00 heroku[router]: GET www.funkalab.com/collections/162 dyno=web.1 queue=0 wait=0ms service=163ms status=200 bytes=17137
+2012-09-29T20:47:13+00:00 app[web.1]: 
+2012-09-29T20:47:13+00:00 app[web.1]: Started GET "/collections/162" for 184.73.103.216 at 2012-09-29 20:47:13 +0000
+2012-09-29T20:47:13+00:00 app[web.1]: 
+2012-09-29T20:47:13+00:00 app[web.1]: Processing by CollectionsController#show as */*
+2012-09-29T20:47:13+00:00 app[web.1]:   Parameters: {"id"=>"162"}
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_status.html.erb (0.1ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_admin.html.erb (0.0ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_invite.html.erb (0.0ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_share.html.erb (1.9ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_add_vacant.html.erb (0.0ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_wcollections.html.erb (5.4ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered shared/_error_messages.html.erb (0.0ms)
+2012-09-29T20:47:13+00:00 heroku[router]: GET www.funkalab.com/collections/162 dyno=web.1 queue=0 wait=0ms service=72ms status=200 bytes=12788
+2012-09-29T20:47:13+00:00 heroku[nginx]: 184.73.103.216 - - [29/Sep/2012:20:47:13 +0000] "GET /collections/162 HTTP/1.1" 200 12788 "-" "bitlybot" www.funkalab.com
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_comments.html.erb (1.9ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered shared/_error_messages.html.erb (0.0ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (3.3ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_collaborate.html.erb (11.5ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (4.8ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_share_now.html.erb (0.3ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/show.html.erb within layouts/application (38.4ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered layouts/_header.html.erb (3.0ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.4ms)
+2012-09-29T20:47:13+00:00 app[web.1]: Completed 200 OK in 63ms (Views: 38.8ms | ActiveRecord: 10.9ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_icollections.html.erb (2.9ms)
+2012-09-29T20:47:13+00:00 app[web.1]: 
+2012-09-29T20:47:13+00:00 app[web.1]: 
+2012-09-29T20:47:13+00:00 app[web.1]: Started GET "/collections/162" for 23.22.209.12 at 2012-09-29 20:47:13 +0000
+2012-09-29T20:47:13+00:00 app[web.1]:   Parameters: {"id"=>"162"}
+2012-09-29T20:47:13+00:00 app[web.1]: Processing by CollectionsController#show as HTML
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_status.html.erb (0.1ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_admin.html.erb (0.0ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_invite.html.erb (0.0ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_share.html.erb (2.2ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_wcollections.html.erb (4.7ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_add_vacant.html.erb (0.6ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered shared/_error_messages.html.erb (0.0ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (4.8ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered shared/_error_messages.html.erb (0.0ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (3.3ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_collaborate.html.erb (11.7ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_comments.html.erb (13.1ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_icollections.html.erb (9.8ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered layouts/_header.html.erb (2.4ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.0ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/_share_now.html.erb (0.1ms)
+2012-09-29T20:47:13+00:00 app[web.1]:   Rendered collections/show.html.erb within layouts/application (57.2ms)
+2012-09-29T20:47:13+00:00 app[web.1]: Completed 200 OK in 81ms (Views: 37.6ms | ActiveRecord: 29.8ms)
+2012-09-29T20:47:13+00:00 heroku[router]: GET www.funkalab.com/collections/162 dyno=web.1 queue=0 wait=0ms service=90ms status=200 bytes=12788
+2012-09-29T20:47:13+00:00 heroku[nginx]: 23.22.209.12 - - [29/Sep/2012:20:47:13 +0000] "GET /collections/162 HTTP/1.1" 200 4241 "-" "bitlybot" www.funkalab.com
+2012-09-29T20:47:22+00:00 app[web.1]: 
+2012-09-29T20:47:22+00:00 app[web.1]: Started GET "/collections/162" for 69.171.229.5 at 2012-09-29 20:47:22 +0000
+2012-09-29T20:47:22+00:00 app[web.1]:   Parameters: {"id"=>"162"}
+2012-09-29T20:47:22+00:00 app[web.1]: 
+2012-09-29T20:47:22+00:00 app[web.1]: Processing by CollectionsController#show as */*
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered collections/_status.html.erb (0.1ms)
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered collections/_admin.html.erb (0.0ms)
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered collections/_invite.html.erb (0.0ms)
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered collections/_share.html.erb (2.2ms)
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered collections/_wcollections.html.erb (7.2ms)
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered collections/_add_vacant.html.erb (0.0ms)
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered shared/_error_messages.html.erb (0.0ms)
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (4.7ms)
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered shared/_error_messages.html.erb (0.0ms)
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered collections/_i_can_help.html.erb (3.0ms)
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered collections/_collaborate.html.erb (11.8ms)
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered collections/_comments.html.erb (1.8ms)
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered collections/_share_now.html.erb (0.1ms)
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered collections/show.html.erb within layouts/application (128.2ms)
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered collections/_icollections.html.erb (11.0ms)
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered layouts/_header.html.erb (2.3ms)
+2012-09-29T20:47:22+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (4.3ms)
+2012-09-29T20:47:22+00:00 app[web.1]: Completed 200 OK in 212ms (Views: 41.5ms | ActiveRecord: 98.4ms)
+2012-09-29T20:47:22+00:00 heroku[router]: GET www.funkalab.com/collections/162 dyno=web.1 queue=0 wait=0ms service=220ms status=200 bytes=12788
+2012-09-29T20:47:22+00:00 heroku[nginx]: 69.171.229.5 - - [29/Sep/2012:20:47:22 +0000] "GET /collections/162 HTTP/1.1" 200 4161 "-" "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)" www.funkalab.com
+2012-09-29T20:47:23+00:00 heroku[router]: GET www.funkalab.com/assets/arte-dummy.png dyno=web.1 queue=0 wait=0ms service=6ms status=200 bytes=7244
+2012-09-29T20:47:23+00:00 heroku[nginx]: 69.171.234.6 - - [29/Sep/2012:20:47:23 +0000] "GET /assets/arte-dummy.png HTTP/1.1" 200 7244 "-" "facebookexternalhit/1.0 (+http://www.facebook.com/externalhit_uatext.php)" www.funkalab.com
+2012-09-29T20:48:45+00:00 app[web.1]: Started GET "/users/new?state=32" for 189.160.105.153 at 2012-09-29 20:48:45 +0000
+2012-09-29T20:48:45+00:00 app[web.1]: Processing by UsersController#new as JS
+2012-09-29T20:48:45+00:00 app[web.1]: 
+2012-09-29T20:48:45+00:00 app[web.1]: 
+2012-09-29T20:48:45+00:00 app[web.1]:   Parameters: {"state"=>"32"}
+2012-09-29T20:48:45+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:48:45 +0000] "GET /users/new?state=32 HTTP/1.1" 200 1502 "http://www.funkalab.com/signup" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:48:45+00:00 app[web.1]:   Rendered users/_city.html.erb (48.5ms)
+2012-09-29T20:48:45+00:00 app[web.1]:   Rendered users/new.js.erb (50.1ms)
+2012-09-29T20:48:45+00:00 app[web.1]: Completed 200 OK in 251ms (Views: 224.3ms | ActiveRecord: 22.8ms)
+2012-09-29T20:48:45+00:00 heroku[router]: GET www.funkalab.com/users/new?state=32 dyno=web.1 queue=0 wait=0ms service=276ms status=200 bytes=6031
+2012-09-29T20:48:55+00:00 heroku[router]: GET www.funkalab.com/assets/logo75x75.png dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=4385
+2012-09-29T20:48:55+00:00 heroku[nginx]: 178.154.243.87 - - [29/Sep/2012:20:48:55 +0000] "GET /assets/logo75x75.png HTTP/1.1" 200 4385 "-" "Mozilla/5.0 (compatible; YandexImages/3.0; +http://yandex.com/bots)" www.funkalab.com
+2012-09-29T20:49:33+00:00 app[web.1]: 
+2012-09-29T20:49:33+00:00 app[web.1]: 
+2012-09-29T20:49:33+00:00 app[web.1]: Started POST "/users" for 189.160.105.153 at 2012-09-29 20:49:33 +0000
+2012-09-29T20:49:33+00:00 app[web.1]: Processing by UsersController#create as HTML
+2012-09-29T20:49:33+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"5kE6WLwC76m4ZyKvYx8ihhb9LeDF1ZowpmzVdlgcBeM=", "user"=>{"name"=>"Shirley", "email"=>"sh.nodz@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "city_id"=>"2456", "c_art"=>"1", "c_video"=>"0", "c_music"=>"0", "c_tecnology"=>"0", "c_design"=>"1", "about"=>"Todos a escribir, a crear y a leer.", "link_a"=>"", "link_b"=>"", "link_c"=>"", "link_d"=>""}, "commit"=>"Registrar"}
+2012-09-29T20:49:34+00:00 heroku[router]: POST www.funkalab.com/users dyno=web.1 queue=0 wait=0ms service=1051ms status=500 bytes=643
+2012-09-29T20:49:34+00:00 app[web.1]: Completed 500 Internal Server Error in 1042ms
+2012-09-29T20:49:34+00:00 app[web.1]:   Rendered static_pages/landing.html.erb within layouts/application (919.4ms)
+2012-09-29T20:49:34+00:00 app[web.1]:     2: </div>
+2012-09-29T20:49:34+00:00 app[web.1]: 
+2012-09-29T20:49:34+00:00 app[web.1]: ActionView::Template::Error (Missing partial users/front, application/front with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder]}. Searched in:
+2012-09-29T20:49:34+00:00 app[web.1]:     4:   <%= render 'front'%>
+2012-09-29T20:49:34+00:00 app[web.1]:     3: 
+2012-09-29T20:49:34+00:00 app[web.1]:   * "/app/app/views"
+2012-09-29T20:49:34+00:00 app[web.1]:     7:   <%= render 'how'%>
+2012-09-29T20:49:34+00:00 app[web.1]:   app/views/static_pages/landing.html.erb:4:in `_app_views_static_pages_landing_html_erb__3372713681394308527_58574400'
+2012-09-29T20:49:34+00:00 app[web.1]: 
+2012-09-29T20:49:34+00:00 app[web.1]:     1: <% provide(:title, '') %>
+2012-09-29T20:49:34+00:00 app[web.1]:   app/controllers/users_controller.rb:68:in `create'
+2012-09-29T20:49:34+00:00 app[web.1]:   * "/app/vendor/bundle/ruby/1.9.1/gems/devise-2.1.2/app/views"
+2012-09-29T20:49:34+00:00 app[web.1]: ):
+2012-09-29T20:49:34+00:00 app[web.1]:     6:   <%= render 'weekly'%>
+2012-09-29T20:49:34+00:00 app[web.1]: 
+2012-09-29T20:49:34+00:00 app[web.1]:     5:   <%= render 'success'%>
+2012-09-29T20:49:34+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:49:34 +0000] "POST /users HTTP/1.1" 500 643 "http://www.funkalab.com/signup" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:49:44+00:00 app[web.1]: 
+2012-09-29T20:49:44+00:00 app[web.1]: Started GET "/users/new?state=32" for 189.160.105.153 at 2012-09-29 20:49:44 +0000
+2012-09-29T20:49:44+00:00 app[web.1]: 
+2012-09-29T20:49:44+00:00 app[web.1]: Processing by UsersController#new as JS
+2012-09-29T20:49:44+00:00 app[web.1]:   Parameters: {"state"=>"32"}
+2012-09-29T20:49:44+00:00 app[web.1]:   Rendered users/new.js.erb (36.8ms)
+2012-09-29T20:49:44+00:00 app[web.1]: Completed 200 OK in 43ms (Views: 14.6ms | ActiveRecord: 25.5ms)
+2012-09-29T20:49:44+00:00 app[web.1]:   Rendered users/_city.html.erb (35.7ms)
+2012-09-29T20:49:44+00:00 heroku[router]: GET www.funkalab.com/users/new?state=32 dyno=web.1 queue=0 wait=0ms service=51ms status=200 bytes=6031
+2012-09-29T20:49:48+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:49:44 +0000] "GET /users/new?state=32 HTTP/1.1" 304 0 "http://www.funkalab.com/signup" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:49:58+00:00 app[web.1]: 
+2012-09-29T20:49:58+00:00 app[web.1]: 
+2012-09-29T20:49:58+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"5kE6WLwC76m4ZyKvYx8ihhb9LeDF1ZowpmzVdlgcBeM=", "user"=>{"name"=>"Shirley", "email"=>"sh.nodz@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "city_id"=>"2456", "c_art"=>"1", "c_video"=>"0", "c_music"=>"0", "c_tecnology"=>"0", "c_design"=>"1", "about"=>"Todos a escribir, a crear y a leer.", "link_a"=>"", "link_b"=>"", "link_c"=>"", "link_d"=>""}, "commit"=>"Registrar"}
+2012-09-29T20:49:58+00:00 app[web.1]: Started POST "/users" for 189.160.105.153 at 2012-09-29 20:49:58 +0000
+2012-09-29T20:49:58+00:00 app[web.1]: Processing by UsersController#create as HTML
+2012-09-29T20:49:59+00:00 app[web.1]:   Rendered app_mailer/welcome_email.text.erb (0.3ms)
+2012-09-29T20:49:59+00:00 app[web.1]:   Rendered app_mailer/welcome_email.html.erb (0.5ms)
+2012-09-29T20:50:01+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:50:01 +0000] "POST /users HTTP/1.1" 302 101 "http://www.funkalab.com/signup" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:50:01+00:00 heroku[router]: POST www.funkalab.com/users dyno=web.1 queue=0 wait=0ms service=2540ms status=302 bytes=101
+2012-09-29T20:50:01+00:00 app[web.1]: 
+2012-09-29T20:50:01+00:00 app[web.1]: Sent mail to sh.nodz@gmail.com (2302ms)
+2012-09-29T20:50:01+00:00 app[web.1]: Redirected to http://www.funkalab.com/collections
+2012-09-29T20:50:01+00:00 app[web.1]: Completed 302 Found in 2534ms (ActiveRecord: 57.0ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_categories.html.erb (1.3ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (7.1ms)
+2012-09-29T20:50:01+00:00 app[web.1]: Processing by CollectionsController#index as HTML
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (5.9ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (10.9ms)
+2012-09-29T20:50:01+00:00 app[web.1]: 
+2012-09-29T20:50:01+00:00 app[web.1]: 
+2012-09-29T20:50:01+00:00 app[web.1]: Started GET "/collections" for 189.160.105.153 at 2012-09-29 20:50:01 +0000
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (9.3ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (6.8ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_boards.html.erb (41.7ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (116.4ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.1ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.2ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.6ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.6ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.2ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.0ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.9ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (1.8ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.4ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.6ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (26.5ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (21.2ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.0ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.2ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (13.1ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.7ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (9.3ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.9ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.2ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.3ms)
+2012-09-29T20:50:01+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.7ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (62.5ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.9ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.5ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (27.5ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.8ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.0ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.1ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (62.8ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.5ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.0ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.5ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.2ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.0ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.8ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.5ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (32.7ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.5ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (36.6ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.0ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.1ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.9ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered shared/_boards.html.erb (650.4ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered collections/index.html.erb within layouts/application (694.8ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered layouts/_header.html.erb (14.7ms)
+2012-09-29T20:50:02+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.1ms)
+2012-09-29T20:50:02+00:00 app[web.1]: Completed 200 OK in 720ms (Views: 351.7ms | ActiveRecord: 365.9ms)
+2012-09-29T20:50:02+00:00 heroku[router]: GET www.funkalab.com/collections dyno=web.1 queue=0 wait=0ms service=747ms status=200 bytes=38045
+2012-09-29T20:50:02+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:50:02 +0000] "GET /collections HTTP/1.1" 200 10068 "http://www.funkalab.com/signup" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:50:03+00:00 heroku[router]: GET www.funkalab.com/assets/glyphicons-halflings.png dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=13826
+2012-09-29T20:50:03+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:50:03 +0000] "GET /assets/glyphicons-halflings.png HTTP/1.1" 200 13826 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:50:03+00:00 heroku[router]: GET www.funkalab.com/assets/arte-dummy.png dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=7244
+2012-09-29T20:50:03+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:50:03 +0000] "GET /assets/arte-dummy.png HTTP/1.1" 200 7244 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:50:03+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:50:03 +0000] "GET /assets/tecnologia-dummy.png HTTP/1.1" 200 8161 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:50:03+00:00 heroku[router]: GET www.funkalab.com/assets/tecnologia-dummy.png dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=8161
+2012-09-29T20:50:03+00:00 heroku[router]: GET www.funkalab.com/assets/musica-dummy.png dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=10575
+2012-09-29T20:50:03+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:50:03 +0000] "GET /assets/musica-dummy.png HTTP/1.1" 200 10575 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:50:30+00:00 app[web.1]: 
+2012-09-29T20:50:30+00:00 app[web.1]: 
+2012-09-29T20:50:30+00:00 app[web.1]: Started GET "/collections" for 189.160.105.153 at 2012-09-29 20:50:30 +0000
+2012-09-29T20:50:30+00:00 app[web.1]: Processing by CollectionsController#index as HTML
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_categories.html.erb (1.2ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (17.5ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (7.0ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (8.2ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (6.0ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (5.9ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_boards.html.erb (45.8ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (60.5ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.5ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (1.9ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.0ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (21.9ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.2ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.3ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (18.5ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.0ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.4ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.2ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.6ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.7ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.2ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.0ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.1ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.6ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.2ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.4ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.7ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.8ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.0ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.4ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.9ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.4ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.5ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.4ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.5ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.3ms)
+2012-09-29T20:50:30+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (57.9ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.3ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.1ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.8ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.1ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.4ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (31.7ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.1ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered shared/_boards.html.erb (405.0ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered collections/index.html.erb within layouts/application (453.0ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered layouts/_header.html.erb (8.6ms)
+2012-09-29T20:50:31+00:00 app[web.1]: Completed 200 OK in 515ms (Views: 341.3ms | ActiveRecord: 171.4ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.4ms)
+2012-09-29T20:50:31+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:50:31 +0000] "GET /collections HTTP/1.1" 200 9822 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:50:31+00:00 heroku[router]: GET www.funkalab.com/collections dyno=web.1 queue=0 wait=0ms service=523ms status=200 bytes=37904
+2012-09-29T20:50:31+00:00 app[web.1]: 
+2012-09-29T20:50:31+00:00 app[web.1]: 
+2012-09-29T20:50:31+00:00 app[web.1]: Started GET "/collections/new" for 189.160.105.153 at 2012-09-29 20:50:31 +0000
+2012-09-29T20:50:31+00:00 app[web.1]: Processing by CollectionsController#new as HTML
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered collections/_fields.html.erb (8.4ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered collections/_choro.html.erb (0.0ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered collections/new.html.erb within layouts/application (10.2ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered collections/_city.html.erb (6.8ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered layouts/_header.html.erb (33.5ms)
+2012-09-29T20:50:31+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (2.9ms)
+2012-09-29T20:50:31+00:00 app[web.1]: Completed 200 OK in 54ms (Views: 22.0ms | ActiveRecord: 29.4ms)
+2012-09-29T20:50:31+00:00 heroku[router]: GET www.funkalab.com/collections/new dyno=web.1 queue=0 wait=0ms service=60ms status=200 bytes=12502
+2012-09-29T20:50:31+00:00 heroku[nginx]: 189.160.105.153 - - [29/Sep/2012:20:50:31 +0000] "GET /collections/new HTTP/1.1" 200 3851 "http://www.funkalab.com/collections" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:50:43+00:00 heroku[router]: GET www.funkalab.com/ dyno=web.1 queue=0 wait=0ms service=9ms status=302 bytes=101
+2012-09-29T20:50:43+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:50:43 +0000] "GET / HTTP/1.1" 302 101 "http://www.funkalab.com/collections/new" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com
+2012-09-29T20:50:43+00:00 app[web.1]: 
+2012-09-29T20:50:43+00:00 app[web.1]: Started GET "/" for 187.162.150.66 at 2012-09-29 20:50:43 +0000
+2012-09-29T20:50:43+00:00 app[web.1]: Processing by StaticPagesController#landing as HTML
+2012-09-29T20:50:43+00:00 app[web.1]: 
+2012-09-29T20:50:43+00:00 app[web.1]: Completed 302 Found in 3ms (ActiveRecord: 1.5ms)
+2012-09-29T20:50:43+00:00 app[web.1]: Redirected to http://www.funkalab.com/collections
+2012-09-29T20:50:43+00:00 app[web.1]: 
+2012-09-29T20:50:43+00:00 app[web.1]: Started GET "/collections" for 187.162.150.66 at 2012-09-29 20:50:43 +0000
+2012-09-29T20:50:43+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (17.1ms)
+2012-09-29T20:50:43+00:00 app[web.1]: 
+2012-09-29T20:50:43+00:00 app[web.1]: Processing by CollectionsController#index as HTML
+2012-09-29T20:50:43+00:00 app[web.1]:   Rendered shared/_categories.html.erb (1.1ms)
+2012-09-29T20:50:43+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (8.1ms)
+2012-09-29T20:50:43+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (11.3ms)
+2012-09-29T20:50:43+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (24.2ms)
+2012-09-29T20:50:43+00:00 app[web.1]:   Rendered shared/_boards.html.erb (139.7ms)
+2012-09-29T20:50:43+00:00 app[web.1]:   Rendered shared/_board_thumbnail_big.html.erb (77.3ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.4ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.0ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (16.3ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.6ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (1.9ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.9ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.4ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.3ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.0ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.4ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.8ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (10.9ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (30.1ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (12.3ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.4ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.4ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.5ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.8ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.7ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (43.8ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (17.1ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.9ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.2ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.6ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.6ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.4ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (18.2ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (4.1ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (15.6ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.8ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.2ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.7ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.2ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.9ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.9ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (61.2ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (27.3ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (37.5ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.7ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (7.6ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.0ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.6ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.8ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.1ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.9ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (3.1ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (2.8ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (5.7ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (8.8ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_board_thumbnail.html.erb (6.3ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered shared/_boards.html.erb (556.5ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered collections/index.html.erb within layouts/application (698.7ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered layouts/_header.html.erb (12.2ms)
+2012-09-29T20:50:44+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (3.6ms)
+2012-09-29T20:50:44+00:00 app[web.1]: Completed 200 OK in 732ms (Views: 439.8ms | ActiveRecord: 290.7ms)
+2012-09-29T20:50:44+00:00 heroku[router]: GET www.funkalab.com/collections dyno=web.1 queue=0 wait=0ms service=742ms status=200 bytes=37925
+2012-09-29T20:50:44+00:00 heroku[nginx]: 187.162.150.66 - - [29/Sep/2012:20:50:44 +0000] "GET /collections HTTP/1.1" 200 9997 "http://www.funkalab.com/collections/new" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4" www.funkalab.com

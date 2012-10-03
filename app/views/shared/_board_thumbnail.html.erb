@@ -6,6 +6,7 @@
 			<p><small><%= board.category.name %></small></p>
 		</div>
 	<%end%>
+	<div class='thmbcontent'>
 	<p><%= board.title %></p>
 	<p><small><%= tiempo(board.created_at) %></small></p>
 	<p><small><%= board.idea %></small></p>
@@ -14,5 +15,5 @@
 	<%else%>
 		<%= image_tag(dummycover(board.category_id))%>
 	<% end %>
-
+	</div>
 <% end %>
