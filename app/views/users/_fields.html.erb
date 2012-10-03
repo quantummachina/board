@@ -2,7 +2,7 @@
   <%= f.label :name, 'Nombre' %>
   <%= f.text_field :name %>
 
-  <%if (@user.id.nil? || @user.uid == 0) then dis = false else dis = true end%>
+  <%if (@user.id.nil? || @user.uid < 0) then dis = false else dis = true end%>
   <%= f.label :email, 'Correo Electrónico' %>
   <%= f.text_field :email, disabled: dis %>
 
