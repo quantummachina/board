@@ -11,7 +11,11 @@
 
 				  	    <%= link_to user, class: "user-card" do %>
 				  	    <div class='span1'>
-				  	    <% if user.uid != 0 %><%=image_tag 'https://graph.facebook.com/' + user.uid.to_s + '/picture' %><%end%>
+							<% if user.uid != 0 %>
+								<%=image_tag 'https://graph.facebook.com/' + user.uid.to_s + '/picture' %>
+							<%else%>
+								<%= image_tag user.photo.url(:thumb), size:'50x50' if user.photo.url != '/photos/original/missing.png'%>
+							<%end%>
 				  	    </div>
 				  	    <div class 'span2'>
 							<p><%= user.name %></p>

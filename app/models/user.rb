@@ -1,7 +1,13 @@
 class User < ActiveRecord::Base
     #UID + PROVIDER USELESS. Using Session variables
-	attr_accessible :email, :name, :password, :password_confirmation, :admin, :uid, :provider, :city, :category_id, :subcategory_id, :c_art, :c_video, :c_music, :c_tecnology, :c_design, :link_a, :link_b, :link_c, :link_d, :about, :notifications, :city_id
+	attr_accessible :email, :name, :password, :password_confirmation, :admin, :uid, :provider, :city, :category_id, :subcategory_id, :c_art, :c_video, :c_music, :c_tecnology, :c_design, :link_a, :link_b, :link_c, :link_d, :about, :notifications, :city_id, :photo
 	has_secure_password
+
+  has_attached_file :photo,
+     :storage => :s3,
+     :s3_credentials => "#{Rails.root}/config/s3.yml",
+     :path => "/:style/:id/:filename",
+     styles: {thumb: "64x64#"}
 
 	has_many :collections, dependent: :destroy
 	has_many :items, through: :collections

@@ -8,3 +8,4 @@
 					<%=image_tag 'https://graph.facebook.com/' + u.uid.to_s + '/picture' %><%end%>
 	<%end%>
 <%end%>
+<%= image_tag User.find(6).photo.url(:thumb) %>
