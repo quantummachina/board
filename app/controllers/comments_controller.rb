@@ -35,7 +35,8 @@ class CommentsController < ApplicationController
 
 		#mensaje a commenters
 		@collection.acommenters.each do |u|
-			if u.id != current_user.id
+			if u.id != current_user.id && u.id != @collection.user.id && @collection.collaborators.where('user_id = ?', u.id).empty?
+				
 				u.notifications.create(message: message2)
 				n = u.extra.notifications + 1
 				u.extra.update_attributes(notifications: n)
