@@ -66,7 +66,7 @@ class AppMailer < ActionMailer::Base
     @text = comment.text
     @project = comment.collection
     @project_url = 'http://www.funkalab.com/collections/'+@project.id.to_s
-    mail(:to => @to.email, :subject => @from.name + " ha comentado en tu proyecto " + @project.title)
+    mail(:to => @to.email, :subject => @from.name + " ha comentado en el proyecto " + @project.title)
   end
 #http://localhost:3000/conversations?interlocutor_id=6&user_id=10
 

@@ -57,6 +57,7 @@ Board::Application.routes.draw do
     end
   end
   resources :collaborations
+  resources :commenters
   resources :lines, only:[:create, :index]
   resources :conversations, only:[:create, :index, :show]
   resources :items do
