@@ -29,7 +29,7 @@ class CollectionsController < ApplicationController
 	end
 
 	def finished
-		@finishedboards = Collection.order('created_at ASC').find_all_by_status(5)
+		@finishedboards = Collection.order('created_at DESC').find_all_by_status(5)
 	end
 
 	def show
