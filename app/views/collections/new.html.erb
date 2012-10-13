@@ -1,7 +1,11 @@
 <% provide :title, "Nuevo proyecto" %> 
 <div class="row">
+
+  	<%# render 'before_warning'%>
+
   <div class = "span6 offset1">
-	<h1>Nuevo proyecto</h1>
+<!--hr-->
+	<h2>Nuevo proyecto</h2>
 	<br>
 	<h3>Paso 1 de 2</h3>
 	<%= form_for(@collection) do |f| %>
@@ -12,7 +16,7 @@
 	<% end %>
   </div>
   <div class='span4 offset1'>
-  	<%= render 'choro'%>
+  	<%# render 'choro'%>
   </div>
 </div>
 
