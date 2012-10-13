@@ -8,7 +8,7 @@
 					<% item = @board.items.where(kind: 1)[i] %>
 			  	    	<%= wrap(item.pre_content) %>
 			  		</div>
-			  		<%= if signed_in? then render 'gear', item: item end%>
+			  		<%= if signed_in? && collaborates? then render 'gear', item: item end%>
 				<% end %>
 			</div>
 		</div>
