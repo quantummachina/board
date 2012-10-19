@@ -24,7 +24,7 @@
   </li>
   <li class="dropdown">
   	<%=fields_for @collection do |g| %>
-  		<%= g.select 'city_id', options_from_collection_for_select(@cities, 'id', 'name', selected: @collection.city_id || 0)  %>
+  		<%= g.select 'city_id', options_from_collection_for_select(@cities, 'id', 'name', selected: @collection.city_id)  %>
   	<%end%>
   </li>
 </ul>

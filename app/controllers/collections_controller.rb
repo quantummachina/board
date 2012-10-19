@@ -127,7 +127,7 @@ class CollectionsController < ApplicationController
 	def update
 		@collection = Collection.find(params[:id])
 		if @collection.update_attributes(params[:collection])
-			if params[:collection][:state].to_i == 0
+	    	if !params[:collection].has_key?(:city_id)
 				@collection.update_attributes(city_id: 0)
 			end
 			if @collection.status !=5
