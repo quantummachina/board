@@ -1,23 +1,6 @@
-<% provide :title, "Nuevo proyecto" %> 
-<div class="row">
-
-  	<%= render 'collections/before_warning'%>
-
-  <div class = "span6 offset1">
-<hr>
-	<h2>Nuevo proyecto</h2>
-	<br>
-	<h3>Paso 1 de 2</h3>
-	<%= form_for(@collection) do |f| %>
-		<%= render 'collections/fields', f: f %>
-		<%= f.select :category_id, options_from_collection_for_select(@categories, "id", "name") %>
-		<br>
-		<%= f.submit 'Siguiente'%>
-	<% end %>
-  </div>
-  <div class='span4 offset1'>
-  	<%# render 'choro'%>
-  </div>
 </div>
 
-		
+  <%= render 'static_pages/front'%>
+
+
+<div class='container'>
