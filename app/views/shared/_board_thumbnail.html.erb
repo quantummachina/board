@@ -8,7 +8,7 @@
 	<%end%>
 	<div class='thmbcontent'>
 	<p><%= board.title %></p>
-	<p><small><%= tiempo(board.created_at) %></small></p>
+	<p><small><%= tiempo(board.created_at) %>, <%= if board.city_id == 0 then 'En Línea' else board.city.name end %></small></p>
 	<p><small><%= board.idea %></small></p>
 	<% if board.cover != 0 %>
 		<%= cover(board.items.find(board.cover))%>

@@ -1,12 +1,12 @@
 <% provide :title, "Nuevo proyecto" %> 
 <div class="row">
-  <div class = "span8 offset">
+  <div class = "span10">
 	<h1>Colaboración</h1>
 	<br>
 	<h3>Paso 2 de 2</h3>
 
 	<div class='row'>
-		<div class = 'span4'>
+		<div class = 'span4 offset2'>
 			
 		  	<%= form_for @collection.vacants.build(collection_id: @collection.id) do |g|%>
 		  		<%=g.hidden_field :collection_id %>
@@ -44,9 +44,9 @@
 		<%= link_to 'Publicar proyecto', @collection, class: "btn btn-large btn-primary" %>
 	<% end %>
   </div>
-  <div class='span4'>
-  	<%= render 'choro'%>
-  </div>
+  <!--div class='span4'
+  	<%# render 'choro'%>
+  </div-->
 </div>
 
 		

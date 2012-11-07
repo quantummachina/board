@@ -31,7 +31,7 @@
 			<p>Lugar: <%= if @board.city_id == 0 then 'En Línea' else @board.city.name + ", " + @board.city.state.name end %>, 
 
 			<%= render 'status' %> </p>
-
+			<%=if collaborator? then link_to 'Abandonar proyecto', @board.collaborations.find_by_user_id(current_user.id) , method: :delete, title: "Abandonar este proyecto", confirm: "¿Estás seguro de abandonar este proyecto?" end %>
 			<%= render 'invite' if @board.status != 5 %>
 			<%if signed_in? && (owner? || current_user.admin) %>
 			<%= link_to "Editar proyecto", edit_collection_path(@board), class: "btn btn-small" %>

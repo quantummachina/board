@@ -17,4 +17,12 @@ class CollaborationsController < ApplicationController
 		end
 		redirect_to @collection
 	end
+
+
+	def destroy
+		@Collaboration = Collaboration.find(params[:id])
+		@Collection = @Collaboration.collection
+		@Collaboration.delete
+		redirect_to @Collection
+	end
 end

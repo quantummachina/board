@@ -14,6 +14,13 @@ module CollectionsHelper
 			false
 		end
 	end
+	def collaborator?
+		if signed_in?
+			@board.collaborations.find_by_user_id(current_user.id)
+		else
+			false
+		end
+	end
 
 	def status(n)
 		case n

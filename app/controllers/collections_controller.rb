@@ -55,6 +55,8 @@ class CollectionsController < ApplicationController
       		redirect_to action: 'new'
 	    end
 	end
+
+
 	def add_vacants
 		@collection = Collection.find(params[:cid])
 	end

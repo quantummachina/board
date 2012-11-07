@@ -17,7 +17,7 @@
 		<div class='thmbcontent'>
 
 			<h3><%= board.title %></h3>
-			
+			<h4><%= if board.city_id == 0 then 'En Línea' else board.city.name end %></h4>
 			<p><%= board.idea %></p>
 
 			<%if board.vacants %>
