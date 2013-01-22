@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121010023310) do
+ActiveRecord::Schema.define(:version => 20130122045302) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(:version => 20121010023310) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "cfollowings", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "cfollowed_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "cities", :force => true do |t|
@@ -61,6 +68,8 @@ ActiveRecord::Schema.define(:version => 20121010023310) do
     t.boolean  "quarantine",                  :default => false
     t.text     "contribution",                :default => ""
     t.integer  "city_id",                     :default => 0
+    t.text     "site",                        :default => ""
+    t.text     "statustext",                  :default => ""
   end
 
   add_index "collections", ["user_id"], :name => "index_collections_on_user_id"
@@ -203,6 +212,13 @@ ActiveRecord::Schema.define(:version => 20121010023310) do
     t.text     "t",          :limit => 255, :default => ""
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
+  end
+
+  create_table "ufollowings", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "ufollowed_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "uoptions", :force => true do |t|

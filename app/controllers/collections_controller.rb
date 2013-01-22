@@ -184,4 +184,21 @@ class CollectionsController < ApplicationController
   		@collection.update_attributes(status: 5)
   		redirect_to edit_collection_path(@collection)
   	end
+
+  	def eshare
+  		collection = Collection.find(params[:board_id])
+  		@name = "Alguien"
+  		if signed_in? then @name = current_user.name end
+  		message = params[:message]
+  		email = params[:email]
+  		if !email.empty? then AppMailer.share_email(email, collection, @name, message).deliver end
+  		flash[:success] = 'Se ha enviado el correo electrónico.'
+  		redirect_to collection
+  	end
+
+  	def statusupdate
+  		@collection = Collection.find(params[:board_id])
+  		@collection.update_attributes(statustext: params[:statustext])
+  		redirect_to @collection
+  	end
 end

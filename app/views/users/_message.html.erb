@@ -28,8 +28,14 @@
 
 <%# link_to image_tag(' ' , class: 'icon-envelope'), conversations_path(user_id: current_user.id, interlocutor_id: @user.id), :method => :post, class: 'btn btn-small' %>
 
-<%= link_to conversations_path(user_id: current_user.id, interlocutor_id: @user.id), :method => :post, class: 'btn btn-small' do%>
-	<i class='icon-envelope'></i>
-<%end%>
+	<%= link_to conversations_path(user_id: current_user.id, interlocutor_id: @user.id), :method => :post, class: 'btn btn-small' do%>
+		<i class='icon-envelope'></i>
+	<%end%>
+	<% ufollowed = current_user.ufollowings.find_by_ufollowed_id(@user.id) %>
+	<% if ufollowed.nil? %>
+		<%= link_to 'Seguir', {controller: 'ufollowings', action: 'create', user: @user.id}, method: :post,  class: 'btn btn-small' %>
+	<%else%>
+		<%= link_to 'Dejar de Seguir', ufollowed, method: :delete, class: 'btn btn-small' %>
+	<%end%>
 
 <% end %>

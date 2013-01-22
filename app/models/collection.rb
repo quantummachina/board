@@ -1,5 +1,5 @@
 class Collection < ActiveRecord::Base
-  attr_accessible :description, :title, :user_id, :category_id, :needs, :status, :cover, :conclusion, :idea, :contribution, :city_id
+  attr_accessible :description, :title, :user_id, :category_id, :needs, :status, :cover, :conclusion, :idea, :contribution, :city_id, :site, :statustext
 
   has_many :items, dependent: :destroy
   has_many :collaborations, dependent: :destroy

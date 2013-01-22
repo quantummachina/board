@@ -1,5 +1,9 @@
 Board::Application.routes.draw do
 
+  resources :cfollowings
+
+
+  resources :ufollowings
   resources :uoptions
 
   get "admins/admin"
@@ -39,7 +43,8 @@ Board::Application.routes.draw do
   match '/rstpss', to: 'users#reset_password'
   match '/finished', to: 'collections#finished'
   match '/massemail', to: 'admins#massemail'
-  
+  match '/ceshare', to: 'collections#eshare'
+  match '/statusupdate', to: 'collections#statusupdate'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 

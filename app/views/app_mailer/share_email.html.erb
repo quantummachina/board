@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Hola!</h1>
+<p>
+   <%= @name %> te ha compartido el proyecto <%=link_to @collection.title, @project_url %>.
+</p><br><p>
+   "<%=@message%>"
+</p><br><p>
+ Visita <%=link_to @collection.title, @project_url %> y colabora con creativos como tú en Funkalab.
+ </p>
+<br>
+<p>Gracias,
+</p><p>
+   Tus amigos de Funkalab.
+</p>
+  </body>
+</html>

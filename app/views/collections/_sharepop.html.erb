@@ -1,0 +1,42 @@
+<%#if signed_in?%>
+
+	<a data-toggle="modal" href="#sharepop" class="btn btn-info btn-large">Compartir</a>
+	
+	<div class="modal hide fade" id="sharepop">
+	  <div class="modal-header">
+	    <a class="close" data-dismiss="modal">×</a>
+	    <h3>Compartir</h3>
+	  </div>
+	  <div class="modal-body">
+	  	<div class="row">
+	  		<div class= "span4 offset1 tcenter">
+	  	<h4>Comparte por redes sociales</h4><br>
+	  	<br>
+	  	<%= link_to 'Comparte por Facebook', fb_share_project, target: '_blank', class: 'profbsh' %><br><br>
+
+	  	<%= link_to 'Comparte por Twitter', "https://twitter.com/share?text=Colabora%20en%20'"+ @board.title.split.join('%20') + "',%20un%20proyecto%20de%20" + @board.category.name + "%20en%20Funkalab!%20www.funkalab.com/collections/" + @board.id.to_s, target: '_blank', class: 'protwsh'%><br>
+	  	<br>
+	  	
+	  	<br>
+
+  		<h4>O usa el correo electrónico</h4><br><br>
+		<%= form_tag '/ceshare' do %>
+			<%= hidden_field_tag 'board_id', @board.id %>
+			<%= text_field_tag 'email', nil, placeholder:'correo electrónico', class: 'span4'%><br>
+			<%= text_area_tag 'message', nil, placeholder:'Escribe un mensaje a tu amigo.', rows: 4, class: 'span4'%>	
+			<br>
+			<%= submit_tag 'Enviar', class: "btn btn-primary pull-right" %>
+		<% end %>
+
+			</div>
+		</div>
+	  </div>		
+	  <div class="modal-footer">
+		    <a  data-dismiss='modal' href="#" class="btn">Cancelar</a>
+		  	
+
+
+	  </div>
+	</div>
+
+<%#end%>

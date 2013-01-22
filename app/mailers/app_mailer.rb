@@ -82,4 +82,14 @@ class AppMailer < ActionMailer::Base
     @signature = signature
     mail(to: user.email, subject: subject)
   end
+
+  def share_email(email, collection, name, message)
+    @email = email
+    @collection = collection
+    @name = name
+    @message = message
+    @project_url = 'http://www.funkalab.com/collections/'+@collection.id.to_s
+    mail(:to => @email, :subject => @name + " te ha compartido el proyecto "+ @collection.title)
+  end
+
 end

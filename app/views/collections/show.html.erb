@@ -12,30 +12,83 @@
 
 	<%end%>
 <%end%>
+
 <div class="row">
-	<div class="span12">
-		<h1><%= @board.title %></h1>
-		<p>Por <%=link_to @board.user.name, @board.user, rel: "tooltip", :"data-placement"=> "bottom", title: @board.user.about %>
-			<% if @board.collaborators %>
-				<% @board.collaborators.each do |c| %>
+	<div class="span12 proheader">
+		<%#Begins project header bar%>
+		<div class = "row">
+			<div class="span10 offset1 proh">
+				<%#centrar%>
+				<div class="prohh">
+				<div class="proheadcent">
+				<h1><%= @board.title+ ' ' %>
+
+				</h1>
+				<h4>Por <%=link_to @board.user.name, @board.user, rel: "tooltip", :"data-placement"=> "bottom", title: @board.user.about %>
+				
+				</h4>
+				</div>
+
+				<%if @board.category %>
+				<div class ='lablover'>
+		<div class= "<%='b'+@board.category_id.to_s%>">
+			<p><small><%= @board.category.name %></small></p>
+		</div></div>
+	<%end%>
+
+				</div>
+				<%#/centrar%>
 
 
-					<%=", "%> <%=link_to c.name, c, rel: "tooltip", :"data-placement"=> "bottom", title: c.about %>
+			</div>
+			<div class = 'span1'>
+				
+				<%= render 'admin'%>
+				
+			</div>
+		</div>
+		<div class = 'row'>
+			<div class='span4'>
+				<div class='row'>
+					<div class='span3'>
+				<b>Estatus:</b> <%= @board.statustext %> <br><small> <%=render 'editstatustext'%></small>
+					</div>
+				</div>
+				
+			</div>
+			<div class='span4 offset4'>
+				<p><b>Lugar:</b> <%= if @board.city_id == 0 then 'En Línea' else @board.city.name + ", " + @board.city.state.name end %></p>
+				<p><b>Sitio: </b><%= raw(make_nice(@board.site)[3..1000])%></p>
+				
+				
+			</div>
+		</div>
+		<div class = 'row'>
+			<div class= 'span4'>
+				<br>
+				<p>Creado: <%= tiempo(@board.created_at)%>, Actualizado: <%= tiempo(@board.updated_at)%></p>
+			</div>
+			<div class = 'span4 offset4'>
+				<%#link_to 'Compartir','#', class: 'btn btn-large btn-info'%>
+				<%= render 'sharepop'%>
+				<%= render 'follow' if signed_in? && !owner? %>
+				<%if signed_in? && (owner? || current_user.admin) %>
+					<%= link_to "Editar", edit_collection_path(@board), class: "btn btn-large" %>
+				<%end%>
+			</div>
+		</div>
 
 
-				<% end %>
-			<% end %>
-			<%= link_to @board.category.name, nav_path(category: @board.category.id), class: "label"%></p>
+			<%# render 'status' %> 
 
-			<p>Creado: <%= tiempo(@board.created_at)%>, Actualizado: <%= tiempo(@board.updated_at)%></p>
-			<p>Lugar: <%= if @board.city_id == 0 then 'En Línea' else @board.city.name + ", " + @board.city.state.name end %>, 
 
-			<%= render 'status' %> </p>
-			<%=if collaborator? then link_to 'Abandonar proyecto', @board.collaborations.find_by_user_id(current_user.id) , method: :delete, title: "Abandonar este proyecto", confirm: "¿Estás seguro de abandonar este proyecto?" end %>
-			<%= render 'invite' if @board.status != 5 %>
-			<%if signed_in? && (owner? || current_user.admin) %>
-			<%= link_to "Editar proyecto", edit_collection_path(@board), class: "btn btn-small" %>
-		<%end%><%= render 'admin'%>
+			<%# render 'invite' if @board.status != 5 %>
+			
+
+	</div>	
+	<div class = 'span12'>
+
+			
 		<br><br>
 
 		<ul id="WoI" class="nav nav-tabs">
@@ -53,7 +106,9 @@
 						<%else%>
 							<%= image_tag(dummycover(@board.category_id))%>
 						<%end%>
-						<%= render 'share' %>
+
+						<%# render 'share' -version anterior a solo el fblike- %>
+						<%= render 'fblike'%>
 						<h2>La idea</h2>
 						<p><%= @board.idea %></p>
 						<% if @board.description == ''%>
@@ -90,10 +145,12 @@
 					<div class="span5 offset1">
 						<%if @board.status != 5 %>
 							<%= render 'collaborate'%>
+							<small><%=if collaborator? then link_to 'Abandonar', @board.collaborations.find_by_user_id(current_user.id) , method: :delete, title: "Abandonar este proyecto", confirm: "¿Estás seguro de abandonar este proyecto?", class: 'pull-right' end %></small>
 						<%else%>
 							<%= render 'finishlinks'%>
 						<% end %>
 						<hr>
+						<%= render 'collaborators' %>
 						<%= render 'comments'%>
 					</div>
 				</div>
