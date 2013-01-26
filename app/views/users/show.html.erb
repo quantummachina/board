@@ -5,42 +5,89 @@
 	</div>
 	<br>
 <% end %>
-<div class="row-fluid">
-	<div class="span12">
-	<div class='row'>
-		<div class='span1'>
-			<% if @user.uid != 0 %>
-				<%=image_tag 'https://graph.facebook.com/' + @user.uid.to_s + '/picture', size: '64x64' %>
-			<%else%>
-				<%if @user.photo.url != '/photos/original/missing.png'%>
-					<%= link_to @user.photo.url do%><%= image_tag @user.photo.url(:thumb), size:'50x50' %>
+<div class="row">
+	<%#header begins%>
+	<div class="span12 proheader">
+		<div class='row'>
+
+			<div class='span1'>
+				<% if @user.uid != 0 %>
+					<%=image_tag 'https://graph.facebook.com/' + @user.uid.to_s + '/picture', size: '64x64' %>
+				<%else%>
+					<%if @user.photo.url != '/photos/original/missing.png'%>
+						<%= link_to @user.photo.url do%><%= image_tag @user.photo.url(:thumb), size:'50x50' %>
+						<%end%>
+					<%else%>
+						<%=image_tag 'dummyface.png'%>
 					<%end%>
 				<%end%>
-			<%end%>
+			</div>
+
+			<div class='span7'>
+				<%if signed_in? && @user.id == current_user.id %>
+					<h1>Mi Laboratorio
+				<%else%>
+					<h1>Laboratorio de <%= @user.name%>
+				<%end%>
+				 <small><%=if @user.city_id !=0 then @user.city.name + ', ' + @user.city.state.name + '.' end%></small></h1>
+				<h3><%=@user.about%></h3>
+				<%= make_nice(@user.link_a)%>
+				<%= make_nice(@user.link_b)%>
+				<%= make_nice(@user.link_c)%>
+				<%= make_nice(@user.link_d)%>
+			</div>
+			<div class='span2 offset2'>
+				<%= render 'users/categories_cards', user: @user %>
+			</div>
+			<div class='span4'>
+				<%= render 'message'%>
+			</div>
 		</div>
-	<div class='span10'>
-		<%if signed_in? && @user.id == current_user.id %>
-			<h1>Mi Laboratorio
-		<%else%>
-			<h1>Laboratorio de <%= @user.name%>
-		<%end%>
-		 <small><%=if @user.city_id !=0 then @user.city.name + ', ' + @user.city.state.name + '.' end%></small></h1>
-		<%= render 'users/categories_cards', user: @user %>
 	</div>
-</div>
-				 <%= render 'message'%>
-				 <br>
-		<h3><%=@user.about%></h3>
-		<%= make_nice(@user.link_a)%>
-		<%= make_nice(@user.link_b)%>
-		<%= make_nice(@user.link_c)%>
-		<%= make_nice(@user.link_d)%>
-		<!--%= if current_user == @user then render 'collections/create_board' end %-->
-		<hr>
-		<h2>Proyectos Creados</h2>
-		<%= render 'shared/boards', boards:@boards, first: false %>
-		<hr>
-		<h2>Colaborando</h2>
-		<%= render 'shared/boards', boards:@collabs, first: false %>
+	<%#End of header%>
+	<div class = 'span12'>
+		<br><br>
+		<ul id="PoF" class="nav nav-tabs">
+			<li class="active"><a href="#proys" data-toggle="tab">Proyectos</a></li>
+			<li><a href="#folls" data-toggle="tab">Siguiendo</a></li>
+		</ul>
+		<div id="PoFContent" class="tab-content">
+			<%# division to proys %>
+			<div class="tab-pane fade in active" id="proys">
+				<div class="row">
+					<div class="span12">
+						<%if !@fboards.empty? %>
+							<h2>Proyectos Exitosos</h2>
+							<%= render 'shared/boards', boards:@fboards, first: false %>
+							<hr>
+						<%end%>
+						<%if !@boards.empty? %>
+							<h2>Proyectos Creados</h2>
+							<%= render 'shared/boards', boards:@boards, first: false %>
+							<hr>
+						<%end%>
+						<%if !@collabs.empty? %>
+							<h2>Colaborando</h2>
+							<%= render 'shared/boards', boards:@collabs, first: false %>
+						<%end%>
+					</div>
+				</div>
+			</div>
+<%#Division to folls%>
+			<div class="tab-pane fade" id="folls">
+				<%if !@user.cfollowings.empty? %>
+					<h2>Proyectos Seguidos</h2>
+					<%= render 'shared/boards', boards:@user.cfolloweds, first: false %>
+					<hr>
+				<%end%>
+				<%if !@user.ufollowings.empty? %>
+					<h2>Usuarios Seguidos</h2>
+					<div id="users">
+						<%= render 'shared/users', users:@user.ufolloweds %>
+					</div>
+				<%end%>
+			</div>
+		</div>
+
 	</div>
 </div>

@@ -72,8 +72,9 @@ class UsersController < ApplicationController
   	def show
       @categories = Category.all
       @user = User.find(params[:id])
-      @boards = @user.collections.all #to change for other users
+      @boards = Collection.where("status != 5 AND user_id = ?", @user.id)
       @collabs = @user.collaboratives.all
+      @fboards = Collection.where("status = 5 AND user_id = ?", @user.id)
   	end
 
   def edit

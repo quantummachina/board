@@ -1,6 +1,14 @@
 <% unless current_user?(@user) || !signed_in? %>
 
-	<a class='btn btn-primary' data-toggle="modal" href="#invite" >Invitar a proyecto</a>
+	<% ufollowed = current_user.ufollowings.find_by_ufollowed_id(@user.id) %>
+	<br>
+	<% if ufollowed.nil? %>
+		<%= link_to 'Seguir', {controller: 'ufollowings', action: 'create', user: @user.id}, method: :post,  class: 'btn btn-large btn-primary' %>
+	<%else%>
+		<%= link_to 'Dejar de Seguir', ufollowed, method: :delete, class: 'btn btn-large btn-info' %>
+	<%end%>
+
+	<a class='btn btn-large' data-toggle="modal" href="#invite" >Invitar</a>
 		
 		<div class="modal hide fade" id="invite">
 		  <div class="modal-header textc">
@@ -28,14 +36,10 @@
 
 <%# link_to image_tag(' ' , class: 'icon-envelope'), conversations_path(user_id: current_user.id, interlocutor_id: @user.id), :method => :post, class: 'btn btn-small' %>
 
-	<%= link_to conversations_path(user_id: current_user.id, interlocutor_id: @user.id), :method => :post, class: 'btn btn-small' do%>
+	<%= link_to conversations_path(user_id: current_user.id, interlocutor_id: @user.id), :method => :post, class: 'btn btn-large' do%>
 		<i class='icon-envelope'></i>
 	<%end%>
-	<% ufollowed = current_user.ufollowings.find_by_ufollowed_id(@user.id) %>
-	<% if ufollowed.nil? %>
-		<%= link_to 'Seguir', {controller: 'ufollowings', action: 'create', user: @user.id}, method: :post,  class: 'btn btn-small' %>
-	<%else%>
-		<%= link_to 'Dejar de Seguir', ufollowed, method: :delete, class: 'btn btn-small' %>
-	<%end%>
+	
+
 
 <% end %>

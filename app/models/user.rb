@@ -21,8 +21,9 @@ class User < ActiveRecord::Base
     has_many :notifications
     has_many :comments
     has_many :ufollowings, dependent: :destroy
-    #has_many :ufolloweds, through: :ufollowings,source: :ufollowed
+    has_many :ufolloweds, through: :ufollowings, source: :ufollowed
     has_many :cfollowings, dependent: :destroy
+    has_many :cfolloweds, through: :cfollowings, source: :cfollowed
 
     has_one :extra
     has_one :uoption
