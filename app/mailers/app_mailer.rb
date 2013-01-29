@@ -92,4 +92,20 @@ class AppMailer < ActionMailer::Base
     mail(:to => @email, :subject => @name + " te ha compartido el proyecto "+ @collection.title)
   end
 
+  def cfollow_notification_email(from, collection)
+    @from = from
+    @to = collection.user
+    @project = collection
+    @project_url = 'http://www.funkalab.com/collections/'+@project.id.to_s
+    @from_url = 'http://www.funkalab.com/users/'+@from.id.to_s
+    mail(:to => @to.email, :subject => @from.name + " ha seguido tu proyecto " + @project.title)
+  end
+
+  def ufollow_notification_email(from, to)
+    @from = from
+    @to = to
+    @from_url = 'http://www.funkalab.com/users/'+@from.id.to_s
+    mail(:to => @to.email, :subject => @from.name + " te está siguiendo")
+  end
+
 end
