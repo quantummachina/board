@@ -65,7 +65,8 @@ class UsersController < ApplicationController
       	flash[:success] = "¡Bienvenido a Funkalab!"
         redirect_to collections_path
     	else
-      		render 'static_pages/landing'
+      		#render 'static_pages/landing'
+          redirect_to root_path
     	end
   	end
 

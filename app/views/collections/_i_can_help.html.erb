@@ -39,19 +39,21 @@
 		  <div class="modal-body texti">
 
 		    <h3>Para unirte a este proyecto, regístrate.</h3>
+		    <br>
+	
+  <%# form_for(User.new,html: {class: 'form-inline'}) do |f| %>
 
-		    <p>Usa tu correo electrónico</p>
-  <%= form_for(User.new,html: {class: 'form-inline'}) do |f| %>
-
-	<%= render 'shared/error_messages', object: f.object %>
+	<%# render 'shared/error_messages', object: f.object %>
   	<!--%= f.label :email %-->
-  	<%= f.text_field :email, placeholder: 'correo electrónico' %>
-    <%= f.submit "Registrarse ahora!", class: "btn btn-large btn-primary" %>
-   <% end %>
-   <p>O usa facebook</p>
+  	<%# f.text_field :email, placeholder: 'correo electrónico' %>
+    <%# f.submit "Registrarse ahora!", class: "btn btn-large btn-primary" %>
+   <%# end %>
 
     <%= link_to user_omniauth_authorize_path(:facebook) do %> <%= image_tag 'fb2.jpg', class: :fb %>
    <%end%><%= link_to "Conéctate con facebook", user_omniauth_authorize_path(:facebook), class: "fbb" %>
+<br>
+   	    <%= link_to 'O usa tu correo electrónico', '/signup' %>
+		    <br>
 
 		  </div>
 		  <div class="modal-footer">
