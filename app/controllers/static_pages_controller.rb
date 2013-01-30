@@ -3,8 +3,7 @@ class StaticPagesController < ApplicationController
 		if !signed_in? || !current_user.admin
 			redirect_to root_path
 		end
-		@s1 = Section.find_by_name('Landing front')
-			@s2 = Section.find_by_name('Landing success')
+		@rs = Request.find_all_by_collection_id(199)
 	end
 
 	def about

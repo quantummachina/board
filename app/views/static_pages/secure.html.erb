@@ -1,6 +1,7 @@
-</div>
-
-  <%= render 'static_pages/front'%>
-
-
-<div class='container'>
+<%= @rs.count %>
+<br>
+<% @rs.each do |r| %>
+	<%= link_to r.from_id, User.find(r.from_id) %>: 
+	<%= r.message %>
+	<hr>
+<%end%>
