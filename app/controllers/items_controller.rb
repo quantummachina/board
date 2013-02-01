@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
     end
     #to followers
     @collection.cfollowers.each do |u|
-      if u.id != current_user.id && @collection.collaborators.where("user_id = u.id").empty?
+      if u.id != current_user.id && @collection.collaborators.where("user_id = ?", u.id).empty?
         u.notifications.create(message: message2)
         n = u.extra.notifications + 1
         u.extra.update_attributes(notifications: n)

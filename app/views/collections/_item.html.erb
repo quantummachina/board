@@ -19,7 +19,16 @@
 				</div>
 
 		    	</div>
-		    	<%= wrap(item.pre_content) %>
+		    	<%if item.urltype == 4%>
+		    		<%= wrap(item.pre_content) %>
+		    	<%else%>
+		    		<%if item.urltype == 3 %>
+		    			<%= embedded_b(item.content,5) %>
+		    		<%else%>
+		    			<%= cover(item)%>
+		    		<%end%>
+		    	<%end%>
+		    	
 
 		    	<div class= 'row'>
 
