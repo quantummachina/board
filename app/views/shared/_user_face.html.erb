@@ -1,0 +1,12 @@
+<%#Receives u %>
+<%= link_to u, title: u.name do%>
+	<% if u.uid != 0 %>
+		<%=image_tag 'https://graph.facebook.com/' + u.uid.to_s + '/picture' %>
+	<%else%>
+		<% if u.photo.url != '/photos/original/missing.png' %>
+			<%= image_tag u.photo.url(:thumb), size:'50x50' %>
+		<%else%>
+			<%= image_tag 'dummyface.png' %>
+		<%end%>
+	<%end%>
+<%end%>

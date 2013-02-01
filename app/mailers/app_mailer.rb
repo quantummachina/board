@@ -108,4 +108,13 @@ class AppMailer < ActionMailer::Base
     mail(:to => @to.email, :subject => @from.name + " te está siguiendo")
   end
 
+  def item_notification_email(to, item)
+    @from = item.user
+    @to = to
+    @project = item.collection
+    @from_url = 'http://www.funkalab.com/users/'+@from.id.to_s
+    @project_url = 'http://www.funkalab.com/collections/'+@project.id.to_s
+    mail(:to => @to.email, :subject => @from.name + " ha publicado en el proyecto " + @project.title)
+  end
+
 end

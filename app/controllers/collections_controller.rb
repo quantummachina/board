@@ -34,7 +34,7 @@ class CollectionsController < ApplicationController
 
 	def show
 		@board = Collection.find(params[:id])
-		@size = 3 #Items size
+		@size = 6 #Items size
 		@names = User.find(:all,:select=>'name').map(&:name)
 		respond_to do |format|
 	      format.html { }

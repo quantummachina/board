@@ -3,10 +3,10 @@ class CommentsController < ApplicationController
 		@collection = Collection.find(params[:comment][:collection_id])
 		comment = Comment.create(params[:comment])
 		
-		#Agrega al usuario a la lista de comenters
-		if Commenter.where('user_id = ? AND collection_id = ?', comment.user.id, comment.collection.id).empty?
-				Commenter.create(user_id: comment.user.id, collection_id: comment.collection.id)
-		end
+		#COMMENTERS VA A SER ELIMINADO // Agrega al usuario a la lista de comenters
+		#if Commenter.where('user_id = ? AND collection_id = ?', comment.user.id, comment.collection.id).empty?
+		#		Commenter.create(user_id: comment.user.id, collection_id: comment.collection.id)
+		#end
 
 		#Notificacion
 		message = '<a href="/users/' + current_user.id.to_s + '">' + current_user.name + '</a> ha publicado un comentario en tu proyecto <a href="/collections/' + @collection.id.to_s + '">' + @collection.title + '</a>'
@@ -33,18 +33,18 @@ class CommentsController < ApplicationController
 			end
 		end
 
-		#mensaje a commenters
-		@collection.acommenters.each do |u|
-			if u.id != current_user.id && u.id != @collection.user.id && @collection.collaborators.where('user_id = ?', u.id).empty?
+		#COMMENTERS VA A SER ELIMINADO / mensaje a commenters
+		#@collection.acommenters.each do |u|
+		#	if u.id != current_user.id && u.id != @collection.user.id && @collection.collaborators.where('user_id = ?', u.id).empty?
 				
-				u.notifications.create(message: message2)
-				n = u.extra.notifications + 1
-				u.extra.update_attributes(notifications: n)
-				if u.uoption.n_commenters
-					AppMailer.comment_notification_email(u, comment).deliver
-				end
-			end
-		end
+		#		u.notifications.create(message: message2)
+		#		n = u.extra.notifications + 1
+		#		u.extra.update_attributes(notifications: n)
+		#		if u.uoption.n_commenters
+		#			AppMailer.comment_notification_email(u, comment).deliver
+		#		end
+		#	end
+		#end
 
 		redirect_to @collection
 	end

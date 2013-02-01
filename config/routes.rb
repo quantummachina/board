@@ -1,5 +1,8 @@
 Board::Application.routes.draw do
 
+  resources :icomments
+
+
   resources :cfollowings
 
 

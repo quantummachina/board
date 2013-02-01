@@ -9,7 +9,8 @@ class Collection < ActiveRecord::Base
   has_many :vacants, dependent: :destroy
   has_many :externallinks, dependent: :destroy
   has_many :comments, dependent: :destroy
-
+  has_many :cfollowings, foreign_key: "cfollowed_id", dependent: :destroy
+  has_many :cfollowers, through: :cfollowings, source: :user
 
   belongs_to :user
   belongs_to :category

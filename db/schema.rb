@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130122045302) do
+ActiveRecord::Schema.define(:version => 20130131203848) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -141,6 +141,14 @@ ActiveRecord::Schema.define(:version => 20130122045302) do
     t.datetime "updated_at",                 :null => false
   end
 
+  create_table "icomments", :force => true do |t|
+    t.integer  "item_id"
+    t.integer  "user_id"
+    t.text     "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "items", :force => true do |t|
     t.integer  "collection_id"
     t.text     "content"
@@ -151,6 +159,7 @@ ActiveRecord::Schema.define(:version => 20130122045302) do
     t.integer  "urltype",       :default => 0
     t.string   "og_image",      :default => ""
     t.text     "pre_content",   :default => ""
+    t.integer  "user_id",       :default => 0
   end
 
   add_index "items", ["collection_id"], :name => "index_items_on_collection_id"

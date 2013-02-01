@@ -1,16 +1,11 @@
 <% indexes = arr_2_cols(@board.items.where(kind: 1).count,@size) %>
 <div class="row">
 	<% indexes.each do |col| %>
-		<div class=<%="span#{@size}" %>>
-			<div class="row-fluid">
+
 				<% col.each do |i| %>
-					<div class="board-item ">
 					<% item = @board.items.where(kind: 1)[i] %>
-			  	    	<%= wrap(item.pre_content) %>
-			  		</div>
-			  		<%= if signed_in? && collaborates? then render 'gear', item: item end%>
+					<%= render 'item', item: item %>
 				<% end %>
-			</div>
-		</div>
+		
 	<% end %>
 </div>

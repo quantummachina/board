@@ -1,11 +1,19 @@
 # encoding: utf-8
 namespace :data do
-	desc "Set acommenters"
+	desc "Set items id"
 
-	task set_acommenters: :environment do
-		Comment.all.each do |c|
-			if Commenter.where('user_id = ? AND collection_id = ?', c.user.id, c.collection.id).empty?
-				Commenter.create(user_id: c.user.id, collection_id: c.collection.id)
+	task set_items_id: :environment do
+		Item.all.each do |i|
+			if i.user_id == 0
+				i.update_attributes(user_id: i.collection.user.id)
+			end
+		end
+	end
+
+	task clean_items: :environment do
+		Item.all.each do |i|
+			if i.collection.nil?
+				i.destroy
 			end
 		end
 	end

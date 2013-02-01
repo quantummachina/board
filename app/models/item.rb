@@ -1,7 +1,9 @@
 class Item < ActiveRecord::Base
   include ActionView::Helpers::UrlHelper
 
-  attr_accessible :collection_id, :content, :content_html, :kind, :urltype, :og_image, :pre_content
+  attr_accessible :collection_id, :content, :content_html, :kind, :urltype, :og_image, :pre_content, :user_id
+
+  has_many :icomments
 
   belongs_to :collection, touch: true
 

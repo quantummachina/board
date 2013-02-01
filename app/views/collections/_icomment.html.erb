@@ -1,0 +1,25 @@
+<%#receives ic%>
+<%if ic.id %>
+	<div class = 'row'>
+		<div class = 'span3'>
+			<p><b><%= link_to ic.user.name, ic.user%>:</b></p>
+		</div>
+		<div class = 'span2 textd'>
+			<p><small><%= tiempo(ic.created_at) %></small></p>
+		</div>
+	</div>
+
+	<%= ic.text %>
+
+	<% if signed_in? && (ic.user.id == current_user.id || current_user.admin || current_user.id == @board.user.id) %>
+		<div class='textd'><p><small><%= link_to 'Borrar', ic, method: :delete %></small></p></div>
+	<%else%>
+		<br>
+	<%end%>
+
+	<br>
+
+<%end%>
+
+
+

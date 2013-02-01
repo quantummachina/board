@@ -1,19 +1,7 @@
 <%if !@board.collaborations.empty? %>
 	<h2>Colaboradores:</h2> 
 	<% @board.collaborators.each do |c| %>
-	<%= link_to c, title: c.name do%>
-
-		<% if c.uid != 0 %>
-			<%=image_tag 'https://graph.facebook.com/' + c.uid.to_s + '/picture' %>
-		<%else%>
-			<% if c.photo.url != '/photos/original/missing.png' %>
-				<%= image_tag c.photo.url(:thumb), size:'50x50' %>
-			<%else%>
-				<%= image_tag 'dummyface.png' %>
-			<%end%>
-		<%end%>
-
-	<%end%>
+		<%= render 'shared/user_face', u: c %>
 	<%end%>
 	<div id="users">
 		<%# render 'shared/users', users:@board.collaborators %>

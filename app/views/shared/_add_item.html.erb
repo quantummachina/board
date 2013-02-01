@@ -2,15 +2,17 @@
 	<ul id= <%="myTab" + kind.to_s %> class="nav nav-tabs">
 	    <li class="active"><a href= <%="#link" + kind.to_s %> data-toggle="tab">Agrega un enlace o nota</a></li>
 	    <li><a href=<%="#upload"+kind.to_s%> data-toggle="tab">Sube una imagen</a></li>
+	    <li><a href=<%="#event"+kind.to_s%> data-toggle="tab">Publica un evento</a></li>
 	</ul>
 	<div id=<%="myTabContent"+kind.to_s%> class="tab-content">
 		<div class="tab-pane fade in active" id=<%="link"+kind.to_s%>>
 			<%= form_for @board.items.build(collection_id: @board.id) do |f|%>
 			<%= f.hidden_field :collection_id %>
 			<%= hidden_field_tag :kind, kind %>
-			<div class='form-inline'>
-			<%= f.text_field :content, placeholder: 'Agrega un enlace o nota' %>
-		 	<%= f.submit "Agregar", class: "btn btn-small btn-primary" %>
+			<%= hidden_field_tag :user_id, current_user.id %>
+			<div class='form'>
+			<%= f.text_area :content, placeholder: 'Agrega un enlace o nota', rows: 3, class: 'span6' %>
+		 	<%= f.submit "Agregar", class: "btn btn-small btn-primary pull-right" %>
 		 	</div>
 		 	<%end%>
 		</div>
@@ -23,6 +25,9 @@
 		 	<%= f.submit "Agregar", class: "btn btn-small btn-primary" %>
 		 	</div>
  			<%end%>
+		</div>
+		<div class="tab-pane fade" id=<%="event"+kind.to_s%>>
+			Evento
 		</div>
 	</div>
 

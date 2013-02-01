@@ -1,0 +1,112 @@
+<%#receives item%>
+<% ncomments = 2 #cantidad de comentarios a mostrar%>
+<div class="<%="span#{@size} board-item-#{@size}"%>"> 
+	<div class = 'row'>
+		<div class = 'span1'>
+			<%if item.user_id != 0 %>
+				<%= render 'shared/user_face', u: item.user %>
+			<%end%>
+		</div>
+
+		<div class = 'span5'>
+			<div class='row'>
+
+				<div class = 'span3'>
+					<p><b><%= if item.user_id != 0  then item.user.name+':' end %></b></p>
+				</div>
+				<div class = 'span2 textd'>
+					<p><small><%= tiempo(item.created_at) %></small></p>
+				</div>
+
+		    	</div>
+		    	<%= wrap(item.pre_content) %>
+
+		    	<div class= 'row'>
+
+		  	    <div class= 'pull-left'>
+		  	    	<p><small><%= link_to 'Comentar', '#', id: "show_postcomment#{item.id}" if signed_in? %></small></p>
+		  	    </div>
+
+  	    
+		  	    <div class= 'textd pull-right' >
+		  	    	<% if signed_in? && (owner? || current_user.admin || current_user.id == item.user.id) %><p><small>
+			  	    	<%if item.urltype == 1|| item.urltype == 2 || item.urltype == 3 %>
+						<%= link_to 'Establecer como Portada', controller: "items", action: "setcover", id: item.id if item.kind == 1 %> - 
+						<%end%>
+						<%= link_to 'Borrar', item, method: :delete, title: "Eliminar item" %></small>
+					<% end %>
+		  	    </div></p>
+  	    		<%# if signed_in? && collaborates? then render 'gear', item: item end%>
+  	    	</div>
+
+
+	  	    <script type="text/javascript">
+	  	    	$(function() {
+				  $('a#show_<%="postcomment#{item.id}"%>').click(function(event){
+				    event.preventDefault();
+				    $('div#<%="postcomment#{item.id}"%>').toggle();
+				  });
+				});   
+	  	    </script>
+
+
+			<div class = 'row'>
+    			<div class = 'span5'>
+
+
+    				<div id='<%="postcomment#{item.id}"%>' class = 'hidden'>
+  	    				<%if signed_in? %>
+							<%= form_for item.icomments.build(item_id: item.id, user_id: current_user.id) do |f|%>
+								<%= f.hidden_field :item_id %>
+								<%= f.hidden_field :user_id %>
+								<%= f.text_field :text, class: 'span4' %>
+								<%= f.submit "Publicar" %>
+							<% end %>
+						<%end%>
+  	    			</div>
+
+
+	    			<%if !item.icomments.empty?%>
+	    				<%if item.icomments.count <= ncomments %>
+
+		    				<% item.icomments.each do |ic| %>
+			  	    			<%= render 'icomment', ic: ic %>
+		    				<%end%>
+
+		    			<%else%>
+		    				<% item.icomments[0..ncomments-1].each do |ic| %>
+			  	    			<%= render 'icomment', ic: ic %>
+		    				<%end%>
+
+		    				
+		    				<div id='<%="showcomments#{item.id}"%>' class = 'hidden'>
+		    					<% item.icomments[ncomments..item.icomments.count-1].each do |ic| %>
+				  	    			<%= render 'icomment', ic: ic %>
+			    				<%end%>
+		    				</div>
+
+		    				<div id='<%="linkshowcomments#{item.id}"%>'>
+		    					<p><small><%= link_to 'Mostrar todos los comentarios', '#', id: "show_showcomments#{item.id}" %></small></p>
+		    				</div>
+
+		    				<script type="text/javascript">
+					  	    	$(function() {
+								  $('a#show_<%="showcomments#{item.id}"%>').click(function(event){
+								    event.preventDefault();
+								    $('div#<%="showcomments#{item.id}"%>').toggle();
+								    $('div#<%="linkshowcomments#{item.id}"%>').toggle();
+								  });
+								});   
+					  	    </script>
+
+		    			<%end%>
+
+	    			<%end%>
+
+    			</div>
+    		</div>
+    		
+
+		</div>
+	</div>
+</div>

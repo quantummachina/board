@@ -7,7 +7,25 @@ $grayLighter:           #eee !default;
 $linkColor:             #00AEEF !default;
 $linkColorHover:        darken($linkColor, 15%) !default;
 
-div.board-item {
+div.board-item-6 {
+	border-style: solid;
+	border-color: $grayLighter;
+	border-width: 1px;
+	//width: 524px;
+	//474 524
+	margin-top: 5px;
+	padding: 5px 5px 5px 5px;
+
+}
+
+div.board-item-7 {
+	border-style: solid;
+	border-color: $grayLighter;
+	border-width: 1px;
+	width: 543px;
+}
+
+div.board-item-3 {
 	border-style:solid;
 	border-color: $grayLighter;
 	border-width: 1px;
