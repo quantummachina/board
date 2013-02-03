@@ -5,7 +5,7 @@ class AttachmentsController < ApplicationController
 		if !params[:attachment].nil? #no file to upload
 			@attachment = current_user.attachments.build(params[:attachment])
 			if @attachment.save
-				@item = @collection.items.create(content: '*$&%#'+@attachment.id.to_s, kind: params[:kind])
+				@item = @collection.items.create(content: '*$&%#'+@attachment.id.to_s, kind: params[:kind], user_id: params[:user_id])
 				@item.set
 				if @item.kind == 1 && @collection.cover == 0
 			      @collection.update_attributes(cover: @item.id)

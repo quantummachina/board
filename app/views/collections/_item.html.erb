@@ -25,7 +25,12 @@
 		    		<%if item.urltype == 3 %>
 		    			<%= embedded_b(item.content,5) %>
 		    		<%else%>
-		    			<%= cover(item)%>
+		    			<% aid = item.content[5..(item.content.length-1)].to_i %>
+						<% a = Attachment.find(aid)%>
+						<%#To check if embedded_b can do this%>
+		    			<%= link_to a.file.url, target: "_blank", class: "thumbnail" do%>
+		    				<%= cover(item)%>
+		    			<%end%>
 		    		<%end%>
 		    	<%end%>
 		    	

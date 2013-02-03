@@ -21,6 +21,7 @@
 			<div class='form-inline'>
 			<%= hidden_field_tag :collection_id, @board.id %>
 			<%= hidden_field_tag :kind, kind %>
+			<%= hidden_field_tag :user_id, current_user.id %>
  			<%= f.file_field :file, :accept => 'image/png,image/gif,image/jpeg' %>
 		 	<%= f.submit "Agregar", class: "btn btn-small btn-primary" %>
 		 	</div>
