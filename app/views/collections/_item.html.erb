@@ -22,15 +22,16 @@
 		    	<%if item.urltype == 4%>
 		    		<%= wrap(item.pre_content) %>
 		    	<%else%>
-		    		<%if item.urltype == 3 %>
-		    			<%= embedded_b(item.content,5) %>
-		    		<%else%>
+		    		<%if item.urltype == 1 %>
+
 		    			<% aid = item.content[5..(item.content.length-1)].to_i %>
 						<% a = Attachment.find(aid)%>
 						<%#To check if embedded_b can do this%>
 		    			<%= link_to a.file.url, target: "_blank", class: "thumbnail" do%>
-		    				<%= cover(item)%>
+		    				<%= if a.file_content_type != "application/pdf" then cover(item) else a.file_file_name end%>
 		    			<%end%>
+		    		<%else%>
+		    			<%= embedded_b(item.content,5) %>
 		    		<%end%>
 		    	<%end%>
 		    	
