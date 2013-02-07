@@ -33,15 +33,15 @@ class ItemsController < ApplicationController
         #end
       end
     end
-    #to followers
+    #to cfollowers
     @collection.cfollowers.each do |u|
       if u.id != current_user.id && @collection.collaborators.where("user_id = ?", u.id).empty?
         u.notifications.create(message: message2)
         n = u.extra.notifications + 1
         u.extra.update_attributes(notifications: n)
-        #if u.uoption.n_comments
+        if u.uoption.n_cfollowings
           AppMailer.item_notification_email(u, @item).deliver
-        #end
+        end
       end
     end
 

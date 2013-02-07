@@ -48,6 +48,18 @@ class CollectionsController < ApplicationController
 	    if @collection.save
 	    	@collection.user.extra.toggle!(:newboard)
 	      flash[:success] = "Ahora crea las colaboraciones que necesites."
+
+	      #notification to ufollowers
+	      	message = '<a href="/users/' + @collection.user.id.to_s + '">' + @collection.user.name + '</a> ha creado un nuevo proyecto: <a href="/collections/' + @collection.id.to_s + '">' + @collection.title + '</a>'
+  			@collection.user.ufollowers.each do |u|
+  				u.notifications.create(message: message)
+				n = u.extra.notifications + 1
+				u.extra.update_attributes(notifications: n)
+	  			if u.uoption.n_ufollowings
+					AppMailer.gfollow_notification_email(u, @collection.user, @collection, 2).deliver
+				end
+	  		end
+
 	      redirect_to add_vacants_path({cid: @collection.id})
 
 	  	else
@@ -182,6 +194,29 @@ class CollectionsController < ApplicationController
   	def markfinished
   		@collection = Collection.find(params[:id])
   		@collection.update_attributes(status: 5)
+
+  		#notification to ufollowers
+  		message = '<a href="/users/' + @collection.user.id.to_s + '">' + @collection.user.name + '</a> ha finalizado exitosamente el proyecto <a href="/collections/' + @collection.id.to_s + '">' + @collection.title + '</a>'
+  		@collection.user.ufollowers.each do |u|
+  			u.notifications.create(message: message)
+			n = u.extra.notifications + 1
+			u.extra.update_attributes(notifications: n)
+  			if u.uoption.n_ufollowings
+				AppMailer.gfollow_notification_email(u, @collection.user, @collection, 1).deliver
+			end
+  		end
+
+  		#notification to cfollowers
+  		message = '<a href="/users/' + @collection.user.id.to_s + '">' + @collection.user.name + '</a> ha finalizado exitosamente el proyecto <a href="/collections/' + @collection.id.to_s + '">' + @collection.title + '</a>'
+  		@collection.cfollowers.each do |u|
+  			u.notifications.create(message: message)
+			n = u.extra.notifications + 1
+			u.extra.update_attributes(notifications: n)
+  			if u.uoption.n_cfollowings
+				AppMailer.gfollow_notification_email(u, @collection.user, @collection, 7).deliver
+			end
+  		end
+
   		redirect_to edit_collection_path(@collection)
   	end
 
@@ -199,6 +234,18 @@ class CollectionsController < ApplicationController
   	def statusupdate
   		@collection = Collection.find(params[:board_id])
   		@collection.update_attributes(statustext: params[:statustext])
+
+  		#notification to cfollowers
+  		message = '<a href="/users/' + @collection.user.id.to_s + '">' + @collection.user.name + '</a> ha actualizado el estatus del proyecto <a href="/collections/' + @collection.id.to_s + '">' + @collection.title + '</a>'
+  		@collection.cfollowers.each do |u|
+  			u.notifications.create(message: message)
+			n = u.extra.notifications + 1
+			u.extra.update_attributes(notifications: n)
+  			if u.uoption.n_cfollowings
+				AppMailer.gfollow_notification_email(u, @collection.user, @collection, 4).deliver
+			end
+  		end
+
   		redirect_to @collection
   	end
 end

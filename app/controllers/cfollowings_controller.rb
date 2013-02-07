@@ -8,9 +8,9 @@ class CfollowingsController < ApplicationController
 		@collection.user.notifications.create(message: message) #message to owner
 		n = @collection.user.extra.notifications + 1
 		@collection.user.extra.update_attributes(notifications: n)
-		#if @collection.user.uoption.n_comments #email
+		if @collection.user.uoption.n_cfollowers #email
 			AppMailer.cfollow_notification_email(current_user, @collection).deliver
-		#end
+		end
 
 		redirect_to @collection
 	end

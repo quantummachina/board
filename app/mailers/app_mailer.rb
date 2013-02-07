@@ -60,6 +60,7 @@ class AppMailer < ActionMailer::Base
     mail(:to => @to.email, :subject => @from.name + " te ha enviado un mensaje.")
   end
 
+  #Comments seems like going to be delete
   def comment_notification_email(to, comment)
     @from = comment.user
     @to = to
@@ -68,7 +69,6 @@ class AppMailer < ActionMailer::Base
     @project_url = 'http://www.funkalab.com/collections/'+@project.id.to_s
     mail(:to => @to.email, :subject => @from.name + " ha comentado en el proyecto " + @project.title)
   end
-#http://localhost:3000/conversations?interlocutor_id=6&user_id=10
 
   def password_restar_email(user, pass)
     @user = user
@@ -117,4 +117,34 @@ class AppMailer < ActionMailer::Base
     mail(:to => @to.email, :subject => @from.name + " ha publicado en el proyecto " + @project.title)
   end
 
+  def gfollow_notification_email(to, from, collection, type)
+    #types: 1.success 2.newproj 3. addedascollab
+    # 4. statuschange 5.newcollab 6.newitem 7.success 8.vacant
+    @from = from
+    @to = to
+    @project = collection
+    @from_url = 'http://www.funkalab.com/users/'+@from.id.to_s
+    @project_url = 'http://www.funkalab.com/collections/'+@project.id.to_s
+
+    case type
+      when 1 #collections/markfinished
+        @message = "ha completado exitosamente su proyecto"
+      when 2 #collections
+        @message = "ha creado un nuevo proyecto:"
+      when 3 #requests
+        @message = "ha sido incluido como colaborador en el proyecto "
+      when 4 #collections/statusupdate
+        @message = "ha actualizado el status de su proyecto "
+      when 5 #requests
+        @message = "ha agregado un nuevo colaborador al proyecto"
+      when 6 #items. not in use because item_email instead
+        @message = "ha publicado en el proyecto "
+      when 7 #collections/markfinished
+        @message = "ha completado exitosamente el proyecto"
+      when 8 #vacants
+        @message = "ha publicado una nueva colaboración en el proyecto"
+    end
+
+    mail(:to => @to.email, :subject => "Tenemos actualizaciones para ti")
+  end
 end

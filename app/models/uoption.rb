@@ -1,5 +1,5 @@
 class Uoption < ActiveRecord::Base
-  attr_accessible :n_comments, :n_messages, :n_requests, :n_commenters,  :user_id
+  attr_accessible :n_comments, :n_messages, :n_requests,  :user_id, :n_cfollowers, :n_ufollowers, :n_ufollowings, :n_cfollowings, :n_items
 
   belongs_to :user, dependent: :destroy
 end

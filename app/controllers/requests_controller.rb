@@ -78,6 +78,29 @@ class RequestsController < ApplicationController
 			@fromuser.extra.update_attributes(notifications: n)
 
 			AppMailer.accept_notification_email(@request).deliver
+
+			#notification and email to ufollowers
+			message = '<a href="/users/' + @user.id.to_s + '">' + @user.name + '</a> ha sido ha aceptado a colaborar en el proyecto <a href="/collections/' + @collection.id.to_s + '">' + @collection.title + '</a>'
+			@user.ufollowers.each do |u|
+				u.notifications.create(message: message)
+				n = u.extra.notifications + 1
+				u.extra.update_attributes(notifications: n)
+				if u.uoption.n_ufollowings
+					AppMailer.gfollow_notification_email(u, @user, @collection, 3).deliver
+				end
+			end
+
+			#notification to cfollowers
+	  		message = '<a href="/users/' + @collection.user.id.to_s + '">' + @collection.user.name + '</a> ha agregado un nuevo colaborador al proyecto <a href="/collections/' + @collection.id.to_s + '">' + @collection.title + '</a>'
+	  		@collection.cfollowers.each do |u|
+	  			u.notifications.create(message: message)
+				n = u.extra.notifications + 1
+				u.extra.update_attributes(notifications: n)
+	  			if u.uoption.n_cfollowings
+					AppMailer.gfollow_notification_email(u, @collection.user, @collection, 5).deliver
+				end
+	  		end
+
 		end
 		@request.delete
 		flash[:success] = "La colaboración ha sido aceptada."

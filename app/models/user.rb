@@ -17,11 +17,16 @@ class User < ActiveRecord::Base
     has_many :conversations
     has_many :reverse_conversations, foreign_key: "interlocutor_id", class_name: "Conversation"
     has_many :interlocutors, through: :reverse_conversations, source: :interlocutor
-    has_many :requests
-    has_many :notifications
-    has_many :comments
+    has_many :requests, dependent: :destroy
+    has_many :reverse_requests, foreign_key: "from_id", class_name: "Request", dependent: :destroy #this is not working correctly, but so far, users do not delete accounts
+    has_many :notifications, dependent: :destroy
+    has_many :comments, dependent: :destroy
     has_many :ufollowings, dependent: :destroy
     has_many :ufolloweds, through: :ufollowings, source: :ufollowed
+
+    has_many :reverse_ufollowings, foreign_key: "ufollowed_id", class_name: "Ufollowing", dependent: :destroy
+    has_many :ufollowers, through: :reverse_ufollowings, source: :user
+
     has_many :cfollowings, dependent: :destroy
     has_many :cfolloweds, through: :cfollowings, source: :cfollowed
 

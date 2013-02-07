@@ -9,9 +9,9 @@ class UfollowingsController < ApplicationController
 		@user.notifications.create(message: message) #message to owner
 		n = @user.extra.notifications + 1
 		@user.extra.update_attributes(notifications: n)
-		#if @collection.user.uoption.n_comments #email
+		if @user.uoption.n_ufollowers #email
 			AppMailer.ufollow_notification_email(current_user, @user).deliver
-		#end
+		end
 
 		redirect_to @user
 	end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130131203848) do
+ActiveRecord::Schema.define(:version => 20130206192226) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -73,11 +73,6 @@ ActiveRecord::Schema.define(:version => 20130131203848) do
   end
 
   add_index "collections", ["user_id"], :name => "index_collections_on_user_id"
-
-  create_table "commenters", :force => true do |t|
-    t.integer "collection_id"
-    t.integer "user_id"
-  end
 
   create_table "comments", :force => true do |t|
     t.integer  "collection_id"
@@ -232,12 +227,16 @@ ActiveRecord::Schema.define(:version => 20130131203848) do
 
   create_table "uoptions", :force => true do |t|
     t.integer  "user_id"
-    t.boolean  "n_requests",   :default => true
-    t.boolean  "n_messages",   :default => true
-    t.boolean  "n_comments",   :default => true
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-    t.boolean  "n_commenters", :default => true
+    t.boolean  "n_requests",    :default => true
+    t.boolean  "n_messages",    :default => true
+    t.boolean  "n_comments",    :default => true
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.boolean  "n_cfollowers",  :default => true
+    t.boolean  "n_ufollowers",  :default => true
+    t.boolean  "n_cfollowings", :default => true
+    t.boolean  "n_ufollowings", :default => true
+    t.boolean  "n_items",       :default => true
   end
 
   add_index "uoptions", ["user_id"], :name => "index_uoptions_on_user_id", :unique => true
