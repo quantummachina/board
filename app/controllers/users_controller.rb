@@ -73,9 +73,25 @@ class UsersController < ApplicationController
   	def show
       @categories = Category.all
       @user = User.find(params[:id])
+      #array to separate finished collab
+      finished_collab = []
+      unfinished_collab = []
+      @user.collaboratives.each do |c|
+        if c.status == 5
+          finished_collab << c.id
+        else
+          unfinished_collab << c.id
+        end
+      end
+       @user.collections.each do |c|
+        if c.status == 5
+          finished_collab << c.id
+        end
+      end
+      #
       @boards = Collection.where("status != 5 AND user_id = ?", @user.id)
-      @collabs = @user.collaboratives.all
-      @fboards = Collection.where("status = 5 AND user_id = ?", @user.id)
+      @collabs = Collection.where(id: unfinished_collab)
+      @fboards = Collection.where(id: finished_collab)
   	end
 
   def edit
