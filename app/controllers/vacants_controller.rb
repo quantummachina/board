@@ -41,6 +41,9 @@ class VacantsController < ApplicationController
   def destroy
     @vacant = Vacant.find(params[:id])
     @collection = @vacant.collection
+    Request.find_all_by_vacant_id(@vacant.id).each do |r|
+      r.update_attributes(vacant_id: 0)
+    end
     @vacant.destroy
       redirect_to @collection
   end

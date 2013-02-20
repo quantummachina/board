@@ -92,7 +92,7 @@
 
 		<ul id="WoI" class="nav nav-tabs">
 			<li class="active"><a href="#work" data-toggle="tab">Proyecto</a></li>
-			<li><a href="#inspiration" data-toggle="tab">Inspiración</a></li>
+			<li><a href="#inspiration" data-toggle="tab">Inspiración</a></li><li><a href="#comments" data-toggle="tab">Comentarios</a></li>
 		</ul>
 		<div id="WoIContent" class="tab-content">
 			<div class="tab-pane fade in active" id="work">
@@ -155,7 +155,7 @@
 						<% end %>
 						<hr>
 						<%= render 'collaborators' %>
-						<%= render 'comments'%>
+						
 					</div>
 				</div>
 			</div>
@@ -165,6 +165,9 @@
 				<% if collaborates? %><%=render 'shared/add_item', kind: 0 %><% end%>
 				<%= render 'icollections' %>
 				<br>
+			</div>
+			<div class="tab-pane fade" id="comments">
+						<%= render 'comments'%>
 			</div>
 
 		</div>

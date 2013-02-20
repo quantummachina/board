@@ -11,16 +11,28 @@
 <%end%>
 <hr>
 <%if @board.comments.count > 0 %>
-	<% @board.comments.each do |c|%>
-		<%if c.id %>
-			<%= link_to c.user.name, c.user %>: <%= make_nice(c.text)%>
-			<div class='textd'><p><small><%=tiempo(c.created_at)%></small></p></div>
-			<% if signed_in? && (c.user.id == current_user.id || current_user.admin || current_user.id == @board.user.id) %>
-			<div class='textd'><p><small><%= link_to 'Borrar comentario', c, method: :delete %></small></p></div>
+
+		<% @board.comments.each do |c|%>
+			<%if c.id %>
+				<div class='row'>
+				<div class = 'span1'>
+					<%if c.user_id != 0 %>
+						<%= render 'shared/user_face', u: c.user %>
+					<%end%>
+				</div>
+				<div class = 'span6'>
+		
+					<%= link_to c.user.name, c.user %>: <%= make_nice(c.text)%>
+					<div class='textd'><p><small><%=tiempo(c.created_at)%></small></p></div>
+					<% if signed_in? && (c.user.id == current_user.id || current_user.admin || current_user.id == @board.user.id) %>
+					<div class='textd'><p><small><%= link_to 'Borrar comentario', c, method: :delete %></small></p></div>
+					<%end%>
+					<hr>
+				</div>
+				</div>
 			<%end%>
-			<hr>
-		<%end%>
-	<% end %>
+		<% end %>
+	
 <%else%>
 	Este proyecto no tiene comentarios aún ¡Sé el primero!
 <%end%>
