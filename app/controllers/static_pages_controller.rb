@@ -31,6 +31,13 @@ class StaticPagesController < ApplicationController
   		end
 	end
 
+	def business
+		if !signed_in? || !current_user.admin
+			redirect_to root_path
+		end
+		
+	end
+
 	def invite
 		@board_id = params[:board_id]
 	end

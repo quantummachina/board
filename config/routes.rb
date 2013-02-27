@@ -35,6 +35,7 @@ Board::Application.routes.draw do
   match '/terms', to: 'static_pages#terms_of_service'
   match '/privacy', to: 'static_pages#privacy_policy'
   match '/invite', to: 'static_pages#invite'
+  match '/business', to: 'static_pages#business'
   match '/suscribe', to: 'collaborations#suscribe'
   match '/nav', to: 'collections#index'
   match '/secure', to: 'static_pages#secure'
