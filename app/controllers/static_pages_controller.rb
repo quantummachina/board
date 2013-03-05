@@ -1,3 +1,4 @@
+# encoding: utf-8
 class StaticPagesController < ApplicationController
 	def secure
 		if !signed_in? || !current_user.admin
@@ -36,6 +37,18 @@ class StaticPagesController < ApplicationController
 			redirect_to root_path
 		end
 		
+	end
+
+	def businessform
+		name = params[:name]
+		company = params[:company]
+		email = params[:email]
+		phone = params[:telephone]
+		message = params[:message]
+		AppMailer.business_email('rodrigo@funkalab.com',name, company,email,phone,message).deliver
+		AppMailer.business_email('alberto@funkalab.com',name, company,email,phone,message).deliver
+		flash[:success] = "Gracias, hemos recibido tu información. Te buscaremos pronto. Eres genial."
+		redirect_to root_path
 	end
 
 	def invite

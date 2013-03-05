@@ -1,0 +1,63 @@
+$grayLight:             #999 !default;
+$grayLighter:           #eee !default;
+$fuscia:				rgb(225, 41, 124) !default;
+
+div.m1 {
+	width: 100%;
+	h1{color: $grayLight;
+		font-size: 300%;}
+}
+div.m2 {
+	width: 100%;
+	background-color: #3AB9BF;
+	h1{color: #FFFFFF;
+		font-size: 420%;}
+	h2{color: #FFFFFF;}
+	h3{color: white;}
+	h4{color: white;}
+	h5{color: white;}
+
+}
+div.m4 {
+	width: 100%;
+	background-color: #33454E;
+	h1{color: $grayLighter;}
+	h2{color: $grayLighter;}
+}
+a.business-t {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	display: block;
+	background-color: $grayLighter;
+	border-radius: 4px;
+	text-align: center;
+	color: black;
+	padding-bottom: 1em;
+	padding-top: 1em;
+	font-size: 150%;
+	&:hover{
+		text-decoration:none;
+		background-color: $grayLight;
+	}
+}
+a.sbthumb{
+	display: block;
+    padding: 1px;
+	border-style: solid;
+	border-color: $grayLighter;
+	border-width: 1px;
+	margin-bottom: 18px;
+    width: 312px;
+    height: 400px;
+    &:link {text-decoration:none;}
+	&:visited {text-decoration:none;}
+    &:hover{border-color: $grayLight;}
+}
+
+div.modal-body{
+	h2{color: black;}
+}
+
+div.jhvbda{
+
+}

@@ -2,30 +2,33 @@
 <div class='container'>
 <div class='span12'>
 	<div class="row">
-	  <div class="span9 offset2">
-	  	<div class= 'how-t'>
-			<h1><%=@s4.tls.find_by_i(1).t%></h1>
-		</div>
+	  <div class="span7 offset3 textc">
+	  	<br><br><br>
+		<h1><%=@s4.tls.find_by_i(1).t%></h1>
+		<br><br><br>
+	  </div>
+	  <div class='span12'>
+	  	<%= image_tag 'landing_monosgrandes.png'%>
+	  	<br>
+	  </div>
 		<div class="row">
-		    <div class="span3">
-		    	<%=image_tag 'mono-nube.png'%>
-		    	<h3><%=@s4.tls.find_by_i(2).t%></h3>
-		    	<h5><%=@s4.tls.find_by_i(3).t%></h5>
+		    <div class="span4">
+		 
+		    	<h2><%=@s4.tls.find_by_i(2).t%></h2>
+		    	<h4><%=@s4.tls.find_by_i(3).t%></h4>
 		    </div>
-		    <div class="span3">
-		    	<%=image_tag 'mono-ideas.png'%>
-		    	<h3><%=@s4.tls.find_by_i(4).t%></h3>
-		    	<h5><%=@s4.tls.find_by_i(5).t%></h5>
+		    <div class="span4">
+		    
+		    	<h2><%=@s4.tls.find_by_i(4).t%></h2>
+		    	<h4><%=@s4.tls.find_by_i(5).t%></h4>
 		    </div>
-			<div class="span3">
-				<%=image_tag 'mono-filmando.png'%>
-		    	<h3><%=@s4.tls.find_by_i(6).t%></h3>
-		    	<h5><%=@s4.tls.find_by_i(7).t%></h5>
+			<div class="span4">
+			
+		    	<h2><%=@s4.tls.find_by_i(6).t%></h2>
+		    	<h4><%=@s4.tls.find_by_i(7).t%></h4>
 		    </div>
 		</div>
-		<div class='textd'>
-			<h3><%= link_to @s4.tls.find_by_i(8).t, '/about'%></h3>
-		</div>
+		<br><br><br><br>
 	  </div>
 	</div>
 </div>

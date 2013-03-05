@@ -9,6 +9,8 @@
 04-colectivo/index.jpg: 04-colectivo-2794f12eadd01c3f5f375a0d8f50bda8.jpg
 dummyface.png: dummyface-baf446cf3100734bc3c7dd1014fcd3f9.png
 dummyface/index.png: dummyface-baf446cf3100734bc3c7dd1014fcd3f9.png
+landing_monosgrandes.png: landing_monosgrandes-3b7055ae5f9622a16b05cd0c566ec784.png
+landing_monosgrandes/index.png: landing_monosgrandes-3b7055ae5f9622a16b05cd0c566ec784.png
 prensa.png: prensa-2cab25d5ff5a103420e5fc40d1e6cd73.png
 prensa/index.png: prensa-2cab25d5ff5a103420e5fc40d1e6cd73.png
 recuerdaque.png: recuerdaque-b0a420c49b30886bffbc6de4021b6000.png
@@ -17,8 +19,8 @@ sellomexico.png: sellomexico-6dc30bb497aed1a800e1bb3739b82973.png
 sellomexico/index.png: sellomexico-6dc30bb497aed1a800e1bb3739b82973.png
 application.js: application-4969be00cbc3dc93a21db0be70722d52.js
 application/index.js: application-4969be00cbc3dc93a21db0be70722d52.js
-application.css: application-5a583ff9162b06a121a746b955e3b0ff.css
-application/index.css: application-5a583ff9162b06a121a746b955e3b0ff.css
+application.css: application-ed3ef015419673099373fbe07e4015af.css
+application/index.css: application-ed3ef015419673099373fbe07e4015af.css
 glyphicons-halflings-white.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
 glyphicons-halflings-white/index.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
 glyphicons-halflings.png: glyphicons-halflings-d63e747535b6b5c589a12cad5d16a401.png

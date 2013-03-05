@@ -49,6 +49,7 @@ Board::Application.routes.draw do
   match '/massemail', to: 'admins#massemail'
   match '/ceshare', to: 'collections#eshare'
   match '/statusupdate', to: 'collections#statusupdate'
+  match '/businessform', to: 'static_pages#businessform'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 

@@ -147,4 +147,14 @@ class AppMailer < ActionMailer::Base
 
     mail(:to => @to.email, :subject => "Tenemos actualizaciones para ti")
   end
+
+  def business_email(to, name, company, email, phone, message)
+    @to = to
+    @name = name
+    @company = company
+    @email = email
+    @phone = phone
+    @message = message
+    mail(:to => @to, :subject => 'Negocios: '+@name)
+  end
 end

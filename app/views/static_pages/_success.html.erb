@@ -1,33 +1,35 @@
 <%if @sprojects.count >= 1%>
-<div class='m1'>
+<div class=''>
 <div class='container'>
 <div class='span12'>
 	<div class="row">
-	  <div class="span9 offset2 columns">
-	  	<div class= 'success-t'>
-		  <h2><%=@s2.tls.find_by_i(1).t%></h2>
-		</div>
-		
+	  <div class="span7 offset3 textc">
+	  	<br>
+		<h1><%=@s2.tls.find_by_i(1).t%></h1>
+		<br>
+	  </div>
 
-		<div id="myCarousel" class="carousel slide">
-            <div class="carousel-inner">
+	  	<div class = 'row'>
 
-                <% @sprojects.each do |s|%>
-                  <div class="<%=if s == @sprojects.first then "item active" else "item" end%>">
-	                <%= cover(Item.find(s.collection.cover))%>
-	                <div class="carousel-caption">
-	                  <h3><%= link_to s.collection.title, s.collection %></h3>
-	                  <h3><%=s.text%></h3>
-	                </div>
-	              </div>
-	            <%end%>
+	      	<% @sprojects.each do |s|%>
+	          <div class="span4">
 
-            </div>
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
-          </div>
+	            <%= link_to s.collection, class: "sbthumb" do %>
+	            	<% if s.collection.cover != 0 %>
+						<%= cover(s.collection.items.find(s.collection.cover))%>
+					<%else%>
+						<%= image_tag(dummycover(s.collection.category_id))%>
+					<% end %>
+					<div class='thmbcontent'>
+						<h3><%= s.collection.title %></h3>
+						<p><%= s.collection.idea %></p>
+					</div>
+				<% end %>
+	            
+	          </div>
+	        <%end%>
 
-      	
+    	</div>
 
 		<br>
 		<br>
