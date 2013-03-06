@@ -89,9 +89,10 @@
 	  	<h3>Los proyectos de Funkalab son propuestas de creativos independientes que hacen cosas por diversión. La mejor forma de integrarte a estas ideas es apoyándolas. Ellos tienen las ideas, nosotros somos el medio para acercarte a ellos.</h3>
 	  </div>
 	  <div class="span5 offset1">
-	  	<h1>Apoya un proyecto existente</h1>
-	  	<h2>Aquí están las mejores ideas, un empujón no les haría mal.</h2>
-	  	<%= link_to 'Aquí', "#", class: 'btn pull-right'%>
+	  	<div class = 'busstitle'><h1>Apoya proyectos existentes</h1></div>
+	  	<h1>Aquí están las mejores ideas, un empujón no les haría mal.</h1>
+	  	<br>
+	  	<a href="#businessModalApoyar" role="button" class="btn pull-right" data-toggle="modal">Entra aquí.</a>
 	  </div>
 	</div>
 </div>
@@ -101,17 +102,18 @@
 <div class='bussdiv5'>
 <div class='container'>
 <div class='span12'>
-	<div class = 'textc'>
+	<div class = 'busstitle textc'>
 		<h1>Crea un proyecto</h1>
 	</div>
 	<br>
 	<div class="row">
 	  <div class="span4 offset1">
-	  	<h2>Una frase bien chingona de como te ayudamos</h2>
+	  	<h1>Una frase bien chingona de como te ayudamos</h1>
 	  </div>
 	  <div class="span6">
-	  	<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</h4>
-	  	<%= link_to 'Aquí', "#", class: 'btn pull-right'%>
+	  	<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</h3>
+	  	<br>
+	  	<a href="#businessModalCrear" role="button" class="btn pull-right" data-toggle="modal">Entra aquí.</a>
 	  </div>
 	</div>
 </div>
@@ -123,58 +125,44 @@
 <div class='span12'>
 	<div class="row">
 	  <div class="span4 offset1">
-	  	<h1>Consultoría</h1>
+	  	<div class='busstitle'><h1>Consultoría</h1></div>
 	  	<br>
-	  	<h2>Tenemos buenas ideas y nos gusta compartirlas.</h2>
+	  	<h1>Tenemos buenas ideas y nos gusta compartirlas.</h1>
 	  </div>
 	  <div class="span5 offset1">
-	  	<h4>Si tu compañía necesita refrescarse, no dudes en buscarnos. Si necesitas desarrollar un nuevo producto, un video, publicidad BTL o solo te interesa pensar más creativamente, dinos.</h4>
-	  	<br>
-	  	<%= link_to 'Aquí', "#", class: 'btn pull-right'%>
+	  	<h3>Si tu compañía necesita refrescarse, no dudes en buscarnos. Si necesitas desarrollar un nuevo producto, un video, publicidad BTL o solo te interesa pensar más creativamente, dinos.</h3>
+	  	<br><br>
+	  	<a href="#businessModalConsultoria" role="button" class="btn pull-right" data-toggle="modal">Entra aquí.</a>
 	  </div>
 	</div>
 </div>
 </div>
 </div>
 
-<div class='bussdiv7'>
-<div class='container'>
-<div class='span12'>
-	<div class="row">
-	  <div class="span4 offset1">
-	  	<h1>Invertir</h1>
-	  	<br>
-	  	<h3>Invierte ahorita (es más barato, después ya no). </h3>
-	  </div>
-	  <div class="span5 offset1">
-	  	<p>Si ves potencial en Funkalab, igual que nosotros, como una plataforma que pueda ayudar a creativos a desarrollar sus ideas y crear productos innovadores.</p>
-	  	<br>
-	  	<%= link_to 'Aquí', "#", class: 'btn pull-right'%>
-	  </div>
-	</div>
-</div>
-</div>
-</div>
-
-<div class='container'>
+<div class='container busscontact'>
 	<div class='span8 offset2'>
 		<br><br><br>
 		<p> Escríbenos aquí:</p>
-		<br>
+		<br><br>
 		<div class = 'bussmail'>
-			<p>hello@funkalab.com</p>
+			<p><b>hello@funkalab.com</b></p>
 		</div>
+		<br>
 		<br>
 		<br>
 		<p> O búscanos aquí:</p>
-		<br>
+		<br><br>
 		<div class='row'>
 			<div class = 'span4 textc'>
-				<%= link_to 'facebook', 'http://www.facebook.com/funkalab', class: 'bussfb'%>
+				<b><%= link_to 'facebook', 'http://www.facebook.com/funkalab', class: 'bussfb'%></b>
 			</div>
 			<div class = 'span4 textc'>
-				<%= link_to 'twitter', 'http://www.twitter.com/funkalab', class: 'busstw'%>
+				<b><%= link_to 'twitter', 'http://www.twitter.com/funkalab', class: 'busstw'%></b>
 			</div>
 		</div>
-		<br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	</div>
+
+	<%= render 'businessform', sub: 'Apoyar'%>
+	<%= render 'businessform', sub: 'Crear'%>
+	<%= render 'businessform', sub: 'Consultoria'%>

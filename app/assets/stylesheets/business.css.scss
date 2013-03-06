@@ -57,26 +57,23 @@ div.bussdiv6{
 	h4{color: #FF4893;}
 	p{color: #FF4893;}
 }
-div.bussdiv7{
-	background-color: blue;
-	padding-top: 5em;
-	padding-bottom: 5em;
-	h1{color: white;}
-	h2{color: white;}
-	h3{color: white;}
-	h4{color: white;}
-	p{color: white;}
+div.busscontact{
+	p{color: #929497;}
 }
 div.bussmail{
-	p{color: red;
+	p{color: #F75757;
 		font-size: 500%;}
 }
 a.bussfb{
-	color: blue;
+	color: #1B75BB;
 	font-size: 500%;
 	&:hover{ text-decoration: none;}
 }
 a.busstw{
+	color: #00ADEE;
 	font-size: 500%;
 	&:hover{ text-decoration: none;}
+}
+div.busstitle{
+	h1{font-size: 48px;}
 }
