@@ -9,7 +9,7 @@
     <h4>Si tú o tu compañía quieren hacer negocios con nosotros (ya sea patrocinando algún proyecto, necesitas ayuda para desarrollar ideas o invirtiendo en nosotros), aquí es el lugar.</h4>
     <br>
     <%= form_tag('/businessform') do -%>
-      <%# hidden_field_tag :sub %>
+      <%= hidden_field_tag :sub, sub %>
     	<%= text_field_tag :name, nil, placeholder: 'Nombre*', class: 'span4' %>
     	<%= text_field_tag :company, nil, placeholder: 'Compañía o marca', class: 'span4' %>
     	<%= text_field_tag :email, nil, placeholder: 'Correo electrónico*', class: 'span4' %>
