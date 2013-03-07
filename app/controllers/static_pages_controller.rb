@@ -28,7 +28,7 @@ class StaticPagesController < ApplicationController
 			@s3 = Section.find_by_name('Landing weekly')
 			@s4 = Section.find_by_name('Landing how')
 			@s5 = Section.find_by_name('Landing why')
-			@p_feat= Collection.find(Genvar.find_by_name('weekly').value)
+			@p_feat= Attachment.find(Item.find(@p_feat.cover).content[5..8])
   		end
 	end
 
@@ -36,7 +36,7 @@ class StaticPagesController < ApplicationController
 		if !signed_in? || !current_user.admin
 			redirect_to root_path
 		end
-		
+		@s = Section.find_by_name('Business')
 	end
 
 	def businessform

@@ -1,37 +1,75 @@
+$grayDarker:            #222 !default;
+$grayDark:              #333 !default;
+$gray:                  #555 !default;
+$grayLight:             #999 !default;
+$grayLighter:           #eee !default;
+
 div.bussdiv0{
 	padding-top: 4em;
-	h1{font-size: 400%;}
+	h1{font-size: 60px;
+		color: $gray;}
+	h3{font-size: 24px;
+		color: $gray;}
 }
 div.bussdiv1{
 	background-color: #08A7E3;
-	padding-top: 5em;
-	padding-bottom: 5em;
-	h1{color: white;}
-	h2{color: white;}
-	h3{color: white;}
+	padding-top: 7em;
+	padding-bottom: 9em;
+	h1{color: white;
+		font-size: 42px;
+	line-height:100%;}
+	
+	h2{color: white;
+		font-size: 36px;
+		font-weight: normal;
+		line-height:100%;}
 }
 div.bussdiv2{
 	background-color: #6D6E70;
-	padding-top: 5em;
-	padding-bottom: 5em;
-	h1{color: white;}
+	padding-top: 6em;
+	padding-bottom: 6em;
+	h1{color: white;
+	font-size: 42px;
+	line-height:100%;}
 	h2{color: white;}
-	h3{color: white;}
+	h3{color: white;
+		font-size: 24px;
+		font-weight: normal;
+		line-height:120%;}
 	h4{color: white;}
 }
 div.bussdiv3{
 	background-color: #13D3BC;
-	padding-top: 5em;
-	padding-bottom: 5em;
-	h2{color: white;}
-	h3{color: white;}
+	padding-top: 6em;
+	padding-bottom: 6em;
+	h2{color: white;
+		font-size: 32px;
+		line-height:100%;}
+	h3{color: white;
+	font-size: 24px;
+		font-weight: normal;
+		line-height:120%;}
 	h4{color: white;}
 	p{color: white;}
 }
-div.bussdiv4{
-	background-color: #FF8080;
+div.bussdiv7{
 	padding-top: 5em;
 	padding-bottom: 5em;
+	h1{
+		font-size: 48px;
+		line-height: 100%;
+		color: $grayDark;
+	}
+	p{
+		font-size: 14px;
+		line-height: 120%;
+		color: $grayDark;
+	}
+}
+div.bussdiv4{
+	background-color: #FF8080;
+	padding-top: 6em;
+	padding-bottom: 6em;
 	h1{color: white;}
 	h2{color: white;}
 	h3{color: white;}
@@ -39,8 +77,8 @@ div.bussdiv4{
 	p{color: white;}
 }
 div.bussdiv5{
-	padding-top: 5em;
-	padding-bottom: 5em;
+	padding-top: 6em;
+	padding-bottom: 6em;
 	h1{color: #00A69C;}
 	h2{color: #00A69C;}
 	h3{color: #00A69C;}
@@ -49,8 +87,8 @@ div.bussdiv5{
 }
 div.bussdiv6{
 	background-color: #F1F1F2;
-	padding-top: 5em;
-	padding-bottom: 5em;
+	padding-top: 6em;
+	padding-bottom: 6em;
 	h1{color: #FF4893;}
 	h2{color: #FF4893;}
 	h3{color: #FF4893;}
@@ -75,5 +113,23 @@ a.busstw{
 	&:hover{ text-decoration: none;}
 }
 div.busstitle{
-	h1{font-size: 48px;}
+	h1{font-size: 48px;
+	line-height:100%;}
 }
+a.businessform {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	display: block;
+	background-color: $grayLight;
+	border-radius: 4px;
+	text-align: center;
+	color: white;
+	padding-bottom: 1em;
+	padding-top: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	font-size: 150%;
+	&:hover{
+		text-decoration:none;
+		background-color: $gray;}
+	}

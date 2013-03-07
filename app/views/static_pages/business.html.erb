@@ -1,10 +1,11 @@
 <% provide(:title, 'Business') %>
 <div class = 'row'>
 	<div class = 'span12'>
-		<div class = 'row'>
+		<div class = 'row bussdiv0'>
 			<div class = 'span7'>
-				<div class = 'bussdiv0'>
-					<h1>¿Qué es Funkalab?</h1>
+				<div class = 'textc'>
+					<br><br>
+					<h1><b>¿Qué es Funkalab?</b></h1>
 				</div>
 			</div>
 			<div class = 'span5'>
@@ -42,6 +43,7 @@
 				<h2><strong>Sí nos gusta :)</strong></h2>
 				<br>
 				<h3>Colaborar</h3>
+				<h3>Crear</h3>
 				<h3>Resolver problemas</h3>
 				<h3>Hacer ruido</h3>
 			</div>
@@ -50,31 +52,34 @@
 				<br>
 				<h3>Explotar freelancers</h3>
 				<h3>Trabajo gratis</h3>
+				<h3>Proyectos aburridos</h3>
 			</div>
 		</div>
 		<br><br>
-		<div class='row'>
+		<div class='row bussdiv7'>
 			<div class ='span10 offset1'>
 				<div class ='row'>
 					<div class = 'span8 textc'> 
-						<br><br>
+						
 						<h1>Esto es lo que hacemos:</h1>
 					</div>
 				</div>
+				<br><br>
+				<%= image_tag @s.tls.find_by_i(1).t %>
+				<br><br>
+				<h1><%=@s.tls.find_by_i(2).t%></h1>
 				<br>
-				<%= image_tag 'http://images.hellokisses.com/cache/images/61989-0701cf-500-667.jpg' %>
-				<h1>Puente del árbol</h1>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+				<p><%=@s.tls.find_by_i(3).t %></p>
 			</div>
 		</div>
 		<br><br>
-		<div class='row'>
+		<div class='row bussdiv7'>
 			<div class ='span12 textc'>
 				<br><br><br><br>
 				<h1>Ellos hablan bien de nosotros:</h1>
 				<br>
 				<%= image_tag 'prensa.png'%>
-				<br><br><br><br>
+				
 			</div>
 		</div>
 	</div>
@@ -92,7 +97,7 @@
 	  	<div class = 'busstitle'><h1>Apoya proyectos existentes</h1></div>
 	  	<h1>Aquí están las mejores ideas, un empujón no les haría mal.</h1>
 	  	<br>
-	  	<a href="#businessModalApoyar" role="button" class="btn pull-right" data-toggle="modal">Entra aquí.</a>
+	  	<a href="#businessModalApoyar" role="button" class="businessform pull-right" data-toggle="modal">Estoy interesado.</a>
 	  </div>
 	</div>
 </div>
@@ -108,12 +113,12 @@
 	<br>
 	<div class="row">
 	  <div class="span4 offset1">
-	  	<h1>Una frase bien chingona de como te ayudamos</h1>
+	  	<h1>Una campaña, un video, una canción, un robot...</h1>
 	  </div>
 	  <div class="span6">
-	  	<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</h3>
+	  	<h3>Lo más probable es que no sepas exactamente lo que buscas, pero cuando lo veas, sabrás que eso era, claro. Podemos juntarnos, platicar y generar un proyecto específicamente para ti, donde tu compañía, la comunidad creativa y Funkalab, ganemos. A todos nos conviene.</h3>
 	  	<br>
-	  	<a href="#businessModalCrear" role="button" class="btn pull-right" data-toggle="modal">Entra aquí.</a>
+	  	<a href="#businessModalCrear" role="button" class="businessform pull-right" data-toggle="modal">Estoy interesado.</a>
 	  </div>
 	</div>
 </div>
@@ -132,7 +137,7 @@
 	  <div class="span5 offset1">
 	  	<h3>Si tu compañía necesita refrescarse, no dudes en buscarnos. Si necesitas desarrollar un nuevo producto, un video, publicidad BTL o solo te interesa pensar más creativamente, dinos.</h3>
 	  	<br><br>
-	  	<a href="#businessModalConsultoria" role="button" class="btn pull-right" data-toggle="modal">Entra aquí.</a>
+	  	<a href="#businessModalConsultoria" role="button" class="businessform pull-right" data-toggle="modal">Estoy interesado.</a>
 	  </div>
 	</div>
 </div>
