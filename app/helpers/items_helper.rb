@@ -35,7 +35,7 @@ module ItemsHelper
 						auto_html(content){behance_og_i}
 					end
 				else
-			auto_html(content){ html_escape; image; vimeo(width: w, height: h); youtube(width: w, height: h, wmode: 'transparent'); soundcloud(width: w, height: h); link target: "_blank", rel: "nofollow"; simple_format} #google_map(width: w, height: h); google_map(width: w, height: h);
+			auto_html(content){ html_escape; image; vimeo(width: w, height: h); youtube(width: w, height: h, wmode: 'transparent');  link target: "_blank", rel: "nofollow"; simple_format} #google_map(width: w, height: h); google_map(width: w, height: h); soundcloud(width: w, height: h);
 				end
 			end
 		end
