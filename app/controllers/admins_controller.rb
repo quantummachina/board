@@ -7,6 +7,22 @@ class AdminsController < ApplicationController
     #@i = s[/http:\/\/imc1.hellokisses.com\/.+?\.(jpg|jpeg|bmp|gif|png)/]
   end
 
+  def statistics
+    @np = Collection.all.count
+    @nu = User.all.count
+    @u1c = User.joins(:collections).uniq.all.count
+    @p1c = Collection.joins(:comments).uniq.all.count
+    @p1co =  Collection.joins(:collaborations).uniq.all.count
+    @p1s =  Collection.joins(:requests).uniq.all.count
+    @u1pco = User.joins(:collections, :collaborations).uniq.all.count
+
+    @pTco = Collection.select("collections.id, collections.title, count(collaborations.id) AS collaborations_count").joins(:collaborations).group("collections.id").reorder("collaborations_count DESC").limit(5)
+    @pTc = Collection.select("collections.id, collections.title, count(comments.id) AS comments_count").joins(:comments).group("collections.id").reorder("comments_count DESC").limit(5)
+
+
+    
+  end
+
   def users
     @users = User.reorder('created_at DESC').all
   end

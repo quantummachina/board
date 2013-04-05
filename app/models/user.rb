@@ -48,6 +48,7 @@ class User < ActiveRecord::Base
 
 	devise :omniauthable
     default_scope order: 'users.updated_at DESC'
+    scope :bycollections, select("users.id, count(collections.id) AS collections_count").joins(:collections).group("users.id").order("collections_count DESC")
 
 def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
   user = User.where(:provider => auth.provider, :uid => auth.uid).first

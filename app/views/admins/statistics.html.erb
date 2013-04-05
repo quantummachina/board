@@ -1,0 +1,58 @@
+<div class="row-fluid">
+	<div class="span12">
+		<h2>===STATISTICS===</h2>
+		<hr>
+		<div class='row'>
+			<div class='span6'>
+
+		<p>Colecciones: <%=@np%></p>
+		<p><%= link_to 'Usuarios:', 'users' %> <%=@nu%></p>
+		<table border="1">
+			<tr>
+				<td>Usuarios con al menos 1 proyecto creado</td>
+				<td><%=@u1c%></td>
+				<td><%=@u1c*100/@nu%> %</td>
+			</tr>
+			<tr>
+				<td>Proyectos con al menos 1 comentario</td>
+				<td><%=@p1c%></td>
+				<td><%=@p1c*100/@np%> %</td>
+			</tr>
+			<tr>
+				<td>Proyectos con al menos 1 colaborador</td>
+				<td><%=@p1co%></td>
+				<td><%=@p1co*100/@np%> %</td>
+			</tr>
+			<tr>
+				<td>Proyectos con al menos 1 solicitud de colaboración</td>
+				<td><%=@p1s%></td>
+				<td><%=@p1s*100/@np%> %</td>
+			</tr>
+			<tr>
+				<td>Usuarios con al menos 1 proyecto o colaboración</td>
+				<td><%= @u1pco %></td>
+				<td><%=@u1pco*100/@nu%> %</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><%=%></td>
+				<td><%=%> %</td>
+			</tr>
+		</table>
+			</div>
+			<div class = 'span6'>
+				<h3>TOP Proyectos</h3>
+				<h4> Número de colaboradores</h4>
+				<% @pTco.each do |p|%>
+					<%=p.collaborations.count.to_s + " - " %><%=link_to p.title, '/collections/'+p.id.to_s %><br>
+				<%end%>
+				<br>
+				<h4> Número de comentarios</h4>
+				<% @pTc.each do |p|%>
+					<%=p.comments.count.to_s + " - "%><%=link_to p.title, '/collections/'+p.id.to_s%><br>
+				<%end%>
+
+			</div>
+		</div>
+	</div>
+</div>

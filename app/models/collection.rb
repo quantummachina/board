@@ -20,4 +20,5 @@ class Collection < ActiveRecord::Base
   validates :idea, presence: true
 
   default_scope order: 'collections.promoted DESC'
+
 end

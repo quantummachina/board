@@ -12,6 +12,7 @@ Board::Application.routes.draw do
   get "admins/admin"
   get "admins/users"
   get "admins/quarantine"
+  get "admins/statistics"
   #get "admins/massemail"
   #get "admins/sendmassemail"
 
