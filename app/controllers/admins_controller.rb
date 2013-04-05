@@ -14,7 +14,7 @@ class AdminsController < ApplicationController
     @p1c = Collection.joins(:comments).uniq.all.count
     @p1co =  Collection.joins(:collaborations).uniq.all.count
     @p1s =  Collection.joins(:requests).uniq.all.count
-    @u1pco = User.joins(:collections, :collaborations).uniq.all.count
+    @u1pco = @u1c +  - User.joins(:collaborations, :collections).uniq.all.count
 
     @pTco = Collection.select("collections.id, collections.title, count(collaborations.id) AS collaborations_count").joins(:collaborations).group("collections.id").reorder("collaborations_count DESC").limit(5)
     @pTc = Collection.select("collections.id, collections.title, count(comments.id) AS comments_count").joins(:comments).group("collections.id").reorder("comments_count DESC").limit(5)
