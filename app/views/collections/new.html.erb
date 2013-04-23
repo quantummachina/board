@@ -1,21 +1,77 @@
 <% provide :title, "Nuevo proyecto" %> 
-<div class="row">
+<%#inicio div choro%>
+<div class= 'newcollchoro', id='choro'>
+  <h1>Tres simples reglas:</h1>
 
-  	<%= render 'before_warning'%>
-
-  <div class = "span6 offset1">
-<hr>
-	<h2>Nuevo proyecto</h2>
-	<br>
-	<h3>Paso 1 de 2</h3>
-	<%= form_for(@collection) do |f| %>
-		<%= render 'fields', f: f %>
-		<%= f.select :category_id, options_from_collection_for_select(@categories, "id", "name") %>
-		<br>
-		<%= f.submit 'Siguiente'%>
-	<% end %>
+  <div class="row">
+    <div class= 'span6'>
+    	<h1>1 Tu proyecto tiene que ser creativo.</h1>
+    </div>
+    <div class= 'span6'>
+    	Tu idea tiene que caer en una de las siguientes categorías: música, video, diseño, arte o tecnología. Es muy distinto apoyar a un músico emergente a hacer ek arte de su album, que ayudar a una ferretería. Piénsalo y no hagas el ridículo.
+    </div>
   </div>
-  <div class='span4 offset1'>
-  	<%# render 'choro'%>
+  <div class="row">
+    <div class= 'span6'>
+    	<h1>2 Cuéntanos tu historia.</h1>
+    </div>
+    <div class= 'span6'>
+    	Queremos saber quién eres, qué haces y por qué quieres crear algo nuevo. Si cautivas a la comunidad con la explicación de tu proyecto, es más probable que la gente se quiera unir a hacer eso que te apasiona.
+    </div>
+  </div>
+  <div class="row">
+    <div class= 'span6'>
+    	<h1>3 Intercambia algo interesante</h1>
+    </div>
+    <div class= 'span6'>
+    	Si tu proyecto es personal, intercambia algo por ayuda; te recomendamos dar recompensas divertidas y originales. Si tu proyecto genera dinero, no olvides pagar también. Paga lo que puedas, pero sé justo.
+    </div>
+  </div>
+  <%= link_to 'Entiendo y me agrada', '#', class: 'btn btn-large', id: "hide_choro"%>
+</div>
+<script type="text/javascript">
+  $(function() {
+    $('a#hide_choro').click(function(event){
+        event.preventDefault();
+        $('div#choro').toggle();
+        $('div#category').toggle();
+    });
+  });   
+</script>
+<%#fin seccion choro%>
+
+<%#ini seccion category%>
+<div id='category' class= 'hidden'>
+  <h1>¿Qué tipo de proyecto quieres crear?</h1>
+
+  <%= form_for(@collection) do |f| %>
+    <%= f.label :category_id, "Categoría:" %>
+    <%= f.select :category_id, options_from_collection_for_select(@categories, "id", "name") %>
+
+  <%= link_to 'Siguiente', '#', class: 'btn btn-large', id: "hide_category"%>
+</div>
+<script type="text/javascript">
+  $(function() {
+    $('a#hide_category').click(function(event){
+        event.preventDefault();
+        $('div#category').toggle();
+        $('div#fields').toggle();
+    });
+  });   
+</script>
+<%#fin seccion category%>
+<%#ini seccion fields%>
+<div id='fields' class='hidden'>
+  <div class= 'row'>
+
+    <div class = "span6 offset1">
+  	<%#Originalmente aqui estaba el formfor%>
+  		<%= render 'fields', f: f %>
+  		
+  		<br>
+  		<%= f.submit 'Crear proyecto y agregar colaboradores'%>
+  	<% end %>
+    </div>
   </div>
 </div>
+<%#fin seccion fields%>

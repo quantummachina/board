@@ -7,7 +7,7 @@
         </div>
         <div class="span3">
           <% if signed_in? %>
-            <%= link_to 'Crear Proyecto', new_collection_path ,class: 'btn' %>
+            <%= link_to 'Crear Proyecto', newproyect_path ,class: 'btn' %>
             <%=if current_user.admin? then link_to 'Admin', '/admin' end%>
             <!--a class="btn" data-toggle="modal" href="#NewBoard" >Crear Proyecto</a-->
           <% end %>

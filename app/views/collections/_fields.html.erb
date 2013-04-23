@@ -1,13 +1,21 @@
-		<%= f.label :title, 'Título' %>
-		<%= f.text_field :title, maxlength: 50, placeholder:"Dale un nombre a tu idea. No te preocupes, lo puedes cambiar después.", class: "span6"%>
-		<%= f.label :idea, "Idea" %>
-		<%= f.text_area :idea, maxlength: 160, placeholder:"Explícanos brevemente tu idea. Este texto aparecerá en portada. (160 caracteres)", rows: 2 , class: "span6" %>
-		<%= f.label :description, "Descripción" %>
-		<%= f.text_area :description, maxlength: 1000, placeholder:"Describe tu idea. Recuerda ser claro e incluir que producto quieres realizar. (1000 caracteres)", rows: 6 , class: "span6" %>
-		<%= f.label :contribution, "Yo puedo contribuir con" %>
-		<%= f.text_area :contribution, maxlength: 500, placeholder:"Describe tu rol en el proyecto, lo que  puedes aportar. (500 caracteres)", rows: 4 , class: "span6" %>
-	 	<%= f.label :city, 'Ciudad en que se desarrolla' %>
+		<%= f.label :title, '¿Cómo se llama tu proyecto?' %>
+		<%= f.text_field :title, maxlength: 50, class: "span6"%>
+		<%# f.label :idea, "Descríbenos ¿qué quieres hacer?" %>
+		<%# f.text_area :idea, maxlength: 160, placeholder:"Explícanos brevemente tu idea. Este texto aparecerá en portada. (160 caracteres)", rows: 2 , class: "span6" %>
+		<%= f.label :description, "Descríbenos ¿qué quieres hacer?" %>
+		<%= f.text_area :description, maxlength: 1000, placeholder:"Cuéntale tu idea a la comunidad. Recuerda ser claro, para que todos te podamos ayudar. (1000 caracteres???)", rows: 6 , class: "span6" %>
+		<%= f.label :history, "Cuéntanos tu historia..." %>
+		<br>*campo historia*<br>
+		<%# f.text_area :description, maxlength: 1000, placeholder:"Cuéntale tu idea a la comunidad. Recuerda ser claro, para que todos te podamos ayudar. (1000 caracteres???)", rows: 6 , class: "span6" %>
+
+		<%# Cuéntanos tu historia... Dinos qué te inspira, cómo se te ocurrió y por qué tu idea es importante y debería apoyarte. Esto es una comunidad, queremos saber de ti.%>
+
+		<%# f.label :contribution, "Yo puedo contribuir con" %>
+		<%# f.text_area :contribution, maxlength: 500, placeholder:"Describe tu rol en el proyecto, lo que  puedes aportar. (500 caracteres)", rows: 4 , class: "span6" %>
+	 	<%= f.label :city, '¿En dónde?' %>
   	<div id='city'>
     	<%= render 'city'%>
   	</div>
-	 	<%= f.label :category_id, "Categoría:" %>
+  		<%= f.label :when, "¿Cuándo lo quieres hacer?" %>
+		<br>*campo fecha*<br>
+	 	

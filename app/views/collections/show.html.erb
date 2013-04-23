@@ -174,11 +174,12 @@
 	</div>
 </div>
 
-<%= render 'share_now'%>
+<%#borrar si ya no se ocupa render 'share_now'%>
+<%= render 'fill_idea'%>
 <% if signed_in? && current_user.extra.newboard %>
 	<script type="text/javascript">
 	    $(window).load(function(){
-	        $('#sharenow').modal('show');
+	        $('#fill_idea').modal('show');
 	    });
 	</script>
 	<%current_user.extra.toggle!(:newboard)%>

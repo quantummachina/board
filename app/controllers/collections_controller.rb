@@ -49,7 +49,7 @@ class CollectionsController < ApplicationController
 	    	@collection.user.extra.toggle!(:newboard)
 	      flash[:success] = "Ahora crea las colaboraciones que necesites."
 
-	      #notification to ufollowers
+	      #mover más abajo: notification to ufollowers
 	      	message = '<a href="/users/' + @collection.user.id.to_s + '">' + @collection.user.name + '</a> ha creado un nuevo proyecto: <a href="/collections/' + @collection.id.to_s + '">' + @collection.title + '</a>'
   			@collection.user.ufollowers.each do |u|
   				u.notifications.create(message: message)

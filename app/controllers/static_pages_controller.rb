@@ -4,9 +4,22 @@ class StaticPagesController < ApplicationController
 		if !signed_in? || !current_user.admin
 			redirect_to root_path
 		end
-		@rs = Request.find_all_by_collection_id(199)
+	me = FbGraph::User.me(session[:fb_access_token])
+	me.feed!(
+  :message => 'Updating via FbGraph',
+  :picture => 'https://graph.facebook.com/matake/picture',
+  :link => 'https://github.com/nov/fb_graph',
+  :name => 'FbGraph',
+  :description => 'A Ruby wrapper for Facebook Graph API'
+)
+
+		
 	end
 
+	def newproyect
+		
+	end
+	
 	def about
 	end
 

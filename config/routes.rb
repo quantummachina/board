@@ -34,7 +34,7 @@ Board::Application.routes.draw do
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
   match '/terms', to: 'static_pages#terms_of_service'
-  match '/privacy', to: 'static_pages#privacy_policy'
+  match '/privacy', to: 'static_pages#privacy_policy' #still needed?
   match '/invite', to: 'static_pages#invite'
   match '/business', to: 'static_pages#business'
   match '/suscribe', to: 'collaborations#suscribe'
@@ -51,10 +51,16 @@ Board::Application.routes.draw do
   match '/ceshare', to: 'collections#eshare'
   match '/statusupdate', to: 'collections#statusupdate'
   match '/businessform', to: 'static_pages#businessform'
+  match '/newproyect', to: 'static_pages#newproyect'
+  match '/pay', to: 'users#pay'
+
+  
+
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :users
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :collections do
     member do

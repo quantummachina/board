@@ -159,6 +159,12 @@ class UsersController < ApplicationController
     end
     
   end
+
+  def pay
+    debugger
+    flash[:success] = 'Pay'
+    redirect_to root_path
+  end
   
 private
 
