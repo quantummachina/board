@@ -182,15 +182,19 @@ a.hlp {
    }
 
 a.qc {
-	background-color: $fuscia;
+	background-color: #f50c5b;
 	display: block;
     padding: 5px 5px 5px 5px;
     width: 130px;
     text-align: center;
+    -webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
     h3{color: white;}
     &:link {text-decoration:none;}
 	&:visited {text-decoration:none;}
-    &:hover{border-color: $grayLight;}
+    &:hover{
+    	background: #F44764;}
 	}​
 
 a.help-btn {
