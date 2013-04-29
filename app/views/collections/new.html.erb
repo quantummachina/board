@@ -1,33 +1,30 @@
 <% provide :title, "Nuevo proyecto" %> 
 <%#inicio div choro%>
-<div class= 'newcollchoro', id='choro'>
+<div class= 'products_title textc', id='choro'>
   <h1>Tres simples reglas:</h1>
-
-  <div class="row">
-    <div class= 'span6'>
+</div>
+  <div class="row offset1">
+    <div class= 'span4 rules_text'>
     	<h1>1 Tu proyecto tiene que ser creativo.</h1>
+      <br>
+      <br>
+      <h1>2 Cuéntanos tu historia.</h1>
+      <br>
+      <br>
+      <h1>3 Intercambia algo interesante</h1>
     </div>
-    <div class= 'span6'>
-    	Tu idea tiene que caer en una de las siguientes categorías: música, video, diseño, arte o tecnología. Es muy distinto apoyar a un músico emergente a hacer ek arte de su album, que ayudar a una ferretería. Piénsalo y no hagas el ridículo.
-    </div>
-  </div>
-  <div class="row">
-    <div class= 'span6'>
-    	<h1>2 Cuéntanos tu historia.</h1>
-    </div>
-    <div class= 'span6'>
-    	Queremos saber quién eres, qué haces y por qué quieres crear algo nuevo. Si cautivas a la comunidad con la explicación de tu proyecto, es más probable que la gente se quiera unir a hacer eso que te apasiona.
-    </div>
-  </div>
-  <div class="row">
-    <div class= 'span6'>
-    	<h1>3 Intercambia algo interesante</h1>
-    </div>
-    <div class= 'span6'>
-    	Si tu proyecto es personal, intercambia algo por ayuda; te recomendamos dar recompensas divertidas y originales. Si tu proyecto genera dinero, no olvides pagar también. Paga lo que puedas, pero sé justo.
+    <div class='offset1 span4 rules_text'>
+    	<p>Tu idea tiene que caer en una de las siguientes categorías: música, video, diseño, arte o tecnología. Es muy distinto apoyar a un músico emergente a hacer ek arte de su album, que ayudar a una ferretería. Piénsalo y no hagas el ridículo.</p>
+      <br>
+    	<p>Queremos saber quién eres, qué haces y por qué quieres crear algo nuevo. Si cautivas a la comunidad con la explicación de tu proyecto, es más probable que la gente se quiera unir a hacer eso que te apasiona.</p>
+      <br>
+     	<p>Si tu proyecto es personal, intercambia algo por ayuda; te recomendamos dar recompensas divertidas y originales. Si tu proyecto genera dinero, no olvides pagar también. Paga lo que puedas, pero sé justo.</p>
     </div>
   </div>
-  <%= link_to 'Entiendo y me agrada', '#', class: 'btn btn-large', id: "hide_choro"%>
+<div class="row">
+  <div class="row offset4 important_button" >
+  <%= link_to 'Entiendo y me agrada', '#', class: 'important_button', id: "hide_choro"%>
+  </div>
 </div>
 <script type="text/javascript">
   $(function() {
@@ -41,6 +38,7 @@
 <%#fin seccion choro%>
 
 <%#ini seccion category%>
+<div class="row">
 <div id='category' class= 'hidden'>
   <h1>¿Qué tipo de proyecto quieres crear?</h1>
 

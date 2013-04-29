@@ -1,0 +1,45 @@
+$grayDarker:            #222 !default;
+$grayDark:              #333 !default;
+$gray:                  #555 !default;
+$grayLight:             #999 !default;
+$grayLighter:           #eee !default;
+
+
+div.rules_text {
+	float: left;
+	padding: 0px 0px 0px 0px;
+	margin: 50px 0px 100px 0px;
+	text-decoration: none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+div.rules_text h1{
+		color: $grayDark;
+		}
+	h2{
+		font-size: 14px;
+		color: gray;
+		line-height: 18px;
+	}
+	p{
+		font-weight: normal;
+		color: $grayLight;
+	}
+a.important_button{
+	font-size: h2;
+	margin-top: 64px 64px 64px 64px;
+	float: center;
+	padding: 20px 60px 20px 60px;
+	text-decoration: none;
+	color: #fff;
+	background: #33CCFF;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	&:hover{
+		background: #196A7F;
+	}
+	
+}
