@@ -161,9 +161,27 @@ class UsersController < ApplicationController
   end
 
   def pay
-    debugger
-    flash[:success] = 'Pay'
-    redirect_to root_path
+    require 'net/http'
+    paypal = 'https://www.paypal.com/cgi-bin/webscr?cmd=_notify-validate'
+    uri = URI.parse(paypal)
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.open_timeout = 60
+    http.read_timeout = 60
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    http.use_ssl = true
+    response = http.post(uri.request_uri, request.raw_post, 'Content-Length' => "#{request.raw_post.size}",
+                       'User-Agent' => "My custom user agent"
+                       ).body
+    if response == 'VERIFIED'
+      #validar
+      flash[:success] = 'Pago recibido. Prosigue con tu proyecto.'
+      redirect_to new_collection_path
+    else
+      flash[:error] = 'Pago fallido, intente de nuevo'
+      redirect_to '/newproject'
+    end
+    #flash[:success] = 'Pay'
+    
   end
   
 private

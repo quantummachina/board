@@ -51,7 +51,7 @@ Board::Application.routes.draw do
   match '/ceshare', to: 'collections#eshare'
   match '/statusupdate', to: 'collections#statusupdate'
   match '/businessform', to: 'static_pages#businessform'
-  match '/newproyect', to: 'static_pages#newproyect'
+  match '/newproject', to: 'static_pages#newproject'
   match '/pay', to: 'users#pay'
 
   
