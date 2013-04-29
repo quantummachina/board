@@ -16,7 +16,7 @@ class StaticPagesController < ApplicationController
 		
 	end
 
-	def newproyect
+	def newproject
 		
 	end
 	
