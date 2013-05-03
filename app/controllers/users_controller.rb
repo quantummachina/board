@@ -174,6 +174,14 @@ class UsersController < ApplicationController
                        ).body
     if response == 'VERIFIED'
       #validar
+      unique = params[:invoice].to_s
+      rnd = unique[0..3].to_i
+      uid = unique[4..unique.length].to_i
+      if User.find(uid).uoption.temp_pay == rnd
+        User.find(uid).uoption.update_attributes(temp_pay: -1)
+      end
+      #fin validacion
+      #Checar si dirige correctamente. 2. redireccion cuando falla. 3. migracion "profitable" 4. migracion campos faltantes. 5. campos en form. LISTO!
       flash[:success] = 'Pago recibido. Prosigue con tu proyecto.'
       redirect_to new_collection_path
     else

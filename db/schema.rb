@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206192226) do
+ActiveRecord::Schema.define(:version => 20130429232031) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -237,6 +237,7 @@ ActiveRecord::Schema.define(:version => 20130206192226) do
     t.boolean  "n_cfollowings", :default => true
     t.boolean  "n_ufollowings", :default => true
     t.boolean  "n_items",       :default => true
+    t.integer  "temp_pay",      :default => 0
   end
 
   add_index "uoptions", ["user_id"], :name => "index_uoptions_on_user_id", :unique => true
