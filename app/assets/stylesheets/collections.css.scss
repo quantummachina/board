@@ -4,6 +4,8 @@
 
 $grayLighter:           #eee !default;
 $grayLight:             #999 !default;
+$grayDark:              #333 !default;
+$grayDarker:            #222 !default;
 $orange:                #f89406 !default;
 $fuscia:				rgb(225, 41, 124) !default;
 $fuscia2:				rgb(201, 41, 175) !default;
@@ -36,13 +38,30 @@ div.alert-success{
 
 }
 
-div.idea{
-	background-color: $cyan;
-	padding: 17px 0px 5px 0px;
-	h3{color: black;}
-	small{color: #FFFFFF;}
-	a{color: $fuscia2;}
+div.explorer_banner{
+	background-color: #F3F3F3;
+	padding: 100px 200px 80px 200px;
+	margin: 0px 0px 64px 0px;
+	border-bottom:1px solid $grayLighter;
+}
 
+div.explorer_vp{
+	padding: 10px 120px 20px 120px;
+	margin: 0px 0px 42px 0px;
+	border:0px;
+	width:960;
+	text-decoration: none;
+}
+div.explorer_vp h3{
+	color: gray
+}	
+
+div.explorer_vp h1{
+	color: $grayDark
+}
+
+div.explorer_vp h4{
+	color: $grayLight
 }
 
 div.b22{//diseno
@@ -187,9 +206,9 @@ a.qc {
     padding: 5px 5px 5px 5px;
     width: 130px;
     text-align: center;
-    -webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+    -webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
     h3{color: white;}
     &:link {text-decoration:none;}
 	&:visited {text-decoration:none;}

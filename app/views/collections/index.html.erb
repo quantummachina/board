@@ -1,10 +1,13 @@
 </div>
 <% provide :title, "Explorar" %> 
-<div class="idea textc">
-	<h1>Haz tu proyecto creativo con la comunidad de creadores en México.</h1>
-		
-	<h4>En tu ciudad hay diseñadores, músicos, fotógrafos, ilustradores y artistas que pueden colaborar contigo para que termines esa idea que tienes en mente. <%= link_to 'Quiero saber más...','/about'%></h4>
-	<%= link_to 'Crear proyecto', '/newproject', class: 'btn btn-large' %>
+<div class="explorer_banner textc">
+	<div="row">
+		<div class="explorer_vp">
+			<h1>Haz tu proyecto creativo con la comunidad de creadores en México.</h1>
+			<h3>En tu ciudad hay diseñadores, músicos, fotógrafos, ilustradores y artistas que pueden colaborar contigo para que termines esa idea que tienes en mente. </h3><h4><%= link_to 'Quiero saber más...','/about'%></h4>
+		</div>
+		<%= link_to 'Crear proyecto', '/newproject', class: 'important_button' %>
+	</div>
 </div>
 <div class='container'>
 <br>

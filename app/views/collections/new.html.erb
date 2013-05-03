@@ -4,7 +4,7 @@
   <div class= 'products_title textc'>
     <h1>Tres simples reglas:</h1>
   </div>
-  <div class="row offset1">
+  <div class="row offset2">
     <div class= 'span4 rules_text'>
     	<h1>1 Tu proyecto tiene que ser creativo.</h1>
       <br>
@@ -40,38 +40,40 @@
 <%#fin seccion choro%>
 
 <%#ini seccion category%>
-<div class="row">
-<div id='category' class= 'hidden'>
-  <h1>¿Qué tipo de proyecto quieres crear?</h1>
+<div class="row offset2 span12">
+      <div id='category' class= 'hidden'>
+        <div class="products_title">
+          <h1>¿Qué tipo de proyecto quieres crear?</h1>
+        </div>
+        <%= form_for(@collection) do |f| %>
+          <%= f.label :category_id, "Categoría:" %>
+          <%= f.select :category_id, options_from_collection_for_select(@categories, "id", "name") %>
 
-  <%= form_for(@collection) do |f| %>
-    <%= f.label :category_id, "Categoría:" %>
-    <%= f.select :category_id, options_from_collection_for_select(@categories, "id", "name") %>
-
-  <%= link_to 'Siguiente', '#', class: 'btn btn-large', id: "hide_category"%>
-</div>
-<script type="text/javascript">
-  $(function() {
-    $('a#hide_category').click(function(event){
-        event.preventDefault();
-        $('div#category').toggle();
-        $('div#fields').toggle();
-    });
-  });   
-</script>
-<%#fin seccion category%>
-<%#ini seccion fields%>
-<div id='fields' class='hidden'>
-  <div class= 'row'>
-
-    <div class = "span6 offset1">
-  	<%#Originalmente aqui estaba el formfor%>
-  		<%= render 'fields', f: f %>
-  		
-  		<br>
-  		<%= f.submit 'Crear proyecto y agregar colaboradores'%>
-  	<% end %>
+        <%= link_to 'Siguiente', '#', class: 'btn btn-large', id: "hide_category"%>
+      </div>
+    <script type="text/javascript">
+      $(function() {
+        $('a#hide_category').click(function(event){
+            event.preventDefault();
+            $('div#category').toggle();
+            $('div#fields').toggle();
+        });
+      });   
+    </script>
+    <%#fin seccion category%>
+    <%#ini seccion fields%>
+    <div id='fields' class='hidden'>
+      <div class= 'row'>
+        
+         <div class = "span8">
+      	 <%#Originalmente aqui estaba el formfor%>
+      	 <%= render 'fields', f: f %>
+      		
+      		<br>
+      		<%= f.submit 'Crear proyecto y agregar colaboradores', class: "important_button" %>
+      	<% end %>
+        </div>
+      </div>
     </div>
-  </div>
+    <%#fin seccion fields%>
 </div>
-<%#fin seccion fields%>

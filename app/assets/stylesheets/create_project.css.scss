@@ -29,7 +29,7 @@ div.rules_text h1{
 	}
 a.important_button{
 	font-size: h2;
-	margin-top: 64px 64px 64px 64px;
+	margin: 32px 32px 32px 32px;
 	float: center;
 	padding: 20px 60px 20px 60px;
 	text-decoration: none;
@@ -42,4 +42,64 @@ a.important_button{
 		background: #196A7F;
 	}
 	
+}
+
+input.important_button{
+	font-size: h2;
+	margin: 32px 0px 32px 0px;
+	float: center;
+	border: 0px;
+	padding: 20px 60px 20px 60px;
+	text-decoration: none;
+	color: #fff;
+	background: #33CCFF;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	&:hover{
+		background: #196A7F;
+	}
+}
+
+input.projectinfo{
+	outline:none;
+	width: 600px;
+	padding: 24px;
+	outline: none;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    border:1px solid rgba(0,0,0, 0.2);
+}
+
+
+input:focus {
+    box-shadow: 0 0 5px white;
+    -webkit-box-shadow: 0 0 5px white; 
+    -moz-box-shadow: 0 0 5px white;
+    border:1px solid gray; 
+}
+
+textarea.projectinfo{
+	outline:none;
+	width: 600px;
+	padding: 24px;
+	outline: none;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    border:1px solid rgba(0,0,0, 0.2);
+}
+
+textarea:focus {
+    box-shadow: 0 0 5px white;
+    -webkit-box-shadow: 0 0 5px white; 
+    -moz-box-shadow: 0 0 5px white;
+    border:1px solid gray; 
 }
