@@ -183,10 +183,10 @@ class UsersController < ApplicationController
       #fin validacion
       #Checar si dirige correctamente. 2. redireccion cuando falla. 3. migracion "profitable" 4. migracion campos faltantes. 5. campos en form. LISTO!
       flash[:success] = 'Pago recibido. Prosigue con tu proyecto.'
-      redirect_to new_collection_path
+      #redirect_to new_collection_path
     else
       flash[:error] = 'Pago fallido, intente de nuevo'
-      redirect_to '/newproject'
+      #redirect_to '/newproject'
     end
     #flash[:success] = 'Pay'
     

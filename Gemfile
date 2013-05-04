@@ -45,6 +45,8 @@ end
 
 gem 'jquery-rails', '1.0.19' #'2.0.0'
 
+gem 'calendar_date_select', :git => 'git://github.com/paneq/calendar_date_select.git'
+
 group :production do
 	gem 'pg', '0.12.2'
 end
