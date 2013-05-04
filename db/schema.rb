@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130504195423) do
+ActiveRecord::Schema.define(:version => 20130504204842) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -255,6 +255,8 @@ ActiveRecord::Schema.define(:version => 20130504195423) do
     t.string   "description",   :default => ""
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.text     "reward",        :default => ""
+    t.integer  "pay",           :default => 0
   end
 
 end
