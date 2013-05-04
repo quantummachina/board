@@ -50,6 +50,7 @@ class VacantsController < ApplicationController
 
   def edit
     @vacant = Vacant.find(params[:id])
+    @board = @vacant.collection
   end
 
   def update

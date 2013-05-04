@@ -252,4 +252,10 @@ class CollectionsController < ApplicationController
 
   		redirect_to @collection
   	end
+
+  	def ideaupdate
+  		@collection = Collection.find(params[:board_id])
+  		@collection.update_attributes(idea: params[:idea])
+  		redirect_to @collection
+  	end
 end

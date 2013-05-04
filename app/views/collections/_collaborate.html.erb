@@ -14,6 +14,10 @@
 			<div class='span3'>
 				<h3><%=v.title%></h3>
 				<p><%=v.description%></p>
+				<p>Recompensa: <%=v.reward%></p>
+				<%if @board.profitable %>
+					<p>$ <%=v.pay%></p>
+				<%end%>
 			</div>
 			<div class='span2 textc'>
 				<%= render 'i_can_help', id: v.id %>

@@ -50,6 +50,7 @@ Board::Application.routes.draw do
   match '/massemail', to: 'admins#massemail'
   match '/ceshare', to: 'collections#eshare'
   match '/statusupdate', to: 'collections#statusupdate'
+  match '/ideaupdate', to: 'collections#ideaupdate'
   match '/businessform', to: 'static_pages#businessform'
   match '/newproject', to: 'static_pages#newproject'
   match '/pay', to: 'users#pay'

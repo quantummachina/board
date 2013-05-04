@@ -1,27 +1,27 @@
 ---
-!binary "MDEtaWRlYS5qcGc=": 01-idea-5dc5df014adb6a93302367477086b040.jpg
-!binary "MDEtaWRlYS9pbmRleC5qcGc=": 01-idea-5dc5df014adb6a93302367477086b040.jpg
-!binary "MDItZGl2ZXJzaW9uLmpwZw==": 02-diversion-06a2013c83680b4b30ebddacebf08f89.jpg
-!binary "MDItZGl2ZXJzaW9uL2luZGV4LmpwZw==": 02-diversion-06a2013c83680b4b30ebddacebf08f89.jpg
-!binary "MDMtdHJhYmFqby5qcGc=": 03-trabajo-15a7cafa46e60447f77c24b5b1686a8c.jpg
-!binary "MDMtdHJhYmFqby9pbmRleC5qcGc=": 03-trabajo-15a7cafa46e60447f77c24b5b1686a8c.jpg
-!binary "MDQtY29sZWN0aXZvLmpwZw==": 04-colectivo-2794f12eadd01c3f5f375a0d8f50bda8.jpg
-!binary "MDQtY29sZWN0aXZvL2luZGV4LmpwZw==": 04-colectivo-2794f12eadd01c3f5f375a0d8f50bda8.jpg
-!binary "ZHVtbXlmYWNlLnBuZw==": dummyface-baf446cf3100734bc3c7dd1014fcd3f9.png
-!binary "ZHVtbXlmYWNlL2luZGV4LnBuZw==": dummyface-baf446cf3100734bc3c7dd1014fcd3f9.png
-!binary "bGFuZGluZ19tb25vc2dyYW5kZXMucG5n": landing_monosgrandes-b5135c7bb701ac9ae5d3f6faea5f8be4.png
-!binary "bGFuZGluZ19tb25vc2dyYW5kZXMvaW5kZXgucG5n": landing_monosgrandes-b5135c7bb701ac9ae5d3f6faea5f8be4.png
-!binary "cHJlbnNhLnBuZw==": prensa-2cab25d5ff5a103420e5fc40d1e6cd73.png
-!binary "cHJlbnNhL2luZGV4LnBuZw==": prensa-2cab25d5ff5a103420e5fc40d1e6cd73.png
-!binary "cmVjdWVyZGFxdWUucG5n": recuerdaque-b0a420c49b30886bffbc6de4021b6000.png
-!binary "cmVjdWVyZGFxdWUvaW5kZXgucG5n": recuerdaque-b0a420c49b30886bffbc6de4021b6000.png
-!binary "c2VsbG9tZXhpY28ucG5n": sellomexico-6dc30bb497aed1a800e1bb3739b82973.png
-!binary "c2VsbG9tZXhpY28vaW5kZXgucG5n": sellomexico-6dc30bb497aed1a800e1bb3739b82973.png
-!binary "YXBwbGljYXRpb24uanM=": application-4969be00cbc3dc93a21db0be70722d52.js
-!binary "YXBwbGljYXRpb24vaW5kZXguanM=": application-4969be00cbc3dc93a21db0be70722d52.js
-!binary "YXBwbGljYXRpb24uY3Nz": application-34a4bbe160fc96590038f711ff59ce0a.css
-!binary "YXBwbGljYXRpb24vaW5kZXguY3Nz": application-34a4bbe160fc96590038f711ff59ce0a.css
-!binary "Z2x5cGhpY29ucy1oYWxmbGluZ3Mtd2hpdGUucG5n": glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
-!binary "Z2x5cGhpY29ucy1oYWxmbGluZ3Mtd2hpdGUvaW5kZXgucG5n": glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
-!binary "Z2x5cGhpY29ucy1oYWxmbGluZ3MucG5n": glyphicons-halflings-d63e747535b6b5c589a12cad5d16a401.png
-!binary "Z2x5cGhpY29ucy1oYWxmbGluZ3MvaW5kZXgucG5n": glyphicons-halflings-d63e747535b6b5c589a12cad5d16a401.png
+01-idea.jpg: 01-idea-5dc5df014adb6a93302367477086b040.jpg
+01-idea/index.jpg: 01-idea-5dc5df014adb6a93302367477086b040.jpg
+02-diversion.jpg: 02-diversion-06a2013c83680b4b30ebddacebf08f89.jpg
+02-diversion/index.jpg: 02-diversion-06a2013c83680b4b30ebddacebf08f89.jpg
+03-trabajo.jpg: 03-trabajo-15a7cafa46e60447f77c24b5b1686a8c.jpg
+03-trabajo/index.jpg: 03-trabajo-15a7cafa46e60447f77c24b5b1686a8c.jpg
+04-colectivo.jpg: 04-colectivo-2794f12eadd01c3f5f375a0d8f50bda8.jpg
+04-colectivo/index.jpg: 04-colectivo-2794f12eadd01c3f5f375a0d8f50bda8.jpg
+dummyface.png: dummyface-baf446cf3100734bc3c7dd1014fcd3f9.png
+dummyface/index.png: dummyface-baf446cf3100734bc3c7dd1014fcd3f9.png
+landing_monosgrandes.png: landing_monosgrandes-b5135c7bb701ac9ae5d3f6faea5f8be4.png
+landing_monosgrandes/index.png: landing_monosgrandes-b5135c7bb701ac9ae5d3f6faea5f8be4.png
+prensa.png: prensa-2cab25d5ff5a103420e5fc40d1e6cd73.png
+prensa/index.png: prensa-2cab25d5ff5a103420e5fc40d1e6cd73.png
+recuerdaque.png: recuerdaque-b0a420c49b30886bffbc6de4021b6000.png
+recuerdaque/index.png: recuerdaque-b0a420c49b30886bffbc6de4021b6000.png
+sellomexico.png: sellomexico-6dc30bb497aed1a800e1bb3739b82973.png
+sellomexico/index.png: sellomexico-6dc30bb497aed1a800e1bb3739b82973.png
+application.js: application-4969be00cbc3dc93a21db0be70722d52.js
+application/index.js: application-4969be00cbc3dc93a21db0be70722d52.js
+application.css: application-3c766c3c362b687fb4934ff27cc4e90e.css
+application/index.css: application-3c766c3c362b687fb4934ff27cc4e90e.css
+glyphicons-halflings-white.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
+glyphicons-halflings-white/index.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
+glyphicons-halflings.png: glyphicons-halflings-d63e747535b6b5c589a12cad5d16a401.png
+glyphicons-halflings/index.png: glyphicons-halflings-d63e747535b6b5c589a12cad5d16a401.png

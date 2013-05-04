@@ -108,8 +108,6 @@
 
 						<%# render 'share' -version anterior a solo el fblike- %>
 						<%= render 'fblike'%>
-						<h2>La idea</h2>
-						<p><%= @board.idea %></p>
 						<% if @board.description == ''%>
 							<% if signed_in? && owner? %>
 								<h2>Descripción</h2>
@@ -119,11 +117,15 @@
 							<h2>Descripción</h2>
 							<p><%= @board.description %></p>
 						<%end%>
-						<% if @board.contribution != '' %>
-							<h2>Mi aportación es</h2>
-							<p><%= @board.contribution %></p>
+						<% if @board.story != '' %>
+							<h2>Mi historia:</h2>
+							<p><%= @board.story %></p>
 						<%end%>
-
+						<% if @board.goal != '' %>
+							<h2>Meta:</h2>
+							<p><%= @board.goal %></p>
+							<p><%= @board.end_date %></p>
+						<%end%>
 						<%if @board.status == 5%>
 							<%= render 'finished' %>
 							

@@ -1,7 +1,8 @@
 <%if signed_in? && owner? %>
 	
-	<div class="modal hide fade" id="sharenow">
+	<div class="modal hide fade" id="fill_idea">
 	  <div class="modal-header">
+	  	Descripción
 	    <a class="close" data-dismiss="modal">×</a>
 	  </div>
 	  <div class="modal-body">
@@ -9,11 +10,14 @@
 	    <h3>Una cosa más:</h3>
 
 	  	<br>
-	  	*Descríbemos, en 140 caracteres tu idea. Esto aparecerá en la portada de tu proyecto.
-	  	<%#form_tag%>
+	  	
+	  	<%= form_tag '/ideaupdate' do %>
+			<%= hidden_field_tag 'board_id', @board.id %>
+			<%= text_area_tag 'idea', nil, maxlength: 140, placeholder:'Descríbemos, en 140 caracteres tu idea. Esto aparecerá en la portada de tu proyecto.. (140 caracteres)', rows: 4, class: 'span4'%>	
 	  </div>		
 	  <div class="modal-footer">
-		    <a  data-dismiss='modal' href="#" class="btn">Ir a mi proyecto</a>
+	  	<%= submit_tag 'Actualizar', class: "btn btn-primary pull-right" %><% end %>
+		    <a  data-dismiss='modal' href="#" class="btn">Cancelar</a>
 	  </div>
 	</div>
 
