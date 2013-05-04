@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503222835) do
+ActiveRecord::Schema.define(:version => 20130504195423) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20130503222835) do
     t.text     "story",                       :default => ""
     t.text     "goal",                        :default => ""
     t.date     "end_date",                    :default => '2013-05-03'
+    t.boolean  "profitable",                  :default => false
   end
 
   add_index "collections", ["user_id"], :name => "index_collections_on_user_id"
