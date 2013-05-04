@@ -54,6 +54,7 @@ Board::Application.routes.draw do
   match '/businessform', to: 'static_pages#businessform'
   match '/newproject', to: 'static_pages#newproject'
   match '/pay', to: 'users#pay'
+  match '/payed', to: 'collections#new'
 
   
 
