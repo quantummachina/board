@@ -1,5 +1,5 @@
 class Vacant < ActiveRecord::Base
-   attr_accessible :collection_id, :title, :description
+   attr_accessible :collection_id, :title, :description, :pay, :reward
 
    belongs_to :collection, touch: true
 

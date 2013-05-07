@@ -47,6 +47,10 @@ class CollectionsController < ApplicationController
 
 	    if @collection.save
 	    	@collection.user.extra.toggle!(:newboard)
+	    	if current_user.uoption.temp_pay == -1
+	    		@collection.toggle!(:profitable)
+	    		current_user.uoption.update_attributes(temp_pay: 0)
+	    	end
 	      flash[:success] = "Ahora crea las colaboraciones que necesites."
 
 	      #mover más abajo: notification to ufollowers
@@ -246,6 +250,12 @@ class CollectionsController < ApplicationController
 			end
   		end
 
+  		redirect_to @collection
+  	end
+
+  	def ideaupdate
+  		@collection = Collection.find(params[:board_id])
+  		@collection.update_attributes(idea: params[:idea])
   		redirect_to @collection
   	end
 end

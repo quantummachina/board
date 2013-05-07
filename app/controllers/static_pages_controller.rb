@@ -17,6 +17,22 @@ class StaticPagesController < ApplicationController
 	end
 
 	def newproject
+		rnd = rand(9999)
+		i = current_user.id
+		current_user.uoption.update_attributes(temp_pay: rnd)
+		if rnd < 1000
+			if rnd < 100
+				if rnd < 10
+					@unique = 	'000'+rnd.to_s + i.to_s
+				else
+					@unique = 	'00'+rnd.to_s + i.to_s
+				end
+			else
+				@unique = 	'0'+rnd.to_s + i.to_s
+			end
+		else
+			@unique = 	rnd.to_s + i.to_s
+		end
 		
 	end
 	

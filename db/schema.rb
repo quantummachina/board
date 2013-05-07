@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206192226) do
+ActiveRecord::Schema.define(:version => 20130504204842) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file"
@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(:version => 20130206192226) do
     t.integer  "user_id"
     t.string   "title",                       :default => ""
     t.text     "description",  :limit => 255, :default => ""
-    t.datetime "created_at",                                     :null => false
-    t.datetime "updated_at",                                     :null => false
+    t.datetime "created_at",                                            :null => false
+    t.datetime "updated_at",                                            :null => false
     t.integer  "category_id",                 :default => 2
     t.boolean  "promoted",                    :default => false
     t.integer  "cover",                       :default => 0
@@ -70,6 +70,10 @@ ActiveRecord::Schema.define(:version => 20130206192226) do
     t.integer  "city_id",                     :default => 0
     t.text     "site",                        :default => ""
     t.text     "statustext",                  :default => ""
+    t.text     "story",                       :default => ""
+    t.text     "goal",                        :default => ""
+    t.date     "end_date",                    :default => '2013-05-03'
+    t.boolean  "profitable",                  :default => false
   end
 
   add_index "collections", ["user_id"], :name => "index_collections_on_user_id"
@@ -237,6 +241,7 @@ ActiveRecord::Schema.define(:version => 20130206192226) do
     t.boolean  "n_cfollowings", :default => true
     t.boolean  "n_ufollowings", :default => true
     t.boolean  "n_items",       :default => true
+    t.integer  "temp_pay",      :default => 0
   end
 
   add_index "uoptions", ["user_id"], :name => "index_uoptions_on_user_id", :unique => true
@@ -250,6 +255,8 @@ ActiveRecord::Schema.define(:version => 20130206192226) do
     t.string   "description",   :default => ""
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.text     "reward",        :default => ""
+    t.integer  "pay",           :default => 0
   end
 
 end
