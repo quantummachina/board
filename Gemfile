@@ -22,6 +22,7 @@ gem 'aws-s3'
 gem 'aws-sdk', '1.5.8'
 
 #gem 'delayed_job_active_record'
+#
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
