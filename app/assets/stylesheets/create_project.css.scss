@@ -5,6 +5,7 @@ $grayLight:             #999 !default;
 $grayLighter:           #eee !default;
 
 
+
 div.rules_text {
 	float: left;
 	padding: 0px 0px 0px 0px;
@@ -102,4 +103,10 @@ textarea:focus {
     -webkit-box-shadow: 0 0 5px white; 
     -moz-box-shadow: 0 0 5px white;
     border:1px solid gray; 
+}
+
+div.collaboration_box {
+	background-color: $grayLighter;
+	padding: 15px 0px 15px 0px;
+	margin: 24px 0px 24px 0px;
 }
