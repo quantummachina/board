@@ -1,62 +1,47 @@
 <% provide :title, "Nuevo proyecto" %> 
 <div class="row">
-  <div class = "span10">
-	<h1>Colaboración</h1>
-	<br>
-	<h3>Paso 2 de 2</h3>
-
-	<div class='row'>
-		<div class = 'span4 offset2'>
-			
+	<div class = "offset2 span10">
+		<h1>Colaboración</h1>
 		  	<%= form_for @collection.vacants.build(collection_id: @collection.id) do |g|%>
-		  		<%=g.hidden_field :collection_id %>
-		  		<%=hidden_field_tag 'from', 1 %>
-		  		<%= g.label :title, "¿Qué colaborador buscas?" %>
-		  	  <%= g.text_field :title, maxlength: 30, placeholder:" Ej. Animador", class: "span4"%>
-		  	  <%= g.label :description, "Describe cómo puede colaborar:" %>
-		  	  <%= g.text_area :description, maxlength: 200, placeholder:"Ej. Alguien interesado en experimentar con animación 2D", class: "span4", rows: 4%><br>
-		  	  <%= g.label :reward, "¿Qué ofreces a cambio?" %>
-		  	  <%= g.text_area :reward, maxlength: 200, placeholder:"Recompensa la colaboración con algo creativo: una camiseta, una canción, etc.", class: "span4", rows: 4%><br>
-		  	  <%if @collection.profitable %>
-		  	  	<%= g.label :pay, "¿Cuánto puedes pagar? Se trata de que los dos ganen." %>
-		  	  	<%= g.number_field :pay, class: "span2"%><br>
-		  	  <%end%>
-		  	  <%= g.submit "Agregar este colaborador", class: "btn btn-warning" %>
+			  	<%=g.hidden_field :collection_id %>
+			  	<%=hidden_field_tag 'from', 1 %>
+			  	<%= g.label :title, "¿Qué colaborador buscas?", class: "products_title" %>
+			  		<%= g.text_field :title, maxlength: 30, placeholder:" Ej. Fotógrafo, animador, cantante.", class: "projectinfo"%>
+			  	<%= g.label :description, "Describe cómo puede colaborar:", class: "products_title" %>
+			  		<%= g.text_area :description, maxlength: 200, placeholder:"Ej. Alguien interesado en experimentar con animación 2D", class: "span4 projectinfo", rows: 4%><br>
+			  	<%= g.label :reward, "¿Qué ofreces a cambio?", class: "products_title" %>
+			  		<%= g.text_area :reward, maxlength: 200, placeholder:"Ofrece una recompensa creativa para tus colaboradores: una canción, una camiseta, créditos de tu proyecto, etc.", class: "span4 projectinfo", rows: 4%><br>
+			  		<%if @collection.profitable %>
+			  	  		<%= g.label :pay, "¿Cuánto puedes pagar? Se trata de que los dos ganen.", class: "project_title" %>
+			  	  		<%= g.number_field :pay, class: "span2 projectinfo"%><br>
+		  	<%end%>
+		  	
+		  	<%= g.submit "+ Agregar", class: "btn" %>
 			<%end%>
-		</div>
-		<div class= 'span4'>
-
+	
 			<% @collection.vacants.each do |v|%>
 				<%if !v.id.nil? %>
-				<div class="row help2">
-					<div class='span3'>
+				<div class="collaboration_box span8">
 						<h3><%=v.title%></h3>
 						<p><%=v.description%></p>
 						<p>Recompensa: <%=v.reward%></p>
 						<%if @collection.profitable %>
 							<p>$ <%=v.pay%></p>
 						<%end%>
-
-						
-						<%= link_to 'Descartar', {controller: 'collections', action: 'devacant', id: v.id} %>
+						<%= link_to 'Borrar', {controller: 'collections', action: 'devacant', id: v.id} %>
 					</div>
-				</div>
-				<br>
+					<br>
+					<%end%>
 				<%end%>
-			<%end%>
-		</div>	
-
+			<%if @collection.vacants.count < 1 %>
+				<%= link_to 'Necesitas un colaborador para publicar', '#', class: "btn disabled" %>
+			<% else %>
+				<%= link_to '¡Listo! Ya puedes crear tu proyecto', @collection, class: "btn" %>
+			<% end %>
 	</div>
-	<hr>
-	<%if @collection.vacants.count < 1 %>
-		<%= link_to 'Publicar proyecto', '#', class: "btn btn-large btn-primary disabled" %>
-	<% else %>
-		<%= link_to 'Publicar proyecto', @collection, class: "btn btn-large btn-primary" %>
-	<% end %>
-  </div>
+</div>
   <!--div class='span4'
   	<%# render 'choro'%>
   </div-->
-</div>
 
 		
