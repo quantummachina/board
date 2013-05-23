@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+## look at it! It works!
 gem 'rails', '3.2.11'
 
 gem 'bootstrap-generators', '2.0.1'#,~> :git => 'git://github.com/decioferreira/bootstrap-generators.git'
